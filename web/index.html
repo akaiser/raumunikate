@@ -54,7 +54,7 @@
 <script>
     window.addEventListener('load', function () {
         _flutter.loader.loadEntrypoint({serviceWorker: {serviceWorkerVersion: serviceWorkerVersion}})
-            .then((engineInitializer) => engineInitializer.initializeEngine({canvasKitBaseUrl: "canvaskit/"}))
+            .then((engineInitializer) => engineInitializer.initializeEngine({canvasKitBaseUrl: "/raumunikate/canvaskit/"}))
             .then((appRunner) => appRunner.runApp())
             .then(() => document.querySelector('#loading').remove());
     });
