@@ -2,17 +2,17 @@ import 'dart:async' show runZonedGuarded;
 import 'dart:developer' show log;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/ui/fade_in.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/b/about_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  usePathUrlStrategy();
+  //usePathUrlStrategy();
 
   runZonedGuarded<void>(
     () => runApp(
@@ -35,10 +35,13 @@ class _App extends StatelessWidget {
   const _App();
 
   @override
-  Widget build(BuildContext context) => MaterialApp.router(
-        title: 'Raumunikate',
-        debugShowCheckedModeBanner: false,
-        routerConfig: _router,
+  Widget build(BuildContext context) => FadeIn(
+        millis: 1000,
+        child: MaterialApp.router(
+          title: 'Raumunikate',
+          debugShowCheckedModeBanner: false,
+          routerConfig: _router,
+        ),
       );
 }
 
