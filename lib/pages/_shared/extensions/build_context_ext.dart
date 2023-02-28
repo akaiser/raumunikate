@@ -9,4 +9,10 @@ extension BuildContextExt on BuildContext {
   double get screenWidth => mediaQueryData.size.width;
 
   String? get currentRoutePath => GoRouter.of(this).location;
+
+  //
+
+  ThemeData get td => Theme.of(this);
+
+  TextTheme get tt => td.textTheme;
 }
