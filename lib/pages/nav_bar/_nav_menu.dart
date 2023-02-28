@@ -14,7 +14,6 @@ class NavMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
-        //offset: Offset(100, 0),
         tooltip: '',
         iconSize: 30,
         color: mainBackgroundColor,
@@ -25,7 +24,7 @@ class NavMenu extends StatelessWidget {
             BlendMode.srcIn,
           ),
         ),
-        itemBuilder: (_) => data.navData.entries.map(
+        itemBuilder: (context) => data.navData.entries.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.key;
             return PopupMenuItem<String>(
