@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
@@ -10,44 +13,46 @@ class NavMenu extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => PopupMenuButton<int>(
-        //offset: Offset(100, 0),
+  Widget build(BuildContext context) => PopupMenuButton<String>(
         tooltip: '',
+        iconSize: 30,
         color: mainBackgroundColor,
-        icon: const Icon(
-          Icons.menu_rounded,
-          size: 36,
-          color: mainTODO_0,
+        icon: SvgPicture.asset(
+          Assets.menu,
+          colorFilter: const ColorFilter.mode(
+            mainTODO_0,
+            BlendMode.srcIn,
+          ),
         ),
-        onSelected: (_) {},
-        itemBuilder: (_) => data.navData.entries
-            .map(
-              (entry) => PopupMenuItem<int>(
-                value: entry.key,
-                child: _MenuItem(entry),
-              ),
-            )
-            .unmodifiable,
+        itemBuilder: (context) => data.navData.entries.map(
+          (entry) {
+            final isEnabled = context.currentRoutePath != entry.key;
+            return PopupMenuItem<String>(
+              enabled: isEnabled,
+              onTap: () => context.go(entry.key),
+              value: entry.value,
+              child: _MenuItem(entry.value, isEnabled: isEnabled),
+            );
+          },
+        ).unmodifiable,
       );
 }
 
 class _MenuItem extends StatelessWidget {
-  const _MenuItem(this.entry);
+  const _MenuItem(this.value, {required this.isEnabled});
 
-  final MapEntry<int, data.NavItem> entry;
+  final String value;
+  final bool isEnabled;
 
   @override
   Widget build(BuildContext context) {
-    final fontStyle = context.tt.labelMedium?.copyWith(
-      fontWeight: FontWeight.w700,
+    final fontStyle = context.tt.titleMedium?.copyWith(
+      color: mainTODO_1,
+      fontWeight: FontWeight.bold,
     );
     return Text(
-      entry.value.text.toUpperCase(),
-      style: fontStyle?.copyWith(
-          //color: ref.watch(currentSectionProvider) != entry.key
-          //    ? Colors.black
-          //    : sgsRedColor,
-          ),
+      value,
+      style: fontStyle?.copyWith(color: isEnabled ? mainTODO_1 : mainTODO_0),
     );
   }
 }

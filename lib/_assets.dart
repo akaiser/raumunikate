@@ -3,7 +3,18 @@ class Assets {
   Assets._();
 
   static const //
-      homeIntro = 'assets/a_home_intro_0.jpg',
-      homeIntroDimmed = 'assets/a_home_intro_0_dimmed.jpg',
-      homeIntro2 = 'assets/a_home_intro_2.jpg';
+      _root = 'assets',
+      _iconsRoot = '$_root/icons';
+
+  static const // misc
+      logo = '$_root/logo.svg',
+      homeIntro = '$_root/a_home_intro_0.jpg',
+      homeIntroDimmed = '$_root/a_home_intro_0_dimmed.jpg',
+      homeIntro2 = '$_root/a_home_intro_2.jpg';
+
+  static const // icons
+      facebook = '$_iconsRoot/facebook.svg',
+      instagram = '$_iconsRoot/instagram.svg',
+      mail = '$_iconsRoot/mail.svg',
+      menu = '$_iconsRoot/menu.svg';
 }

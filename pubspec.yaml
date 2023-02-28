@@ -22,4 +22,11 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
-  uses-material-design: true
+    - assets/icons/
+  fonts:
+    - family: Barlow
+      fonts:
+        - asset: google_fonts/Barlow-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: google_fonts/Roboto-Regular.ttf
