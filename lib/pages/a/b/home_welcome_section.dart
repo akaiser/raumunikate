@@ -6,7 +6,7 @@ class HomeWelcomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const BaseSection(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.orange,
         child: Center(child: Text('HomeWelcomeSection')),
       );
 }
