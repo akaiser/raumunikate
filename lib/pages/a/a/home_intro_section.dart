@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
+import 'package:raumunikate/pages/a/a/_data.dart' as data;
 import 'package:raumunikate/pages/base_section.dart';
 
 class HomeIntroSection extends StatelessWidget {
@@ -11,10 +13,17 @@ class HomeIntroSection extends StatelessWidget {
   Widget build(BuildContext context) => BaseSection(
         backgroundAsset: Assets.homeIntroDimmed,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SizedBox(height: navigationBarHeightExpanded),
-            Text('HomeIntroSection'),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: navigationBarHeightExpanded),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: ResponsiveText(
+                data.introText,
+                fontSizes: const [56, 48, 32, 26],
+                textStyle: context.tt.bodyLarge?.copyWith(color: Colors.white),
+              ),
+            )
             //SizedBox(height: navigationBarHeightExpanded),
             //_AnimatedBox(),
           ],

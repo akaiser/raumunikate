@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
-import 'package:raumunikate/pages/nav_bar.dart';
+import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
 class BasePage extends StatefulWidget {
   const BasePage({
