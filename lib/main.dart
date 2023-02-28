@@ -2,17 +2,15 @@ import 'dart:async' show runZonedGuarded;
 import 'dart:developer' show log;
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
+import 'package:raumunikate/_router.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/_theme.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in.dart';
-import 'package:raumunikate/pages/a/home_page.dart';
-import 'package:raumunikate/pages/b/about_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  //usePathUrlStrategy();
 
   runZonedGuarded<void>(
     () => runApp(
@@ -38,39 +36,10 @@ class _App extends StatelessWidget {
   Widget build(BuildContext context) => FadeIn(
         millis: 1000,
         child: MaterialApp.router(
-          title: 'Raumunikate',
           debugShowCheckedModeBanner: false,
-          routerConfig: _router,
+          theme: theme,
+          title: appName,
+          routerConfig: router,
         ),
       );
 }
-
-final _router = GoRouter(
-  initialLocation: HomePage.path,
-  routes: [
-    GoRoute(
-      path: HomePage.path,
-      pageBuilder: (_, state) => _page(state, const HomePage()),
-    ),
-    GoRoute(
-      path: AboutPage.path,
-      pageBuilder: (_, state) => _page(state, const AboutPage()),
-    ),
-  ],
-);
-
-CustomTransitionPage<Widget> _page(
-  GoRouterState state,
-  Widget page,
-) =>
-    CustomTransitionPage(
-      key: state.pageKey,
-      child: page,
-      transitionDuration: const Duration(
-        milliseconds: transitionsDurationInMillis,
-      ),
-      transitionsBuilder: (_, animation, __, child) => FadeTransition(
-        opacity: CurveTween(curve: Curves.ease).animate(animation),
-        child: child,
-      ),
-    );

@@ -9,14 +9,13 @@ class HomeIntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSection(
-        backgroundColor: Colors.green,
-        backgroundAsset: Assets.homeIntro,
+        backgroundAsset: Assets.homeIntroDimmed,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             SizedBox(height: navigationBarHeightExpanded),
             Text('HomeIntroSection'),
-            SizedBox(height: navigationBarHeightExpanded),
+            //SizedBox(height: navigationBarHeightExpanded),
             //_AnimatedBox(),
           ],
         ),
@@ -70,10 +69,10 @@ class _AnimatedBoxState extends State<_AnimatedBox>
 
   @override
   Widget build(BuildContext context) => ColoredBox(
-        color: Colors.red.withOpacity(0.5),
+        color: Colors.black.withOpacity(0.1),
         child: SizedBox(
           width: _animation.value,
-          height: 100,
+          height: context.screenHeight - 200,
         ),
       );
 }

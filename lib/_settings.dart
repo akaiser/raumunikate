@@ -1,5 +1,7 @@
 import 'package:flutter/painting.dart' show Color;
 
+const appName = 'Raumunikate';
+
 const double navigationBarHeight = 48;
 const double navigationBarHeightExpanded = 96;
 

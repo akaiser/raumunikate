@@ -15,10 +15,20 @@ class BaseSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final content = SizedBox(
+      height: context.screenHeight,
+      width: context.screenWidth,
+      child: child,
+    );
+
+    if (backgroundColor == null && backgroundAsset == null) {
+      return content;
+    }
+
     final _backgroundAsset = backgroundAsset;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: backgroundColor?.withOpacity(0.5),
+        color: backgroundColor,
         image: _backgroundAsset != null
             ? DecorationImage(
                 fit: BoxFit.cover,
@@ -26,11 +36,7 @@ class BaseSection extends StatelessWidget {
               )
             : null,
       ),
-      child: SizedBox(
-        height: context.screenHeight,
-        width: context.screenWidth,
-        child: child,
-      ),
+      child: content,
     );
   }
 }
