@@ -1,14 +1,11 @@
+import 'package:raumunikate/pages/a/home_page.dart';
+import 'package:raumunikate/pages/b/about_page.dart';
+
 const navData = {
-  0: NavItem('HOME'),
-  1: NavItem('ATMOSPHÄRE PLANEN'),
-  2: NavItem('PROJEKTE'),
-  3: NavItem('PRODUKTE'),
-  4: NavItem('PORTRAIT'),
-  5: NavItem('INSPIRATION'),
+  HomePage.path: 'HOME',
+  AboutPage.path: 'ATMOSPHÄRE PLANEN',
+  '0': 'PROJEKTE',
+  '1': 'PRODUKTE',
+  '2': 'PORTRAIT',
+  '3': 'INSPIRATION',
 };
-
-class NavItem {
-  const NavItem(this.text);
-
-  final String text;
-}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
@@ -22,8 +23,8 @@ class NavBar extends StatelessWidget {
         curve: Curves.ease,
         color: mainBackgroundColor,
         padding: EdgeInsets.only(
-          left: isFullWidthNavBar ? 100 : 6,
-          top: 6,
+          left: isFullWidthNavBar ? 104 : 6,
+          top: 10,
           right: isFullWidthNavBar ? 90 : 16,
         ),
         duration: const Duration(milliseconds: transitionsDurationInMillis),
@@ -50,10 +51,10 @@ class _NavBar extends StatelessWidget {
                 child: NavMenu(),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(top: 7),
                 child: SvgPicture.asset(
-                  'assets/logo.svg',
-                  height: 30,
+                  Assets.logo,
+                  height: 32,
                   colorFilter: const ColorFilter.mode(
                     mainTODO_0,
                     BlendMode.srcIn,
@@ -61,7 +62,7 @@ class _NavBar extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 8),
+                padding: EdgeInsets.only(top: 4),
                 child: SocialLinks(),
               ),
             ],
