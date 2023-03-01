@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:raumunikate/_theme.dart';
 
 extension BuildContextExt on BuildContext {
   MediaQueryData get mediaQueryData => MediaQuery.of(this);
@@ -12,7 +13,7 @@ extension BuildContextExt on BuildContext {
 
   //
 
-  ThemeData get td => Theme.of(this);
+  ThemeData get _td => Theme.of(this);
 
-  TextTheme get tt => td.textTheme;
+  AppTextTheme get tt => AppTextTheme(_td.textTheme);
 }

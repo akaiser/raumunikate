@@ -8,6 +8,7 @@ class InspirationIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: Colors.tealAccent,
+        isIntroSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

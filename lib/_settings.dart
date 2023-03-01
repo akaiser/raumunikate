@@ -11,4 +11,6 @@ const int transitionsDurationInMillis = 400;
 const //
     mainBackgroundColor = Color(0xfff2f2f2),
     mainTODO_0 = Color(0xff626665),
-    mainTODO_1 = Color(0xffc4b3a3);
+    mainTODO_1 = Color(0xffc4b3a3),
+    mainTODO_2 = Color(0xffece9d8)
+;

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
@@ -17,13 +15,15 @@ class NavMenu extends StatelessWidget {
         tooltip: '',
         iconSize: 30,
         color: mainBackgroundColor,
-        icon: SvgPicture.asset(
-          Assets.menu,
-          colorFilter: const ColorFilter.mode(
-            mainTODO_0,
-            BlendMode.srcIn,
-          ),
-        ),
+        icon: const Placeholder(),
+        // TODO(albert): mehh
+        // SvgPicture.asset(
+        //   Assets.menu,
+        //   colorFilter: const ColorFilter.mode(
+        //     mainTODO_0,
+        //     BlendMode.srcIn,
+        //   ),
+        // )
         itemBuilder: (context) => data.navData.entries.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.key;
@@ -45,14 +45,11 @@ class _MenuItem extends StatelessWidget {
   final bool isEnabled;
 
   @override
-  Widget build(BuildContext context) {
-    final fontStyle = context.tt.titleMedium?.copyWith(
-      color: mainTODO_1,
-      fontWeight: FontWeight.bold,
-    );
-    return Text(
-      value,
-      style: fontStyle?.copyWith(color: isEnabled ? mainTODO_1 : mainTODO_0),
-    );
-  }
+  Widget build(BuildContext context) => Text(
+        value,
+        style: context.tt.title?.copyWith(
+          color: isEnabled ? mainTODO_1 : mainTODO_0,
+          fontSize: 18,
+        ),
+      );
 }

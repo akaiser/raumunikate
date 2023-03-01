@@ -12,6 +12,7 @@ class HomeIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundAsset: Assets.homeIntroDimmed,
+        isIntroSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -20,8 +21,10 @@ class HomeIntroSection extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: ResponsiveText(
                 data.introText,
-                fontSizes: const [56, 48, 32, 26],
-                textStyle: context.tt.bodyLarge?.copyWith(color: Colors.white),
+                fontSizes: const [72, 56, 48, 32],
+                textStyle: context.tt.headline?.copyWith(
+                  color: Colors.white,
+                ),
               ),
             )
             //SizedBox(height: navigationBarHeightExpanded),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
@@ -43,25 +41,27 @@ class _NavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Table(
-        children: [
+        children: const [
           TableRow(
             children: [
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: NavMenu(),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 7),
-                child: SvgPicture.asset(
-                  Assets.logo,
-                  height: 32,
-                  colorFilter: const ColorFilter.mode(
-                    mainTODO_0,
-                    BlendMode.srcIn,
-                  ),
-                ),
+                padding: EdgeInsets.only(top: 7),
+                child: SizedBox(width: 30, height: 26, child: Placeholder()),
+                // TODO(albert): mehh
+                // SvgPicture.asset(
+                //   Assets.logo,
+                //   height: 32,
+                //   colorFilter: const ColorFilter.mode(
+                //     mainTODO_0,
+                //     BlendMode.srcIn,
+                //   ),
+                // ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(top: 4),
                 child: SocialLinks(),
               ),

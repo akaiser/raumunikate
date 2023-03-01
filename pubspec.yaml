@@ -9,7 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.2
   go_router: ^6.2.0
   provider: ^6.0.5
 
@@ -27,6 +26,9 @@ flutter:
     - family: Barlow
       fonts:
         - asset: google_fonts/Barlow-Regular.ttf
+    - family: BarlowCondensed
+      fonts:
+        - asset: google_fonts/BarlowCondensed-Regular.ttf
     - family: Roboto
       fonts:
         - asset: google_fonts/Roboto-Regular.ttf

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:raumunikate/_assets.dart';
-import 'package:raumunikate/_settings.dart';
 
 class SocialLinks extends StatelessWidget {
   const SocialLinks({super.key});
@@ -26,12 +24,15 @@ class _Svg extends StatelessWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context) => SvgPicture.asset(
-        asset,
-        height: height,
-        colorFilter: const ColorFilter.mode(
-          mainTODO_0,
-          BlendMode.srcIn,
-        ),
-      );
+  Widget build(BuildContext context) =>
+      const SizedBox(width: 20, height: 20, child: Placeholder());
+// TODO(albert): mehh
+// SvgPicture.asset(
+//   asset,
+//   height: height,
+//   colorFilter: const ColorFilter.mode(
+//     mainTODO_0,
+//     BlendMode.srcIn,
+//   ),
+// );
 }
