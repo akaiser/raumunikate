@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/pages/base_footer_page.dart';
+import 'package:raumunikate/pages/base_page.dart';
 import 'package:raumunikate/pages/e/a/portrait_intro_section.dart';
 
 class PortraitPage extends StatelessWidget {
@@ -8,7 +8,7 @@ class PortraitPage extends StatelessWidget {
   static const path = '/portrait';
 
   @override
-  Widget build(BuildContext context) => const BaseFooterPage(
+  Widget build(BuildContext context) => const BasePage(
         children: [
           PortraitIntroSection(),
         ],
