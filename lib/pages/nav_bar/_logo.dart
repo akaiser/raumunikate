@@ -1,7 +1,5 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_assets.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
-import 'package:raumunikate/pages/nav_bar/_data.dart' as data;
 
 class Logo extends StatelessWidget {
   const Logo({super.key});
