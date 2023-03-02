@@ -8,31 +8,18 @@ class SocialLinks extends StatelessWidget {
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: const [
-          _Svg(Assets.instagram),
+          _Icon(Assets.instagram),
           SizedBox(width: 6),
-          _Svg(Assets.facebook),
-          SizedBox(width: 4),
-          _Svg(Assets.mail, height: 20),
+          _Icon(Assets.facebook),
         ],
       );
 }
 
-class _Svg extends StatelessWidget {
-  const _Svg(this.asset, {this.height = 14});
+class _Icon extends StatelessWidget {
+  const _Icon(this.asset);
 
   final String asset;
-  final double height;
 
   @override
-  Widget build(BuildContext context) =>
-      const SizedBox(width: 20, height: 20, child: Placeholder());
-// TODO(albert): mehh
-// SvgPicture.asset(
-//   asset,
-//   height: height,
-//   colorFilter: const ColorFilter.mode(
-//     mainTODO_0,
-//     BlendMode.srcIn,
-//   ),
-// );
+  Widget build(BuildContext context) => Image.asset(asset, height: 16);
 }

@@ -6,7 +6,7 @@ class ResponsiveText extends StatelessWidget {
   const ResponsiveText(
     this.text, {
     required this.fontSizes,
-    required this.textStyle,
+    required this.style,
     this.textAlign = TextAlign.center,
     super.key,
   }) : assert(fontSizes.length == 4, 'one needs to provide four font sizes');
@@ -15,18 +15,18 @@ class ResponsiveText extends StatelessWidget {
 
   // huge | large | medium | small
   final List<double> fontSizes;
-  final TextStyle? textStyle;
+  final TextStyle? style;
   final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) => Text(
         text,
         textAlign: textAlign,
-        style: textStyle?.copyWith(fontSize: _resolveFontSize(context)),
+        style: style?.copyWith(fontSize: _resolveFontSize(context)),
       );
 
   double _resolveFontSize(BuildContext context) {
-    switch (resolveBreakpoint(context.screenWidth)) {
+    switch (context.breakpoint) {
       case Breakpoint.huge:
         return fontSizes[0];
       case Breakpoint.large:

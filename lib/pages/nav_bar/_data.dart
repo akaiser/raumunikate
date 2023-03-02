@@ -1,3 +1,4 @@
+// ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/b/plan_page.dart';
 import 'package:raumunikate/pages/c/projects_page.dart';
@@ -13,3 +14,7 @@ const navData = {
   PortraitPage.path: 'PORTRAIT',
   InspirationPage.path: 'INSPIRATION',
 };
+
+const //
+    logoTitle = 'RAUMUNIKATE',
+    logoSubtitle = 'INA KAISER';

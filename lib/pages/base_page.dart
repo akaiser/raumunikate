@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
+import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/footer/footer.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
@@ -46,28 +48,29 @@ class _BasePageState extends State<_BasePage> {
   Widget build(BuildContext context) {
     final navBarNotifier = context.read<NavBarNotifier>();
     return Scaffold(
-      body: Scrollbar(
-        controller: _scrollController,
-        notificationPredicate: (notification) {
-          if (notification.metrics.axis == Axis.vertical) {
-            final metrics = notification.metrics;
-            final currentOffset = metrics.pixels;
-            final isAtTop = metrics.atEdge && currentOffset == 0;
-            if (navBarNotifier.isExpanded == isAtTop) {
-              navBarNotifier.toggle;
+      body: RefreshIndicator(
+        onRefresh: () async => context.go(HomePage.path),
+        child: Scrollbar(
+          controller: _scrollController,
+          notificationPredicate: (notification) {
+            if (notification.metrics.axis == Axis.vertical) {
+              final isAtTop = notification.metrics.pixels <= 0;
+              if (navBarNotifier.isExpanded != isAtTop) {
+                navBarNotifier.toggle;
+              }
             }
-          }
-          return true;
-        },
-        child: Stack(
-          children: [
-            ListView.builder(
-              controller: _scrollController,
-              itemCount: widget.children.length,
-              itemBuilder: (_, index) => widget.children[index],
-            ),
-            const Positioned(child: NavBar()),
-          ],
+            return true;
+          },
+          child: Stack(
+            children: [
+              ListView.builder(
+                controller: _scrollController,
+                itemCount: widget.children.length,
+                itemBuilder: (_, index) => widget.children[index],
+              ),
+              const Positioned(child: NavBar()),
+            ],
+          ),
         ),
       ),
     );

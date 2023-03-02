@@ -1,39 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
+import 'package:raumunikate/pages/a/b/_data.dart' as data;
 import 'package:raumunikate/pages/base_section.dart';
+
+const _largeInfoPadding = EdgeInsets.only(left: 100, top: 100, right: 100);
+const _mediumInfoPadding = EdgeInsets.only(left: 40, top: 40, right: 40);
 
 class HomeWelcomeSection extends StatelessWidget {
   const HomeWelcomeSection({super.key});
+
+  @override
+  Widget build(BuildContext context) => ResponsiveLayout(
+        large: (_) => const _TwoColumn(4, 5, _largeInfoPadding),
+        medium: (_) => const _TwoColumn(2, 3, _mediumInfoPadding),
+        small: (_) => const _OneColumn(),
+      );
+}
+
+class _TwoColumn extends StatelessWidget {
+  const _TwoColumn(
+    this.flexLeft,
+    this.flexRight,
+    this.infoPadding,
+  );
+
+  final int flexLeft;
+  final int flexRight;
+  final EdgeInsetsGeometry infoPadding;
 
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: mainTODO_2,
         child: Row(
           children: [
-            const Flexible(
-              flex: 4,
-              child: _Ina(),
+            Flexible(
+              flex: flexLeft,
+              child: const CoverImageBox(Assets.homeWelcomeIna),
             ),
             Flexible(
-              flex: 5,
+              flex: flexRight,
               child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 130,
-                  top: 120,
-                  right: 120,
-                  bottom: 100,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    //Text(data.introTitle, style: context.tt.title),
-                    //Text(data.introTitle2, style: context.tt.title),
-                    SizedBox(height: 80),
-                    //Text(data.introContent, style: context.tt.body),
-                  ],
-                ),
+                padding: infoPadding,
+                child: const _Info(),
               ),
             ),
           ],
@@ -41,10 +54,43 @@ class HomeWelcomeSection extends StatelessWidget {
       );
 }
 
-class _Ina extends StatelessWidget {
-  const _Ina();
+class _OneColumn extends StatelessWidget {
+  const _OneColumn();
 
   @override
-  Widget build(BuildContext context) =>
-      const CoverImageBox(Assets.homeWelcomeIna);
+  Widget build(BuildContext context) => Column(
+        children: const [
+          BaseSection(
+            backgroundColor: mainTODO_2,
+            child: Padding(
+              padding: EdgeInsets.only(left: 40, top: 40, right: 40),
+              child: _Info(),
+            ),
+          ),
+          BaseSection(backgroundAsset: Assets.homeWelcomeIna),
+        ],
+      );
+}
+
+class _Info extends StatelessWidget {
+  const _Info();
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = context.tt;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(data.introTitle, style: textTheme.title),
+        Text(data.introTitle2, style: textTheme.title),
+        const SizedBox(height: 40),
+        ResponsiveText(
+          data.introContent,
+          fontSizes: const [22, 18, 16, 16],
+          style: textTheme.body,
+          textAlign: TextAlign.start,
+        ),
+      ],
+    );
+  }
 }

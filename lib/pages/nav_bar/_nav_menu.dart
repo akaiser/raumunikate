@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart' as data;
 
 class NavMenu extends StatelessWidget {
-  const NavMenu({
-    super.key,
-  });
+  const NavMenu({super.key});
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
         tooltip: '',
-        iconSize: 30,
+        iconSize: 32,
         color: mainBackgroundColor,
-        icon: const Placeholder(),
-        // TODO(albert): mehh
-        // SvgPicture.asset(
-        //   Assets.menu,
-        //   colorFilter: const ColorFilter.mode(
-        //     mainTODO_0,
-        //     BlendMode.srcIn,
-        //   ),
-        // )
+        icon: DecoratedBox(
+          decoration: const BoxDecoration(
+            color: mainBackgroundColor,
+            borderRadius: BorderRadius.all(Radius.circular(4)),
+          ),
+          child: Image.asset(Assets.menu,color: mainTODO_0),
+        ),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(4)),
+        ),
         itemBuilder: (context) => data.navData.entries.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.key;

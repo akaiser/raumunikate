@@ -8,19 +8,23 @@ class BaseSection extends StatelessWidget {
     this.backgroundColor,
     this.backgroundAsset,
     this.isIntroSection = false,
-    required this.child,
+    this.child,
     super.key,
   });
 
   final Color? backgroundColor;
   final String? backgroundAsset;
   final bool isIntroSection;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
+    final isFullWidthNavBar = context.isFullWidthNavBar;
     final content = SizedBox(
-      height: context.screenHeight - (isIntroSection ? 0 : navigationBarHeight),
+      height: context.screenHeight -
+          (isIntroSection || (!isIntroSection && !isFullWidthNavBar)
+              ? 0
+              : navigationBarHeight),
       width: context.screenWidth,
       child: child,
     );
@@ -35,6 +39,6 @@ class BaseSection extends StatelessWidget {
       return CoverImageBox(_backgroundAsset, child: content);
     }
 
-    throw Exception('This must not happen :)');
+    throw Exception('This must not happen!');
   }
 }

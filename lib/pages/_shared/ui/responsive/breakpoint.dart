@@ -12,14 +12,3 @@ Breakpoint resolveBreakpoint(double screenWidth) => screenWidth > 1199
         : screenWidth > 767
             ? Breakpoint.medium
             : Breakpoint.small;
-
-double resolveMaxWidth(double screenWidth) {
-  final breakpoint = resolveBreakpoint(screenWidth);
-  return breakpoint == Breakpoint.huge
-      ? 1140
-      : breakpoint == Breakpoint.large
-          ? 960
-          : breakpoint == Breakpoint.medium
-              ? 720
-              : 540;
-}

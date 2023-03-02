@@ -7,15 +7,15 @@ class Assets {
       _iconsRoot = '$_root/icons';
 
   static const // misc
-      logo = '$_root/logo.svg',
+      logo = '$_root/logo.png',
+      logoText = '$_root/logo_text.png',
       homeIntro = '$_root/a_home_intro_0.jpg',
       homeIntroDimmed = '$_root/a_home_intro_0_dimmed.jpg',
       homeIntro2 = '$_root/a_home_intro_2.jpg',
       homeWelcomeIna = '$_root/a_home_welcome_ina.jpg';
 
   static const // icons
-      facebook = '$_iconsRoot/facebook.svg',
-      instagram = '$_iconsRoot/instagram.svg',
-      mail = '$_iconsRoot/mail.svg',
-      menu = '$_iconsRoot/menu.svg';
+      facebook = '$_iconsRoot/facebook.png',
+      instagram = '$_iconsRoot/instagram.png',
+      menu = '$_iconsRoot/menu.png';
 }
