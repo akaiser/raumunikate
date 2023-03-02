@@ -85,11 +85,11 @@ class _NavBar extends StatelessWidget {
                 ),
                 if (isFullWidthNavBar)
                   const Padding(
-                    padding: EdgeInsets.only(top: 4),
+                    padding: EdgeInsets.only(top: 16),
                     child: SocialLinks(),
                   )
                 else
-                  const SizedBox()
+                  const SizedBox.shrink()
               ]
             ],
           ),

@@ -19,7 +19,7 @@ class NavMenu extends StatelessWidget {
             color: mainBackgroundColor,
             borderRadius: BorderRadius.all(Radius.circular(4)),
           ),
-          child: Image.asset(Assets.menu,color: mainTODO_0),
+          child: Image.asset(Assets.menu, color: mainTODO_0),
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -49,7 +49,8 @@ class _MenuItem extends StatelessWidget {
         value,
         style: context.tt.title?.copyWith(
           color: isEnabled ? mainTODO_1 : mainTODO_0,
-          fontSize: 18,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
       );
 }

@@ -17,5 +17,6 @@ class Assets {
   static const // icons
       facebook = '$_iconsRoot/facebook.png',
       instagram = '$_iconsRoot/instagram.png',
+      mail = '$_iconsRoot/mail.png',
       menu = '$_iconsRoot/menu.png';
 }

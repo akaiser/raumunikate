@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/ui/hover_region.dart';
 
 class SocialLinks extends StatelessWidget {
   const SocialLinks({super.key});
@@ -9,8 +11,10 @@ class SocialLinks extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: const [
           _Icon(Assets.instagram),
-          SizedBox(width: 6),
+          SizedBox(width: 8),
           _Icon(Assets.facebook),
+          SizedBox(width: 8),
+          _Icon(Assets.mail),
         ],
       );
 }
@@ -21,5 +25,11 @@ class _Icon extends StatelessWidget {
   final String asset;
 
   @override
-  Widget build(BuildContext context) => Image.asset(asset, height: 16);
+  Widget build(BuildContext context) => HoverRegion(
+        builder: (context, isHovering, _) => Image.asset(
+          asset,
+          height: 16,
+          color: isHovering ? mainTODO_0 : mainTODO_0.withOpacity(0.3),
+        ),
+      );
 }
