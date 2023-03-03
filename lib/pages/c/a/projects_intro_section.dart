@@ -8,7 +8,6 @@ class ProjectsIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: Colors.green,
-        isFirstSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

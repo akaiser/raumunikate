@@ -8,7 +8,6 @@ class PortraitIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: Colors.cyan,
-        isFirstSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

@@ -4,40 +4,24 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   const ResponsiveLayout({
-    required this.small,
     this.huge,
     this.large,
-    this.medium,
+    required this.medium,
     super.key,
   });
 
   final WidgetBuilder? huge;
   final WidgetBuilder? large;
-  final WidgetBuilder? medium;
-  final WidgetBuilder small;
+  final WidgetBuilder medium;
 
   @override
   Widget build(BuildContext context) {
     final breakpoint = context.breakpoint;
     return breakpoint == Breakpoint.huge
-        ? _HugeFallback(
-            huge: huge,
-            large: large,
-            medium: medium,
-            small: small,
-          )
+        ? _HugeFallback(huge: huge, large: large, medium: medium)
         : breakpoint == Breakpoint.large
-            ? _LargeFallback(
-                large: large,
-                medium: medium,
-                small: small,
-              )
-            : breakpoint == Breakpoint.medium
-                ? _MediumFallback(
-                    medium: medium,
-                    small: small,
-                  )
-                : small(context);
+            ? _LargeFallback(large: large, medium: medium)
+            : medium(context);
   }
 }
 
@@ -46,20 +30,18 @@ class _HugeFallback extends StatelessWidget {
     required this.huge,
     required this.large,
     required this.medium,
-    required this.small,
   });
 
   final WidgetBuilder? huge;
   final WidgetBuilder? large;
-  final WidgetBuilder? medium;
-  final WidgetBuilder small;
+  final WidgetBuilder medium;
 
   @override
   Widget build(BuildContext context) {
     final _huge = huge;
     return _huge != null
         ? _huge(context)
-        : _LargeFallback(large: large, medium: medium, small: small);
+        : _LargeFallback(large: large, medium: medium);
   }
 }
 
@@ -67,34 +49,14 @@ class _LargeFallback extends StatelessWidget {
   const _LargeFallback({
     required this.large,
     required this.medium,
-    required this.small,
   });
 
   final WidgetBuilder? large;
-  final WidgetBuilder? medium;
-  final WidgetBuilder small;
+  final WidgetBuilder medium;
 
   @override
   Widget build(BuildContext context) {
     final _large = large;
-    return _large != null
-        ? _large(context)
-        : _MediumFallback(medium: medium, small: small);
-  }
-}
-
-class _MediumFallback extends StatelessWidget {
-  const _MediumFallback({
-    required this.medium,
-    required this.small,
-  });
-
-  final WidgetBuilder? medium;
-  final WidgetBuilder small;
-
-  @override
-  Widget build(BuildContext context) {
-    final _medium = medium;
-    return _medium != null ? _medium(context) : small(context);
+    return _large != null ? _large(context) : medium(context);
   }
 }

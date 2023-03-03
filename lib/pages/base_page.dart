@@ -31,18 +31,18 @@ class _BasePage extends StatefulWidget {
 }
 
 class _BasePageState extends State<_BasePage> {
-  late final ScrollController _scrollController;
-
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController();
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) {
+        // When navigating to new scaffold and NavBar was not expanded yet...
+        final navBarNotifier = context.read<NavBarNotifier>();
+        if (!navBarNotifier.isExpanded) {
+          navBarNotifier.toggle;
+        }
+      },
+    );
   }
 
   @override
@@ -56,7 +56,7 @@ class _BasePageState extends State<_BasePage> {
             edgeOffset: navigationBarHeightExpanded,
             notificationPredicate: (notification) {
               if (notification.metrics.axis == Axis.vertical) {
-                final isAtTop = notification.metrics.pixels <= 0;
+                final isAtTop = notification.metrics.pixels <= 10;
                 if (navBarNotifier.isExpanded != isAtTop) {
                   navBarNotifier.toggle;
                 }
@@ -67,10 +67,9 @@ class _BasePageState extends State<_BasePage> {
               const Duration(milliseconds: pageTransitionInMillis),
               () => context.go(HomePage.path),
             ),
-            child: ListView.builder(
-              controller: _scrollController,
-              itemCount: widget.children.length,
-              itemBuilder: (_, index) => widget.children[index],
+            child: PageView(
+              scrollDirection: Axis.vertical,
+              children: widget.children,
             ),
           ),
           const Positioned(child: NavBar()),

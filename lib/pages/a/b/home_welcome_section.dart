@@ -11,14 +11,13 @@ import 'package:raumunikate/pages/base_section.dart';
 const _largeInfoPadding = EdgeInsets.only(left: 100, top: 100, right: 100);
 const _mediumInfoPadding = EdgeInsets.only(left: 40, top: 40, right: 40);
 
-class HomeWelcomeSection extends StatelessWidget {
-  const HomeWelcomeSection({super.key});
+class HomeWelcomeSingleSection extends StatelessWidget {
+  const HomeWelcomeSingleSection({super.key});
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
         large: (_) => const _TwoColumn(4, 5, _largeInfoPadding),
         medium: (_) => const _TwoColumn(2, 3, _mediumInfoPadding),
-        small: (_) => const _OneColumn(),
       );
 }
 
@@ -36,42 +35,52 @@ class _TwoColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: mainTODO_2,
-        child: Row(
-          children: [
-            Flexible(
-              flex: flexLeft,
-              child: const SizedBox.expand(
-                child: CoverImageBox(Assets.homeWelcomeIna),
+        child: Padding(
+          padding: const EdgeInsets.only(top: navigationBarHeight),
+          child: Row(
+            children: [
+              Flexible(
+                flex: flexLeft,
+                child: const SizedBox.expand(
+                  child: CoverImageBox(Assets.homeWelcomeIna),
+                ),
               ),
-            ),
-            Flexible(
-              flex: flexRight,
-              child: Padding(
-                padding: infoPadding,
-                child: const _Info(),
+              Flexible(
+                flex: flexRight,
+                child: Padding(
+                  padding: infoPadding,
+                  child: const _Info(),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
 }
 
-class _OneColumn extends StatelessWidget {
-  const _OneColumn();
+class HomeWelcomeFirstSection extends StatelessWidget {
+  const HomeWelcomeFirstSection({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
-        children: const [
-          BaseSection(
-            backgroundColor: mainTODO_2,
-            child: Padding(
-              padding: EdgeInsets.only(left: 40, top: 40, right: 40),
-              child: _Info(),
-            ),
+  Widget build(BuildContext context) => const BaseSection(
+        backgroundColor: mainTODO_2,
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 40,
+            top: navigationBarHeight,
+            right: 40,
           ),
-          BaseSection(backgroundAsset: Assets.homeWelcomeIna),
-        ],
+          child: _Info(),
+        ),
       );
+}
+
+class HomeWelcomeSecondSection extends StatelessWidget {
+  const HomeWelcomeSecondSection({super.key});
+
+  @override
+  Widget build(BuildContext context) =>
+      const BaseSection(backgroundAsset: Assets.homeWelcomeIna);
 }
 
 class _Info extends StatelessWidget {
