@@ -97,7 +97,7 @@ class _Info extends StatelessWidget {
         const SizedBox(height: 40),
         ResponsiveText(
           data.introContent,
-          fontSizes: const [22, 18, 16, 16],
+          fontSizes: const [22, 20, 18, 18],
           style: textTheme.body,
           textAlign: TextAlign.start,
         ),

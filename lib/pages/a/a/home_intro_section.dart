@@ -21,9 +21,7 @@ class HomeIntroSection extends StatelessWidget {
               child: ResponsiveText(
                 data.introText,
                 fontSizes: const [72, 56, 48, 32],
-                style: context.tt.headline?.copyWith(
-                  color: Colors.white,
-                ),
+                style: context.tt.headline?.copyWith(color: Colors.white),
               ),
             )
           ],

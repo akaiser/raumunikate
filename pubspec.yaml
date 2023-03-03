@@ -23,12 +23,21 @@ flutter:
     - assets/
     - assets/icons/
   fonts:
-    - family: Barlow
+    - family: CourierPrime
       fonts:
-        - asset: google_fonts/Barlow-Regular.ttf
-    - family: BarlowCondensed
-      fonts:
-        - asset: google_fonts/BarlowCondensed-Regular.ttf
+        - asset: google_fonts/CourierPrime-Bold.ttf
+          weight: 700
+        - asset: google_fonts/CourierPrime-Regular.ttf
+          weight: 400
     - family: Roboto
       fonts:
         - asset: google_fonts/Roboto-Regular.ttf
+          weight: 400
+    - family: RobotoCondensed
+      fonts:
+        - asset: google_fonts/RobotoCondensed-Bold.ttf
+          weight: 700
+        - asset: google_fonts/RobotoCondensed-Light.ttf
+          weight: 300
+        - asset: google_fonts/RobotoCondensed-Regular.ttf
+          weight: 400

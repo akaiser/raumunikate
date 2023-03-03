@@ -47,10 +47,8 @@ class _MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         value,
-        style: context.tt.title?.copyWith(
+        style: context.tt.body?.copyWith(
           color: isEnabled ? mainTODO_1 : mainTODO_0,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
         ),
       );
 }
