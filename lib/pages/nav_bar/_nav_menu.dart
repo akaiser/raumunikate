@@ -19,7 +19,7 @@ class NavMenu extends StatelessWidget {
             color: mainBackgroundColor,
             borderRadius: BorderRadius.all(Radius.circular(4)),
           ),
-          child: Image.asset(Assets.menu, color: mainTODO_0),
+          child: Image.asset(Assets.menu, color: Colors.black),
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),

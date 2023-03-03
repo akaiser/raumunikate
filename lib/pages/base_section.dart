@@ -7,14 +7,14 @@ class BaseSection extends StatelessWidget {
   const BaseSection({
     this.backgroundColor,
     this.backgroundAsset,
-    this.isIntroSection = false,
+    this.isFirstSection = false,
     this.child,
     super.key,
   });
 
   final Color? backgroundColor;
   final String? backgroundAsset;
-  final bool isIntroSection;
+  final bool isFirstSection;
   final Widget? child;
 
   @override
@@ -22,7 +22,7 @@ class BaseSection extends StatelessWidget {
     final isFullWidthNavBar = context.isFullWidthNavBar;
     final content = SizedBox(
       height: context.screenHeight -
-          (isIntroSection || (!isIntroSection && !isFullWidthNavBar)
+          (isFirstSection || (!isFirstSection && !isFullWidthNavBar)
               ? 0
               : navigationBarHeight),
       width: context.screenWidth,

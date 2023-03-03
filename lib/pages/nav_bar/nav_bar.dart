@@ -20,13 +20,13 @@ class NavBar extends StatelessWidget {
         final isExpanded = notifier.isExpanded;
         final navMenuOnly = !isFullWidthNavBar && !isExpanded;
         return AnimatedContainer(
-          duration: const Duration(milliseconds: transitionsDurationInMillis),
+          duration: const Duration(milliseconds: navBarTransitionInMillis),
           curve: Curves.ease,
           color: navMenuOnly ? Colors.transparent : mainBackgroundColor,
           padding: EdgeInsets.only(
-            left: isFullWidthNavBar ? 104 : 6,
+            left: isFullWidthNavBar ? 100 : 10,
             top: 10,
-            right: isFullWidthNavBar ? 90 : 16,
+            right: isFullWidthNavBar ? 100 : 10,
           ),
           height:
               isExpanded ? navigationBarHeightExpanded : navigationBarHeight,

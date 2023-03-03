@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 class CoverImageBox extends StatelessWidget {
   const CoverImageBox(
     this.asset, {
-    this.child = const SizedBox.expand(),
+    this.child,
     super.key,
   });
 
   final String asset;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) => DecoratedBox(

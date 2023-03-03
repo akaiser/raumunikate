@@ -8,7 +8,7 @@ class ProductsIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: Colors.redAccent,
-        isIntroSection: true,
+        isFirstSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [

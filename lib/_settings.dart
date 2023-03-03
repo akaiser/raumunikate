@@ -6,7 +6,9 @@ const appName = 'Raumunikate';
 const double navigationBarHeight = 66;
 const double navigationBarHeightExpanded = 132;
 
-const int transitionsDurationInMillis = 400;
+
+const int pageTransitionInMillis = 400;
+const int navBarTransitionInMillis = 200;
 
 const //
     mainBackgroundColor = Color(0xfff2f2f2),

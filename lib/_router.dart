@@ -45,9 +45,7 @@ CustomTransitionPage<Widget> _page(
     CustomTransitionPage(
       key: state.pageKey,
       child: page,
-      transitionDuration: const Duration(
-        milliseconds: transitionsDurationInMillis,
-      ),
+      transitionDuration: const Duration(milliseconds: pageTransitionInMillis),
       transitionsBuilder: (_, animation, __, child) => FadeTransition(
         opacity: CurveTween(curve: Curves.ease).animate(animation),
         child: child,

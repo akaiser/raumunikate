@@ -12,7 +12,7 @@ class HomeIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundAsset: Assets.homeIntroDimmed,
-        isIntroSection: true,
+        isFirstSection: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
