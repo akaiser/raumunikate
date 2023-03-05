@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
 import 'package:raumunikate/pages/a/b/_data.dart' as data;
 import 'package:raumunikate/pages/base_section.dart';
 
-const _largeInfoPadding = EdgeInsets.only(left: 100, top: 100, right: 100);
+const _largeInfoPadding = EdgeInsets.only(
+  left: 130,
+  top: 195,
+  right: 280,
+);
 const _mediumInfoPadding = EdgeInsets.only(left: 40, top: 40, right: 40);
 
 class HomeWelcomeSingleSection extends StatelessWidget {
@@ -16,8 +21,8 @@ class HomeWelcomeSingleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-        large: (_) => const _TwoColumn(4, 5, _largeInfoPadding),
-        medium: (_) => const _TwoColumn(2, 3, _mediumInfoPadding),
+        s: (_) => const _TwoColumn(4, 5, _largeInfoPadding),
+        xs: (_) => const _TwoColumn(2, 3, _mediumInfoPadding),
       );
 }
 
@@ -35,25 +40,22 @@ class _TwoColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) => BaseSection(
         backgroundColor: mainTODO_2,
-        child: Padding(
-          padding: const EdgeInsets.only(top: navigationBarHeight),
-          child: Row(
-            children: [
-              Flexible(
-                flex: flexLeft,
-                child: const SizedBox.expand(
-                  child: CoverImageBox(Assets.homeWelcomeIna),
-                ),
+        child: Row(
+          children: [
+            Flexible(
+              flex: flexLeft,
+              child: const SizedBox.expand(
+                child: CoverImageBox(Assets.homeWelcomeIna),
               ),
-              Flexible(
-                flex: flexRight,
-                child: Padding(
-                  padding: infoPadding,
-                  child: const _Info(),
-                ),
+            ),
+            Flexible(
+              flex: flexRight,
+              child: Padding(
+                padding: infoPadding,
+                child: const _Info(),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       );
 }
@@ -94,13 +96,15 @@ class _Info extends StatelessWidget {
       children: [
         Text(data.introTitle, style: textTheme.title),
         Text(data.introTitle2, style: textTheme.title),
-        const SizedBox(height: 40),
+        const SizedBox(height: 60),
         ResponsiveText(
           data.introContent,
-          fontSizes: const [22, 20, 18, 18],
+          fontSizes: const [18, 20, 18, 18, 18, 18],
           style: textTheme.body,
           textAlign: TextAlign.start,
         ),
+        const SizedBox(height: 50),
+        ActionButton('Gespräch anfragen', onTap: () {})
       ],
     );
   }

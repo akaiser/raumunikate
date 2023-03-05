@@ -1,8 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/footer/footer.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
@@ -72,7 +74,14 @@ class _BasePageState extends State<_BasePage> {
               children: widget.children,
             ),
           ),
-          const Positioned(child: NavBar()),
+          const NavBar(),
+          if (kDebugMode)
+            Text(
+              '${context.screenWidth} x '
+              '${context.screenHeight} | '
+              '${context.breakpoint.name}',
+              style: context.tt.label,
+            ),
         ],
       ),
     );

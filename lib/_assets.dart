@@ -9,10 +9,9 @@ class Assets {
   static const // misc
       logo = '$_root/logo.png',
       logoText = '$_root/logo_text.png',
-      homeIntro = '$_root/a_home_intro_0.jpg',
-      homeIntroDimmed = '$_root/a_home_intro_0_dimmed.jpg',
-      homeIntro2 = '$_root/a_home_intro_2.jpg',
-      homeWelcomeIna = '$_root/a_home_welcome_ina.jpg';
+      homeIntro = '$_root/home_intro.jpg',
+      homeWelcomeIna = '$_root/home_welcome_ina.jpg',
+      homeContents = '$_root/home_contents.png';
 
   static const // icons
       facebook = '$_iconsRoot/facebook.png',
