@@ -18,7 +18,7 @@ extension BuildContextExt on BuildContext {
 
   Breakpoint get breakpoint => resolveBreakpoint(screenWidth);
 
-  bool get isFullWidthNavBar => breakpoint != Breakpoint.small;
+  bool get isFullWidthNavBar => breakpoint != Breakpoint.xs;
 
   // theme
 

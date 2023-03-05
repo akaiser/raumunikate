@@ -11,7 +11,7 @@ class HomeIntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSection(
-        backgroundAsset: Assets.homeIntroDimmed,
+        backgroundAsset: Assets.homeIntro,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -20,7 +20,7 @@ class HomeIntroSection extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: ResponsiveText(
                 data.introText,
-                fontSizes: const [72, 56, 48, 32],
+                fontSizes: const [72, 56, 48, 32, 32, 32],
                 style: context.tt.headline?.copyWith(color: Colors.white),
               ),
             )

@@ -9,11 +9,11 @@ class ResponsiveText extends StatelessWidget {
     required this.style,
     this.textAlign = TextAlign.center,
     super.key,
-  }) : assert(fontSizes.length == 4, 'one needs to provide four font sizes');
+  }) : assert(fontSizes.length == 6, 'one needs to provide six font sizes');
 
   final String text;
 
-  // huge | large | medium | small
+  // xxl | xl | l | m | s | xs
   final List<double> fontSizes;
   final TextStyle? style;
   final TextAlign textAlign;
@@ -27,14 +27,18 @@ class ResponsiveText extends StatelessWidget {
 
   double _resolveFontSize(BuildContext context) {
     switch (context.breakpoint) {
-      case Breakpoint.huge:
+      case Breakpoint.xxl:
         return fontSizes[0];
-      case Breakpoint.large:
+      case Breakpoint.xl:
         return fontSizes[1];
-      case Breakpoint.medium:
+      case Breakpoint.l:
         return fontSizes[2];
-      case Breakpoint.small:
+      case Breakpoint.m:
         return fontSizes[3];
+      case Breakpoint.s:
+        return fontSizes[4];
+      case Breakpoint.xs:
+        return fontSizes[5];
     }
   }
 }

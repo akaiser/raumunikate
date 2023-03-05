@@ -26,7 +26,7 @@ class AppTextTheme {
         fontFamily: 'RobotoCondensed',
         color: mainTODO_0,
         fontSize: 16,
-        height: 2,
+        height: 1.7,
       );
 
   TextStyle? get label => _textTheme.labelLarge?.copyWith(
