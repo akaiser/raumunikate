@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/nav_bar/_logo.dart';
 import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
@@ -12,9 +13,11 @@ import 'package:raumunikate/pages/nav_bar/_social_links.dart';
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
+  bool _isFullWidthNavBar(Breakpoint breakpoint) => breakpoint != Breakpoint.xs;
+
   @override
   Widget build(BuildContext context) {
-    final isFullWidthNavBar = context.isFullWidthNavBar;
+    final isFullWidthNavBar = _isFullWidthNavBar(context.breakpoint);
     return Consumer<NavBarNotifier>(
       builder: (context, notifier, navMenu) {
         final isExpanded = notifier.isExpanded;
@@ -31,7 +34,7 @@ class NavBar extends StatelessWidget {
           height:
               isExpanded ? navigationBarHeightExpanded : navigationBarHeight,
           child: _NavBar(
-            navMenu ?? const SizedBox(),
+            navMenu ?? const SizedBox.shrink(),
             isExpanded: isExpanded,
             navMenuOnly: navMenuOnly,
             isFullWidthNavBar: isFullWidthNavBar,

@@ -1,5 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class ResponsiveText extends StatelessWidget {

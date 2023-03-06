@@ -1,3 +1,5 @@
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+
 enum Breakpoint {
   xxl,
   xl,
@@ -7,7 +9,7 @@ enum Breakpoint {
   xs,
 }
 
-Breakpoint resolveBreakpoint(double screenWidth) => screenWidth > 1399
+Breakpoint _resolveBreakpoint(double screenWidth) => screenWidth > 1399
     ? Breakpoint.xxl
     : screenWidth > 1199
         ? Breakpoint.xl
@@ -18,3 +20,7 @@ Breakpoint resolveBreakpoint(double screenWidth) => screenWidth > 1399
                 : screenWidth > 575
                     ? Breakpoint.s
                     : Breakpoint.xs;
+
+extension BreakpointExt on BuildContext {
+  Breakpoint get breakpoint => _resolveBreakpoint(screenWidth);
+}

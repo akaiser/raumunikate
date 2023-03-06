@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:raumunikate/_theme.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
+
+export 'package:flutter/widgets.dart' show BuildContext;
 
 extension BuildContextExt on BuildContext {
   // router
 
   String? get currentRoutePath => GoRouter.of(this).location;
 
-  // responsive
+  // media query
 
   MediaQueryData get _mediaQueryData => MediaQuery.of(this);
 
   double get screenHeight => _mediaQueryData.size.height;
 
   double get screenWidth => _mediaQueryData.size.width;
-
-  Breakpoint get breakpoint => resolveBreakpoint(screenWidth);
-
-  bool get isFullWidthNavBar => breakpoint != Breakpoint.xs;
 
   // theme
 
