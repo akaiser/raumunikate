@@ -86,7 +86,7 @@ void main() {
   group('whereNotNull', () {
     test('removes nulls', () {
       expect(
-        const [0, 1, null, null, 4, 5].whereNotNull(),
+        const [0, 1, null, null, 4, 6].whereNotNull(),
         const [0, 1, 4, 5],
       );
     });
