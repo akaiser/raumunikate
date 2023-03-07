@@ -9,7 +9,7 @@ extension BuildContextExt on BuildContext {
 
   String? get currentRoutePath => GoRouter.of(this).location;
 
-  // media query
+  // media
 
   MediaQueryData get _mediaQueryData => MediaQuery.of(this);
 
