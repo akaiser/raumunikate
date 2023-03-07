@@ -1,8 +1,9 @@
 name: Test UI
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_run:
+    workflows: [Test]
+    types: [completed]
+
 jobs:
   test-ui:
     strategy:
