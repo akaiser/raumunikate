@@ -2,7 +2,8 @@ name: Release Web
 on:
   push:
     branches:
-      - 'main'
+      - main
+
 jobs:
   release-web:
     runs-on: ubuntu-latest
