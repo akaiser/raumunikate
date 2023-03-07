@@ -12,14 +12,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runZonedGuarded<void>(
-    () => runApp(
-      MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => NavBarNotifier()),
-        ],
-        child: const _App(),
-      ),
-    ),
+    () => runApp(const App()),
     (error, stack) => log(
       'Some Explosion...',
       error: error,
@@ -28,14 +21,19 @@ void main() {
   );
 }
 
-class _App extends StatelessWidget {
-  const _App();
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
-  Widget build(BuildContext context) => MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        theme: theme,
-        title: appName,
-        routerConfig: router,
+  Widget build(BuildContext context) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => NavBarNotifier()),
+        ],
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          theme: theme,
+          title: appName,
+          routerConfig: router,
+        ),
       );
 }
