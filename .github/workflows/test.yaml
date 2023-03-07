@@ -2,7 +2,8 @@ name: Test
 on:
   workflow_run:
     workflows: [Analyze]
-    types: [completed]
+    types:
+      - completed
 
 jobs:
   test:
