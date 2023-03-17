@@ -1,8 +1,5 @@
 name: Analyze
-on:
-  push:
-    branches-ignore:
-      - main
+on: [workflow_call]
 
 jobs:
   analyze:

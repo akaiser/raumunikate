@@ -9,7 +9,10 @@ on:
       - completed
 
 jobs:
+  analyze:
+    uses: ./.github/workflows/analyze.yaml
   test:
+    needs: [analyze]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
