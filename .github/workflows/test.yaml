@@ -4,12 +4,11 @@ on:
     branches-ignore:
       - main
   workflow_run:
-    workflows: [ "analyze.yaml" ]
+    workflows: [ "Analyze" ]
     types:
       - completed
 
 jobs:
-  needs: analyze
   test:
     runs-on: ubuntu-latest
     steps:
