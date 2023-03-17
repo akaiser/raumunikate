@@ -9,7 +9,7 @@ on:
       - completed
 
 jobs:
-  needs: analyze
+  needs: Analyze
   test:
     runs-on: ubuntu-latest
     steps:
