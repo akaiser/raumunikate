@@ -1,4 +1,8 @@
 name: Analyze
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   analyze:

@@ -1,5 +1,8 @@
 name: Test
 on:
+  push:
+    branches-ignore:
+      - main
   workflow_run:
     workflows: [ "analyze.yml" ]
     types:
