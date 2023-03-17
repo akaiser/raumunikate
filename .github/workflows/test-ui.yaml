@@ -3,9 +3,14 @@ on:
   push:
     branches-ignore:
       - main
+  workflow_run:
+    workflows: [ "test.yml" ]
+    types:
+      - completed
 
 jobs:
   test-ui:
+    needs: test
     strategy:
       matrix:
         include:

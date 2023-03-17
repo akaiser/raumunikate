@@ -1,9 +1,12 @@
 name: Test
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_run:
+    workflows: [ "analyze.yml" ]
+    types:
+      - completed
+
 jobs:
+  needs: analyze
   test:
     runs-on: ubuntu-latest
     steps:
