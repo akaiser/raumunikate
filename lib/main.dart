@@ -14,7 +14,7 @@ void main() {
   runZonedGuarded<void>(
     () => runApp(const App()),
     (error, stack) => log(
-      'Some Explosion...',
+      'Some Explosion...!',
       error: error,
       stackTrace: stack,
     ),
