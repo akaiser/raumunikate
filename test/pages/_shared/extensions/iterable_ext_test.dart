@@ -87,7 +87,7 @@ void main() {
     test('removes nulls', () {
       expect(
         const [0, 1, null, null, 4, 5].whereNotNull(),
-        const [0, 1, 4, 5],
+        const [0, 1, 4, 6],
       );
     });
   });
