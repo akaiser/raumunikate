@@ -33,7 +33,7 @@ jobs:
       - run: flutter test
 
   test-ui:
-    needs: test
+    needs: analyze
     strategy:
       matrix:
         include:
