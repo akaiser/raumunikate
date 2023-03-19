@@ -1,0 +1,22 @@
+name: Release Web
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.7.7"
+          channel: "stable"
+      - name: Build
+        run: flutter build web --base-href /raumunikate/
+      - name: Upload
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
