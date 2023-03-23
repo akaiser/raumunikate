@@ -11,19 +11,15 @@ class HomePage extends StatelessWidget {
   static const String path = '/';
 
   @override
-  Widget build(BuildContext context) {
-    final breakpoint = context.breakpoint;
-    return BasePage(
-      children: [
-        const HomeIntroSection(),
-        if (breakpoint != Breakpoint.xs)
-          const HomeWelcomeSingleSection()
-        else ...const [
-          HomeWelcomeFirstSection(),
-          HomeWelcomeSecondSection(),
+  Widget build(BuildContext context) => BasePage(
+        children: [
+          const HomeIntroSection(),
+          if (context.isSxsBreakpoint) ...const [
+            HomeWelcomeFirstSection(),
+            HomeWelcomeSecondSection(),
+          ] else
+            const HomeWelcomeSingleSection(),
+          const HomeContentsSection(),
         ],
-        const HomeContentsSection(),
-      ],
-    );
-  }
+      );
 }

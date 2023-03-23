@@ -8,7 +8,7 @@ class ResponsiveLayout extends StatelessWidget {
     this.l,
     this.m,
     this.s,
-    required this.xs,
+    this.xs,
     super.key,
   });
 
@@ -17,7 +17,7 @@ class ResponsiveLayout extends StatelessWidget {
   final WidgetBuilder? l;
   final WidgetBuilder? m;
   final WidgetBuilder? s;
-  final WidgetBuilder xs;
+  final WidgetBuilder? xs;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,9 @@ class ResponsiveLayout extends StatelessWidget {
         continue xs;
       xs:
       case Breakpoint.xs:
-        return xs(context);
+        final result = xs?.call(context);
+        if (result != null) return result;
+        throw Exception('This might happen!');
     }
   }
 }
