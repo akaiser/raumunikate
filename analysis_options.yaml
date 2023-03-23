@@ -24,6 +24,7 @@ dart_code_metrics:
     - no-equal-then-else
     - prefer-conditional-expressions
     - prefer-correct-edge-insets-constructor
+    - prefer-define-hero-tag
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last

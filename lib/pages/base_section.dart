@@ -7,7 +7,14 @@ class BaseSection extends StatelessWidget {
     this.backgroundAsset,
     this.child,
     super.key,
-  });
+  })  : assert(
+          backgroundColor != null || backgroundAsset != null,
+          'Either a backgroundColor or a backgroundAsset must be provided.',
+        ),
+        assert(
+          backgroundColor == null || backgroundAsset == null,
+          'Cannot provide both a backgroundColor and a backgroundAsset.',
+        );
 
   final Color? backgroundColor;
   final String? backgroundAsset;

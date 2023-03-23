@@ -1,0 +1,2 @@
+
+cwebp home_welcome_ina.jpg -o file.webp

@@ -1,9 +1,9 @@
 import 'package:integration_test/integration_test.dart';
 
-import 'pages/home_page_test.dart' as home_page_test;
+import 'pages/navigation_test.dart' as navigation_test;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  home_page_test.main();
+  navigation_test.main();
 }

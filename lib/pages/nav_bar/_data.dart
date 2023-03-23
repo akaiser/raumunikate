@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/b/plan_page.dart';
 import 'package:raumunikate/pages/c/projects_page.dart';
@@ -6,15 +5,23 @@ import 'package:raumunikate/pages/d/products_page.dart';
 import 'package:raumunikate/pages/e/portrait_page.dart';
 import 'package:raumunikate/pages/f/inspiration_page.dart';
 
-const navData = {
-  HomePage.path: 'HOME',
-  PlanPage.path: 'ATMOSPHÄRE PLANEN',
-  ProjectsPage.path: 'PROJEKTE',
-  ProductsPage.path: 'PRODUKTE',
-  PortraitPage.path: 'PORTRAIT',
-  InspirationPage.path: 'INSPIRATION',
-};
+final navData = [
+  NavDataEntry(HomePage.path, HomePage, 'HOME'),
+  NavDataEntry(PlanPage.path, PlanPage, 'ATMOSPHÄRE PLANEN'),
+  NavDataEntry(ProjectsPage.path, ProjectsPage, 'PROJEKTE'),
+  NavDataEntry(ProductsPage.path, ProductsPage, 'PRODUKTE'),
+  NavDataEntry(PortraitPage.path, PortraitPage, 'PORTRAIT'),
+  NavDataEntry(InspirationPage.path, InspirationPage, 'INSPIRATION'),
+];
 
-const //
-    logoTitle = 'RAUMUNIKATE',
-    logoSubtitle = 'INA KAISER';
+class NavDataEntry {
+  NavDataEntry(
+    this.pagePath,
+    this.pageType,
+    this.menuLinkText,
+  );
+
+  final String pagePath;
+  final Type pageType;
+  final String menuLinkText;
+}

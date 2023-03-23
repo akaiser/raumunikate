@@ -23,4 +23,9 @@ Breakpoint _resolveBreakpoint(double screenWidth) => screenWidth > 1399
 
 extension BreakpointExt on BuildContext {
   Breakpoint get breakpoint => _resolveBreakpoint(screenWidth);
+
+  bool get isSxsBreakpoint {
+    final breakpoint = this.breakpoint;
+    return breakpoint == Breakpoint.s || breakpoint == Breakpoint.xs;
+  }
 }

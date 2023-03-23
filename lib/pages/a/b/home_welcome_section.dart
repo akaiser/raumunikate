@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
 import 'package:raumunikate/pages/a/b/_data.dart' as data;
 import 'package:raumunikate/pages/base_section.dart';
-
-const _largeInfoPadding = EdgeInsets.only(
-  left: 130,
-  top: 195,
-  right: 280,
-);
-const _mediumInfoPadding = EdgeInsets.only(left: 40, top: 40, right: 40);
 
 class HomeWelcomeSingleSection extends StatelessWidget {
   const HomeWelcomeSingleSection({super.key});
 
+  static const _xlInfoPadding = EdgeInsets.only(
+    left: 100,
+    top: navigationBarHeight + 100,
+    right: 100,
+  );
+
+  static const _mInfoPadding = EdgeInsets.only(
+    left: 60,
+    top: navigationBarHeight + 100,
+    right: 60,
+  );
+
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-        s: (_) => const _TwoColumn(4, 5, _largeInfoPadding),
-        xs: (_) => const _TwoColumn(2, 3, _mediumInfoPadding),
+        xl: (_) => const _TwoColumn(2, 3, _xlInfoPadding),
+        m: (_) => const _TwoColumn(2, 3, _mInfoPadding),
       );
 }
 
@@ -63,18 +68,30 @@ class _TwoColumn extends StatelessWidget {
 class HomeWelcomeFirstSection extends StatelessWidget {
   const HomeWelcomeFirstSection({super.key});
 
+  static const _sInfoPadding = EdgeInsets.only(
+    left: 100,
+    top: navigationBarHeight + 100,
+    right: 100,
+  );
+
+  static const _defaultInfoPadding = EdgeInsets.only(
+    left: 54,
+    top: navigationBarHeight + 60,
+    right: 54,
+  );
+
   @override
-  Widget build(BuildContext context) => const BaseSection(
-        backgroundColor: mainTODO_2,
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: 40,
-            top: navigationBarHeight,
-            right: 40,
-          ),
-          child: _Info(),
-        ),
-      );
+  Widget build(BuildContext context) {
+    final breakpoint = context.breakpoint;
+    final isSBreakpoint = breakpoint == Breakpoint.s;
+    return BaseSection(
+      backgroundColor: mainTODO_2,
+      child: Padding(
+        padding: isSBreakpoint ? _sInfoPadding : _defaultInfoPadding,
+        child: const _Info(),
+      ),
+    );
+  }
 }
 
 class HomeWelcomeSecondSection extends StatelessWidget {
@@ -89,23 +106,10 @@ class _Info extends StatelessWidget {
   const _Info();
 
   @override
-  Widget build(BuildContext context) {
-    final textTheme = context.tt;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(data.introTitle, style: textTheme.title),
-        Text(data.introTitle2, style: textTheme.title),
-        const SizedBox(height: 60),
-        ResponsiveText(
-          data.introContent,
-          fontSizes: const [18, 20, 18, 18, 18, 18],
-          style: textTheme.body,
-          textAlign: TextAlign.start,
-        ),
-        const SizedBox(height: 50),
-        ActionButton('Gespräch anfragen', onTap: () {})
-      ],
-    );
-  }
+  Widget build(BuildContext context) => FullTextSection(
+        title: data.introTitle,
+        title2: data.introTitle2,
+        text: data.introContent,
+        actionButton: ActionButton('Gespräch anfragen', onTap: () {}),
+      );
 }

@@ -14,7 +14,7 @@ class AppTextTheme {
   TextStyle? get title => _textTheme.titleLarge?.copyWith(
         fontFamily: 'RobotoCondensed',
         color: mainTODO_0,
-        fontSize: 28,
+        fontSize: 30,
       );
 
   TextStyle? get headline => _textTheme.headlineLarge?.copyWith(
@@ -25,7 +25,7 @@ class AppTextTheme {
   TextStyle? get body => _textTheme.bodyLarge?.copyWith(
         fontFamily: 'RobotoCondensed',
         color: mainTODO_0,
-        fontSize: 16,
+        fontSize: 18,
         height: 1.7,
       );
 

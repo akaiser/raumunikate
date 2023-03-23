@@ -6,11 +6,14 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart' as data;
 
+const navMenuKey = Key('nav-menu');
+
 class NavMenu extends StatelessWidget {
   const NavMenu({super.key});
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
+        key: navMenuKey,
         tooltip: '',
         iconSize: 32,
         color: mainBackgroundColor,
@@ -24,14 +27,14 @@ class NavMenu extends StatelessWidget {
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(4)),
         ),
-        itemBuilder: (context) => data.navData.entries.map(
+        itemBuilder: (context) => data.navData.map(
           (entry) {
-            final isEnabled = context.currentRoutePath != entry.key;
+            final isEnabled = context.currentRoutePath != entry.pagePath;
             return PopupMenuItem<String>(
               enabled: isEnabled,
-              onTap: () => context.go(entry.key),
-              value: entry.value,
-              child: _MenuItem(entry.value, isEnabled: isEnabled),
+              onTap: () => context.go(entry.pagePath),
+              value: entry.menuLinkText,
+              child: _MenuItem(entry.menuLinkText, isEnabled: isEnabled),
             );
           },
         ).unmodifiable,
