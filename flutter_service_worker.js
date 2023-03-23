@@ -4,7 +4,7 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "flutter.js": "a85fcf6324d3c4d3ae3be1ae4931e9c5",
-"main.dart.js": "10d787e8c993bc97b07da6bda462d717",
+"main.dart.js": "9ea52ac51b6254b550eb247624b7e439",
 "canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
 "canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
 "canvaskit/canvaskit.js": "97937cb4c2c2073c968525a3e08c86a3",
@@ -33,7 +33,7 @@ const RESOURCES = {
 "assets/assets/icons/_facebook.png": "1cb0b8c4066431d9da17075d71271d38",
 "assets/assets/icons/menu.png": "bc3cfd3c743a326dae96f069abccfaff",
 "assets/FontManifest.json": "db87a0fef57b6f969913aab4644fe8af",
-"assets/NOTICES": "32dd37a047176c569dc8948d7d703fa4",
+"assets/NOTICES": "b768b9fc337dcf4ece6a927115834de9",
 "index.html": "a831b7210e1196152bddd7f15d0b350a",
 "/": "a831b7210e1196152bddd7f15d0b350a",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
