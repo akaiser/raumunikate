@@ -69,9 +69,9 @@ class HomeWelcomeFirstSection extends StatelessWidget {
   const HomeWelcomeFirstSection({super.key});
 
   static const _xSInfoPadding = EdgeInsets.only(
-    left: 50,
+    left: 20,
     top: navigationBarHeight,
-    right: 50,
+    right: 20,
   );
 
   static const _defaultInfoPadding = EdgeInsets.only(
