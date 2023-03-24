@@ -8,9 +8,12 @@ class PageIntroText extends StatelessWidget {
   final String text;
 
   @override
-  Widget build(BuildContext context) => ResponsiveText(
-        text,
-        fontSizes: const [80, 60, 54, 50, 46, 40],
-        style: context.tt.headline?.copyWith(color: Colors.white),
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: ResponsiveText(
+          text,
+          fontSizes: const [80, 60, 54, 50, 46, 40],
+          style: context.tt.headline?.copyWith(color: Colors.white),
+        ),
       );
 }

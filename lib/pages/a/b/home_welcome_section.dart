@@ -68,26 +68,26 @@ class _TwoColumn extends StatelessWidget {
 class HomeWelcomeFirstSection extends StatelessWidget {
   const HomeWelcomeFirstSection({super.key});
 
-  static const _sInfoPadding = EdgeInsets.only(
-    left: 100,
-    top: navigationBarHeight + 100,
-    right: 100,
+  static const _xSInfoPadding = EdgeInsets.only(
+    left: 50,
+    top: navigationBarHeight,
+    right: 50,
   );
 
   static const _defaultInfoPadding = EdgeInsets.only(
-    left: 54,
+    left: 100,
     top: navigationBarHeight + 60,
-    right: 54,
+    right: 100,
   );
 
   @override
   Widget build(BuildContext context) {
     final breakpoint = context.breakpoint;
-    final isSBreakpoint = breakpoint == Breakpoint.s;
+    final isXsBreakpoint = breakpoint == Breakpoint.xs;
     return BaseSection(
       backgroundColor: mainTODO_2,
       child: Padding(
-        padding: isSBreakpoint ? _sInfoPadding : _defaultInfoPadding,
+        padding: isXsBreakpoint ? _xSInfoPadding : _defaultInfoPadding,
         child: const _Info(),
       ),
     );
@@ -110,6 +110,6 @@ class _Info extends StatelessWidget {
         title: data.introTitle,
         title2: data.introTitle2,
         text: data.introContent,
-        actionButton: ActionButton('Gespräch anfragen', onTap: () {}),
+        actionButton: ActionButton(data.introCta, onTap: () {}),
       );
 }

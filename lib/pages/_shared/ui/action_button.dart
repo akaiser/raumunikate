@@ -18,7 +18,7 @@ class ActionButton extends StatelessWidget {
         onTap: onTap,
         child: HoverRegion(
           builder: (context, isHovering, child) => Container(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 7),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: const BorderRadius.all(Radius.circular(20)),
