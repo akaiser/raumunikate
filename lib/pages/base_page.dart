@@ -81,7 +81,7 @@ class _BasePageState extends State<_BasePage> {
               '${context.screenWidth} x '
               '${context.screenHeight} | '
               '${context.breakpoint.name}',
-              style: context.tt.label,
+              style: context.tt.label?.copyWith(fontSize: 14),
             ),
         ],
       ),

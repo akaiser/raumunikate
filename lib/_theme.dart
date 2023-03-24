@@ -32,5 +32,6 @@ class AppTextTheme {
   TextStyle? get label => _textTheme.labelLarge?.copyWith(
         fontFamily: 'CourierPrime',
         color: mainTODO_0,
+        fontSize: 20,
       );
 }
