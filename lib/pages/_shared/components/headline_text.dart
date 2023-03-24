@@ -9,10 +9,18 @@ class HeadlineText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isXxlBreakpoint = context.breakpoint == Breakpoint.xxl;
+    final breakpoint = context.breakpoint;
+    final isXsBreakpoint = breakpoint == Breakpoint.xs;
+    final isXxlBreakpoint = breakpoint == Breakpoint.xxl;
     return Text(
       text,
-      style: context.tt.title?.copyWith(fontSize: isXxlBreakpoint ? 40 : 30),
+      style: context.tt.title?.copyWith(
+        fontSize: isXsBreakpoint
+            ? 24
+            : isXxlBreakpoint
+                ? 40
+                : 30,
+      ),
     );
   }
 }

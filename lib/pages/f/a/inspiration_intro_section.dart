@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/pages/_data.dart' as data;
 import 'package:raumunikate/pages/base_intro_section.dart';
 
@@ -8,6 +9,6 @@ class InspirationIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.inspirationIntroText,
-        backgroundColor: Colors.teal,
+        backgroundAsset: Assets.inspirationIntro,
       );
 }
