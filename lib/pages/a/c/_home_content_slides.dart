@@ -6,15 +6,25 @@ import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
-class HomeContentSlides extends StatefulWidget {
+class HomeContentSlides extends StatelessWidget {
   const HomeContentSlides({super.key});
 
   @override
-  State<HomeContentSlides> createState() => _HomeContentSlidesState();
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.only(top: navigationBarHeight - 20),
+        child: _Slides(),
+      );
 }
 
-class _HomeContentSlidesState extends State<HomeContentSlides> {
-  late PageController _pageController;
+class _Slides extends StatefulWidget {
+  const _Slides();
+
+  @override
+  State<_Slides> createState() => _SlidesState();
+}
+
+class _SlidesState extends State<_Slides> {
+  late PageController _controller;
 
   static const _viewportFractions = {
     Breakpoint.xxl: 0.2,
@@ -28,31 +38,28 @@ class _HomeContentSlidesState extends State<HomeContentSlides> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _pageController = PageController(
+    _controller = PageController(
       viewportFraction: _viewportFractions[context.breakpoint] ?? 1,
     );
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final isSxsBreakpoint = context.isSxsBreakpoint;
-    return Padding(
-      padding: const EdgeInsets.only(top: navigationBarHeight - 20),
-      child: PageView.builder(
-        controller: _pageController,
-        itemCount: data.slidesData.length,
-        padEnds: isSxsBreakpoint,
-        itemBuilder: (context, index) => FractionallySizedBox(
-          widthFactor: 0.9,
-          heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
-          child: _SlideCard(data.slidesData[index]),
-        ),
+    return PageView.builder(
+      controller: _controller,
+      itemCount: data.slidesData.length,
+      padEnds: isSxsBreakpoint,
+      itemBuilder: (context, index) => FractionallySizedBox(
+        widthFactor: 0.9,
+        heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
+        child: _SlideCard(data.slidesData[index]),
       ),
     );
   }
