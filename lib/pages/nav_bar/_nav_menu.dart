@@ -25,15 +25,15 @@ class NavMenu extends StatelessWidget {
               enabled: isEnabled,
               onTap: () => context.go(entry.pagePath),
               value: entry.menuLinkText,
-              child: _MenuItem(entry.menuLinkText, isEnabled: isEnabled),
+              child: _MenuItemText(entry.menuLinkText, isEnabled: isEnabled),
             );
           },
         ).unmodifiable,
       );
 }
 
-class _MenuItem extends StatelessWidget {
-  const _MenuItem(this.value, {required this.isEnabled});
+class _MenuItemText extends StatelessWidget {
+  const _MenuItemText(this.value, {required this.isEnabled});
 
   final String value;
   final bool isEnabled;
