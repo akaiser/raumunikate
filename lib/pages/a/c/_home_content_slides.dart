@@ -1,26 +1,20 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:raumunikate/_assets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
-import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
-class HomeContentsSection extends StatelessWidget {
-  const HomeContentsSection({super.key});
+class HomeContentSlides extends StatefulWidget {
+  const HomeContentSlides({super.key});
 
   @override
-  Widget build(BuildContext context) => const CoverImageBox(
-        Assets.homeContents,
-        colorFilter: ColorFilter.mode(mainTODO_0, BlendMode.srcATop),
-        child: Slides(),
-      );
+  State<HomeContentSlides> createState() => _HomeContentSlidesState();
 }
 
-class Slides extends StatelessWidget {
-  const Slides({super.key});
+class _HomeContentSlidesState extends State<HomeContentSlides> {
+  late PageController _pageController;
 
   static const _viewportFractions = {
     Breakpoint.xxl: 0.2,
@@ -32,28 +26,40 @@ class Slides extends StatelessWidget {
   };
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _pageController = PageController(
+      viewportFraction: _viewportFractions[context.breakpoint] ?? 1,
+    );
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isSxsBreakpoint = context.isSxsBreakpoint;
     return Padding(
       padding: const EdgeInsets.only(top: navigationBarHeight - 20),
       child: PageView.builder(
-        controller: PageController(
-          viewportFraction: _viewportFractions[context.breakpoint] ?? 1,
-        ),
+        controller: _pageController,
         itemCount: data.slidesData.length,
         padEnds: isSxsBreakpoint,
         itemBuilder: (context, index) => FractionallySizedBox(
           widthFactor: 0.9,
           heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
-          child: _Slide(data.slidesData[index]),
+          child: _SlideCard(data.slidesData[index]),
         ),
       ),
     );
   }
 }
 
-class _Slide extends StatelessWidget {
-  const _Slide(this.entry);
+class _SlideCard extends StatelessWidget {
+  const _SlideCard(this.entry);
 
   final data.SlideDataEntry entry;
 
@@ -61,24 +67,23 @@ class _Slide extends StatelessWidget {
   Widget build(BuildContext context) => ColoredBox(
         color: entry.backgroundColor.withOpacity(0.85),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const SizedBox(height: 60),
+              const _Spacer(),
               Text(
                 entry.title,
-                style: context.tt.label?.copyWith(color: Colors.white),
+                style: context.tt.label?.copyWith(color: data.textColor),
               ),
-              const SizedBox(height: 40),
+              const _Spacer(),
               Text(
                 entry.text,
                 textAlign: TextAlign.center,
                 style: context.tt.body?.copyWith(
-                  color: Colors.white,
+                  color: data.textColor,
                   fontSize: 16,
                 ),
               ),
-              const SizedBox(height: 40),
               const Spacer(),
               ActionButton(
                 data.linkText,
@@ -89,4 +94,13 @@ class _Slide extends StatelessWidget {
           ),
         ),
       );
+}
+
+class _Spacer extends StatelessWidget {
+  const _Spacer();
+
+  @override
+  Widget build(BuildContext context) => context.isShittySmallDevice
+      ? const SizedBox(height: 30)
+      : const SizedBox(height: 60);
 }

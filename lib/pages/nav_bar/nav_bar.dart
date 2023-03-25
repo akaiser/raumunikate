@@ -13,11 +13,9 @@ import 'package:raumunikate/pages/nav_bar/_social_links.dart';
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
 
-  bool _isFullWidthNavBar(Breakpoint breakpoint) => breakpoint != Breakpoint.xs;
-
   @override
   Widget build(BuildContext context) {
-    final isFullWidthNavBar = _isFullWidthNavBar(context.breakpoint);
+    final isFullWidthNavBar = context.isFullWidthNavBar;
     return Consumer<NavBarNotifier>(
       builder: (context, notifier, navMenu) {
         final isExpanded = notifier.isExpanded;

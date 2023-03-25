@@ -23,30 +23,36 @@ class FullTextSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final _title2 = title2;
     final _actionButton = actionButton;
-    final isXsBreakpoint = context.breakpoint == Breakpoint.xs;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         HeadlineText(title),
         if (_title2 != null) HeadlineText(_title2),
-        if (isXsBreakpoint)
-          const SizedBox(height: 30)
-        else
-          const SizedBox(height: 60),
+        const _Spacer(),
         ResponsiveText(
           text,
           style: context.tt.body,
           textAlign: TextAlign.start,
-          fontSizes: const [20, 18, 18, 18, 18, 18],
+          fontSizes: context.isShittySmallDevice
+              ? const [20, 18, 18, 18, 18, 16]
+              : const [20, 18, 18, 18, 18, 18],
         ),
         if (_actionButton != null) ...[
-          if (isXsBreakpoint)
-            const SizedBox(height: 40)
-          else
-            const SizedBox(height: 60),
+          const _Spacer(),
           _actionButton,
         ],
       ],
     );
   }
+}
+
+class _Spacer extends StatelessWidget {
+  const _Spacer();
+
+  @override
+  Widget build(BuildContext context) => context.breakpoint == Breakpoint.xs
+      ? context.isShittySmallDevice
+          ? const SizedBox(height: 20)
+          : const SizedBox(height: 40)
+      : const SizedBox(height: 60);
 }

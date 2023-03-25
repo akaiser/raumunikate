@@ -1,11 +1,13 @@
 // ignore_for_file: lines_longer_than_80_chars
-import 'package:flutter/painting.dart' show Color;
+import 'package:flutter/material.dart' show Color, Colors;
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/b/plan_page.dart';
 import 'package:raumunikate/pages/c/projects_page.dart';
 import 'package:raumunikate/pages/d/products_page.dart';
 import 'package:raumunikate/pages/e/portrait_page.dart';
 import 'package:raumunikate/pages/f/inspiration_page.dart';
+
+const textColor = Colors.white;
 
 const linkText = 'Erfahre mehr';
 

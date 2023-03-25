@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/a/home_intro_section.dart';
 import 'package:raumunikate/pages/a/b/home_welcome_section.dart';
-import 'package:raumunikate/pages/a/c/home_contents_section.dart';
+import 'package:raumunikate/pages/a/b/home_welcome_sections.dart';
+import 'package:raumunikate/pages/a/c/home_content_section.dart';
 import 'package:raumunikate/pages/base_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,8 +19,8 @@ class HomePage extends StatelessWidget {
             HomeWelcomeFirstSection(),
             HomeWelcomeSecondSection(),
           ] else
-            const HomeWelcomeSingleSection(),
-          const HomeContentsSection(),
+            const HomeWelcomeSection(),
+          const HomeContentSection(),
         ],
       );
 }

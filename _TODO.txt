@@ -3,4 +3,5 @@ cwebp home_welcome_ina.jpg -o file.webp
 
 flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
 
-POCO: 393 x 732
+393 x 732 | POCO
+375 x 549 | iPhone SE 2020
