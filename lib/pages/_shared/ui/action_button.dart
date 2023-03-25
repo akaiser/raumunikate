@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/hover_region.dart';
+import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class ActionButton extends StatelessWidget {
   const ActionButton(
@@ -42,6 +43,9 @@ class _ActionButtonText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: context.tt.body?.copyWith(color: mainTODO_1),
+        style: context.tt.body?.copyWith(
+          color: mainTODO_1,
+          fontSize: context.isShittySmallDevice ? 16 : null,
+        ),
       );
 }
