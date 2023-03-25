@@ -4,6 +4,8 @@ import 'package:raumunikate/pages/a/a/home_intro_section.dart';
 import 'package:raumunikate/pages/a/b/home_welcome_section.dart';
 import 'package:raumunikate/pages/a/b/home_welcome_sections.dart';
 import 'package:raumunikate/pages/a/c/home_content_section.dart';
+import 'package:raumunikate/pages/a/d/home_image_section.dart';
+import 'package:raumunikate/pages/a/e/home_referrals_section.dart';
 import 'package:raumunikate/pages/base_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -21,6 +23,8 @@ class HomePage extends StatelessWidget {
           ] else
             const HomeWelcomeSection(),
           const HomeContentSection(),
+          const HomeImageSection(),
+          const HomeReferralsSection(),
         ],
       );
 }

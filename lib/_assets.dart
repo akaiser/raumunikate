@@ -15,7 +15,8 @@ class Assets {
   static const // home
       homeIntro = '$_root/home_intro.jpg',
       homeWelcomeIna = '$_root/home_welcome_ina.jpg',
-      homeContent = '$_root/home_content.png';
+      homeContent = '$_root/home_content.png',
+      homeImage = '$_root/home_image.jpg';
 
   static const // plan
       planIntro = '$_root/plan_intro.jpg';
@@ -34,5 +35,6 @@ class Assets {
 
   static const // misc
       logo = '$_root/logo.png',
-      logoText = '$_root/logo_text.png';
+      logoText = '$_root/logo_text.png',
+      chevron = '$_root/chevron.png';
 }
