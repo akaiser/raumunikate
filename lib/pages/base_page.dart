@@ -10,6 +10,8 @@ import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/footer/footer.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
+const basePageViewKey = Key('base-page-view');
+
 class BasePage extends StatelessWidget {
   const BasePage({
     required this.children,
@@ -71,6 +73,7 @@ class _BasePageState extends State<_BasePage> {
               () => context.go(HomePage.path),
             ),
             child: PageView(
+              key: basePageViewKey,
               scrollDirection: Axis.vertical,
               children: widget.children,
             ),
