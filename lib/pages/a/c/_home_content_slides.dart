@@ -6,24 +6,14 @@ import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
-class HomeContentSlides extends StatelessWidget {
+class HomeContentSlides extends StatefulWidget {
   const HomeContentSlides({super.key});
 
   @override
-  Widget build(BuildContext context) => const Padding(
-        padding: EdgeInsets.only(top: navigationBarHeight - 20),
-        child: _Slides(),
-      );
+  State<HomeContentSlides> createState() => _HomeContentSlidesState();
 }
 
-class _Slides extends StatefulWidget {
-  const _Slides();
-
-  @override
-  State<_Slides> createState() => _SlidesState();
-}
-
-class _SlidesState extends State<_Slides> {
+class _HomeContentSlidesState extends State<HomeContentSlides> {
   late PageController _controller;
 
   static const _viewportFractions = {
@@ -56,10 +46,13 @@ class _SlidesState extends State<_Slides> {
       controller: _controller,
       itemCount: data.slidesData.length,
       padEnds: isSxsBreakpoint,
-      itemBuilder: (context, index) => FractionallySizedBox(
-        widthFactor: 0.9,
-        heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
-        child: _SlideCard(data.slidesData[index]),
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.only(top: navigationBarHeight - 20),
+        child: FractionallySizedBox(
+          widthFactor: 0.9,
+          heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
+          child: _SlideCard(data.slidesData[index]),
+        ),
       ),
     );
   }
