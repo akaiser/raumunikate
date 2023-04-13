@@ -16,9 +16,9 @@ class BaseScrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _children = [
-      const SizedBox(height: navigationBarHeightExpanded + 32),
+      const SizedBox(height: navigationBarHeightExpanded),
       ...children,
-      const SizedBox(height: 32),
+      const SizedBox(height: 16),
       const Footer(),
     ];
     return ResponsiveLayout(

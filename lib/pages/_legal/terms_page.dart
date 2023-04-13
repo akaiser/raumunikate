@@ -1,6 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_legal/_contact.dart';
+import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
@@ -16,8 +17,9 @@ class TermsPage extends StatelessWidget {
     final bodyTextStyle = textTheme.body;
     return BaseScrollPage(
       children: [
-        Text('Allgemeine Geschäftsbedingungen (AGB)', style: textTheme.title),
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
+        const HeadlineText('Allgemeine Geschäftsbedingungen'),
+        const SizedBox(height: 16),
         Text(
           '1. Geltungsbereich und Begriffsbestimmungen',
           style: bodyTextStyle,

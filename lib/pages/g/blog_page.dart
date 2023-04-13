@@ -14,7 +14,9 @@ class BlogPage extends StatelessWidget {
   Widget build(BuildContext context) => BaseScrollPage(
         children: [
           GestureDetector(
-            onTap: () => context.go('$_blogViewPagePathPrefix/test-blog-name'),
+            onTap: () => context.go(
+              '$_blogViewPagePathPrefix/raumfuerunikate-lilli-grewe',
+            ),
             child: const ColoredBox(
               color: Colors.red,
               child: Text('Middle'),
