@@ -26,10 +26,21 @@ class NavBar extends StatelessWidget {
         return AnimatedContainer(
           duration: const Duration(milliseconds: navBarTransitionInMillis),
           curve: Curves.ease,
-          color: navMenuOnly ? Colors.transparent : mainBackgroundColor,
+          color: navMenuOnly ? Colors.transparent : null,
           padding: isFullWidthNavBar ? _bigPadding : _smallPadding,
           height:
               isExpanded ? navigationBarHeightExpanded : navigationBarHeight,
+          decoration: navMenuOnly
+              ? null
+              : const BoxDecoration(
+                  color: mainBackgroundColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 8,
+                    ),
+                  ],
+                ),
           child: _NavBar(
             navMenu ?? const SizedBox.shrink(),
             isExpanded: isExpanded,

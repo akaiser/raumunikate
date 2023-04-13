@@ -15,7 +15,7 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.10"
+          flutter-version: "3.7.11"
       - run: flutter analyze
       - run: flutter pub run dart_code_metrics:metrics analyze lib
       #- run: flutter pub run dart_code_metrics:metrics check-unused-files lib
@@ -31,7 +31,7 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.10"
+          flutter-version: "3.7.11"
       - run: flutter test
 
   test-ui:
@@ -56,7 +56,7 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.10"
+          flutter-version: "3.7.11"
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
       - name: integration_test

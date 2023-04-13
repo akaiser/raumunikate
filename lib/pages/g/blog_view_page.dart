@@ -24,14 +24,34 @@ class BlogViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
         children: [
-          HeadlineText('Herzlich Willkommen im Zuhause der Atmosphäre.'),
+          SizedBox(height: 16),
+          Align(
+            alignment: Alignment.centerRight,
+            child: _Text('20.02.2023'),
+          ),
+          HeadlineText('#raumfuerunikate'),
           SizedBox(height: 16),
           _Text(
-            'Es ist an der Zeit zu entdecken, wie Interiorbegeisterte ihr Wohlfühlzuhause authentisch und mit dem gewissen Gespür für Ästhetik einrichten.',
+            'Herzlich Willkommen im Zuhause der Atmosphäre. Es ist an der Zeit zu entdecken, wie Interiorbegeisterte ihr Wohlfühlzuhause authentisch und mit dem gewissen Gespür für Ästhetik einrichten.',
           ),
           SizedBox(height: 16),
-          _Text(
-            'Mein erster Gast dieser Interviewreihe ist die zauberhafte Lilli, die die #instagraminteriorchallenge ins Leben gerufen hat. Vor zwei Jahren habe ich an dieser Challenge mitgemacht und sie ist mir sehr positiv im Gedächtnis geblieben.',
+          RichTextSection(
+            children: [
+              InlineText('Mein erster Gast dieser Interviewreihe '),
+              InlineText(
+                '#raumfuerunikate',
+                link: 'https://www.instagram.com/explore/tags/raumfuerunikate/',
+              ),
+              InlineText(' ist die zauberhafte Lilli, die die '),
+              InlineText(
+                '#instagraminteriorchallenge',
+                link:
+                    'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
+              ),
+              InlineText(
+                ' ins Leben gerufen hat. Vor zwei Jahren habe ich an dieser Challenge mitgemacht und interessante Accounts entdeckt. Sie ist mir sehr positiv im Gedächtnis geblieben.',
+              ),
+            ],
           ),
           SizedBox(height: 16),
           _Text(
@@ -39,52 +59,48 @@ class BlogViewPage extends StatelessWidget {
           ),
           SizedBox(height: 32),
           _ImageRow([Assets.lilli, Assets.kitchen, Assets.sleep]),
-          _Headline('Bitte erzähle uns kurz über Dich und Dein Zuhause'),
+          _Caption('Bitte erzähle uns über Dich und Dein Zuhause.'),
           _Text(
             'Ich bin Lilli, 39 Jahre alt und arbeite bei einem der letzten familiengeführten Möbelunternehmen in Deutschland. Ich denke gerne kreativ und mag es grenzen übergreifende Strategien zu entwickeln. Wir, das sind mein Mann, unsere beiden Töchter und ich, leben in Bielefeld in einem historischem Gewerbepark in einem Loft auf 100 Quadratmetern. Es ist alles offen, bis auf das Zimmer unserer ältesten Tochter. Wir lieben die Höhe in der Mitte des Raums, die für viel „Freiheit“ sorgt. Es gibt aber auch auf der ganzen Raumlänge auf beiden Seiten Dachschrägen, die dem Raum kuschelige Gemütlichkeit verleihen. Lange (10 Jahre) haben wir davon geträumt so zu wohnen und sind jetzt mega happy.',
           ),
-          _Headline(
+          _Caption(
             'Welche Aspekte verleihen Deinem Zuhause Wohlfühlatmosphäre?',
           ),
           _Text(
             'Für uns bedeutet Wohlfühlatmosphäre Luft zum Atmen, daher ist die Raummitte frei, um mit Leben bespielt zu werden. Wir haben wenig Möbel – die alle funktional und mit viel Liebe ausgewählt sind - aber einige schöne, farbenfrohe Wohnaccessoires und Objekte, die unser Zuhause „besonders“ machen. Ich mag es, wenn man sieht, wer darin wohnt.',
           ),
-          _Headline('Wie gehst Du an Raumgestaltung heran?'),
+          _Caption('Wie gehst Du an Raumgestaltung heran?'),
           _Text(
             'Ich richte selten Räume ein. In unserem Loft wohnen wir jetzt schon fast 10 Jahre und hier hat sich in der groben Struktur wenig getan. Am Anfang haben wir den Raum nach unseren Bedürfnissen und Needs in Bereiche geordnet und geschaut welche Möbel wir wo platzieren um den Bereichen einen Rahmen zu geben, die Leichtigkeit und Offenheit des Raums aber nicht kaputt zu machen. Ein Bad, eine Küche, ein Esstisch mit Stühlen, Bett und Schrank, ein niedriges Regal passend zu unserer Architektur. Es gibt bei uns wenig Möglichkeiten Möbel zu verrücken oder Bereiche zu tauschen. Ich glaube wir haben für unsere Wohnsituation mit den Anforderungen von vier Personen die beste Lösung gefunden.',
           ),
-          _Headline('Was darf in einem Raum für Dich nicht fehlen?'),
+          _Caption('Was darf in einem Raum für Dich nicht fehlen?'),
           _Text(
             'Die persönliche Note. Ich mag es, wenn ein Zuhause individuell ist, wächst und sich verändert und Geschichten über die Bewohner erzählt. Es muss niemandem gefallen, außer den Menschen, die darin zuhause sind. Ich persönlich mag Farbe sehr. Die bringt Fröhlichkeit in jeden Raum und tut meinem Wohlbefinden gut.',
           ),
           SizedBox(height: 32),
           _ImageRow([Assets.child, Assets.eat, Assets.sleep2]),
-          _Headline('Welche Rolle spielt Raumfarbe für Dich?'),
+          _Caption('Welche Rolle spielt Raumfarbe für Dich?'),
           _Text(
             'Wie eben schon erwähnt: Ich liebe Farbe! Aaaaaber unser Boden ist lichtgrau und unsere Wände sind fast überall weiß. Die einzige farbige Wand, findet man bei uns im Bad. Die weißen Wände und der lichtgraue Holzboden bieten aber unseren farbenfrohen Dekoaccessoires, Designobjekten und der Kunst an der Wand die perfekte Bühne. So können unsere besonderen Stücke mehr Aufmerksamkeit auf sich ziehen. Außerdem wird durch die Farb-Unterbrechung ein harmonisches Gleichgewicht zwischen Ruhe und Spannung gehalten.',
           ),
-          _Headline(
+          _Caption(
             'Du wohnst nicht allein. Wie bekommst Du alle Wünsche unter einen Hut?',
           ),
           _Text(
             'Jeder darf seine Wünsche äußern. Damit es am Ende nicht zu wild wird – bei uns sind ja (fast) alle Bereiche auf einen Blick einsehbar - geben wir unseren Töchtern gerne eine Auswahl vor und lenken so in die „richtige“ Richtung. Im Zimmer unserer Großen, hat sie natürlich den Hut auf und die Kleine darf sich in ihren Tiny-Kinderhaus ausleben. Die großen Einrichtungsentscheidungen liegen zu 50% bei meinem Mann Sascha und zu 50% bei mir. Wir können uns da gut die Bälle zuspielen und finden immer einen guten Kompromiss. Würde ich allein entscheiden, wäre es wahrscheinlich weicher, femininer - würde er alleine entscheiden wäre es artify, verrückter und vielleicht minimalistischer. So wie es ist, können wir beide sehr gut damit leben. :)',
           ),
-          _Headline(
-            'Welches ist Dein Lieblingsstück und warum?',
-          ),
+          _Caption('Welches ist Dein Lieblingsstück und warum?'),
           _Text(
             'Ich habe ehrlich gesagt kein Lieblingsstück, ich hänge nicht an den Dingen. Wenn Sascha einen neuen Tisch baut, darf der alte gehen und in einer anderen Familie zum Lebensmittelpunkt werden, das ist ein schöner Fluss. Wir entwerfen gerne neue Dinge, probieren aus und lassen sie irgendwann weiterziehen. Generell mögen wir spannende Produkte feiner kleiner Labels und langlebige Produkte, auf die wir auch gerne sparen.',
           ),
-          _Headline('Wo findest Du Inspiration?'),
+          _Caption('Wo findest Du Inspiration?'),
           _Text(
             'Auf Instagram, Pinterest oder Designmessen. Aber auch gerne mal in Zeitschriften, vor allem wenn ich mal Ruhe habe ausgiebig zu blättern...',
           ),
-          _Headline('Wer inspiriert Dich im Bereich Interior?'),
-          _Text(
-            'Auf Instagram mag ich zum Beispiel folgende Accounts sehr:',
-          ),
+          _Caption('Wer inspiriert Dich im Bereich Interior?'),
+          _Text('Auf Instagram mag ich zum Beispiel folgende Accounts sehr:'),
           _Links(),
-          _Headline(
+          _Caption(
             'Um nochmal den Bogen zum Anfang zu spannen, wie kam es zu Deiner Instagram Interior Challenge?',
           ),
           RichTextSection(
@@ -107,21 +123,54 @@ class BlogViewPage extends StatelessWidget {
               InlineText(' - und das Interesse ist nach wie vor da.'),
             ],
           ),
-          _Headline('Wann startet die nächste?'),
+          _Caption('Wann startet die nächste?'),
           RichTextSection(
             children: [
               InlineText('Schon ganz bald! Die nächste '),
               InlineText(
-                '#iic',
-                link: 'https://www.instagram.com/explore/tags/iic/',
+                '#instagraminteriorchallenge',
+                link:
+                    'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
               ),
               InlineText(' startet im April 2023.'),
             ],
           ),
           SizedBox(height: 24),
           _Text(
-            'Vielen Dank liebe Lilli für den spannenden Einblick in Dein Zuhause.\n\nBleib ein Unikat,\nIna.',
+            'Vielen Dank liebe Lilli für den spannenden Einblick in Dein Zuhause.\n\nBleib ein Unikat,\nIna',
           ),
+          SizedBox(height: 16),
+          Divider(),
+          SizedBox(height: 8),
+          RichTextSection(
+            children: [
+              InlineText('Gästin: Lilli Grewe '),
+              InlineText(
+                '@kitschcanmakeyourich',
+                link: 'https://www.instagram.com/kitschcanmakeyourich/',
+              ),
+            ],
+          ),
+          RichTextSection(
+            children: [
+              InlineText('Fotografie: Benjamin Janzen '),
+              InlineText(
+                '@bjfotografie',
+                link: 'https://www.instagram.com/bjfotografie/',
+              ),
+            ],
+          ),
+          RichTextSection(
+            children: [
+              InlineText('Verfasst von: Ina Kaiser '),
+              InlineText(
+                '@raumunikate',
+                link: 'https://www.instagram.com/raumunikate/',
+              ),
+            ],
+          ),
+          SizedBox(height: 8),
+          Divider(),
         ],
       );
 }
@@ -148,8 +197,8 @@ class _ImageRow extends StatelessWidget {
       );
 }
 
-class _Headline extends StatelessWidget {
-  const _Headline(this.text);
+class _Caption extends StatelessWidget {
+  const _Caption(this.text);
 
   final String text;
 

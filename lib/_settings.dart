@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:flutter/painting.dart' show Color;
 
-const appName = 'Raumunikate';
+const appName = 'RAUMUNIKATE';
 
 const double navigationBarHeight = 66;
 const double navigationBarHeightExpanded = 132;
@@ -15,6 +15,7 @@ const //
     mainTODO_1 = Color(0xffc4b3a3),
     mainTODO_2 = Color(0xffece9d8),
     mainTODO_3 = Color(0xff4d4747),
-    mainTODO_4 = Color(0xffccd1cd);
+    mainTODO_4 = Color(0xffccd1cd),
+    mainTODO_5 = Color(0xffccc8cf);
 
 const linkColor = mainTODO_1;

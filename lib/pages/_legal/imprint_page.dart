@@ -2,6 +2,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_legal/_contact.dart';
 import 'package:raumunikate/pages/_legal/privacy_page.dart';
+import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
@@ -17,8 +18,9 @@ class ImprintPage extends StatelessWidget {
     final bodyTextStyle = textTheme.body;
     return BaseScrollPage(
       children: [
-        Text('Impressum', style: textTheme.title),
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
+        const HeadlineText('Impressum'),
+        const SizedBox(height: 16),
         Text(
           'Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.',
           style: bodyTextStyle,
