@@ -9,6 +9,8 @@ class CoverImageBox extends StatelessWidget {
   });
 
   final String asset;
+
+  // TODO(albert): remove this
   final ColorFilter? colorFilter;
   final Widget? child;
 

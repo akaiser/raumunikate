@@ -28,7 +28,6 @@ dart_code_metrics:
     - prefer-immediate-return
     - prefer-iterable-of
     - prefer-last
-    - prefer-using-list-view
     - use-setstate-synchronously
 
 linter:

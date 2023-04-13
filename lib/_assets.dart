@@ -4,6 +4,7 @@ class Assets {
 
   static const //
       _root = 'assets',
+      _blogRoot = '$_root/blog',
       _iconsRoot = '$_root/icons';
 
   static const // icons
@@ -37,4 +38,17 @@ class Assets {
       logo = '$_root/logo.png',
       logoText = '$_root/logo_text.png',
       chevron = '$_root/chevron.png';
+
+  //////////////// BLOG //////////////////
+
+  static const // blogs
+      _blog0 = '$_blogRoot/0';
+
+  static const // blog 0
+      child = '$_blog0/child.jpg',
+      eat = '$_blog0/eat.jpg',
+      lilli = '$_blog0/lilli.jpg',
+      sleep = '$_blog0/sleep.jpg',
+      sleep2 = '$_blog0/sleep2.jpg',
+      kitchen = '$_blog0/kitchen.jpg';
 }

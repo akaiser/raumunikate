@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/pages/base_page.dart';
+import 'package:raumunikate/pages/base_slide_page.dart';
 import 'package:raumunikate/pages/d/a/products_intro_section.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -8,7 +8,7 @@ class ProductsPage extends StatelessWidget {
   static const path = '/produkte';
 
   @override
-  Widget build(BuildContext context) => const BasePage(
+  Widget build(BuildContext context) => const BaseSlidePage(
         children: [
           ProductsIntroSection(),
         ],

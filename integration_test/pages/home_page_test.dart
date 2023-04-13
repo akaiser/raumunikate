@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/a/a/home_intro_section.dart';
 import 'package:raumunikate/pages/a/b/home_welcome_section.dart';
 import 'package:raumunikate/pages/a/c/home_content_section.dart';
 import 'package:raumunikate/pages/a/d/home_image_section.dart';
 import 'package:raumunikate/pages/a/e/home_referrals_section.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
-import 'package:raumunikate/pages/base_page.dart';
-import 'package:raumunikate/pages/footer/footer.dart';
+import 'package:raumunikate/pages/base_slide_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
@@ -56,7 +56,7 @@ void main() {
 
 extension on WidgetTester {
   Future<void> dragPageView() async {
-    await drag(find.byKey(basePageViewKey), const Offset(0, -600));
+    await drag(find.byKey(baseSlidePageKey), const Offset(0, -600));
     await pumpAndSettle();
   }
 
