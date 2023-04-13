@@ -8,18 +8,14 @@ import 'package:raumunikate/_router.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/_theme.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  runZonedGuarded<void>(
-    () => runApp(const App()),
-    (error, stack) => log(
-      'Some Explosion...',
-      error: error,
-      stackTrace: stack,
-    ),
-  );
-}
+void main() => runZonedGuarded<void>(
+      () => runApp(const App()),
+      (error, stack) => log(
+        'Some Explosion...',
+        error: error,
+        stackTrace: stack,
+      ),
+    );
 
 class App extends StatelessWidget {
   const App({super.key});

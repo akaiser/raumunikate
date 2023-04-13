@@ -1,5 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.kaiserv.raumunikate">
+   <queries>
+      <intent>
+         <action android:name="android.intent.action.VIEW" />
+         <data android:scheme="sms" />
+      </intent>
+      <intent>
+         <action android:name="android.intent.action.VIEW" />
+         <data android:scheme="tel" />
+      </intent>
+   </queries>
    <application
         android:label="raumunikate"
         android:name="${applicationName}"

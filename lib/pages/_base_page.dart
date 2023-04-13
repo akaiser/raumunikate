@@ -7,35 +7,21 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
-import 'package:raumunikate/pages/footer/footer.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
-const basePageViewKey = Key('base-page-view');
-
-class BasePage extends StatelessWidget {
+class BasePage extends StatefulWidget {
   const BasePage({
-    required this.children,
+    required this.child,
     super.key,
   });
 
-  final List<Widget> children;
+  final Widget child;
 
   @override
-  Widget build(BuildContext context) => _BasePage(
-        children: [...children, const Footer()],
-      );
+  State<BasePage> createState() => _BasePageState();
 }
 
-class _BasePage extends StatefulWidget {
-  const _BasePage({required this.children});
-
-  final List<Widget> children;
-
-  @override
-  State<_BasePage> createState() => _BasePageState();
-}
-
-class _BasePageState extends State<_BasePage> {
+class _BasePageState extends State<BasePage> {
   @override
   void initState() {
     super.initState();
@@ -72,11 +58,7 @@ class _BasePageState extends State<_BasePage> {
               const Duration(milliseconds: pageTransitionInMillis),
               () => context.go(HomePage.path),
             ),
-            child: PageView(
-              key: basePageViewKey,
-              scrollDirection: Axis.vertical,
-              children: widget.children,
-            ),
+            child: widget.child,
           ),
           const NavBar(),
           if (kDebugMode)

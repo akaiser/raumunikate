@@ -6,7 +6,7 @@ import 'package:raumunikate/pages/a/b/home_welcome_sections.dart';
 import 'package:raumunikate/pages/a/c/home_content_section.dart';
 import 'package:raumunikate/pages/a/d/home_image_section.dart';
 import 'package:raumunikate/pages/a/e/home_referrals_section.dart';
-import 'package:raumunikate/pages/base_page.dart';
+import 'package:raumunikate/pages/base_slide_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   static const String path = '/';
 
   @override
-  Widget build(BuildContext context) => BasePage(
+  Widget build(BuildContext context) => BaseSlidePage(
         children: [
           const HomeIntroSection(),
           if (context.isSxsBreakpoint) ...const [

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/b/a/plan_intro_section.dart';
-import 'package:raumunikate/pages/base_page.dart';
+import 'package:raumunikate/pages/base_slide_page.dart';
 
 class PlanPage extends StatelessWidget {
   const PlanPage({super.key});
@@ -8,7 +8,7 @@ class PlanPage extends StatelessWidget {
   static const path = '/planen';
 
   @override
-  Widget build(BuildContext context) => const BasePage(
+  Widget build(BuildContext context) => const BaseSlidePage(
         children: [
           PlanIntroSection(),
         ],

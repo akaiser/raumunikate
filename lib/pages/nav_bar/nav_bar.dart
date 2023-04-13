@@ -3,12 +3,15 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/components/social_links.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/nav_bar/_logo.dart';
 import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
-import 'package:raumunikate/pages/nav_bar/_social_links.dart';
+
+const _bigPadding = EdgeInsets.only(left: 100, top: 10, right: 100);
+const _smallPadding = EdgeInsets.only(left: 10, top: 10, right: 10);
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -24,11 +27,7 @@ class NavBar extends StatelessWidget {
           duration: const Duration(milliseconds: navBarTransitionInMillis),
           curve: Curves.ease,
           color: navMenuOnly ? Colors.transparent : mainBackgroundColor,
-          padding: EdgeInsets.only(
-            left: isFullWidthNavBar ? 100 : 10,
-            top: 10,
-            right: isFullWidthNavBar ? 100 : 10,
-          ),
+          padding: isFullWidthNavBar ? _bigPadding : _smallPadding,
           height:
               isExpanded ? navigationBarHeightExpanded : navigationBarHeight,
           child: _NavBar(
