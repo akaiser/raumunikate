@@ -17,27 +17,24 @@ class ImprintPage extends StatelessWidget {
           SizedBox(height: 24),
           HeadlineText('Impressum'),
           SizedBox(height: 16),
-          Text(
-            'Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.',
-          ),
-          SizedBox(height: 20),
-          Text('Anbieter:'),
-          Text('RAUMUNIKATE Einzelunternehmen'),
-          SizedBox(height: 20),
-          Text('Vertretungsberechtigte Geschäftsführerin:'),
+          Text('''
+Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.
+
+Anbieter:
+RAUMUNIKATE Einzelunternehmen
+
+Vertretungsberechtigte Geschäftsführerin:'''),
           Contact(),
-          SizedBox(height: 20),
-          Text('Steuernummer: 64306/24636'),
-          SizedBox(height: 20),
-          Text('Konzept und Design: Ina Kaiser RAUMUNIKATE'),
-          SizedBox(height: 20),
-          Text('Bildmaterial:'),
-          Text(
-            'Alle eigenen Bilder und Bildmaterial aller genutzten Fremdquellen unterliegen dem Urheberrecht und dürfen weder genutzt, verändert oder kopiert werden.',
-          ),
-          SizedBox(height: 20),
-          Text('Kleinunternehmer gemäß § 19 UStG'),
-          SizedBox(height: 20),
+          Text('''
+          
+Steuernummer: 64306/24636
+Konzept und Design: Ina Kaiser RAUMUNIKATE
+
+Bildmaterial:
+Alle eigenen Bilder und Bildmaterial aller genutzten Fremdquellen unterliegen dem Urheberrecht und dürfen weder genutzt, verändert oder kopiert werden.
+
+Kleinunternehmer gemäß § 19 UStG
+'''),
           RichTextSection(
             children: [
               InlineText(
