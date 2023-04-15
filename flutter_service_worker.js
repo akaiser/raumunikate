@@ -9,7 +9,7 @@ const RESOURCES = {
 "canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e",
 "index.html": "aca1508ac9250a4e338d40b3014bb10d",
 "/": "aca1508ac9250a4e338d40b3014bb10d",
-"main.dart.js": "d89b13890f5714a55f0f07657ef27c48",
+"main.dart.js": "9b3e7a67ca9704ab381e0bf566c3104b",
 "icons/Icon-192.png": "492cfabe88aad1727f55a08e9c748af5",
 "manifest.json": "005e52c9c9a3a31a7d54b64aed4f568c",
 "flutter.js": "a85fcf6324d3c4d3ae3be1ae4931e9c5",
