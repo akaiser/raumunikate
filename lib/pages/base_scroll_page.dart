@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 class BaseScrollPage extends StatelessWidget {
@@ -19,6 +19,8 @@ class BaseScrollPage extends StatelessWidget {
       const SizedBox(height: navigationBarHeightExpanded),
       ...children,
       const SizedBox(height: 16),
+      const Divider(),
+      const SizedBox(height: 8),
       const Footer(),
     ];
     return ResponsiveLayout(
@@ -51,9 +53,12 @@ class _BaseScrollPage extends StatelessWidget {
   Widget build(BuildContext context) => BasePage(
         child: SingleChildScrollView(
           padding: padding,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: children,
+          child: DefaultTextStyle.merge(
+            style: context.tt.body?.copyWith(color: mainTODO_0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
           ),
         ),
       );
