@@ -5,6 +5,7 @@ import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/social_links.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/fade_in.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/nav_bar/_logo.dart';
@@ -89,7 +90,7 @@ class _NavBar extends StatelessWidget {
                       const Logo(),
                       if (isExpanded) ...const [
                         SizedBox(height: 20),
-                        LogoText(),
+                        FadeIn(child: LogoText()),
                       ],
                     ],
                   ),
