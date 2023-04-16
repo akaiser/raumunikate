@@ -12,6 +12,7 @@ class PrivacyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
+        preferListView: true,
         children: [
           SizedBox(height: 24),
           HeadlineText('Datenschutzerklärung'),
