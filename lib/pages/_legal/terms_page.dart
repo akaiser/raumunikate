@@ -14,6 +14,7 @@ class TermsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
+        preferListView: true,
         children: [
           _newLine,
           HeadlineText('Allgemeine Geschäftsbedingungen'),
