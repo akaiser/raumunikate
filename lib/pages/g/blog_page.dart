@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:raumunikate/pages/_legal/_shared.dart';
+import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 import 'package:raumunikate/pages/g/blog_view_page.dart';
 
@@ -11,16 +13,12 @@ class BlogPage extends StatelessWidget {
   static const path = '/blog';
 
   @override
-  Widget build(BuildContext context) => BaseScrollPage(
+  Widget build(BuildContext context) => const BaseScrollPage(
         children: [
-          GestureDetector(
-            onTap: () => context.go(
-              '$_blogViewPagePathPrefix/raumfuerunikate-lilli-grewe',
-            ),
-            child: const ColoredBox(
-              color: Colors.red,
-              child: Text('Middle'),
-            ),
+          newLine,
+          TextLink(
+            '#rumfuerunikate: Lilli Grewe',
+            url: '$_blogViewPagePathPrefix/raumfuerunikate-lilli-grewe',
           ),
         ],
       );
