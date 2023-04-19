@@ -13,7 +13,7 @@ class ConnectColumn extends StatelessWidget {
           _Text('Ist Ihr Interesse geweckt?'),
           _Text('Melden Sie sich gern bei mir und bleiben Sie ein Unikat,'),
           _Text('Ina Kaiser'),
-          SizedBox(height: 14),
+          newLine,
           SocialLinks(mainAxisAlignment: MainAxisAlignment.start),
         ],
       );

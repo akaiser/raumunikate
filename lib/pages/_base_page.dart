@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
+import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
-import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
 class BasePage extends StatefulWidget {
@@ -56,7 +56,7 @@ class _BasePageState extends State<BasePage> {
             },
             onRefresh: () => Future<void>.delayed(
               const Duration(milliseconds: pageTransitionInMillis),
-              () => context.go(HomePage.path),
+              () => context.go(Routes.homePage),
             ),
             child: widget.child,
           ),

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
+import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/social_links.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
-import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/nav_bar/_logo.dart';
 import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
 
@@ -78,11 +78,13 @@ class _NavBar extends StatelessWidget {
         children: [
           TableRow(
             children: [
-              Align(alignment: Alignment.centerLeft, child: navMenu),
+              // TODO(albert): revert!
+              const SizedBox(),
+              //Align(alignment: Alignment.centerLeft, child: navMenu),
               if (!navMenuOnly) ...[
                 InkWell(
-                  onTap: context.currentRoutePath != HomePage.path
-                      ? () => context.go(HomePage.path)
+                  onTap: context.currentRoutePath != Routes.homePage
+                      ? () => context.go(Routes.homePage)
                       : null,
                   child: Column(
                     children: [

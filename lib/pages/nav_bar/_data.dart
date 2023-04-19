@@ -1,3 +1,4 @@
+import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
 import 'package:raumunikate/pages/b/plan_page.dart';
 import 'package:raumunikate/pages/c/projects_page.dart';
@@ -7,13 +8,13 @@ import 'package:raumunikate/pages/f/inspiration_page.dart';
 import 'package:raumunikate/pages/g/blog_page.dart';
 
 final navData = [
-  NavDataEntry(HomePage.path, HomePage, 'HOME'),
-  NavDataEntry(PlanPage.path, PlanPage, 'ATMOSPHÄRE PLANEN'),
-  NavDataEntry(ProjectsPage.path, ProjectsPage, 'PROJEKTE'),
-  NavDataEntry(ProductsPage.path, ProductsPage, 'PRODUKTE'),
-  NavDataEntry(PortraitPage.path, PortraitPage, 'PORTRAIT'),
-  NavDataEntry(InspirationPage.path, InspirationPage, 'INSPIRATION'),
-  NavDataEntry(BlogPage.path, BlogPage, 'BLOG'),
+  NavDataEntry(Routes.homePage, HomePage, 'HOME'),
+  NavDataEntry(Routes.planPage, PlanPage, 'ATMOSPHÄRE PLANEN'),
+  NavDataEntry(Routes.planPage, ProjectsPage, 'PROJEKTE'),
+  NavDataEntry(Routes.productsPage, ProductsPage, 'PRODUKTE'),
+  NavDataEntry(Routes.portraitPage, PortraitPage, 'PORTRAIT'),
+  NavDataEntry(Routes.inspirationPage, InspirationPage, 'INSPIRATION'),
+  NavDataEntry(Routes.blogPage, BlogPage, 'BLOG'),
 ];
 
 class NavDataEntry {

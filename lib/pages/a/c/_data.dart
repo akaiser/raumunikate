@@ -1,11 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/material.dart' show Color, Colors;
+import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
-import 'package:raumunikate/pages/b/plan_page.dart';
-import 'package:raumunikate/pages/c/projects_page.dart';
-import 'package:raumunikate/pages/d/products_page.dart';
-import 'package:raumunikate/pages/e/portrait_page.dart';
-import 'package:raumunikate/pages/f/inspiration_page.dart';
 
 const textColor = Colors.white;
 
@@ -16,22 +12,22 @@ final slidesData = [
     mainTODO_3,
     'Atmosphäre planen',
     'Sie sehen einen Einblick in meine Projekte. Im privaten und beruflichen Kontext bekommt Wohlfühlatmosphäre eine immer größere Bedeutung.',
-    PlanPage.path,
+    Routes.planPage,
   ),
   SlideDataEntry(
     mainTODO_1,
     'Projekte',
     'Sie erfahren die Phasen unserer Zusammenarbeit und meine methodische Herangehensweise.',
-    ProjectsPage.path,
+    Routes.projectsPage,
   ),
   SlideDataEntry(
     mainTODO_0,
     'Produkte',
     'Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKATE kreiert.',
-    ProductsPage.path,
+    Routes.productsPage,
   ),
-  SlideDataEntry(mainTODO_4, 'Portrait', 'TODO', PortraitPage.path),
-  SlideDataEntry(mainTODO_4, 'Inspiration', 'TODO', InspirationPage.path),
+  SlideDataEntry(mainTODO_4, 'Portrait', 'TODO', Routes.portraitPage),
+  SlideDataEntry(mainTODO_4, 'Inspiration', 'TODO', Routes.inspirationPage),
 ];
 
 class SlideDataEntry {

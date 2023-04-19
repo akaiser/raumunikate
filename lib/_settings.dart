@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
-import 'package:flutter/painting.dart' show Color;
+import 'package:flutter/widgets.dart' show Color, SizedBox;
 
 const appName = 'RAUMUNIKATE';
 
@@ -19,3 +19,6 @@ const //
     mainTODO_5 = Color(0xffccc8cf);
 
 const linkColor = mainTODO_1;
+
+const newLine = SizedBox(height: 28);
+const smallNewLine = SizedBox(height: 8);

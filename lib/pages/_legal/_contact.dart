@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/pages/_legal/_shared.dart';
+import 'package:raumunikate/_settings.dart';
 
 class Contact extends StatelessWidget {
   const Contact({super.key});

@@ -1,7 +1,7 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/widgets.dart';
+import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_legal/_contact.dart';
-import 'package:raumunikate/pages/_legal/_shared.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
