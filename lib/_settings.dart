@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:flutter/widgets.dart' show Color, SizedBox;
 
-const appName = 'RAUMUNIKATE';
+const appName = 'RAUMUNIKATE Ina Kaiser';
 
 const double navigationBarHeight = 66;
 const double navigationBarHeightExpanded = 132;

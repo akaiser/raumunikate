@@ -51,7 +51,10 @@ class _HomeContentSlidesState extends State<HomeContentSlides> {
         child: FractionallySizedBox(
           widthFactor: 0.9,
           heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
-          child: _SlideCard(data.slidesData[index]),
+          child: _SlideCard(
+            data.slidesData[index],
+            key: Key('slide-card-$index'),
+          ),
         ),
       ),
     );
@@ -59,7 +62,7 @@ class _HomeContentSlidesState extends State<HomeContentSlides> {
 }
 
 class _SlideCard extends StatelessWidget {
-  const _SlideCard(this.entry);
+  const _SlideCard(this.entry, {super.key});
 
   final data.SlideDataEntry entry;
 
