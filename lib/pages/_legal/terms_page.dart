@@ -20,14 +20,14 @@ class TermsPage extends StatelessWidget {
           newLine,
           Text('1. Geltungsbereich und Begriffsbestimmungen'),
           Text(
-            '1.1 Diese Vertragsbedingungen gelten für alle Verträge die ein Käufer (im Folgenden „Kunde“) mit:',
+            '1.1 Diese Vertragsbedingungen gelten für alle Verträge die ein Käufer (im Folgenden "Kunde") mit:',
           ),
           newLine,
           Text('RAUMUNIKATE'),
           Contact(),
           newLine,
           Text(
-            '(im Folgenden „Anbieter“) über die vom Anbieter in seinem Online – Shop angebotene Waren schließt.',
+            '(im Folgenden "Anbieter") über die vom Anbieter in seinem Online – Shop angebotene Waren schließt.',
           ),
           newLine,
           Text(
@@ -57,7 +57,7 @@ class TermsPage extends StatelessWidget {
           ),
           newLine,
           Text(
-            '2.2 Mit Einstellung der Produkte in den Online-Shop gibt der Anbieter ein verbindliches Angebot zum Vertragsschluss über diese Artikel ab. Sie können unsere Produkte zunächst unverbindlich in den Warenkorb legen und Ihre Eingaben vor Absenden Ihrer verbindlichen Bestellung jederzeit korrigieren, indem Sie die hierfür im Bestellablauf vorgesehenen und erläuterten Korrekturhilfen nutzen. Der Vertrag kommt zustande, indem Sie durch Anklicken des Bestellbuttons „Zahlungspflichtig bestellen“ das Angebot über die im Warenkorb enthaltenen Waren annehmen. Erst mit dem Versand einer Auftragsbestätigung per E-Mail durch den Anbieter kommt der Vertragsschluss zustande.',
+            '2.2 Mit Einstellung der Produkte in den Online-Shop gibt der Anbieter ein verbindliches Angebot zum Vertragsschluss über diese Artikel ab. Sie können unsere Produkte zunächst unverbindlich in den Warenkorb legen und Ihre Eingaben vor Absenden Ihrer verbindlichen Bestellung jederzeit korrigieren, indem Sie die hierfür im Bestellablauf vorgesehenen und erläuterten Korrekturhilfen nutzen. Der Vertrag kommt zustande, indem Sie durch Anklicken des Bestellbuttons "Zahlungspflichtig bestellen" das Angebot über die im Warenkorb enthaltenen Waren annehmen. Erst mit dem Versand einer Auftragsbestätigung per E-Mail durch den Anbieter kommt der Vertragsschluss zustande.',
           ),
           newLine,
           Text(

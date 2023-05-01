@@ -78,11 +78,9 @@ class _NavBar extends StatelessWidget {
         children: [
           TableRow(
             children: [
-              // TODO(albert): revert!
-              const SizedBox(),
-              //Align(alignment: Alignment.centerLeft, child: navMenu),
+              Align(alignment: Alignment.centerLeft, child: navMenu),
               if (!navMenuOnly) ...[
-                InkWell(
+                GestureDetector(
                   onTap: context.currentRoutePath != Routes.homePage
                       ? () => context.go(Routes.homePage)
                       : null,

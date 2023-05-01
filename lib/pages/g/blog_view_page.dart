@@ -63,7 +63,7 @@ class BlogViewPage extends StatelessWidget {
           _Caption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
           smallNewLine,
           Text(
-            'Ich bin Lilli, 39 Jahre alt und arbeite bei einem der letzten familiengeführten Möbelunternehmen in Deutschland. Ich denke gerne kreativ und mag es grenzenübergreifende Strategien zu entwickeln. Wir, das sind mein Mann, unsere beiden Töchter und ich, leben in Bielefeld in einem historischem Gewerbepark in einem Loft auf 100 Quadratmetern. Es ist alles offen, bis auf das Zimmer unserer großen Tochter. Wir lieben die Höhe in der Mitte des Raums, die für viel „Freiheit“ sorgt. Es gibt aber auch auf der ganzen Raumlänge auf beiden Seiten Dachschrägen, die dem Raum kuschelige Gemütlichkeit verleihen. Lange (10 Jahre) haben wir davon geträumt so zu wohnen und sind jetzt mega happy.',
+            'Ich bin Lilli, 39 Jahre alt und arbeite bei einem der letzten familiengeführten Möbelunternehmen in Deutschland. Ich denke gerne kreativ und mag es grenzenübergreifende Strategien zu entwickeln. Wir, das sind mein Mann, unsere beiden Töchter und ich, leben in Bielefeld in einem historischem Gewerbepark in einem Loft auf 100 Quadratmetern. Es ist alles offen, bis auf das Zimmer unserer großen Tochter. Wir lieben die Höhe in der Mitte des Raums, die für viel "Freiheit" sorgt. Es gibt aber auch auf der ganzen Raumlänge auf beiden Seiten Dachschrägen, die dem Raum kuschelige Gemütlichkeit verleihen. Lange (10 Jahre) haben wir davon geträumt so zu wohnen und sind jetzt mega happy.',
           ),
           newLine,
           _Caption(
@@ -71,7 +71,7 @@ class BlogViewPage extends StatelessWidget {
           ),
           smallNewLine,
           Text(
-            'Für uns bedeutet Wohlfühlatmosphäre Luft zum Atmen, daher ist die Raummitte frei, um mit Leben bespielt zu werden. Wir haben wenig Möbel – die alle funktional und mit viel Liebe ausgewählt sind - aber einige schöne, farbenfrohe Wohnaccessoires und Objekte, die unser Zuhause „besonders“ machen. Ich mag es, wenn man sieht, wer darin wohnt.',
+            'Für uns bedeutet Wohlfühlatmosphäre Luft zum Atmen, daher ist die Raummitte frei, um mit Leben bespielt zu werden. Wir haben wenig Möbel – die alle funktional und mit viel Liebe ausgewählt sind - aber einige schöne, farbenfrohe Wohnaccessoires und Objekte, die unser Zuhause "besonders" machen. Ich mag es, wenn man sieht, wer darin wohnt.',
           ),
           newLine,
           _Caption('Wie gehst Du an Raumgestaltung heran?'),
@@ -99,7 +99,7 @@ class BlogViewPage extends StatelessWidget {
           ),
           smallNewLine,
           Text(
-            'Jeder darf seine Wünsche äußern. Damit es am Ende nicht zu wild wird – bei uns sind ja (fast) alle Bereiche auf einen Blick einsehbar - geben wir unseren Töchtern gerne eine Auswahl vor und lenken so in die „richtige“ Richtung. Im Zimmer unserer Großen, hat sie natürlich den Hut auf und die Kleine darf sich in ihren Tiny-Kinderhaus ausleben. Die großen Einrichtungsentscheidungen liegen zu 50% bei meinem Mann Sascha und zu 50% bei mir. Wir können uns da gut die Bälle zuspielen und finden immer einen guten Kompromiss. Würde ich allein entscheiden, wäre es wahrscheinlich weicher, femininer - würde er alleine entscheiden wäre es artify, verrückter und vielleicht minimalistischer. So wie es ist, können wir beide sehr gut damit leben. :)',
+            'Jeder darf seine Wünsche äußern. Damit es am Ende nicht zu wild wird – bei uns sind ja (fast) alle Bereiche auf einen Blick einsehbar - geben wir unseren Töchtern gerne eine Auswahl vor und lenken so in die "richtige" Richtung. Im Zimmer unserer Großen, hat sie natürlich den Hut auf und die Kleine darf sich in ihren Tiny-Kinderhaus ausleben. Die großen Einrichtungsentscheidungen liegen zu 50% bei meinem Mann Sascha und zu 50% bei mir. Wir können uns da gut die Bälle zuspielen und finden immer einen guten Kompromiss. Würde ich allein entscheiden, wäre es wahrscheinlich weicher, femininer - würde er alleine entscheiden wäre es artify, verrückter und vielleicht minimalistischer. So wie es ist, können wir beide sehr gut damit leben. :)',
           ),
           newLine,
           _Caption('Welches ist Dein Lieblingsstück und warum?'),

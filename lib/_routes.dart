@@ -1,12 +1,5 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
-import 'package:raumunikate/pages/a/home_page.dart';
-import 'package:raumunikate/pages/b/plan_page.dart';
-import 'package:raumunikate/pages/c/projects_page.dart';
-import 'package:raumunikate/pages/d/products_page.dart';
-import 'package:raumunikate/pages/e/portrait_page.dart';
-import 'package:raumunikate/pages/f/inspiration_page.dart';
-import 'package:raumunikate/pages/g/blog_page.dart';
-import 'package:raumunikate/pages/g/blog_view_page.dart';
+import 'package:raumunikate/_pages.dart';
 
 class Routes {
   const Routes._();

@@ -40,8 +40,8 @@ class _TwoColumn extends StatelessWidget {
   final EdgeInsetsGeometry infoPadding;
 
   @override
-  Widget build(BuildContext context) => BaseSection(
-        backgroundColor: mainTODO_2,
+  Widget build(BuildContext context) => BaseSectionWithBackgroundColor(
+        color: mainTODO_2,
         child: Row(
           children: [
             Flexible(
