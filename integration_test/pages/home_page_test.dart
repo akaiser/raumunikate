@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/a/a/home_intro_section.dart';
@@ -31,7 +32,7 @@ void main() {
     expect(find.byType(entry.pageType), findsOneWidget);
   });
 
-  testWidgets('cycles through all sections', (tester) async {
+  testWidgets('cycles through all sections and slides', (tester) async {
     await tester.pumpApp();
 
     tester.expectSectionType(HomeIntroSection, _sectionTypes);
@@ -41,6 +42,7 @@ void main() {
 
     await tester.dragPageView();
     tester.expectSectionType(HomeContentSection, _sectionTypes);
+    expect(find.byKey(const Key('slide-card-0')), findsOneWidget);
 
     await tester.dragPageView();
     tester.expectSectionType(HomeImageSection, _sectionTypes);
