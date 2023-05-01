@@ -39,7 +39,7 @@ const RESOURCES = {
 "assets/google_fonts/RobotoCondensed-Light.ttf": "905c2728284a6b881d4e417b80f1e79d",
 "assets/google_fonts/RobotoCondensed-Regular.ttf": "0134dd8fe6fe708de73909a71d842780",
 "assets/AssetManifest.json": "66b2521906cb0fe7f6dcc88c6e8514cd",
-"main.dart.js": "a77db0a46768be0ba1143ac29b690c8a",
+"main.dart.js": "2f97c9f906eb7d6251a9f4c316b5188c",
 "flutter.js": "a85fcf6324d3c4d3ae3be1ae4931e9c5",
 "sitemap.xml": "1dbab6adbb6f7f852eb0e611027f8349",
 "canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
