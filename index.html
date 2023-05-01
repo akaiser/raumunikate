@@ -5,40 +5,48 @@
 
     <meta charset="UTF-8">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="Raumunikate">
+    <meta name="robots" content="all">
+    <meta name="author" content="Ina Kaiser">
+    <meta name="description" content="Du bist ein Unikat und liebst Dein Zuhause, Raumfarben und Produkte die Deine Einzigartigkeit unterstreichen? Dann bist Du hier gold richtig!">
+
+    <meta name="theme-color" content="#f2f2f2">
 
     <!-- iOS meta tags & icons -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Raumunikate">
+    <meta name="apple-mobile-web-app-title" content="RAUMUNIKATE Ina Kaiser">
     <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png"/>
 
-    <title>RAUMUNIKATE</title>
+    <title>RAUMUNIKATE Ina Kaiser</title>
     <link rel="manifest" href="manifest.json">
     <style>
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
         #loading {
             position: absolute;
             top: 50%;
-            width: 100%;
-            margin-top: -20px;
-            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
 
-            font: 14px sans-serif;
-
-            /*-webkit-text-fill-color: transparent;
-            -webkit-text-stroke: 1px;*/
-
-            -webkit-animation: pulsate 1s ease-out;
-            -webkit-animation-iteration-count: infinite;
-            opacity: 0.2;
+            animation: rotation 2s infinite ease, pulsate 2s infinite ease;
         }
-        @-webkit-keyframes pulsate {
-            0% { opacity: 0.2; }
-            50% { opacity: 1.0; }
-            100% { opacity: 0.2; }
+
+        @keyframes rotation {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(359deg); }
+        }
+
+        @keyframes pulsate {
+            0% { opacity: 0.8; }
+            50% { opacity: 0.2; }
+            100% { opacity: 0.8; }
         }
     </style>
 
@@ -50,7 +58,7 @@
     <script src="flutter.js" defer></script>
 </head>
 <body>
-<div id="loading">loading...</div>
+<img id="loading" alt="loading" src="https://www.raumunikate.com/assets/assets/logo.png" height="36"/>
 <script>
     window.addEventListener('load', function () {
         _flutter.loader.loadEntrypoint({serviceWorker: {serviceWorkerVersion: serviceWorkerVersion}})
