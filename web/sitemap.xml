@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.raumunikate.com/</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.raumunikate.com/#/impressum</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.raumunikate.com/#/datenschutz</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.raumunikate.com/#/agb</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+</urlset>

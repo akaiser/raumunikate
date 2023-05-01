@@ -9,6 +9,6 @@ class PortraitIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.portraitIntroText,
-        backgroundAsset: Assets.portraitIntro,
+        asset: Assets.portraitIntro,
       );
 }

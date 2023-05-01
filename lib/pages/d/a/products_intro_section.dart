@@ -9,6 +9,6 @@ class ProductsIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.productsIntroText,
-        backgroundAsset: Assets.productsIntro,
+        asset: Assets.productsIntro,
       );
 }

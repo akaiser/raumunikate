@@ -6,7 +6,6 @@ import 'package:raumunikate/pages/a/c/home_content_section.dart';
 import 'package:raumunikate/pages/a/d/home_image_section.dart';
 import 'package:raumunikate/pages/a/e/home_referrals_section.dart';
 import 'package:raumunikate/pages/a/home_page.dart';
-import 'package:raumunikate/pages/base_slide_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
@@ -35,37 +34,21 @@ void main() {
   testWidgets('cycles through all sections', (tester) async {
     await tester.pumpApp();
 
-    tester.expectSectionType(HomeIntroSection);
+    tester.expectSectionType(HomeIntroSection, _sectionTypes);
 
     await tester.dragPageView();
-    tester.expectSectionType(HomeWelcomeSection);
+    tester.expectSectionType(HomeWelcomeSection, _sectionTypes);
 
     await tester.dragPageView();
-    tester.expectSectionType(HomeContentSection);
+    tester.expectSectionType(HomeContentSection, _sectionTypes);
 
     await tester.dragPageView();
-    tester.expectSectionType(HomeImageSection);
+    tester.expectSectionType(HomeImageSection, _sectionTypes);
 
     await tester.dragPageView();
-    tester.expectSectionType(HomeReferralsSection);
+    tester.expectSectionType(HomeReferralsSection, _sectionTypes);
 
     await tester.dragPageView();
-    tester.expectSectionType(Footer);
+    tester.expectSectionType(Footer, _sectionTypes);
   });
-}
-
-extension on WidgetTester {
-  Future<void> dragPageView() async {
-    await drag(find.byKey(baseSlidePageKey), const Offset(0, -600));
-    await pumpAndSettle();
-  }
-
-  void expectSectionType(Type type) {
-    for (final sectionType in _sectionTypes) {
-      expect(
-        find.byType(sectionType),
-        sectionType == type ? findsOneWidget : findsNothing,
-      );
-    }
-  }
 }

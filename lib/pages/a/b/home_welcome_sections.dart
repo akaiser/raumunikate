@@ -21,8 +21,8 @@ class HomeWelcomeFirstSection extends StatelessWidget {
   const HomeWelcomeFirstSection({super.key});
 
   @override
-  Widget build(BuildContext context) => BaseSection(
-        backgroundColor: mainTODO_2,
+  Widget build(BuildContext context) => BaseSectionWithBackgroundColor(
+        color: mainTODO_2,
         child: Padding(
           padding: context.breakpoint == Breakpoint.xs
               ? _xSInfoPadding
@@ -37,5 +37,5 @@ class HomeWelcomeSecondSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const BaseSection(backgroundAsset: Assets.homeWelcomeIna);
+      const BaseSectionWithBackgroundAsset(asset: Assets.homeWelcomeIna);
 }
