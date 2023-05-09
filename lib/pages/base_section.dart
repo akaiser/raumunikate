@@ -15,16 +15,16 @@ class BaseSectionWithBackgroundColor extends StatelessWidget {
   Widget build(BuildContext context) => ColoredBox(color: color, child: child);
 }
 
-class BaseSectionWithBackgroundAsset extends StatelessWidget {
-  const BaseSectionWithBackgroundAsset({
-    required this.asset,
+class BaseSectionWithBackgroundImage extends StatelessWidget {
+  const BaseSectionWithBackgroundImage({
+    required this.image,
     this.child,
     super.key,
   });
 
-  final String asset;
+  final String image;
   final Widget? child;
 
   @override
-  Widget build(BuildContext context) => CoverImageBox(asset, child: child);
+  Widget build(BuildContext context) => CoverImageBox(image, child: child);
 }

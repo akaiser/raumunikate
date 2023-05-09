@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
-class Assets {
-  Assets._();
+class Images {
+  Images._();
 
   static const //
-      _root = 'assets',
+      _root = 'images',
       _blogRoot = '$_root/blog',
       _iconsRoot = '$_root/icons';
 

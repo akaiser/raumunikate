@@ -2,13 +2,13 @@ import 'package:flutter/widgets.dart';
 
 class CoverImageBox extends StatelessWidget {
   const CoverImageBox(
-    this.asset, {
+    this.image, {
     this.colorFilter,
     this.child,
     super.key,
   });
 
-  final String asset;
+  final String image;
 
   // TODO(albert): remove this
   final ColorFilter? colorFilter;
@@ -19,7 +19,7 @@ class CoverImageBox extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage(asset),
+            image: AssetImage(image),
             colorFilter: colorFilter,
           ),
         ),

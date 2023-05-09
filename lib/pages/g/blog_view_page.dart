@@ -1,6 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/material.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
@@ -58,7 +58,7 @@ class BlogViewPage extends StatelessWidget {
             'Liebe Lilli, Dein Zuhause inspiriert mich. Du hast ein sehr gutes Raumgefühl und verstehst es wunderbar Produkte in Akzentfarben zu kombinieren und alles mit einem gewissen Charme von Frohsinn. Auf Deinem Instagramkanal habe ich einige Karussellposts entdeckt, die die Entwicklung eurer Einrichtung zeigen. Es ist so schön zu sehen, dass sich das Zuhause mit uns weiterentwickeln darf.',
           ),
           newLine,
-          _ImageRow([Assets.lilli, Assets.kitchen, Assets.sleep]),
+          _ImageRow([Images.lilli, Images.kitchen, Images.sleep]),
           newLine,
           _Caption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
           smallNewLine,
@@ -86,7 +86,7 @@ class BlogViewPage extends StatelessWidget {
             'Die persönliche Note. Ich mag es, wenn ein Zuhause individuell ist, wächst, sich verändert und Geschichten über die Bewohner erzählt. Es muss niemandem gefallen, außer den Menschen, die darin zuhause sind. Ich persönlich mag Farbe sehr. Die bringt Fröhlichkeit in jeden Raum und tut meinem Wohlbefinden gut.',
           ),
           newLine,
-          _ImageRow([Assets.child, Assets.eat, Assets.sleep2]),
+          _ImageRow([Images.child, Images.eat, Images.sleep2]),
           newLine,
           _Caption('Welche Rolle spielt Raumfarbe für Dich?'),
           smallNewLine,
@@ -199,22 +199,22 @@ class BlogViewPage extends StatelessWidget {
 }
 
 class _ImageRow extends StatelessWidget {
-  const _ImageRow(this.assets);
+  const _ImageRow(this.images);
 
-  final List<String> assets;
+  final List<String> images;
 
   static const _imgSeparator = SizedBox(width: 24, height: 24);
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
         m: (_) => Row(
-          children: assets
-              .map<Widget>((asset) => Expanded(child: Image.asset(asset)))
+          children: images
+              .map<Widget>((image) => Expanded(child: Image.asset(image)))
               .separate(_imgSeparator)
               .unmodifiable,
         ),
         xs: (_) => Column(
-          children: assets
+          children: images
               .map<Widget>(Image.asset)
               .separate(_imgSeparator)
               .unmodifiable,

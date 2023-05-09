@@ -5,16 +5,16 @@ import 'package:raumunikate/pages/base_section.dart';
 class BaseIntroSection extends StatelessWidget {
   const BaseIntroSection(
     this.text, {
-    required this.asset,
+    required this.image,
     super.key,
   });
 
   final String text;
-  final String asset;
+  final String image;
 
   @override
-  Widget build(BuildContext context) => BaseSectionWithBackgroundAsset(
-        asset: asset,
+  Widget build(BuildContext context) => BaseSectionWithBackgroundImage(
+        image: image,
         child: Center(child: PageIntroText(text)),
       );
 }

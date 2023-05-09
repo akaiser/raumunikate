@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
@@ -16,7 +16,7 @@ class HomeReferralCard extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           alignment: Alignment.topLeft,
-          image: AssetImage(Assets.chevron),
+          image: AssetImage(Images.chevron),
           scale: 1.7,
         ),
       ),

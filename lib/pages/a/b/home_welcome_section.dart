@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
@@ -47,7 +47,7 @@ class _TwoColumn extends StatelessWidget {
             Flexible(
               flex: flexLeft,
               child: const SizedBox.expand(
-                child: CoverImageBox(Assets.homeWelcomeIna),
+                child: CoverImageBox(Images.homeWelcomeIna),
               ),
             ),
             Flexible(

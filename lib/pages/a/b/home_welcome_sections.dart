@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/b/_home_welcome_info.dart';
@@ -37,5 +37,5 @@ class HomeWelcomeSecondSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const BaseSectionWithBackgroundAsset(asset: Assets.homeWelcomeIna);
+      const BaseSectionWithBackgroundImage(image: Images.homeWelcomeIna);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
@@ -18,7 +18,7 @@ class NavMenu extends StatelessWidget {
         iconSize: 32,
         splashRadius: 0.1,
         color: mainBackgroundColor,
-        icon: Image.asset(Assets.menu, color: Colors.black),
+        icon: Image.asset(Images.menu, color: Colors.black),
         itemBuilder: (context) => data.navData.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.pagePath;
