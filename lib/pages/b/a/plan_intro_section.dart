@@ -9,6 +9,6 @@ class PlanIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.planIntroText,
-        asset: Assets.planIntro,
+        image: Images.planIntro,
       );
 }

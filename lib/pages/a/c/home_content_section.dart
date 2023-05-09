@@ -9,7 +9,7 @@ class HomeContentSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const CoverImageBox(
-        Assets.homeContent,
+        Images.homeContent,
         colorFilter: ColorFilter.mode(mainTODO_0, BlendMode.srcATop),
         child: HomeContentSlides(),
       );

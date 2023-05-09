@@ -9,6 +9,6 @@ class HomeIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.homeIntroText,
-        asset: Assets.homeIntro,
+        image: Images.homeIntro,
       );
 }

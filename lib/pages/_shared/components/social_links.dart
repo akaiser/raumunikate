@@ -17,17 +17,17 @@ class SocialLinks extends StatelessWidget {
         mainAxisAlignment: mainAxisAlignment,
         children: const [
           _Link(
-            Assets.instagram,
+            Images.instagram,
             urlToLaunch: 'https://www.instagram.com/raumunikate/',
           ),
           SizedBox(width: 8),
           _Link(
-            Assets.facebook,
+            Images.facebook,
             urlToLaunch: 'https://de-de.facebook.com/ina.kaiser.7543/',
           ),
           SizedBox(width: 8),
           _Link(
-            Assets.mail,
+            Images.mail,
             urlToLaunch: 'mailto:kontakt@raumunikate.com',
           ),
         ],
@@ -36,11 +36,11 @@ class SocialLinks extends StatelessWidget {
 
 class _Link extends StatelessWidget {
   const _Link(
-    this.asset, {
+    this.image, {
     required this.urlToLaunch,
   });
 
-  final String asset;
+  final String image;
   final String urlToLaunch;
 
   @override
@@ -48,7 +48,7 @@ class _Link extends StatelessWidget {
         onTap: () => launcher.launchUrl(Uri.parse(urlToLaunch)),
         child: ClickableRegion(
           child: Image.asset(
-            asset,
+            image,
             height: 16,
             color: mainTODO_0,
           ),

@@ -7,5 +7,5 @@ class HomeImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const BaseSectionWithBackgroundAsset(asset: Assets.homeImage);
+      const BaseSectionWithBackgroundImage(image: Images.homeImage);
 }

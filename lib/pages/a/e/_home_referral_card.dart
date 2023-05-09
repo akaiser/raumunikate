@@ -16,7 +16,7 @@ class HomeReferralCard extends StatelessWidget {
       decoration: const BoxDecoration(
         image: DecorationImage(
           alignment: Alignment.topLeft,
-          image: AssetImage(Assets.chevron),
+          image: AssetImage(Images.chevron),
           scale: 1.7,
         ),
       ),

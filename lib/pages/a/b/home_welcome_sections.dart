@@ -37,5 +37,5 @@ class HomeWelcomeSecondSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) =>
-      const BaseSectionWithBackgroundAsset(asset: Assets.homeWelcomeIna);
+      const BaseSectionWithBackgroundImage(image: Images.homeWelcomeIna);
 }

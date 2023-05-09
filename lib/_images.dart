@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_multiple_declarations_per_line
-class Assets {
-  Assets._();
+class Images {
+  Images._();
 
   static const //
       _root = 'images',

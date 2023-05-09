@@ -47,7 +47,7 @@ class _TwoColumn extends StatelessWidget {
             Flexible(
               flex: flexLeft,
               child: const SizedBox.expand(
-                child: CoverImageBox(Assets.homeWelcomeIna),
+                child: CoverImageBox(Images.homeWelcomeIna),
               ),
             ),
             Flexible(

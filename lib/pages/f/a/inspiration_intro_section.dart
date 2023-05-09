@@ -9,6 +9,6 @@ class InspirationIntroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseIntroSection(
         data.inspirationIntroText,
-        asset: Assets.inspirationIntro,
+        image: Images.inspirationIntro,
       );
 }

@@ -18,7 +18,7 @@ class NavMenu extends StatelessWidget {
         iconSize: 32,
         splashRadius: 0.1,
         color: mainBackgroundColor,
-        icon: Image.asset(Assets.menu, color: Colors.black),
+        icon: Image.asset(Images.menu, color: Colors.black),
         itemBuilder: (context) => data.navData.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.pagePath;
