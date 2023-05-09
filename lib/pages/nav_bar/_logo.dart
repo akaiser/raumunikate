@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 
 class Logo extends StatelessWidget {
   const Logo({super.key});

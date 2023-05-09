@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;

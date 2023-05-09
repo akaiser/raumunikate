@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/a/c/_home_content_slides.dart';

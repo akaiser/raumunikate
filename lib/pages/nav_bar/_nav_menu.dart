@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:raumunikate/_assets.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
