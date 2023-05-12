@@ -17,8 +17,8 @@ class BottomSection extends StatelessWidget {
           fontSize: 13,
         ),
         child: ResponsiveLayout(
-          s: (_) => Row(
-            children: const [
+          s: (_) => const Row(
+            children: [
               _Copyright(),
               SizedBox(width: 26),
               _Imprint(),
@@ -28,9 +28,9 @@ class BottomSection extends StatelessWidget {
               _Privacy(),
             ],
           ),
-          xs: (_) => Column(
+          xs: (_) => const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               _Copyright(),
               _Imprint(),
               _Terms(),

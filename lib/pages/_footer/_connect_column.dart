@@ -7,9 +7,9 @@ class ConnectColumn extends StatelessWidget {
   const ConnectColumn({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
+  Widget build(BuildContext context) => const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           _Text('Ist Ihr Interesse geweckt?'),
           _Text('Melden Sie sich gern bei mir und bleiben Sie ein Unikat,'),
           _Text('Ina Kaiser'),

@@ -9,19 +9,19 @@ class HomeReferralsSingle extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(navigationBarHeight),
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.all(navigationBarHeight),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
+              children: [
                 HomeReferralCard(data.referralData0),
                 HomeReferralCard(data.referralData1),
               ],
             ),
-            const HomeReferralCard(data.referralData2),
+            HomeReferralCard(data.referralData2),
           ],
         ),
       );
