@@ -241,9 +241,9 @@ class _Links extends StatelessWidget {
   const _Links();
 
   @override
-  Widget build(BuildContext context) => Column(
+  Widget build(BuildContext context) => const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           TextLink(
             '@theobert_pot',
             url: 'https://www.instagram.com/theobert_pot/',

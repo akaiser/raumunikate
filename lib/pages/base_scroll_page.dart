@@ -45,7 +45,7 @@ class BaseScrollPage extends StatelessWidget {
   }
 }
 
-class _BaseScrollPage extends StatelessWidget {
+class _BaseScrollPage extends StatefulWidget {
   const _BaseScrollPage({
     required this.preferListView,
     required this.padding,
@@ -57,27 +57,64 @@ class _BaseScrollPage extends StatelessWidget {
   final List<Widget> children;
 
   @override
+  State<_BaseScrollPage> createState() => _BaseScrollPageState();
+}
+
+class _BaseScrollPageState extends State<_BaseScrollPage> {
+  late final ScrollController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void get _scrollToTop => _controller.animateTo(
+        0,
+        duration: const Duration(milliseconds: pageTransitionInMillis),
+        curve: Curves.ease,
+      );
+
+  @override
   Widget build(BuildContext context) => BasePage(
+        onScrollToTopTap: () => _scrollToTop,
         child: DefaultTextStyle.merge(
           style: context.tt.body?.copyWith(color: mainTODO_0),
-          child: preferListView
-              ? _ListView(padding: padding, children: children)
-              : _SingleChildScrollView(padding: padding, children: children),
+          child: widget.preferListView
+              ? _ListView(
+                  _controller,
+                  padding: widget.padding,
+                  children: widget.children,
+                )
+              : _SingleChildScrollView(
+                  _controller,
+                  padding: widget.padding,
+                  children: widget.children,
+                ),
         ),
       );
 }
 
 class _ListView extends StatelessWidget {
-  const _ListView({
+  const _ListView(
+    this.controller, {
     required this.padding,
     required this.children,
   });
 
+  final ScrollController controller;
   final EdgeInsetsGeometry padding;
   final List<Widget> children;
 
   @override
   Widget build(BuildContext context) => ListView.builder(
+        controller: controller,
         padding: padding,
         itemCount: children.length,
         itemBuilder: (_, index) => children[index],
@@ -85,16 +122,19 @@ class _ListView extends StatelessWidget {
 }
 
 class _SingleChildScrollView extends StatelessWidget {
-  const _SingleChildScrollView({
+  const _SingleChildScrollView(
+    this.controller, {
     required this.padding,
     required this.children,
   });
 
+  final ScrollController controller;
   final EdgeInsetsGeometry padding;
   final List<Widget> children;
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
+        controller: controller,
         padding: padding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

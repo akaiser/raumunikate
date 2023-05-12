@@ -5,9 +5,9 @@ class Contact extends StatelessWidget {
   const Contact({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
+  Widget build(BuildContext context) => const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text('Ina Kaiser'),
           Text('Straußstraße 27'),
           Text('89518 Heidenheim'),

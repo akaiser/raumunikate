@@ -15,12 +15,12 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.12"
+          flutter-version: "3.10.0"
       - run: flutter analyze
       - run: flutter pub run dart_code_metrics:metrics analyze lib
       #- run: flutter pub run dart_code_metrics:metrics check-unused-files lib
       #- run: flutter pub run dart_code_metrics:metrics check-unused-code lib
-      - run: flutter format -n --set-exit-if-changed .
+      - run: dart format -o none --set-exit-if-changed .
 
   test:
     needs: analyze
@@ -31,7 +31,7 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.12"
+          flutter-version: "3.10.0"
       - run: flutter test
 
   test-ui:
@@ -56,7 +56,7 @@ jobs:
         with:
           cache: true
           channel: "stable"
-          flutter-version: "3.7.12"
+          flutter-version: "3.10.0"
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
       - name: integration_test

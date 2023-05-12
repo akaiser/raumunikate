@@ -10,6 +10,7 @@ class HoverRegion extends StatefulWidget {
 
   final Widget Function(
     BuildContext context,
+    // ignore: avoid_positional_boolean_parameters
     bool isHovering,
     Widget? child,
   ) builder;

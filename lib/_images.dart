@@ -11,7 +11,8 @@ class Images {
       facebook = '$_iconsRoot/facebook.png',
       instagram = '$_iconsRoot/instagram.png',
       mail = '$_iconsRoot/mail.png',
-      menu = '$_iconsRoot/menu.png';
+      menu = '$_iconsRoot/menu.png',
+      arrowUp = '$_iconsRoot/arrow-up.png';
 
   static const // home
       homeIntro = '$_root/home_intro.jpg',

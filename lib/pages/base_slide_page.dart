@@ -6,7 +6,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 const baseSlidePageKey = Key('base-slide-page');
 
-class BaseSlidePage extends StatelessWidget {
+class BaseSlidePage extends StatefulWidget {
   const BaseSlidePage({
     required this.children,
     super.key,
@@ -15,11 +15,38 @@ class BaseSlidePage extends StatelessWidget {
   final List<Widget> children;
 
   @override
+  State<BaseSlidePage> createState() => _BaseSlidePageState();
+}
+
+class _BaseSlidePageState extends State<BaseSlidePage> {
+  late final PageController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void get _scrollToTop => _controller.animateToPage(
+        0,
+        duration: const Duration(milliseconds: pageTransitionInMillis),
+        curve: Curves.ease,
+      );
+
+  @override
   Widget build(BuildContext context) {
-    final _children = [...children, const _Footer()];
+    final _children = [...widget.children, const _Footer()];
     return BasePage(
+      onScrollToTopTap: () => _scrollToTop,
       child: PageView.builder(
         key: baseSlidePageKey,
+        controller: _controller,
         scrollDirection: Axis.vertical,
         itemCount: _children.length,
         itemBuilder: (_, index) => _children[index],
@@ -49,8 +76,8 @@ class _Footer extends StatelessWidget {
 
     return Padding(
       padding: isFullWidthNavBar ? _bigPadding : _smallPadding,
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           Spacer(),
           Footer(),
         ],

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
@@ -11,10 +12,12 @@ import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
 class BasePage extends StatefulWidget {
   const BasePage({
+    required this.onScrollToTopTap,
     required this.child,
     super.key,
   });
 
+  final VoidCallback onScrollToTopTap;
   final Widget child;
 
   @override
@@ -68,8 +71,34 @@ class _BasePageState extends State<BasePage> {
               '${context.breakpoint.name}',
               style: context.tt.label?.copyWith(fontSize: 14),
             ),
+          _ScrollToTopArrow(widget.onScrollToTopTap),
         ],
       ),
     );
   }
+}
+
+class _ScrollToTopArrow extends StatelessWidget {
+  const _ScrollToTopArrow(this.onTap);
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) => Consumer<NavBarNotifier>(
+        builder: (context, navBarNotifier, child) => AnimatedPositioned(
+          duration: const Duration(milliseconds: navBarTransitionInMillis),
+          curve: Curves.ease,
+          right: 16,
+          bottom: navBarNotifier.isExpanded ? -64 : 16,
+          child: child ?? const SizedBox(),
+        ),
+        child: IconButton(
+          onPressed: onTap,
+          iconSize: 42,
+          icon: const ImageIcon(
+            color: mainTODO_1,
+            AssetImage(Images.arrowUp),
+          ),
+        ),
+      );
 }

@@ -12,14 +12,14 @@ class Footer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ResponsiveLayout(
-            m: (_) => Row(
+            m: (_) => const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [ConnectColumn(), ContactColumn()],
+              children: [ConnectColumn(), ContactColumn()],
             ),
-            xs: (_) => Column(
+            xs: (_) => const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 ConnectColumn(),
                 SizedBox(height: 32),
                 ContactColumn(crossAxisAlignment: CrossAxisAlignment.start),
