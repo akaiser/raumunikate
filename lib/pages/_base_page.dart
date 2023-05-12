@@ -79,8 +79,7 @@ class _BasePageState extends State<BasePage> {
 }
 
 class _ScrollToTopArrow extends StatelessWidget {
-  const _ScrollToTopArrow(this.onTap,
-  );
+  const _ScrollToTopArrow(this.onTap);
 
   final VoidCallback onTap;
 
