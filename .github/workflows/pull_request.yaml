@@ -6,6 +6,9 @@ concurrency:
   group: ${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  flutter-version: "3.10.0"
+
 jobs:
   analyze:
     runs-on: ubuntu-latest
@@ -13,13 +16,13 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          cache: true
+          flutter-version: $flutter-version
           channel: "stable"
-          flutter-version: "3.10.0"
+          cache: true
       - run: flutter analyze
-      - run: flutter pub run dart_code_metrics:metrics analyze lib
-      #- run: flutter pub run dart_code_metrics:metrics check-unused-files lib
-      #- run: flutter pub run dart_code_metrics:metrics check-unused-code lib
+      - run: dart run dart_code_metrics:metrics analyze lib
+      #- run: dart run dart_code_metrics:metrics check-unused-files lib
+      #- run: dart run dart_code_metrics:metrics check-unused-code lib
       - run: dart format -o none --set-exit-if-changed .
 
   test:
@@ -29,9 +32,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          cache: true
+          flutter-version: $flutter-version
           channel: "stable"
-          flutter-version: "3.10.0"
+          cache: true
       - run: flutter test
 
   test-ui:
@@ -54,9 +57,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          cache: true
+          flutter-version: $flutter-version
           channel: "stable"
-          flutter-version: "3.10.0"
+          cache: true
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
       - name: integration_test
