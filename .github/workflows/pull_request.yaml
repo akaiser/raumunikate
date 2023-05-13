@@ -13,6 +13,7 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Daaaaaa version is $FLUTTER_VERSION!"
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
