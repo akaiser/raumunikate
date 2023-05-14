@@ -10,6 +10,7 @@ jobs:
   call-setup-flutter:
     uses: ./.github/workflows/_setup_flutter.yaml
   analyze:
+    needs: call-setup-flutter
     runs-on: ubuntu-latest
     steps:
       - run: flutter analyze
