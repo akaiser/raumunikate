@@ -1,0 +1,14 @@
+name: Create and Publish Docker Image
+
+on: [workflow_call]
+
+jobs:
+  setup-flutter:
+    runs-on: ubuntu-latest
+    steps:
+      #- uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: "stable"
+          cache: true
