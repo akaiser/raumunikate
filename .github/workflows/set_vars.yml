@@ -1,0 +1,12 @@
+name: Set vars
+
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      FLUTTER_VERSION: "3.10.0"
+    steps:
+      - name: Print vars
+        run: echo $FLUTTER_VERSION
