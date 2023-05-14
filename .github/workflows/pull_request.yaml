@@ -59,7 +59,7 @@ jobs:
           cache: true
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
-      - name: integration_test
+      - name: Integration Test
         run: |
           ${{ matrix.before-run }}
           flutter test integration_test/test_suite.dart -d ${{ matrix.platform }}
