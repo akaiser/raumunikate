@@ -8,7 +8,7 @@ concurrency:
 
 jobs:
   call-setup-flutter:
-    uses: ./.github/workflows/setup-flutter.yml
+    uses: ./.github/workflows/setup-flutter.yaml
   analyze:
     runs-on: ubuntu-latest
     steps:
