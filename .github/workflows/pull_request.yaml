@@ -1,6 +1,6 @@
 name: Pull Request
-on:
-  pull_request:
+
+on: [ pull_request ]
 
 concurrency:
   group: ${{ github.ref }}
@@ -11,11 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
+      - uses: "./.github/actions/setup-flutter"
       - run: flutter analyze
       - run: dart run dart_code_metrics:metrics analyze lib
       #- run: dart run dart_code_metrics:metrics check-unused-files lib
@@ -27,11 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
+      - uses: "./.github/actions/setup-flutter"
       - run: flutter test
 
   test-ui:
@@ -52,15 +44,10 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
+      - uses: "./.github/actions/setup-flutter"
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
-      - name: integration_test
+      - name: Run integration_test
         run: |
           ${{ matrix.before-run }}
           flutter test integration_test/test_suite.dart -d ${{ matrix.platform }}
-
