@@ -1,6 +1,6 @@
 name: Set vars
 
-on: [push]
+on: [ push ]
 
 jobs:
   set-vars:
