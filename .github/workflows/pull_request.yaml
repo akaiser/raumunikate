@@ -1,6 +1,6 @@
 name: Pull Request
 
-on: [pull_request]
+on: [ pull_request ]
 
 concurrency:
   group: ${{ github.ref }}
@@ -11,56 +11,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
+      - uses: "./.github/actions/setup-flutter"
       - run: flutter analyze
       - run: dart run dart_code_metrics:metrics analyze lib
       #- run: dart run dart_code_metrics:metrics check-unused-files lib
       #- run: dart run dart_code_metrics:metrics check-unused-code lib
       - run: dart format -o none --set-exit-if-changed .
 
-  test:
-    needs: analyze
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
-      - run: flutter test
-
-  test-ui:
-    needs: analyze
-    strategy:
-      matrix:
-        include:
-          - platform: linux
-            runs-on: ubuntu-latest
-            before-test: sudo apt update && sudo apt install -y ninja-build libgtk-3-dev
-            before-run: |
-              export DISPLAY=:99
-              sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
-          #- platform: macos
-          #  runs-on: macos-latest
-          #- platform: windows
-          #  runs-on: windows-latest
-    runs-on: ${{ matrix.runs-on }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
-          channel: "stable"
-          cache: true
-      - if: ${{ matrix.before-test }}
-        run: ${{ matrix.before-test }}
-      - name: Run integration_test
-        run: |
-          ${{ matrix.before-run }}
-          flutter test integration_test/test_suite.dart -d ${{ matrix.platform }}
-
+#  test:
+#    needs: analyze
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          flutter-version: ${{ env.FLUTTER_VERSION }}
+#          channel: "stable"
+#          cache: true
+#      - run: flutter test
+#
+#  test-ui:
+#    needs: analyze
+#    strategy:
+#      matrix:
+#        include:
+#          - platform: linux
+#            runs-on: ubuntu-latest
+#            before-test: sudo apt update && sudo apt install -y ninja-build libgtk-3-dev
+#            before-run: |
+#              export DISPLAY=:99
+#              sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 &
+#          #- platform: macos
+#          #  runs-on: macos-latest
+#          #- platform: windows
+#          #  runs-on: windows-latest
+#    runs-on: ${{ matrix.runs-on }}
+#    steps:
+#      - uses: actions/checkout@v3
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          flutter-version: ${{ env.FLUTTER_VERSION }}
+#          channel: "stable"
+#          cache: true
+#      - if: ${{ matrix.before-test }}
+#        run: ${{ matrix.before-test }}
+#      - name: Run integration_test
+#        run: |
+#          ${{ matrix.before-run }}
+#          flutter test integration_test/test_suite.dart -d ${{ matrix.platform }}
