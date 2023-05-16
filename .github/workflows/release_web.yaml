@@ -1,16 +1,13 @@
 name: Release Web
 
-on:
-  push:
-    branches:
-      - main
+on: [ push ][ branches ][ main ]
 
 jobs:
   release-web:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: "./.github/actions/setup-flutter"
+      - uses: ./.github/actions/setup-flutter
       - name: Build
         run: flutter build web --base-href /raumunikate/
       - name: Upload

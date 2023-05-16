@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: "./.github/actions/setup-flutter"
+      - uses: ./.github/actions/setup-flutter
       - run: flutter analyze
       - run: dart run dart_code_metrics:metrics analyze lib
       #- run: dart run dart_code_metrics:metrics check-unused-files lib
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: "./.github/actions/setup-flutter"
+      - uses: ./.github/actions/setup-flutter
       - run: flutter test
 
   test-ui:
@@ -44,7 +44,7 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3
-      - uses: "./.github/actions/setup-flutter"
+      - uses: ./.github/actions/setup-flutter
       - if: ${{ matrix.before-test }}
         run: ${{ matrix.before-test }}
       - name: Run integration_test
