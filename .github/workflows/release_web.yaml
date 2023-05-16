@@ -1,6 +1,8 @@
 name: Release Web
 
-on: [ push ][ branches ]
+on:
+  push:
+    branches:
       - main
 
 jobs:
