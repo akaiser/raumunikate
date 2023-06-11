@@ -29,26 +29,26 @@ class Images {
   static const // inspiration
       inspirationIntro = '$_root/inspiration_intro.jpg';
 
-  /// BLOGS
-  static const _blog0 = '$_blogRoot/0';
+  static const // BLOGS
+      _blog0 = '$_blogRoot/0';
 
-  /// BLOG 0
-  static const child = '$_blog0/child.jpg',
+  static const // BLOG 0
+      child = '$_blog0/child.jpg',
       eat = '$_blog0/eat.jpg',
       lilli = '$_blog0/lilli.jpg',
       sleep = '$_blog0/sleep.jpg',
       sleep2 = '$_blog0/sleep2.jpg',
       kitchen = '$_blog0/kitchen.jpg';
 
-  /// ICONS
-  static const facebook = '$_iconsRoot/facebook.png',
+  static const // ICONS
+      facebook = '$_iconsRoot/facebook.png',
       instagram = '$_iconsRoot/instagram.png',
       mail = '$_iconsRoot/mail.png',
       menu = '$_iconsRoot/menu.png',
       arrowUp = '$_iconsRoot/arrow-up.png';
 
-  /// MISC
-  static const logo = '$_root/logo.png',
+  static const // MISC
+      logo = '$_root/logo.png',
       logoText = '$_root/logo_text.png',
       chevron = '$_root/chevron.png',
       waben0 = '$_root/waben0.jpg',
