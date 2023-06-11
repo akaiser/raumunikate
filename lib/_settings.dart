@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:flutter/widgets.dart' show Color, SizedBox;
 
 const appName = 'RAUMUNIKATE Ina Kaiser';

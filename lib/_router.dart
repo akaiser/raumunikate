@@ -37,22 +37,12 @@ final router = GoRouter(
     GoRoute(
       path: Routes.blogPage,
       pageBuilder: (_, state) => _page(state, const BlogPage()),
+      // TODO(albert): add redirect for "/v/raumfuerunikate-lilli-grewe"
+      // either here on on server
       routes: [
         GoRoute(
-          path: '${Routes.blogViewPage}/:$_permalinkPathParam',
-          pageBuilder: (_, state) {
-            final permalink = state.pathParameters[_permalinkPathParam];
-            return _page(
-              state,
-              permalink != null
-                  ? BlogViewPage(permalink)
-                  // TODO(albert): make a BlogViewNotFoundPage here
-                  // OR: make the NotFoundPage accept custom messaging
-                  // ALSO: the "permalink" needs to be validated
-                  // against available permalinks!
-                  : const NotFoundPage(),
-            );
-          },
+          path: ':$_permalinkPathParam',
+          pageBuilder: (_, state) => _page(state, state.toBlogViewPage),
         ),
       ],
     ),
@@ -84,3 +74,12 @@ CustomTransitionPage<Widget> _page(
       ),
       child: page,
     );
+
+extension on GoRouterState {
+  // TODO(albert): make a BlogViewNotFoundPage here
+  // OR: make the NotFoundPage accept custom messaging
+  Widget get toBlogViewPage => switch (pathParameters[_permalinkPathParam]) {
+        RaumfuerunikateLilliGrewe.path => const RaumfuerunikateLilliGrewe(),
+        _ => const NotFoundPage(),
+      };
+}

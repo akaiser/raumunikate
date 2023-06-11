@@ -8,5 +8,5 @@ export 'package:raumunikate/pages/c/projects_page.dart';
 export 'package:raumunikate/pages/d/products_page.dart';
 export 'package:raumunikate/pages/e/portrait_page.dart';
 export 'package:raumunikate/pages/f/inspiration_page.dart';
+export 'package:raumunikate/pages/g/a/raumfuerunikate_lilli_grewe.dart';
 export 'package:raumunikate/pages/g/blog_page.dart';
-export 'package:raumunikate/pages/g/blog_view_page.dart';

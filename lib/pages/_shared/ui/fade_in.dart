@@ -4,7 +4,6 @@ class FadeIn extends StatefulWidget {
   const FadeIn({
     required this.child,
     this.millis = 200,
-    super.key,
   });
 
   final int millis;

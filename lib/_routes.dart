@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_multiple_declarations_per_line
 import 'package:raumunikate/_pages.dart';
 
 class Routes {
@@ -11,10 +10,8 @@ class Routes {
       productsPage = ProductsPage.path,
       portraitPage = PortraitPage.path,
       inspirationPage = InspirationPage.path,
-      blogPage = BlogPage.path,
-      blogViewPage = BlogViewPage.path;
+      blogPage = BlogPage.path;
 
   static const // Blog
-      _blogViewPagePrefix = '$blogPage/$blogViewPage',
-      blogLilliGrewe = '$_blogViewPagePrefix/raumfuerunikate-lilli-grewe';
+      blogLilliGrewe = '$blogPage/${RaumfuerunikateLilliGrewe.path}';
 }

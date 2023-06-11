@@ -4,28 +4,19 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
 class TextLink extends StatelessWidget {
-  const TextLink(
-    this.text, {
-    required this.url,
-    this.fontSize,
-    super.key,
-  });
+  const TextLink(this.text, {required this.url});
 
   final String text;
   final String url;
-  final double? fontSize;
 
   @override
-  Widget build(BuildContext context) => GestureDetector(
+  Widget build(BuildContext context) => ClickableRegion(
         onTap: () => context.launch(url),
-        child: ClickableRegion(
-          child: Text(
-            text,
-            style: context.tt.body?.copyWith(
-              //decoration: TextDecoration.underline,
-              color: linkColor,
-              fontSize: fontSize,
-            ),
+        child: Text(
+          text,
+          style: context.dts.copyWith(
+            //decoration: TextDecoration.underline,
+            color: linkColor,
           ),
         ),
       );

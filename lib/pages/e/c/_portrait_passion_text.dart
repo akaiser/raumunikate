@@ -1,18 +1,18 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
-import 'package:raumunikate/pages/a/b/_data.dart' as data;
+import 'package:raumunikate/pages/e/c/_data.dart' as data;
 
-class HomeWelcomeInfo extends StatelessWidget {
-  const HomeWelcomeInfo({super.key});
+class PortraitPassionText extends StatelessWidget {
+  const PortraitPassionText();
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        title: data.introTitle,
-        title2: data.introTitle2,
-        text: data.introContent,
+        title: '',
+        text: data.passionContent,
+        textColor: Colors.white,
         actionButton: ActionButton(
-          data.introCta,
+          data.passionCta,
           onTap: () {
             // TODO(albert): where to go?
           },

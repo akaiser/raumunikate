@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
+
+const baseScrollPageKey = Key('base-scroll-page');
 
 class BaseScrollPage extends StatelessWidget {
   const BaseScrollPage({
     this.preferListView = false,
     required this.children,
-    super.key,
   });
 
   final bool preferListView;
@@ -84,20 +84,17 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
   @override
   Widget build(BuildContext context) => BasePage(
         onScrollToTopTap: () => _scrollToTop,
-        child: DefaultTextStyle.merge(
-          style: context.tt.body?.copyWith(color: mainTODO_0),
-          child: widget.preferListView
-              ? _ListView(
-                  _controller,
-                  padding: widget.padding,
-                  children: widget.children,
-                )
-              : _SingleChildScrollView(
-                  _controller,
-                  padding: widget.padding,
-                  children: widget.children,
-                ),
-        ),
+        child: widget.preferListView
+            ? _ListView(
+                _controller,
+                padding: widget.padding,
+                children: widget.children,
+              )
+            : _SingleChildScrollView(
+                _controller,
+                padding: widget.padding,
+                children: widget.children,
+              ),
       );
 }
 
@@ -114,6 +111,7 @@ class _ListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView.builder(
+        key: baseScrollPageKey,
         controller: controller,
         padding: padding,
         itemCount: children.length,
@@ -134,6 +132,7 @@ class _SingleChildScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
+        key: baseScrollPageKey,
         controller: controller,
         padding: padding,
         child: Column(

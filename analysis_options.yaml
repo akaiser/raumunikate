@@ -33,8 +33,10 @@ dart_code_metrics:
 linter:
   rules:
     always_put_required_named_parameters_first: false
+    avoid_multiple_declarations_per_line: false
     depend_on_referenced_packages: false
     implicit_call_tearoffs: false
     no_leading_underscores_for_local_identifiers: false
     prefer_expression_function_bodies: true
     public_member_api_docs: false
+    use_key_in_widget_constructors: false

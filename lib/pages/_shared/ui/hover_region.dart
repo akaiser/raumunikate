@@ -4,8 +4,8 @@ import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 class HoverRegion extends StatefulWidget {
   const HoverRegion({
     required this.builder,
+    this.onTap,
     this.child,
-    super.key,
   });
 
   final Widget Function(
@@ -15,6 +15,7 @@ class HoverRegion extends StatefulWidget {
     Widget? child,
   ) builder;
 
+  final VoidCallback? onTap;
   final Widget? child;
 
   @override
@@ -26,8 +27,9 @@ class _HoverRegionState extends State<HoverRegion> {
 
   @override
   Widget build(BuildContext context) => ClickableRegion(
-        onEnter: (_) => setState(() => _isHovering = true),
-        onExit: (_) => setState(() => _isHovering = false),
+        onTap: widget.onTap,
+        onEnter: () => setState(() => _isHovering = true),
+        onExit: () => setState(() => _isHovering = false),
         child: widget.builder(context, _isHovering, widget.child),
       );
 }

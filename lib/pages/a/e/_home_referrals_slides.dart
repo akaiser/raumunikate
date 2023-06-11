@@ -3,14 +3,7 @@ import 'package:raumunikate/pages/a/e/_data.dart' as data;
 import 'package:raumunikate/pages/a/e/_home_referral_card.dart';
 
 class HomeReferralsSlides extends StatelessWidget {
-  const HomeReferralsSlides({super.key});
-
-  @override
-  Widget build(BuildContext context) => const _Slides();
-}
-
-class _Slides extends StatelessWidget {
-  const _Slides();
+  const HomeReferralsSlides();
 
   @override
   Widget build(BuildContext context) => PageView(

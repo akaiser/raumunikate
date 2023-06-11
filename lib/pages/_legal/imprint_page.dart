@@ -1,14 +1,14 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
-import 'package:raumunikate/pages/_legal/_contact.dart';
+import 'package:raumunikate/pages/_legal/_contact_column.dart';
 import 'package:raumunikate/pages/_legal/privacy_page.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 
 class ImprintPage extends StatelessWidget {
-  const ImprintPage({super.key});
+  const ImprintPage();
 
   static const path = '/impressum';
 
@@ -26,7 +26,7 @@ class ImprintPage extends StatelessWidget {
           Text('RAUMUNIKATE Einzelunternehmen'),
           newLine,
           Text('Vertretungsberechtigte Geschäftsführerin:'),
-          Contact(),
+          ContactColumn(),
           newLine,
           Text('Steuernummer: 64306/24636'),
           Text('Konzept und Design: Ina Kaiser'),

@@ -7,7 +7,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
 class HomeContentSlides extends StatefulWidget {
-  const HomeContentSlides({super.key});
+  const HomeContentSlides();
 
   @override
   State<HomeContentSlides> createState() => _HomeContentSlidesState();
@@ -82,10 +82,7 @@ class _SlideCard extends StatelessWidget {
               Text(
                 entry.text,
                 textAlign: TextAlign.center,
-                style: context.tt.body?.copyWith(
-                  color: data.textColor,
-                  fontSize: 16,
-                ),
+                style: context.dts.copyWith(color: data.textColor),
               ),
               const Spacer(),
               ActionButton(

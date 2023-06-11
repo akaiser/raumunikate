@@ -5,6 +5,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 export 'package:flutter/widgets.dart' show BuildContext;
 
+final _urlLauncherRegex = RegExp(r'^((tel|http|https|mailto):.*)$');
+
 extension BuildContextExt on BuildContext {
   // router
 
@@ -24,8 +26,10 @@ extension BuildContextExt on BuildContext {
 
   AppTextTheme get tt => AppTextTheme(_td.textTheme);
 
+  TextStyle get dts => DefaultTextStyle.of(this).style;
+
   // util
 
   void launch(String link) =>
-      link.startsWith('http') ? launchUrl(Uri.parse(link)) : go(link);
+      _urlLauncherRegex.hasMatch(link) ? launchUrl(Uri.parse(link)) : go(link);
 }

@@ -10,13 +10,14 @@ class FullTextSection extends StatelessWidget {
     required this.title,
     this.title2,
     required this.text,
+    this.textColor,
     this.actionButton,
-    super.key,
   });
 
   final String title;
   final String? title2;
   final String text;
+  final Color? textColor;
   final Widget? actionButton;
 
   @override
@@ -26,12 +27,12 @@ class FullTextSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadlineText(title),
-        if (_title2 != null) HeadlineText(_title2),
+        HeadlineText(title, textColor: textColor),
+        if (_title2 != null) HeadlineText(_title2, textColor: textColor),
         const _Spacer(),
         ResponsiveText(
           text,
-          style: context.tt.body,
+          style: context.dts.copyWith(color: textColor),
           textAlign: TextAlign.start,
           fontSizes: context.isShittySmallDevice
               ? const [20, 18, 18, 18, 18, 16]

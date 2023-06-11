@@ -29,11 +29,3 @@ extension IterableEx<T> on Iterable<T> {
   Iterable<T> sort([int Function(T a, T b)? compare]) =>
       toList()..sort(compare);
 }
-
-extension IterableNullableEx<T> on Iterable<T?> {
-  Iterable<T> whereNotNull() sync* {
-    for (final element in this) {
-      if (element != null) yield element;
-    }
-  }
-}

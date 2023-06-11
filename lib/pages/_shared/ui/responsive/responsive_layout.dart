@@ -9,7 +9,6 @@ class ResponsiveLayout extends StatelessWidget {
     this.m,
     this.s,
     this.xs,
-    super.key,
   });
 
   final WidgetBuilder? xxl;
