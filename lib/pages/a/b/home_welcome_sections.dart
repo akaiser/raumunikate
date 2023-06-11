@@ -6,23 +6,24 @@ import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/a/b/_home_welcome_text.dart';
 
 class HomeWelcomeFirstSection extends OneColumnSection {
-  const HomeWelcomeFirstSection({
-    super.backgroundColor = mainTODO_2,
-    super.child = const HomeWelcomeText(),
-  });
+  const HomeWelcomeFirstSection()
+      : super(
+          backgroundColor: mainTODO_2,
+          child: const HomeWelcomeText(),
+        );
 }
 
 class HomeWelcomeSecondSection extends OneColumnSection {
-  const HomeWelcomeSecondSection({
-    super.backgroundImage = Images.homeWelcomeIna,
-  });
+  const HomeWelcomeSecondSection()
+      : super(backgroundImage: Images.homeWelcomeIna);
 }
 
 class HomeWelcomeSection extends TwoColumnsSection {
-  const HomeWelcomeSection({
-    super.image = const CoverImageBox(Images.homeWelcomeIna),
-    super.content = const HomeWelcomeText(),
-    super.flipWidgets = false,
-    super.backgroundColor = mainTODO_2,
-  });
+  const HomeWelcomeSection()
+      : super(
+          image: const CoverImageBox(image: Images.homeWelcomeIna),
+          content: const HomeWelcomeText(),
+          flipWidgets: false,
+          backgroundColor: mainTODO_2,
+        );
 }

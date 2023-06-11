@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CoverImageBox extends StatelessWidget {
-  const CoverImageBox(this.image, {this.child});
+  const CoverImageBox({required this.image, this.child});
 
   final String image;
   final Widget? child;

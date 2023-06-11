@@ -29,10 +29,10 @@ class Images {
   static const // inspiration
       inspirationIntro = '$_root/inspiration_intro.jpg';
 
-  static const // BLOGS
+  static const // blogs
       _blog0 = '$_blogRoot/0';
 
-  static const // BLOG 0
+  static const // blog 0
       child = '$_blog0/child.jpg',
       eat = '$_blog0/eat.jpg',
       lilli = '$_blog0/lilli.jpg',
@@ -40,14 +40,14 @@ class Images {
       sleep2 = '$_blog0/sleep2.jpg',
       kitchen = '$_blog0/kitchen.jpg';
 
-  static const // ICONS
+  static const // icons
       facebook = '$_iconsRoot/facebook.png',
       instagram = '$_iconsRoot/instagram.png',
       mail = '$_iconsRoot/mail.png',
       menu = '$_iconsRoot/menu.png',
       arrowUp = '$_iconsRoot/arrow-up.png';
 
-  static const // MISC
+  static const // misc
       logo = '$_root/logo.png',
       logoText = '$_root/logo_text.png',
       chevron = '$_root/chevron.png',

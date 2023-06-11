@@ -13,7 +13,7 @@ abstract class BaseIntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSectionWithBackgroundImage(
-        image,
+        image: image,
         child: Center(child: PageIntroText(text)),
       );
 }

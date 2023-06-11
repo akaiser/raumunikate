@@ -4,26 +4,26 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
-class SocialLinks extends Row {
-  const SocialLinks({
-    super.mainAxisAlignment = MainAxisAlignment.end,
-    super.children = const [
-      _Link(
-        Images.instagram,
-        url: 'https://www.instagram.com/raumunikate/',
-      ),
-      SizedBox(width: 8),
-      _Link(
-        Images.facebook,
-        url: 'https://de-de.facebook.com/ina.kaiser.7543/',
-      ),
-      SizedBox(width: 8),
-      _Link(
-        Images.mail,
-        url: 'mailto:kontakt@raumunikate.com',
-      ),
-    ],
-  });
+class SocialLinksRow extends Row {
+  const SocialLinksRow({super.mainAxisAlignment = MainAxisAlignment.end})
+      : super(
+          children: const [
+            _Link(
+              Images.instagram,
+              url: 'https://www.instagram.com/raumunikate/',
+            ),
+            SizedBox(width: 8),
+            _Link(
+              Images.facebook,
+              url: 'https://de-de.facebook.com/ina.kaiser.7543/',
+            ),
+            SizedBox(width: 8),
+            _Link(
+              Images.mail,
+              url: 'mailto:kontakt@raumunikate.com',
+            ),
+          ],
+        );
 }
 
 class _Link extends StatelessWidget {

@@ -5,23 +5,24 @@ import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/e/c/_portrait_passion_text.dart';
 
 class PortraitPassionFirstSection extends OneColumnSection {
-  const PortraitPassionFirstSection({
-    super.backgroundImage = Images.waben1,
-    super.child = const PortraitPassionText(),
-  });
+  const PortraitPassionFirstSection()
+      : super(
+          backgroundImage: Images.waben1,
+          child: const PortraitPassionText(),
+        );
 }
 
 class PortraitPassionSecondSection extends OneColumnSection {
-  const PortraitPassionSecondSection({
-    super.backgroundImage = Images.portraitPassion,
-  });
+  const PortraitPassionSecondSection()
+      : super(backgroundImage: Images.portraitPassion);
 }
 
 class PortraitPassionSection extends TwoColumnsSection {
-  const PortraitPassionSection({
-    super.image = const CoverImageBox(Images.portraitPassion),
-    super.content = const PortraitPassionText(),
-    super.flipWidgets = false,
-    super.backgroundImage = Images.waben1,
-  });
+  const PortraitPassionSection()
+      : super(
+          image: const CoverImageBox(image: Images.portraitPassion),
+          content: const PortraitPassionText(),
+          flipWidgets: false,
+          backgroundImage: Images.waben1,
+        );
 }

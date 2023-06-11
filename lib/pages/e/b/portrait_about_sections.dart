@@ -6,23 +6,24 @@ import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/e/b/_portrait_about_text.dart';
 
 class PortraitAboutFirstSection extends OneColumnSection {
-  const PortraitAboutFirstSection({
-    super.backgroundColor = mainTODO_2,
-    super.child = const PortraitAboutText(),
-  });
+  const PortraitAboutFirstSection()
+      : super(
+          backgroundColor: mainTODO_2,
+          child: const PortraitAboutText(),
+        );
 }
 
 class PortraitAboutSecondSection extends OneColumnSection {
-  const PortraitAboutSecondSection({
-    super.backgroundImage = Images.portraitAbout,
-  });
+  const PortraitAboutSecondSection()
+      : super(backgroundImage: Images.portraitAbout);
 }
 
 class PortraitAboutSection extends TwoColumnsSection {
-  const PortraitAboutSection({
-    super.image = const CoverImageBox(Images.portraitAbout),
-    super.content = const PortraitAboutText(),
-    super.flipWidgets = true,
-    super.backgroundColor = mainTODO_2,
-  });
+  const PortraitAboutSection()
+      : super(
+          image: const CoverImageBox(image: Images.portraitAbout),
+          content: const PortraitAboutText(),
+          flipWidgets: true,
+          backgroundColor: mainTODO_2,
+        );
 }

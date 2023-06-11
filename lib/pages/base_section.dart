@@ -2,14 +2,11 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 
 class BaseSectionWithBackgroundColor extends ColoredBox {
-  const BaseSectionWithBackgroundColor({
-    required super.color,
-    super.child,
-  });
+  const BaseSectionWithBackgroundColor({required super.color, super.child});
 }
 
 class BaseSectionWithBackgroundImage extends CoverImageBox {
-  const BaseSectionWithBackgroundImage(super.image, {super.child});
+  const BaseSectionWithBackgroundImage({required super.image, super.child});
 }
 
 class BaseSectionWithBackground extends StatelessWidget {
@@ -28,7 +25,7 @@ class BaseSectionWithBackground extends StatelessWidget {
     final _backgroundImage = backgroundImage;
     if (_backgroundImage != null) {
       return BaseSectionWithBackgroundImage(
-        _backgroundImage,
+        image: _backgroundImage,
         child: child,
       );
     }

@@ -8,9 +8,9 @@ import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import '../../widget_tester_ext.dart';
 
 void main() {
-  group('$Copyright', () {
+  group('$CopyrightText', () {
     testWidgets('has text', (tester) async {
-      await tester.render(const Copyright());
+      await tester.render(const CopyrightText());
 
       expect(
         find.text('© 2023 Raumunikate. All rights reserved.'),
@@ -19,72 +19,72 @@ void main() {
     });
 
     testWidgets('has current year', (tester) async {
-      await tester.render(const Copyright());
+      await tester.render(const CopyrightText());
 
       expect(
-        tester.findWidget<Copyright>().data,
+        tester.findWidget<CopyrightText>().data,
         contains('${DateTime.now().year}'),
       );
     });
   });
 
-  group('$Imprint', () {
+  group('$ImprintTextLink', () {
     testWidgets('is a $TextLink', (tester) async {
-      await tester.render(const Imprint());
+      await tester.render(const ImprintTextLink());
 
-      expect(tester.findWidget<Imprint>(), isA<TextLink>());
+      expect(tester.findWidget<ImprintTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has text', (tester) async {
-      await tester.render(const Imprint());
+      await tester.render(const ImprintTextLink());
 
       expect(find.text('Impressum'), findsOneWidget);
     });
 
     testWidgets('has path to $ImprintPage', (tester) async {
-      await tester.render(const Imprint());
+      await tester.render(const ImprintTextLink());
 
-      expect(tester.findWidget<Imprint>().url, ImprintPage.path);
+      expect(tester.findWidget<ImprintTextLink>().url, ImprintPage.path);
     });
   });
 
-  group('$Terms', () {
+  group('$TermsTextLink', () {
     testWidgets('is a $TextLink', (tester) async {
-      await tester.render(const Terms());
+      await tester.render(const TermsTextLink());
 
-      expect(tester.findWidget<Terms>(), isA<TextLink>());
+      expect(tester.findWidget<TermsTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has text', (tester) async {
-      await tester.render(const Terms());
+      await tester.render(const TermsTextLink());
 
       expect(find.text('AGB'), findsOneWidget);
     });
 
     testWidgets('has path to $TermsPage', (tester) async {
-      await tester.render(const Terms());
+      await tester.render(const TermsTextLink());
 
-      expect(tester.findWidget<Terms>().url, TermsPage.path);
+      expect(tester.findWidget<TermsTextLink>().url, TermsPage.path);
     });
   });
 
-  group('$Privacy', () {
+  group('$PrivacyTextLink', () {
     testWidgets('is a $TextLink', (tester) async {
-      await tester.render(const Privacy());
+      await tester.render(const PrivacyTextLink());
 
-      expect(tester.findWidget<Privacy>(), isA<TextLink>());
+      expect(tester.findWidget<PrivacyTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has expected text', (tester) async {
-      await tester.render(const Privacy());
+      await tester.render(const PrivacyTextLink());
 
       expect(find.text('Datenschutz'), findsOneWidget);
     });
 
     testWidgets('has path to $PrivacyPage', (tester) async {
-      await tester.render(const Privacy());
+      await tester.render(const PrivacyTextLink());
 
-      expect(tester.findWidget<Privacy>().url, PrivacyPage.path);
+      expect(tester.findWidget<PrivacyTextLink>().url, PrivacyPage.path);
     });
   });
 }

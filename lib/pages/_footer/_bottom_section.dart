@@ -9,23 +9,23 @@ class BottomSection extends StatelessWidget {
   Widget build(BuildContext context) => ResponsiveLayout(
         s: (_) => const Row(
           children: [
-            Copyright(),
+            CopyrightText(),
             SizedBox(width: 26),
-            Imprint(),
+            ImprintTextLink(),
             SizedBox(width: 26),
-            Terms(),
+            TermsTextLink(),
             SizedBox(width: 26),
-            Privacy(),
+            PrivacyTextLink(),
           ],
         ),
         xs: (_) => const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Imprint(),
-            Terms(),
-            Privacy(),
+            ImprintTextLink(),
+            TermsTextLink(),
+            PrivacyTextLink(),
             SizedBox(height: 12),
-            Copyright(),
+            CopyrightText(),
           ],
         ),
       );

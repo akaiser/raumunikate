@@ -4,10 +4,10 @@ import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
-import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 import 'package:raumunikate/pages/g/_data.dart';
 import 'package:raumunikate/pages/g/_shared.dart';
+import 'package:raumunikate/pages/g/a/_links_column.dart';
 
 class RaumfuerunikateLilliGrewe extends StatelessWidget {
   const RaumfuerunikateLilliGrewe();
@@ -111,7 +111,7 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
           BlogCaption('Wer inspiriert Dich im Bereich Interior?'),
           smallNewLine,
           Text('Auf Instagram mag ich zum Beispiel folgende Accounts sehr:'),
-          _Links(),
+          LinksColumn(),
           newLine,
           BlogCaption(
             'Um nochmal den Bogen zum Anfang zu spannen, wie kam es zu Deiner Instagram Interior Challenge?',
@@ -190,37 +190,4 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
           ),
         ],
       );
-}
-
-class _Links extends Column {
-  const _Links()
-      : super(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            TextLink(
-              '@theobert_pot',
-              url: 'https://www.instagram.com/theobert_pot/',
-            ),
-            TextLink(
-              '@frau.kieselstein',
-              url: 'https://www.instagram.com/frau.kieselstein/',
-            ),
-            TextLink(
-              '@mehr.von.mia',
-              url: 'https://www.instagram.com/mehr.von.mia/',
-            ),
-            TextLink(
-              '@kersylovescolor',
-              url: 'https://www.instagram.com/kersylovescolor/',
-            ),
-            TextLink(
-              '@hoorayforthedetail',
-              url: 'https://www.instagram.com/hoorayforthedetail/',
-            ),
-            TextLink(
-              '@herrklar',
-              url: 'https://www.instagram.com/herrklar/',
-            ),
-          ],
-        );
 }
