@@ -3,7 +3,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
 
 class PageIntroText extends StatelessWidget {
-  const PageIntroText(this.text, {super.key});
+  const PageIntroText(this.text);
 
   final String text;
 

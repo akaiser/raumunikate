@@ -7,10 +7,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 const baseSlidePageKey = Key('base-slide-page');
 
 class BaseSlidePage extends StatefulWidget {
-  const BaseSlidePage({
-    required this.children,
-    super.key,
-  });
+  const BaseSlidePage({required this.children});
 
   final List<Widget> children;
 

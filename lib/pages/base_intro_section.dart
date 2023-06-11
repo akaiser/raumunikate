@@ -2,11 +2,10 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/components/page_intro_text.dart';
 import 'package:raumunikate/pages/base_section.dart';
 
-class BaseIntroSection extends StatelessWidget {
-  const BaseIntroSection(
-    this.text, {
+abstract class BaseIntroSection extends StatelessWidget {
+  const BaseIntroSection({
+    required this.text,
     required this.image,
-    super.key,
   });
 
   final String text;
@@ -14,7 +13,7 @@ class BaseIntroSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSectionWithBackgroundImage(
-        image: image,
+        image,
         child: Center(child: PageIntroText(text)),
       );
 }

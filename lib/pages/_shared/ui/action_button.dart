@@ -8,30 +8,27 @@ class ActionButton extends StatelessWidget {
   const ActionButton(
     this.text, {
     required this.onTap,
-    super.key,
   });
 
   final String text;
   final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) => GestureDetector(
+  Widget build(BuildContext context) => HoverRegion(
         onTap: onTap,
-        child: HoverRegion(
-          builder: (context, isHovering, child) => Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(Radius.circular(20)),
-              border: Border.all(
-                width: 2,
-                color: isHovering ? mainTODO_1 : Colors.white,
-              ),
+        builder: (context, isHovering, child) => Container(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            border: Border.all(
+              width: 2,
+              color: isHovering ? mainTODO_1 : Colors.white,
             ),
-            child: child,
           ),
-          child: _ActionButtonText(text),
+          child: child,
         ),
+        child: _ActionButtonText(text),
       );
 }
 
@@ -43,7 +40,7 @@ class _ActionButtonText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: context.tt.body?.copyWith(
+        style: context.dts.copyWith(
           color: mainTODO_1,
           fontSize: context.isShittySmallDevice ? 16 : null,
         ),

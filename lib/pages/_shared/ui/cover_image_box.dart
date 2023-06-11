@@ -1,17 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CoverImageBox extends StatelessWidget {
-  const CoverImageBox(
-    this.image, {
-    this.colorFilter,
-    this.child,
-    super.key,
-  });
+  const CoverImageBox(this.image, {this.child});
 
   final String image;
-
-  // TODO(albert): remove this
-  final ColorFilter? colorFilter;
   final Widget? child;
 
   @override
@@ -20,7 +13,6 @@ class CoverImageBox extends StatelessWidget {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: AssetImage(image),
-            colorFilter: colorFilter,
           ),
         ),
         child: child,

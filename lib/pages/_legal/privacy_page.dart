@@ -7,7 +7,7 @@ import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 
 class PrivacyPage extends StatelessWidget {
-  const PrivacyPage({super.key});
+  const PrivacyPage();
 
   static const path = '/datenschutz';
 

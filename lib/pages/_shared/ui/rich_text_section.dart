@@ -12,10 +12,7 @@ class InlineText {
 }
 
 class RichTextSection extends StatelessWidget {
-  const RichTextSection({
-    required this.children,
-    super.key,
-  });
+  const RichTextSection({required this.children});
 
   final List<InlineText> children;
 
@@ -40,11 +37,17 @@ class RichTextSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.tt.body?.copyWith(color: mainTODO_0);
+    final textStyle = context.dts;
     return Text.rich(
       TextSpan(
         children: children
-            .map((inlineText) => _resolve(context, inlineText, textStyle))
+            .map(
+              (inlineText) => _resolve(
+                context,
+                inlineText,
+                textStyle,
+              ),
+            )
             .unmodifiable,
       ),
     );

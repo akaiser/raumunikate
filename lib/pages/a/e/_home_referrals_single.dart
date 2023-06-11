@@ -4,9 +4,7 @@ import 'package:raumunikate/pages/a/e/_data.dart' as data;
 import 'package:raumunikate/pages/a/e/_home_referral_card.dart';
 
 class HomeReferralsSingle extends StatelessWidget {
-  const HomeReferralsSingle({
-    super.key,
-  });
+  const HomeReferralsSingle();
 
   @override
   Widget build(BuildContext context) => const Padding(

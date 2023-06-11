@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_multiple_declarations_per_line
 class Images {
   Images._();
 
@@ -7,17 +6,10 @@ class Images {
       _blogRoot = '$_root/blog',
       _iconsRoot = '$_root/icons';
 
-  static const // icons
-      facebook = '$_iconsRoot/facebook.png',
-      instagram = '$_iconsRoot/instagram.png',
-      mail = '$_iconsRoot/mail.png',
-      menu = '$_iconsRoot/menu.png',
-      arrowUp = '$_iconsRoot/arrow-up.png';
-
   static const // home
       homeIntro = '$_root/home_intro.jpg',
       homeWelcomeIna = '$_root/home_welcome_ina.jpg',
-      homeContent = '$_root/home_content.png',
+      //homeContent = '$_root/home_content.png',
       homeImage = '$_root/home_image.jpg';
 
   static const // plan
@@ -30,26 +22,35 @@ class Images {
       productsIntro = '$_root/products_intro.jpg';
 
   static const // portrait
-      portraitIntro = '$_root/portrait_intro.jpg';
+      portraitIntro = '$_root/portrait_intro.jpg',
+      portraitAbout = '$_root/portrait_about.jpg',
+      portraitPassion = '$_root/portrait_passion.jpg';
 
   static const // inspiration
       inspirationIntro = '$_root/inspiration_intro.jpg';
 
-  static const // misc
-      logo = '$_root/logo.png',
-      logoText = '$_root/logo_text.png',
-      chevron = '$_root/chevron.png';
+  /// BLOGS
+  static const _blog0 = '$_blogRoot/0';
 
-  //////////////// BLOG //////////////////
-
-  static const // blogs
-      _blog0 = '$_blogRoot/0';
-
-  static const // blog 0
-      child = '$_blog0/child.jpg',
+  /// BLOG 0
+  static const child = '$_blog0/child.jpg',
       eat = '$_blog0/eat.jpg',
       lilli = '$_blog0/lilli.jpg',
       sleep = '$_blog0/sleep.jpg',
       sleep2 = '$_blog0/sleep2.jpg',
       kitchen = '$_blog0/kitchen.jpg';
+
+  /// ICONS
+  static const facebook = '$_iconsRoot/facebook.png',
+      instagram = '$_iconsRoot/instagram.png',
+      mail = '$_iconsRoot/mail.png',
+      menu = '$_iconsRoot/menu.png',
+      arrowUp = '$_iconsRoot/arrow-up.png';
+
+  /// MISC
+  static const logo = '$_root/logo.png',
+      logoText = '$_root/logo_text.png',
+      chevron = '$_root/chevron.png',
+      waben0 = '$_root/waben0.jpg',
+      waben1 = '$_root/waben1.jpg';
 }

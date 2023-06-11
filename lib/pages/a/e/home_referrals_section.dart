@@ -6,7 +6,7 @@ import 'package:raumunikate/pages/a/e/_home_referrals_slides.dart';
 import 'package:raumunikate/pages/base_section.dart';
 
 class HomeReferralsSection extends StatelessWidget {
-  const HomeReferralsSection({super.key});
+  const HomeReferralsSection();
 
   @override
   Widget build(BuildContext context) => BaseSectionWithBackgroundColor(

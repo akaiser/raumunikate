@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raumunikate/main.dart';
+import 'package:raumunikate/pages/base_scroll_page.dart';
 import 'package:raumunikate/pages/base_slide_page.dart';
 import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
 
@@ -14,17 +16,21 @@ extension WidgetTesterExt on WidgetTester {
     await pumpAndSettle();
   }
 
-  Future<void> dragPageView() async {
-    await drag(find.byKey(baseSlidePageKey), const Offset(0, -600));
-    await pumpAndSettle();
-  }
-
-  void expectSectionType(Type type, List<Type> sectionTypes) {
-    for (final sectionType in sectionTypes) {
+  void expectType(Type type, List<Type> types) {
+    for (final _type in types) {
       expect(
-        find.byType(sectionType),
-        sectionType == type ? findsOneWidget : findsNothing,
+        find.byType(_type),
+        _type == type ? findsOneWidget : findsNothing,
       );
     }
+  }
+
+  Future<void> dragPageView() => _drag(baseSlidePageKey);
+
+  Future<void> dragScrollView() => _drag(baseScrollPageKey);
+
+  Future<void> _drag(Key key) async {
+    await drag(find.byKey(key), const Offset(0, -600));
+    await pumpAndSettle();
   }
 }

@@ -14,7 +14,6 @@ class BasePage extends StatefulWidget {
   const BasePage({
     required this.onScrollToTopTap,
     required this.child,
-    super.key,
   });
 
   final VoidCallback onScrollToTopTap;
@@ -43,36 +42,39 @@ class _BasePageState extends State<BasePage> {
   Widget build(BuildContext context) {
     final navBarNotifier = context.read<NavBarNotifier>();
     return Scaffold(
-      body: Stack(
-        children: [
-          RefreshIndicator(
-            color: mainTODO_0,
-            edgeOffset: navigationBarHeightExpanded,
-            notificationPredicate: (notification) {
-              if (notification.metrics.axis == Axis.vertical) {
-                final isAtTop = notification.metrics.pixels <= 10;
-                if (navBarNotifier.isExpanded != isAtTop) {
-                  navBarNotifier.toggle;
+      body: DefaultTextStyle.merge(
+        style: context.tt.body?.copyWith(color: mainTODO_0),
+        child: Stack(
+          children: [
+            RefreshIndicator(
+              color: mainTODO_0,
+              edgeOffset: navigationBarHeightExpanded,
+              notificationPredicate: (notification) {
+                if (notification.metrics.axis == Axis.vertical) {
+                  final isAtTop = notification.metrics.pixels <= 10;
+                  if (navBarNotifier.isExpanded != isAtTop) {
+                    navBarNotifier.toggle;
+                  }
                 }
-              }
-              return true;
-            },
-            onRefresh: () => Future<void>.delayed(
-              const Duration(milliseconds: pageTransitionInMillis),
-              () => context.go(Routes.homePage),
+                return true;
+              },
+              onRefresh: () => Future<void>.delayed(
+                const Duration(milliseconds: pageTransitionInMillis),
+                () => context.go(Routes.homePage),
+              ),
+              child: widget.child,
             ),
-            child: widget.child,
-          ),
-          const NavBar(),
-          if (kDebugMode)
-            Text(
-              '${context.screenWidth} x '
-              '${context.screenHeight} | '
-              '${context.breakpoint.name}',
-              style: context.tt.label?.copyWith(fontSize: 14),
-            ),
-          _ScrollToTopArrow(widget.onScrollToTopTap),
-        ],
+            const NavBar(),
+            if (!kReleaseMode)
+              Text(
+                '${context.screenWidth} x '
+                '${context.screenHeight} | '
+                '${context.breakpoint.name}',
+                style: context.tt.label?.copyWith(fontSize: 14),
+              ),
+            _ScrollToTopArrow(widget.onScrollToTopTap),
+          ],
+        ),
       ),
     );
   }

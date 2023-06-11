@@ -1,83 +1,32 @@
 import 'package:flutter/widgets.dart';
-import 'package:raumunikate/_settings.dart';
-import 'package:raumunikate/pages/_legal/imprint_page.dart';
-import 'package:raumunikate/pages/_legal/privacy_page.dart';
-import 'package:raumunikate/pages/_legal/terms_page.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_footer/_legal.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
-import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
 class BottomSection extends StatelessWidget {
-  const BottomSection({super.key});
+  const BottomSection();
 
   @override
-  Widget build(BuildContext context) => DefaultTextStyle.merge(
-        style: context.tt.body?.copyWith(
-          color: mainTODO_0,
-          fontSize: 13,
+  Widget build(BuildContext context) => ResponsiveLayout(
+        s: (_) => const Row(
+          children: [
+            Copyright(),
+            SizedBox(width: 26),
+            Imprint(),
+            SizedBox(width: 26),
+            Terms(),
+            SizedBox(width: 26),
+            Privacy(),
+          ],
         ),
-        child: ResponsiveLayout(
-          s: (_) => const Row(
-            children: [
-              _Copyright(),
-              SizedBox(width: 26),
-              _Imprint(),
-              SizedBox(width: 26),
-              _Terms(),
-              SizedBox(width: 26),
-              _Privacy(),
-            ],
-          ),
-          xs: (_) => const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _Copyright(),
-              _Imprint(),
-              _Terms(),
-              _Privacy(),
-            ],
-          ),
+        xs: (_) => const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Imprint(),
+            Terms(),
+            Privacy(),
+            SizedBox(height: 12),
+            Copyright(),
+          ],
         ),
-      );
-}
-
-class _Copyright extends StatelessWidget {
-  const _Copyright();
-
-  @override
-  Widget build(BuildContext context) =>
-      const Text('© 2023 Raumunikate. All rights reserved.');
-}
-
-class _Imprint extends StatelessWidget {
-  const _Imprint();
-
-  @override
-  Widget build(BuildContext context) => const TextLink(
-        'Impressum',
-        url: ImprintPage.path,
-        fontSize: 12,
-      );
-}
-
-class _Terms extends StatelessWidget {
-  const _Terms();
-
-  @override
-  Widget build(BuildContext context) => const TextLink(
-        'AGB',
-        url: TermsPage.path,
-        fontSize: 12,
-      );
-}
-
-class _Privacy extends StatelessWidget {
-  const _Privacy();
-
-  @override
-  Widget build(BuildContext context) => const TextLink(
-        'Datenschutz',
-        url: PrivacyPage.path,
-        fontSize: 12,
       );
 }

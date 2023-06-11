@@ -3,7 +3,7 @@ import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 
 class NotFoundPage extends StatelessWidget {
-  const NotFoundPage({super.key});
+  const NotFoundPage();
 
   @override
   Widget build(BuildContext context) => BasePage(

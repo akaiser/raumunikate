@@ -9,7 +9,7 @@ import 'package:raumunikate/pages/nav_bar/_data.dart' as data;
 const navMenuKey = Key('nav-menu');
 
 class NavMenu extends StatelessWidget {
-  const NavMenu({super.key});
+  const NavMenu();
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
@@ -17,19 +17,24 @@ class NavMenu extends StatelessWidget {
         tooltip: '',
         iconSize: 32,
         splashRadius: 0.1,
-        color: mainBackgroundColor,
-        icon: Image.asset(Images.menu, color: Colors.black),
-        itemBuilder: (context) => data.navData.map(
-          (entry) {
-            final isEnabled = context.currentRoutePath != entry.pagePath;
-            return PopupMenuItem<String>(
-              enabled: isEnabled,
-              onTap: () => context.go(entry.pagePath),
-              value: entry.menuLinkText,
-              child: _MenuItemText(entry.menuLinkText, isEnabled: isEnabled),
-            );
-          },
-        ).unmodifiable,
+        icon: Image.asset(Images.menu, color: mainTODO_0),
+        itemBuilder: (context) {
+          final map = data.navData.map(
+            (entry) {
+              final isEnabled = context.currentRoutePath != entry.pagePath;
+              return PopupMenuItem<String>(
+                enabled: isEnabled,
+                onTap: () => context.go(entry.pagePath),
+                value: entry.menuLinkText,
+                child: _MenuItemText(
+                  entry.menuLinkText,
+                  isEnabled: isEnabled,
+                ),
+              );
+            },
+          );
+          return map.unmodifiable;
+        },
       );
 }
 
@@ -42,8 +47,6 @@ class _MenuItemText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         value,
-        style: context.tt.body?.copyWith(
-          color: isEnabled ? mainTODO_1 : mainTODO_0,
-        ),
+        style: context.dts.copyWith(color: isEnabled ? mainTODO_1 : mainTODO_0),
       );
 }

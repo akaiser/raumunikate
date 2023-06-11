@@ -5,7 +5,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
 
 class HomeReferralCard extends StatelessWidget {
-  const HomeReferralCard(this.entry, {super.key});
+  const HomeReferralCard(this.entry);
 
   final data.ReferralDataEntry entry;
 
@@ -37,7 +37,7 @@ class _ReferralCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.tt.body;
+    final textStyle = context.dts;
     return SizedBox(
       width: entry.maxTextWidth,
       child: Column(
@@ -46,12 +46,12 @@ class _ReferralCard extends StatelessWidget {
         children: [
           Text(
             entry.feedback,
-            style: textStyle?.copyWith(fontSize: 20),
+            style: textStyle.copyWith(fontSize: 20),
           ),
           const SizedBox(height: 8),
           Text(
             entry.referral,
-            style: textStyle?.copyWith(color: data.referralTextColor),
+            style: textStyle.copyWith(color: data.referralTextColor),
           ),
         ],
       ),

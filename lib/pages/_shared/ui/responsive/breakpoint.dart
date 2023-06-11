@@ -9,20 +9,19 @@ enum Breakpoint {
   xs,
 }
 
-Breakpoint _resolveBreakpoint(double screenWidth) => screenWidth > 1399
-    ? Breakpoint.xxl
-    : screenWidth > 1199
-        ? Breakpoint.xl
-        : screenWidth > 991
-            ? Breakpoint.l
-            : screenWidth > 767
-                ? Breakpoint.m
-                : screenWidth > 575
-                    ? Breakpoint.s
-                    : Breakpoint.xs;
+extension on double {
+  Breakpoint get breakpoint => switch (this) {
+        > 1399 => Breakpoint.xxl,
+        > 1199 => Breakpoint.xl,
+        > 991 => Breakpoint.l,
+        > 767 => Breakpoint.m,
+        > 575 => Breakpoint.s,
+        _ => Breakpoint.xs,
+      };
+}
 
 extension BreakpointExt on BuildContext {
-  Breakpoint get breakpoint => _resolveBreakpoint(screenWidth);
+  Breakpoint get breakpoint => screenWidth.breakpoint;
 
   bool get isFullWidthNavBar => breakpoint != Breakpoint.xs;
 

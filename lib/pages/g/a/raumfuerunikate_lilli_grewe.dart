@@ -3,32 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
-import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
-import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
+import 'package:raumunikate/pages/g/_data.dart';
+import 'package:raumunikate/pages/g/_shared.dart';
 
-class BlogViewPage extends StatelessWidget {
-  const BlogViewPage(
-    this.permalink, {
-    super.key,
-  });
+class RaumfuerunikateLilliGrewe extends StatelessWidget {
+  const RaumfuerunikateLilliGrewe();
 
-  static const path = 'v';
-
-  // TODO(albert): use me!
-  final String permalink;
+  static const path = blogLilliGrewePath;
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
         children: [
           newLine,
-          Align(
-            alignment: Alignment.centerRight,
-            child: Text('20.02.2023'),
+          BlogHeader(
+            blogName: blogLilliGreweName,
+            blogDate: blogLilliGreweDate,
           ),
+          newLine,
           HeadlineText('#raumfuerunikate'),
           newLine,
           Text(
@@ -58,15 +52,15 @@ class BlogViewPage extends StatelessWidget {
             'Liebe Lilli, Dein Zuhause inspiriert mich. Du hast ein sehr gutes Raumgefühl und verstehst es wunderbar Produkte in Akzentfarben zu kombinieren und alles mit einem gewissen Charme von Frohsinn. Auf Deinem Instagramkanal habe ich einige Karussellposts entdeckt, die die Entwicklung eurer Einrichtung zeigen. Es ist so schön zu sehen, dass sich das Zuhause mit uns weiterentwickeln darf.',
           ),
           newLine,
-          _ImageRow([Images.lilli, Images.kitchen, Images.sleep]),
+          BlogImageRow([Images.lilli, Images.kitchen, Images.sleep]),
           newLine,
-          _Caption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
+          BlogCaption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
           smallNewLine,
           Text(
             'Ich bin Lilli, 39 Jahre alt und arbeite bei einem der letzten familiengeführten Möbelunternehmen in Deutschland. Ich denke gerne kreativ und mag es grenzenübergreifende Strategien zu entwickeln. Wir, das sind mein Mann, unsere beiden Töchter und ich, leben in Bielefeld in einem historischem Gewerbepark in einem Loft auf 100 Quadratmetern. Es ist alles offen, bis auf das Zimmer unserer großen Tochter. Wir lieben die Höhe in der Mitte des Raums, die für viel "Freiheit" sorgt. Es gibt aber auch auf der ganzen Raumlänge auf beiden Seiten Dachschrägen, die dem Raum kuschelige Gemütlichkeit verleihen. Lange (10 Jahre) haben wir davon geträumt so zu wohnen und sind jetzt mega happy.',
           ),
           newLine,
-          _Caption(
+          BlogCaption(
             'Welche Aspekte verleihen Deinem Zuhause Wohlfühlatmosphäre?',
           ),
           smallNewLine,
@@ -74,27 +68,27 @@ class BlogViewPage extends StatelessWidget {
             'Für uns bedeutet Wohlfühlatmosphäre Luft zum Atmen, daher ist die Raummitte frei, um mit Leben bespielt zu werden. Wir haben wenig Möbel – die alle funktional und mit viel Liebe ausgewählt sind - aber einige schöne, farbenfrohe Wohnaccessoires und Objekte, die unser Zuhause "besonders" machen. Ich mag es, wenn man sieht, wer darin wohnt.',
           ),
           newLine,
-          _Caption('Wie gehst Du an Raumgestaltung heran?'),
+          BlogCaption('Wie gehst Du an Raumgestaltung heran?'),
           smallNewLine,
           Text(
             'Ich richte selten Räume ein. In unserem Loft wohnen wir jetzt schon fast 10 Jahre und hier hat sich in der groben Struktur wenig getan. Am Anfang haben wir den Raum nach unseren Bedürfnissen und Needs in Bereiche geordnet und geschaut welche Möbel wir wo platzieren. Die Gliederung sollte einen Rahmen geben, aber die Leichtigkeit und Offenheit des Raums nicht kaputt zu machen. Ein Bad, eine Küche, ein Esstisch mit Stühlen, Bett und Schrank, ein niedriges Regal passend zu unserer Architektur. Es gibt bei uns wenig Möglichkeiten Möbel zu verrücken oder Bereiche zu tauschen. Ich glaube wir haben für unsere Wohnsituation mit den Anforderungen von vier Personen die beste Lösung gefunden.',
           ),
           newLine,
-          _Caption('Was darf in einem Raum für Dich nicht fehlen?'),
+          BlogCaption('Was darf in einem Raum für Dich nicht fehlen?'),
           smallNewLine,
           Text(
             'Die persönliche Note. Ich mag es, wenn ein Zuhause individuell ist, wächst, sich verändert und Geschichten über die Bewohner erzählt. Es muss niemandem gefallen, außer den Menschen, die darin zuhause sind. Ich persönlich mag Farbe sehr. Die bringt Fröhlichkeit in jeden Raum und tut meinem Wohlbefinden gut.',
           ),
           newLine,
-          _ImageRow([Images.child, Images.eat, Images.sleep2]),
+          BlogImageRow([Images.child, Images.eat, Images.sleep2]),
           newLine,
-          _Caption('Welche Rolle spielt Raumfarbe für Dich?'),
+          BlogCaption('Welche Rolle spielt Raumfarbe für Dich?'),
           smallNewLine,
           Text(
             'Wie eben schon erwähnt: Ich liebe Farbe! Aaaaaber unser Boden ist lichtgrau und unsere Wände sind fast überall weiß. Die einzige farbige Wand, findet man bei uns im Bad. Die weißen Wände und der lichtgraue Holzboden bieten aber unseren farbenfrohen Dekoaccessoires, Designobjekten und der Kunst an der Wand die perfekte Bühne. So können besondere Stücke mehr Aufmerksamkeit auf sich ziehen. Außerdem wird durch die Farb-Unterbrechung ein harmonisches Gleichgewicht zwischen Ruhe und Spannung gehalten.',
           ),
           newLine,
-          _Caption(
+          BlogCaption(
             'Du wohnst nicht allein. Wie bekommst Du alle Wünsche unter einen Hut?',
           ),
           smallNewLine,
@@ -102,24 +96,24 @@ class BlogViewPage extends StatelessWidget {
             'Jeder darf seine Wünsche äußern. Damit es am Ende nicht zu wild wird – bei uns sind ja (fast) alle Bereiche auf einen Blick einsehbar - geben wir unseren Töchtern gerne eine Auswahl vor und lenken so in die "richtige" Richtung. Im Zimmer unserer Großen, hat sie natürlich den Hut auf und die Kleine darf sich in ihren Tiny-Kinderhaus ausleben. Die großen Einrichtungsentscheidungen liegen zu 50% bei meinem Mann Sascha und zu 50% bei mir. Wir können uns da gut die Bälle zuspielen und finden immer einen guten Kompromiss. Würde ich allein entscheiden, wäre es wahrscheinlich weicher, femininer - würde er alleine entscheiden wäre es artify, verrückter und vielleicht minimalistischer. So wie es ist, können wir beide sehr gut damit leben. :)',
           ),
           newLine,
-          _Caption('Welches ist Dein Lieblingsstück und warum?'),
+          BlogCaption('Welches ist Dein Lieblingsstück und warum?'),
           smallNewLine,
           Text(
             'Ich habe ehrlich gesagt kein Lieblingsstück, ich hänge nicht an Dingen. Wenn Sascha einen neuen Tisch baut, darf der alte gehen und in einer anderen Familie zum Lebensmittelpunkt werden, das ist ein schöner Fluss. Wir entwerfen gerne neue Dinge, probieren aus und lassen sie irgendwann weiterziehen. Generell mögen wir spannende Produkte feiner kleiner Labels und langlebige Produkte, auf die wir auch gerne sparen.',
           ),
           newLine,
-          _Caption('Wo findest Du Inspiration?'),
+          BlogCaption('Wo findest Du Inspiration?'),
           smallNewLine,
           Text(
             'Auf Instagram, Pinterest oder Designmessen. Aber auch gerne mal in Zeitschriften, vor allem wenn ich mal Ruhe habe ausgiebig zu blättern...',
           ),
           newLine,
-          _Caption('Wer inspiriert Dich im Bereich Interior?'),
+          BlogCaption('Wer inspiriert Dich im Bereich Interior?'),
           smallNewLine,
           Text('Auf Instagram mag ich zum Beispiel folgende Accounts sehr:'),
           _Links(),
           newLine,
-          _Caption(
+          BlogCaption(
             'Um nochmal den Bogen zum Anfang zu spannen, wie kam es zu Deiner Instagram Interior Challenge?',
           ),
           smallNewLine,
@@ -144,7 +138,7 @@ class BlogViewPage extends StatelessWidget {
             ],
           ),
           newLine,
-          _Caption('Wann startet die nächste?'),
+          BlogCaption('Wann startet die nächste?'),
           smallNewLine,
           RichTextSection(
             children: [
@@ -198,76 +192,35 @@ class BlogViewPage extends StatelessWidget {
       );
 }
 
-class _ImageRow extends StatelessWidget {
-  const _ImageRow(this.images);
-
-  final List<String> images;
-
-  static const _imgSeparator = SizedBox(width: 24, height: 24);
-
-  @override
-  Widget build(BuildContext context) => ResponsiveLayout(
-        m: (_) => Row(
-          children: images
-              .map<Widget>((image) => Expanded(child: Image.asset(image)))
-              .separate(_imgSeparator)
-              .unmodifiable,
-        ),
-        xs: (_) => Column(
-          children: images
-              .map<Widget>(Image.asset)
-              .separate(_imgSeparator)
-              .unmodifiable,
-        ),
-      );
-}
-
-class _Caption extends StatelessWidget {
-  const _Caption(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) => Text(
-        text,
-        style: context.tt.label?.copyWith(
-          color: mainTODO_0,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-}
-
-class _Links extends StatelessWidget {
-  const _Links();
-
-  @override
-  Widget build(BuildContext context) => const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextLink(
-            '@theobert_pot',
-            url: 'https://www.instagram.com/theobert_pot/',
-          ),
-          TextLink(
-            '@frau.kieselstein',
-            url: 'https://www.instagram.com/frau.kieselstein/',
-          ),
-          TextLink(
-            '@mehr.von.mia',
-            url: 'https://www.instagram.com/mehr.von.mia/',
-          ),
-          TextLink(
-            '@kersylovescolor',
-            url: 'https://www.instagram.com/kersylovescolor/',
-          ),
-          TextLink(
-            '@hoorayforthedetail',
-            url: 'https://www.instagram.com/hoorayforthedetail/',
-          ),
-          TextLink(
-            '@herrklar',
-            url: 'https://www.instagram.com/herrklar/',
-          ),
-        ],
-      );
+class _Links extends Column {
+  const _Links()
+      : super(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            TextLink(
+              '@theobert_pot',
+              url: 'https://www.instagram.com/theobert_pot/',
+            ),
+            TextLink(
+              '@frau.kieselstein',
+              url: 'https://www.instagram.com/frau.kieselstein/',
+            ),
+            TextLink(
+              '@mehr.von.mia',
+              url: 'https://www.instagram.com/mehr.von.mia/',
+            ),
+            TextLink(
+              '@kersylovescolor',
+              url: 'https://www.instagram.com/kersylovescolor/',
+            ),
+            TextLink(
+              '@hoorayforthedetail',
+              url: 'https://www.instagram.com/hoorayforthedetail/',
+            ),
+            TextLink(
+              '@herrklar',
+              url: 'https://www.instagram.com/herrklar/',
+            ),
+          ],
+        );
 }
