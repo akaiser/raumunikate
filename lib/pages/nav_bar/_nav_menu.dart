@@ -18,23 +18,20 @@ class NavMenu extends StatelessWidget {
         iconSize: 32,
         splashRadius: 0.1,
         icon: Image.asset(Images.menu, color: mainTODO_0),
-        itemBuilder: (context) {
-          final map = data.navData.map(
-            (entry) {
-              final isEnabled = context.currentRoutePath != entry.pagePath;
-              return PopupMenuItem<String>(
-                enabled: isEnabled,
-                onTap: () => context.go(entry.pagePath),
-                value: entry.menuLinkText,
-                child: _MenuItemText(
-                  entry.menuLinkText,
-                  isEnabled: isEnabled,
-                ),
-              );
-            },
-          );
-          return map.unmodifiable;
-        },
+        itemBuilder: (context) => data.navData.map(
+          (entry) {
+            final isEnabled = context.currentRoutePath != entry.pagePath;
+            return PopupMenuItem<String>(
+              enabled: isEnabled,
+              onTap: () => context.go(entry.pagePath),
+              value: entry.menuLinkText,
+              child: _MenuItemText(
+                entry.menuLinkText,
+                isEnabled: isEnabled,
+              ),
+            );
+          },
+        ).unmodifiable,
       );
 }
 
