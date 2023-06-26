@@ -20,7 +20,7 @@ class PortraitPassionSecondSection extends OneColumnSection {
 class PortraitPassionSection extends TwoColumnsSection {
   const PortraitPassionSection()
       : super(
-          image: const CoverImageBox(image: Images.portraitPassion),
+          image: const CoverImageBox(Images.portraitPassion),
           content: const PortraitPassionText(),
           flipWidgets: false,
           backgroundImage: Images.waben1,

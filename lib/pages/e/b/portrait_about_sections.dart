@@ -21,7 +21,7 @@ class PortraitAboutSecondSection extends OneColumnSection {
 class PortraitAboutSection extends TwoColumnsSection {
   const PortraitAboutSection()
       : super(
-          image: const CoverImageBox(image: Images.portraitAbout),
+          image: const CoverImageBox(Images.portraitAbout),
           content: const PortraitAboutText(),
           flipWidgets: true,
           backgroundColor: mainTODO_2,

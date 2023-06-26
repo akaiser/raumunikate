@@ -14,11 +14,11 @@ extension BuildContextExt on BuildContext {
 
   // media
 
-  MediaQueryData get _mediaQueryData => MediaQuery.of(this);
+  Size get _size => MediaQuery.sizeOf(this);
 
-  double get screenHeight => _mediaQueryData.size.height;
+  double get screenHeight => _size.height;
 
-  double get screenWidth => _mediaQueryData.size.width;
+  double get screenWidth => _size.width;
 
   // theme
 
