@@ -6,7 +6,7 @@ class BaseSectionWithBackgroundColor extends ColoredBox {
 }
 
 class BaseSectionWithBackgroundImage extends CoverImageBox {
-  const BaseSectionWithBackgroundImage({required super.image, super.child});
+  const BaseSectionWithBackgroundImage(super.image, {super.child});
 }
 
 class BaseSectionWithBackground extends StatelessWidget {
@@ -25,7 +25,7 @@ class BaseSectionWithBackground extends StatelessWidget {
     final _backgroundImage = backgroundImage;
     if (_backgroundImage != null) {
       return BaseSectionWithBackgroundImage(
-        image: _backgroundImage,
+        _backgroundImage,
         child: child,
       );
     }

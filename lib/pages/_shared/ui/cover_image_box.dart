@@ -1,20 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/rendering.dart';
+import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 
-class CoverImageBox extends StatelessWidget {
-  const CoverImageBox({required this.image, this.child});
-
-  final String image;
-  final Widget? child;
-
-  @override
-  Widget build(BuildContext context) => DecoratedBox(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(image),
-          ),
-        ),
-        child: child,
-      );
+class CoverImageBox extends FadeInAssetImage {
+  const CoverImageBox(super.image, {super.child}) : super(fit: BoxFit.cover);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
@@ -40,13 +41,13 @@ class BlogImageRow extends StatelessWidget {
   Widget build(BuildContext context) => ResponsiveLayout(
         m: (_) => Row(
           children: images
-              .map<Widget>((image) => Expanded(child: Image.asset(image)))
+              .map<Widget>((image) => Expanded(child: FadeInAssetImage(image)))
               .separate(_imgSeparator)
               .unmodifiable,
         ),
         xs: (_) => Column(
           children: images
-              .map<Widget>(Image.asset)
+              .map<Widget>(FadeInAssetImage.new)
               .separate(_imgSeparator)
               .unmodifiable,
         ),

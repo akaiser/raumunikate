@@ -5,7 +5,7 @@ import 'package:raumunikate/pages/a/c/_home_content_slides.dart';
 class HomeContentSection extends CoverImageBox {
   const HomeContentSection()
       : super(
-          image: Images.waben0,
+          Images.waben0,
           child: const HomeContentSlides(),
         );
 }
