@@ -21,14 +21,17 @@ extension on double {
 }
 
 extension BreakpointExt on BuildContext {
-  Breakpoint get breakpoint => screenWidth.breakpoint;
+  Breakpoint get breakpoint => screenSize.width.breakpoint;
 
   bool get isFullWidthNavBar => breakpoint != Breakpoint.xs;
 
-  bool get isSxsBreakpoint {
-    final breakpoint = this.breakpoint;
-    return breakpoint == Breakpoint.s || breakpoint == Breakpoint.xs;
-  }
+  bool get isSxsBreakpoint => switch (breakpoint) {
+        Breakpoint.s || Breakpoint.xs => true,
+        _ => false,
+      };
 
-  bool get isShittySmallDevice => screenWidth <= 380 && screenHeight <= 560;
+  bool get isShittySmallDevice {
+    final _screenSize = screenSize;
+    return _screenSize.width <= 380 && _screenSize.height <= 560;
+  }
 }

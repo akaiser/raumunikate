@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 const baseSlidePageKey = Key('base-slide-page');
@@ -42,6 +43,7 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
     return BasePage(
       onScrollToTopTap: () => _scrollToTop,
       child: PageView.builder(
+        scrollBehavior: context.pageViewScrollBehavior,
         key: baseSlidePageKey,
         controller: _controller,
         scrollDirection: Axis.vertical,

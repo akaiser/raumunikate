@@ -31,5 +31,9 @@ void main() {
 
       expect(find.byType(pageType), findsOneWidget);
     });
+
+    // TODO(albert): finish this
+    // scroll to the bottom
+    // navigate back (BlogHeader etc.)
   });
 }

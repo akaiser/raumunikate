@@ -29,12 +29,12 @@
 
         #loading {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 47%;
+            left: 47%;
+            width: 36px;
             transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
-
             animation: rotation 2s infinite ease, pulsate 2s infinite ease;
         }
 
@@ -58,7 +58,7 @@
     <script src="flutter.js" defer></script>
 </head>
 <body>
-<img id="loading" alt="loading" src="assets/images/logo.png" height="36"/>
+<img id="loading" alt="loading" src="assets/images/logo.png"/>
 <script>
     window.addEventListener('load', function () {
         _flutter.loader.loadEntrypoint({serviceWorker: {serviceWorkerVersion: serviceWorkerVersion}})
