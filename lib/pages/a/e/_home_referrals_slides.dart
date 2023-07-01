@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
 import 'package:raumunikate/pages/a/e/_home_referral_card.dart';
 
@@ -7,6 +8,7 @@ class HomeReferralsSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PageView(
+        scrollBehavior: context.pageViewScrollBehavior,
         children: const [
           _HomeReferralCard(data.referralData0),
           _HomeReferralCard(data.referralData1),

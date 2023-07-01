@@ -45,7 +45,7 @@ class Images {
       instagram = '$_iconsRoot/instagram.png',
       mail = '$_iconsRoot/mail.png',
       menu = '$_iconsRoot/menu.png',
-      arrowUp = '$_iconsRoot/arrow-up.png';
+      arrowUp = '$_iconsRoot/arrow_up.png';
 
   static const // misc
       logo = '$_root/logo.png',

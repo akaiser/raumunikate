@@ -1,3 +1,5 @@
+import 'dart:ui' show PointerDeviceKind, Size;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:raumunikate/_theme.dart';
@@ -14,11 +16,7 @@ extension BuildContextExt on BuildContext {
 
   // media
 
-  Size get _size => MediaQuery.sizeOf(this);
-
-  double get screenHeight => _size.height;
-
-  double get screenWidth => _size.width;
+  Size get screenSize => MediaQuery.sizeOf(this);
 
   // theme
 
@@ -32,4 +30,13 @@ extension BuildContextExt on BuildContext {
 
   void launch(String link) =>
       _urlLauncherRegex.hasMatch(link) ? launchUrl(Uri.parse(link)) : go(link);
+
+  ScrollBehavior get pageViewScrollBehavior =>
+      ScrollConfiguration.of(this).copyWith(
+        dragDevices: {
+          PointerDeviceKind.touch,
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.trackpad,
+        },
+      );
 }

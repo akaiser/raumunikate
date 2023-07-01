@@ -21,9 +21,7 @@ class BlogHeader extends StatelessWidget {
         children: [
           const TextLink('Blog', url: Routes.blogPage),
           const Text(' > '),
-          Expanded(
-            child: Text(blogName),
-          ),
+          Expanded(child: Text(blogName)),
           const SizedBox(width: 4),
           Text(blogDate),
         ],

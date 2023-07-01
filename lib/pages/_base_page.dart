@@ -40,6 +40,7 @@ class _BasePageState extends State<BasePage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = context.screenSize;
     final navBarNotifier = context.read<NavBarNotifier>();
     return Scaffold(
       body: DefaultTextStyle.merge(
@@ -67,8 +68,8 @@ class _BasePageState extends State<BasePage> {
             const NavBar(),
             if (!kReleaseMode)
               Text(
-                '${context.screenWidth} x '
-                '${context.screenHeight} | '
+                '${screenSize.width} x '
+                '${screenSize.height} | '
                 '${context.breakpoint.name}',
                 style: context.tt.label?.copyWith(fontSize: 14),
               ),
@@ -97,10 +98,7 @@ class _ScrollToTopArrow extends StatelessWidget {
         child: IconButton(
           onPressed: onTap,
           iconSize: 42,
-          icon: const ImageIcon(
-            color: mainTODO_1,
-            AssetImage(Images.arrowUp),
-          ),
+          icon: Image.asset(Images.arrowUp),
         ),
       );
 }
