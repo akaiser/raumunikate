@@ -92,7 +92,10 @@ class _BasePageState extends State<BasePage> {
                 autofocus: true,
                 focusNode: _focus,
                 onKeyEvent: _onKeyEvent,
-                child: widget.child,
+                child: ScrollConfiguration(
+                  behavior: context.defaultScrollBehavior,
+                  child: widget.child,
+                ),
               ),
             ),
             const NavBar(),

@@ -3,7 +3,6 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 const baseScrollPageKey = Key('base-scroll-page');
@@ -85,9 +84,7 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
 
   void get _onScrollUpRequest {
     _controller.animateTo(
-      _controller.offset +
-          context.screenSize.height -
-          (context.isFullWidthNavBar ? navigationBarHeight : 0),
+      _controller.offset + context.screenSize.height,
       duration: const Duration(milliseconds: pageTransitionInMillis),
       curve: Curves.ease,
     );
@@ -96,9 +93,7 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
   void get _onScrollDownRequest {
     if (_controller.offset != 0) {
       _controller.animateTo(
-        _controller.offset -
-            context.screenSize.height +
-            (context.isFullWidthNavBar ? navigationBarHeight : 0),
+        _controller.offset - context.screenSize.height,
         duration: const Duration(milliseconds: pageTransitionInMillis),
         curve: Curves.ease,
       );
