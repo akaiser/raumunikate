@@ -31,7 +31,7 @@ extension BuildContextExt on BuildContext {
   void launch(String link) =>
       _urlLauncherRegex.hasMatch(link) ? launchUrl(Uri.parse(link)) : go(link);
 
-  ScrollBehavior get pageViewScrollBehavior =>
+  ScrollBehavior get defaultScrollBehavior =>
       ScrollConfiguration.of(this).copyWith(
         dragDevices: {
           PointerDeviceKind.touch,

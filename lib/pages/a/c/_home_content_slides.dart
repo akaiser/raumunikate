@@ -43,7 +43,7 @@ class _HomeContentSlidesState extends State<HomeContentSlides> {
   Widget build(BuildContext context) {
     final isSxsBreakpoint = context.isSxsBreakpoint;
     return PageView.builder(
-      scrollBehavior: context.pageViewScrollBehavior,
+      scrollBehavior: context.defaultScrollBehavior,
       controller: _controller,
       itemCount: data.slidesData.length,
       padEnds: isSxsBreakpoint,

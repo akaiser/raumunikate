@@ -8,7 +8,7 @@ class HomeReferralsSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PageView(
-        scrollBehavior: context.pageViewScrollBehavior,
+        scrollBehavior: context.defaultScrollBehavior,
         children: const [
           _HomeReferralCard(data.referralData0),
           _HomeReferralCard(data.referralData1),
