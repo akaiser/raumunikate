@@ -37,14 +37,34 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
         curve: Curves.ease,
       );
 
+  void get _onScrollUpRequest {
+    if (widget.children.length != _controller.page?.toInt()) {
+      _controller.nextPage(
+        duration: const Duration(milliseconds: pageTransitionInMillis),
+        curve: Curves.ease,
+      );
+    }
+  }
+
+  void get _onScrollDownRequest {
+    if (_controller.page?.toInt() != 0) {
+      _controller.previousPage(
+        duration: const Duration(milliseconds: pageTransitionInMillis),
+        curve: Curves.ease,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final _children = [...widget.children, const _Footer()];
     return BasePage(
       onScrollToTopTap: () => _scrollToTop,
+      onScrollUpRequest: () => _onScrollUpRequest,
+      onScrollDownRequest: () => _onScrollDownRequest,
       child: PageView.builder(
-        scrollBehavior: context.pageViewScrollBehavior,
         key: baseSlidePageKey,
+        scrollBehavior: context.pageViewScrollBehavior,
         controller: _controller,
         scrollDirection: Axis.vertical,
         itemCount: _children.length,

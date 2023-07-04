@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_images.dart';
@@ -13,10 +14,14 @@ import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 class BasePage extends StatefulWidget {
   const BasePage({
     required this.onScrollToTopTap,
+    required this.onScrollUpRequest,
+    required this.onScrollDownRequest,
     required this.child,
   });
 
   final VoidCallback onScrollToTopTap;
+  final VoidCallback onScrollUpRequest;
+  final VoidCallback onScrollDownRequest;
   final Widget child;
 
   @override
@@ -24,9 +29,12 @@ class BasePage extends StatefulWidget {
 }
 
 class _BasePageState extends State<BasePage> {
+  late final FocusNode _focus;
+
   @override
   void initState() {
     super.initState();
+    _focus = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         // When navigating to new scaffold and NavBar was not expanded yet...
@@ -36,6 +44,23 @@ class _BasePageState extends State<BasePage> {
         }
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _onKeyEvent(KeyEvent event) {
+    switch (event.logicalKey) {
+      case LogicalKeyboardKey.arrowDown:
+      case LogicalKeyboardKey.pageDown:
+        widget.onScrollUpRequest();
+      case LogicalKeyboardKey.arrowUp:
+      case LogicalKeyboardKey.pageUp:
+        widget.onScrollDownRequest();
+    }
   }
 
   @override
@@ -63,7 +88,12 @@ class _BasePageState extends State<BasePage> {
                 const Duration(milliseconds: pageTransitionInMillis),
                 () => context.go(Routes.homePage),
               ),
-              child: widget.child,
+              child: KeyboardListener(
+                autofocus: true,
+                focusNode: _focus,
+                onKeyEvent: _onKeyEvent,
+                child: widget.child,
+              ),
             ),
             const NavBar(),
             if (!kReleaseMode)

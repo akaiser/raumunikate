@@ -4,7 +4,11 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
 class TextLink extends StatelessWidget {
-  const TextLink(this.text, {required this.url});
+  const TextLink(
+    this.text, {
+    required this.url,
+    super.key,
+  });
 
   final String text;
   final String url;
