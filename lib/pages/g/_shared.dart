@@ -6,6 +6,8 @@ import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
+const blogTextLinkKey = Key('blog-text-link');
+
 class BlogHeader extends StatelessWidget {
   const BlogHeader({
     required this.blogName,
@@ -19,7 +21,11 @@ class BlogHeader extends StatelessWidget {
   Widget build(BuildContext context) => Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TextLink('Blog', url: Routes.blogPage),
+          const TextLink(
+            'Blog',
+            url: Routes.blogPage,
+            key: blogTextLinkKey,
+          ),
           const Text(' > '),
           Expanded(child: Text(blogName)),
           const SizedBox(width: 4),

@@ -29,7 +29,7 @@ void main() {
     await tester.tap(find.text(entry.menuLinkText));
     await tester.pumpAndSettle();
 
-    expect(find.byType(entry.pageType), findsOneWidget);
+    expect(find.byType(HomePage), findsOneWidget);
   });
 
   testWidgets('cycles through all sections and slides', (tester) async {

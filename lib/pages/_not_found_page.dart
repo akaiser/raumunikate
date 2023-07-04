@@ -7,9 +7,9 @@ class NotFoundPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BasePage(
-        onScrollToTopTap: () {
-          // NOOP
-        },
+        onScrollToTopTap: () {},
+        onScrollUpRequest: () {},
+        onScrollDownRequest: () {},
         child: Center(
           child: Text(
             '404 Nix hier!',

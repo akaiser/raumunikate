@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raumunikate/pages/g/_data.dart';
+import 'package:raumunikate/pages/g/_shared.dart';
 import 'package:raumunikate/pages/g/a/raumfuerunikate_lilli_grewe.dart';
 import 'package:raumunikate/pages/g/blog_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
@@ -19,21 +20,27 @@ void main() {
     await tester.tap(find.text(entry.menuLinkText));
     await tester.pumpAndSettle();
 
-    expect(find.byType(entry.pageType), findsOneWidget);
+    expect(find.byType(BlogPage), findsOneWidget);
   });
 
-  _blogs.forEach((linkText, pageType) {
-    testWidgets('tap on "$linkText" shows "$pageType', (tester) async {
+  _blogs.forEach((blogName, pageType) {
+    testWidgets('tap on "$blogName" shows "$pageType', (tester) async {
       await tester.pumpApp();
 
-      await tester.tap(find.text(linkText));
+      await tester.tap(find.text(blogName));
       await tester.pumpAndSettle();
 
       expect(find.byType(pageType), findsOneWidget);
     });
 
-    // TODO(albert): finish this
-    // scroll to the bottom
-    // navigate back (BlogHeader etc.)
+    testWidgets('tap on $blogTextLinkKey leaves "$pageType', (tester) async {
+      await tester.pumpApp();
+
+      await tester.tap(find.byKey(blogTextLinkKey));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(pageType), findsNothing);
+      expect(find.byType(BlogPage), findsOneWidget);
+    });
   });
 }
