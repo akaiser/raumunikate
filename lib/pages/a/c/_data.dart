@@ -1,5 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/material.dart' show Color, Colors;
+import 'package:meta/meta.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 
@@ -7,7 +8,7 @@ const textColor = Colors.white;
 
 const linkText = 'Erfahre mehr';
 
-final slidesData = [
+const slidesData = [
   SlideDataEntry(
     mainTODO_3,
     'Atmosphäre planen',
@@ -30,8 +31,9 @@ final slidesData = [
   SlideDataEntry(mainTODO_4, 'Inspiration', 'TODO', Routes.inspirationPage),
 ];
 
+@immutable
 class SlideDataEntry {
-  SlideDataEntry(
+  const SlideDataEntry(
     this.backgroundColor,
     this.title,
     this.text,

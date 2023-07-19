@@ -1,65 +1,22 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
-class HomeContentSlides extends StatefulWidget {
+class HomeContentSlides extends StatelessWidget {
   const HomeContentSlides();
 
   @override
-  State<HomeContentSlides> createState() => _HomeContentSlidesState();
-}
-
-class _HomeContentSlidesState extends State<HomeContentSlides> {
-  late PageController _controller;
-
-  static const _viewportFractions = {
-    Breakpoint.xxl: 0.2,
-    Breakpoint.xl: 0.3,
-    Breakpoint.l: 0.4,
-    Breakpoint.m: 0.5,
-    Breakpoint.s: 0.6,
-    Breakpoint.xs: 0.8,
-  };
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _controller = PageController(
-      viewportFraction: _viewportFractions[context.breakpoint] ?? 1,
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final isSxsBreakpoint = context.isSxsBreakpoint;
-    return PageView.builder(
-      scrollBehavior: context.defaultScrollBehavior,
-      controller: _controller,
-      itemCount: data.slidesData.length,
-      padEnds: isSxsBreakpoint,
-      itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.only(top: navigationBarHeight - 20),
-        child: FractionallySizedBox(
-          widthFactor: 0.9,
-          heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
-          child: _SlideCard(
-            data.slidesData[index],
-            key: Key('slide-card-$index'),
-          ),
+  Widget build(BuildContext context) => ResponsiveSlides(
+        itemCount: data.slidesData.length,
+        itemBuilder: (_, index) => _SlideCard(
+          data.slidesData[index],
+          key: Key('home-content-slide-card-$index'),
         ),
-      ),
-    );
-  }
+      );
 }
 
 class _SlideCard extends StatelessWidget {

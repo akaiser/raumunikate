@@ -7,7 +7,8 @@ abstract class TwoColumnsSection extends StatelessWidget {
   const TwoColumnsSection({
     required this.image,
     required this.content,
-    required this.flipWidgets,
+    this.flipWidgets = false,
+    this.leftHasMoreFlex = false,
     this.backgroundImage,
     this.backgroundColor,
   });
@@ -15,6 +16,7 @@ abstract class TwoColumnsSection extends StatelessWidget {
   final Widget image;
   final Widget content;
   final bool flipWidgets;
+  final bool leftHasMoreFlex;
   final String? backgroundImage;
   final Color? backgroundColor;
 
@@ -36,6 +38,7 @@ abstract class TwoColumnsSection extends StatelessWidget {
           image,
           content,
           flipWidgets,
+          leftHasMoreFlex,
           _xlContentPadding,
           backgroundImage,
           backgroundColor,
@@ -44,6 +47,7 @@ abstract class TwoColumnsSection extends StatelessWidget {
           image,
           content,
           flipWidgets,
+          leftHasMoreFlex,
           _mContentPadding,
           backgroundImage,
           backgroundColor,
@@ -57,6 +61,7 @@ class _TwoColumn extends StatelessWidget {
     this.content,
     // ignore: avoid_positional_boolean_parameters
     this.flipWidgets,
+    this.leftHasMoreFlex,
     this.contentPadding,
     this.backgroundImage,
     this.backgroundColor,
@@ -65,6 +70,7 @@ class _TwoColumn extends StatelessWidget {
   final Widget image;
   final Widget content;
   final bool flipWidgets;
+  final bool leftHasMoreFlex;
   final EdgeInsetsGeometry contentPadding;
   final String? backgroundImage;
   final Color? backgroundColor;
@@ -72,11 +78,11 @@ class _TwoColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _image = Flexible(
-      flex: 2,
+      flex: leftHasMoreFlex ? 3 : 2,
       child: SizedBox.expand(child: image),
     );
     final _content = Flexible(
-      flex: 3,
+      flex: leftHasMoreFlex ? 2 : 3,
       child: Padding(padding: contentPadding, child: content),
     );
 

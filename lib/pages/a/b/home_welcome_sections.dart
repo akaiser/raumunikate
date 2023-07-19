@@ -23,7 +23,6 @@ class HomeWelcomeSection extends TwoColumnsSection {
       : super(
           image: const CoverImageBox(Images.homeWelcomeIna),
           content: const HomeWelcomeText(),
-          flipWidgets: false,
           backgroundColor: mainTODO_2,
         );
 }
