@@ -22,7 +22,6 @@ class InspirationPage extends StatelessWidget {
             const InspirationWelcomeSection(),
           const InspirationContentSection(),
           const InspirationImaginationSection(),
-          //const InspirationReferralsSection(),
         ],
       );
 }
