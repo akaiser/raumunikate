@@ -27,7 +27,9 @@ class Images {
       portraitPassion = '$_root/portrait_passion.jpg';
 
   static const // inspiration
-      inspirationIntro = '$_root/inspiration_intro.jpg';
+      inspirationIntro = '$_root/inspiration_intro.jpg',
+      inspirationWelcome = '$_root/inspiration_welcome.jpg',
+      inspirationImagination = '$_root/inspiration_imagination.jpg';
 
   static const // blogs
       _blog0 = '$_blogRoot/0';

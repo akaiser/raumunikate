@@ -42,7 +42,7 @@ void main() {
 
     await tester.dragPageView();
     tester.expectType(HomeContentSection, _sectionTypes);
-    expect(find.byKey(const Key('slide-card-0')), findsOneWidget);
+    expect(find.byKey(const Key('home-content-slide-card-0')), findsOneWidget);
     // TODO(albert): finish this...
 
     await tester.dragPageView();

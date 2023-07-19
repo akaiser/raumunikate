@@ -1,5 +1,6 @@
 // ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/material.dart' show Colors;
+import 'package:meta/meta.dart';
 
 const referralTextColor = Colors.white;
 
@@ -21,6 +22,7 @@ const referralData2 = ReferralDataEntry(
   340,
 );
 
+@immutable
 class ReferralDataEntry {
   const ReferralDataEntry(
     this.feedback,
