@@ -15,7 +15,8 @@ const //
     mainTODO_2 = Color(0xffece9d8),
     mainTODO_3 = Color(0xff4d4747),
     mainTODO_4 = Color(0xffccd1cd),
-    mainTODO_5 = Color(0xffccc8cf);
+    mainTODO_5 = Color(0xffccc8cf),
+    mainTODO_6 = Color(0xffcdc8cf);
 
 const linkColor = mainTODO_1;
 

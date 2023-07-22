@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:raumunikate/_pages.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/f/a/inspiration_intro_section.dart';
 import 'package:raumunikate/pages/f/b/inspiration_welcome_sections.dart';
 import 'package:raumunikate/pages/f/c/inspiration_content_section.dart';
 import 'package:raumunikate/pages/f/d/inspiration_imagination_section.dart';
+import 'package:raumunikate/pages/f/inspiration_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';

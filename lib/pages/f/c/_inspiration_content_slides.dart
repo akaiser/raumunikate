@@ -28,7 +28,7 @@ class _Cards extends StatelessWidget {
                 (index, slideData) => Expanded(
                   child: FractionallySizedBox(
                     widthFactor: 0.8,
-                    heightFactor: 0.45,
+                    heightFactor: 0.6,
                     child: _SlideCard(
                       slideData,
                       key: Key('inspiration-content-card-$index'),
@@ -71,7 +71,7 @@ class _SlideCard extends StatelessWidget {
           Expanded(
             flex: 3,
             child: ColoredBox(
-              color: entry.backgroundColor.withOpacity(0.85),
+              color: mainTODO_5.withOpacity(0.85),
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Column(

@@ -13,7 +13,9 @@ class Images {
       homeImage = '$_root/home_image.jpg';
 
   static const // plan
-      planIntro = '$_root/plan_intro.jpg';
+      planIntro = '$_root/plan_intro.jpg',
+      planStyle = '$_root/plan_style.png',
+      planAtmosphere = '$_root/plan_atmosphere.png';
 
   static const // projects
       projectsIntro = '$_root/projects_intro.jpg';

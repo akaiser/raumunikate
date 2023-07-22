@@ -11,26 +11,17 @@ class InspirationImaginationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const BaseSectionWithBackgroundImage(
         Images.inspirationImagination,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              alignment: Alignment.centerLeft,
-              image: AssetImage(Images.chevron),
-              scale: 1.2,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            PageIntroText(data.imaginationTitle),
+            PageIntroText(data.imaginationTitle2),
+            SizedBox(height: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: _Footer(),
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              PageIntroText(data.imaginationTitle),
-              PageIntroText(data.imaginationTitle2),
-              SizedBox(height: 16),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8),
-                child: _Footer(),
-              ),
-            ],
-          ),
+          ],
         ),
       );
 }
