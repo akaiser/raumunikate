@@ -7,10 +7,12 @@ class ResponsiveSlides extends StatefulWidget {
   const ResponsiveSlides({
     required this.itemCount,
     required this.itemBuilder,
+    this.omitTopPadding = false,
   });
 
   final int itemCount;
   final IndexedWidgetBuilder itemBuilder;
+  final bool omitTopPadding;
 
   @override
   State<ResponsiveSlides> createState() => _ResponsiveSlidesState();
@@ -50,14 +52,36 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
       scrollBehavior: context.defaultScrollBehavior,
       itemCount: widget.itemCount,
       padEnds: isSxsBreakpoint,
-      itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.only(top: navigationBarHeight - 20),
-        child: FractionallySizedBox(
-          widthFactor: 0.9,
-          heightFactor: isSxsBreakpoint ? 0.7 : 0.5,
+      itemBuilder: (context, index) {
+        final child = _FractionallySizedBox(
+          isSxsBreakpoint: isSxsBreakpoint,
           child: widget.itemBuilder(context, index),
-        ),
-      ),
+        );
+
+        return widget.omitTopPadding
+            ? child
+            : Padding(
+                padding: const EdgeInsets.only(top: navigationBarHeight - 20),
+                child: child,
+              );
+      },
     );
   }
+}
+
+class _FractionallySizedBox extends StatelessWidget {
+  const _FractionallySizedBox({
+    required this.isSxsBreakpoint,
+    required this.child,
+  });
+
+  final bool isSxsBreakpoint;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => FractionallySizedBox(
+        widthFactor: 0.9,
+        heightFactor: isSxsBreakpoint ? 0.8 : 0.6,
+        child: child,
+      );
 }

@@ -25,6 +25,8 @@ extension BreakpointExt on BuildContext {
 
   bool get isFullWidthNavBar => breakpoint != Breakpoint.xs;
 
+  bool get isXsBreakpoint => breakpoint == Breakpoint.xs;
+
   bool get isSxsBreakpoint => switch (breakpoint) {
         Breakpoint.s || Breakpoint.xs => true,
         _ => false,
