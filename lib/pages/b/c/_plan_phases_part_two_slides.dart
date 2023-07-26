@@ -4,7 +4,7 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/b/_shared/plan_slides.dart';
 import 'package:raumunikate/pages/b/c/_data.dart' as data;
 
-class PlanPhasesPartTwoSlides extends PlanSlidesSlides {
+class PlanPhasesPartTwoSlides extends PlanSlides {
   const PlanPhasesPartTwoSlides()
       : super(
           leading: const Column(

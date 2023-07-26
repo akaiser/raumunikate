@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart' show Color, SizedBox;
+import 'package:flutter/widgets.dart' show Color, EdgeInsets, SizedBox;
 
 const appName = 'RAUMUNIKATE Ina Kaiser';
 
@@ -22,3 +22,8 @@ const linkColor = mainTODO_1;
 
 const newLine = SizedBox(height: 28);
 const smallNewLine = SizedBox(height: 8);
+
+const //
+    textHorizontalPaddingXl = EdgeInsets.symmetric(horizontal: 300),
+    textHorizontalPaddingL = EdgeInsets.symmetric(horizontal: 200),
+    textHorizontalPaddingXs = EdgeInsets.symmetric(horizontal: 20);

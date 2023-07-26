@@ -6,6 +6,8 @@ import 'package:raumunikate/pages/b/c/plan_phases_part_two_section.dart';
 import 'package:raumunikate/pages/b/d/plan_atmosphere_sections.dart';
 import 'package:raumunikate/pages/b/e/plan_aspects_section.dart';
 import 'package:raumunikate/pages/b/f/plan_style_sections.dart';
+import 'package:raumunikate/pages/b/g/plan_natural_sections.dart';
+import 'package:raumunikate/pages/b/i/plan_elegant_sections.dart';
 import 'package:raumunikate/pages/base_slide_page.dart';
 
 class PlanPage extends StatelessWidget {
@@ -32,7 +34,18 @@ class PlanPage extends StatelessWidget {
           PlanStyleSecondSection(),
         ] else
           const PlanStyleSection(),
-        // TODO(albert): two slides are missing
+        if (isSxsBreakpoint) ...const [
+          PlanNaturalJustTextSection(),
+          PlanNaturalJustFirstImageSection(),
+          PlanNaturalJustSecondImageSection(),
+        ] else
+          const PlanNaturalFullSection(),
+        if (isSxsBreakpoint) ...const [
+          PlanElegantJustTextSection(),
+          PlanElegantJustFirstImageSection(),
+          PlanElegantJustSecondImageSection(),
+        ] else
+          const PlanElegantFullSection(),
       ],
     );
   }

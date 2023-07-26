@@ -15,7 +15,11 @@ class Images {
   static const // plan
       planIntro = '$_root/plan_intro.jpg',
       planStyle = '$_root/plan_style.png',
-      planAtmosphere = '$_root/plan_atmosphere.png';
+      planAtmosphere = '$_root/plan_atmosphere.png',
+      planNaturalFirst = '$_root/plan_natural_first.png',
+      planNaturalSecond = '$_root/plan_natural_second.png',
+      planElegantFirst = '$_root/plan_elegant_first.png',
+      planElegantSecond = '$_root/plan_elegant_second.png';
 
   static const // projects
       projectsIntro = '$_root/projects_intro.jpg';

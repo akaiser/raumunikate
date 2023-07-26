@@ -12,7 +12,7 @@ final _urlLauncherRegex = RegExp(r'^((tel|http|https|mailto):.*)$');
 extension BuildContextExt on BuildContext {
   // router
 
-  String? get currentRoutePath => GoRouterState.of(this).location;
+  String? get currentRoutePath => GoRouterState.of(this).path;
 
   // media
 

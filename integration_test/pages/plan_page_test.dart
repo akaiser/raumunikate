@@ -6,6 +6,8 @@ import 'package:raumunikate/pages/b/c/plan_phases_part_two_section.dart';
 import 'package:raumunikate/pages/b/d/plan_atmosphere_sections.dart';
 import 'package:raumunikate/pages/b/e/plan_aspects_section.dart';
 import 'package:raumunikate/pages/b/f/plan_style_sections.dart';
+import 'package:raumunikate/pages/b/g/plan_natural_sections.dart';
+import 'package:raumunikate/pages/b/i/plan_elegant_sections.dart';
 import 'package:raumunikate/pages/b/plan_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
@@ -18,6 +20,8 @@ const _sectionTypes = [
   PlanAtmosphereSection,
   PlanAspectsSection,
   PlanStyleSection,
+  PlanNaturalFullSection,
+  PlanElegantFullSection,
   Footer,
 ];
 
