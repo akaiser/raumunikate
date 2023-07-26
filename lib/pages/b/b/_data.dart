@@ -1,4 +1,5 @@
 // ignore_for_file: lines_longer_than_80_chars
+import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/b/_shared/plan_slide_data_entry.dart';
 
 const sectionTitle = 'DIE PHASEN DER ZUSAMMENARBEIT';
@@ -8,18 +9,21 @@ const sectionSubtitle =
 
 const slidesData = [
   PlanSlideDataEntry(
+    mainTODO_4,
     'Phase 1',
-    'Kennenlernen',
     'In einem unverbindlichen Erstgespräch, erfahre ich von Ihren Wünschen und Vorstellungen und Sie erhalten einen ersten Eindruck von meinem Gespür für Ästhetik.',
+    title2: 'Kennenlernen',
   ),
   PlanSlideDataEntry(
+    mainTODO_4,
     'Phase 2',
-    'Beratungsrahmen',
     'Sir besprechen den Beratrungsumfang. Mit Hilfe meinem Stilraum finden wir gemeinsam heraus, welcher Wohnstil Sie anspricht und mit welchen Materialien und Farben Sie sich wohlfühlen.',
+    title2: 'Beratungsrahmen',
   ),
   PlanSlideDataEntry(
+    mainTODO_4,
     'Phase 3',
-    'Konzept',
     'Auf dieser Basis kreiere ich ihr persönliches ganzheitliches Farbkonzept und selektiere eine stimmige Farbkomposition.',
+    title2: 'Konzept',
   ),
 ];

@@ -7,8 +7,8 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/b/_shared/plan_slide_data_entry.dart';
 
-abstract class PlanSlidesSlides extends StatelessWidget {
-  const PlanSlidesSlides({
+abstract class PlanSlides extends StatelessWidget {
+  const PlanSlides({
     this.leading,
     required this.slidesData,
   });
@@ -58,9 +58,11 @@ class _Cards extends StatelessWidget {
                   child: FractionallySizedBox(
                     widthFactor: 0.8,
                     heightFactor: 0.6,
-                    child: _SlideCard(
-                      slideData,
-                      key: Key('plan-card-$index'),
+                    child: SingleChildScrollView(
+                      child: _SlideCard(
+                        slideData,
+                        key: Key('plan-card-$index'),
+                      ),
                     ),
                   ),
                 ),
@@ -97,28 +99,27 @@ class _SlideCard extends StatelessWidget {
     final title2 = entry.title2;
 
     return ColoredBox(
-      color: mainTODO_4.withOpacity(0.85),
+      color: entry.cardColor.withOpacity(0.85),
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: 16,
-          vertical: isXsBreakpoint ? 16 : 48,
+          vertical: isXsBreakpoint ? 16 : 32,
         ),
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               entry.title,
-              style: context.tt.label,
+              style: context.tt.label?.copyWith(color: entry.textColor),
             ),
             if (title2 != null) ...[
               const SizedBox(height: 10),
               Text(
                 title2,
-                style: context.tt.label,
+                style: context.tt.label?.copyWith(color: entry.textColor),
               ),
             ],
             SizedBox(height: isXsBreakpoint ? 8 : 48),
-            _Text(entry.text),
+            _Text(entry),
           ],
         ),
       ),
@@ -127,14 +128,15 @@ class _SlideCard extends StatelessWidget {
 }
 
 class _Text extends StatelessWidget {
-  const _Text(this.text);
+  const _Text(this.entry);
 
-  final String text;
+  final PlanSlideDataEntry entry;
 
   @override
   Widget build(BuildContext context) => Text(
-        text,
+        entry.text,
         style: context.tt.body?.copyWith(
+          color: entry.textColor,
           fontSize: context.isShittySmallDevice ? 15 : 18,
         ),
         textAlign: TextAlign.center,

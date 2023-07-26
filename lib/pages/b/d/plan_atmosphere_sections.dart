@@ -36,8 +36,11 @@ class _PlanAtmosphereImage extends StatelessWidget {
   const _PlanAtmosphereImage();
 
   @override
-  Widget build(BuildContext context) => const FadeInAssetImage(
-        Images.planAtmosphere,
-        fit: BoxFit.fitWidth,
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.only(top: navigationBarHeight),
+        child: FadeInAssetImage(
+          Images.planAtmosphere,
+          fit: BoxFit.contain,
+        ),
       );
 }

@@ -3,7 +3,7 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/b/_shared/plan_slides.dart';
 import 'package:raumunikate/pages/b/b/_data.dart' as data;
 
-class PlanPhasesPartOneSlides extends PlanSlidesSlides {
+class PlanPhasesPartOneSlides extends PlanSlides {
   const PlanPhasesPartOneSlides()
       : super(
           leading: const Column(

@@ -29,17 +29,17 @@ class BaseScrollPage extends StatelessWidget {
     return ResponsiveLayout(
       xl: (_) => _BaseScrollPage(
         preferListView: preferListView,
-        padding: const EdgeInsets.symmetric(horizontal: 300),
+        padding: textHorizontalPaddingXl,
         children: _children,
       ),
       l: (_) => _BaseScrollPage(
         preferListView: preferListView,
-        padding: const EdgeInsets.symmetric(horizontal: 200),
+        padding: textHorizontalPaddingL,
         children: _children,
       ),
       xs: (_) => _BaseScrollPage(
         preferListView: preferListView,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: textHorizontalPaddingXs,
         children: _children,
       ),
     );

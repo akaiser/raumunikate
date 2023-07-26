@@ -36,8 +36,11 @@ class _PlanStyleImage extends StatelessWidget {
   const _PlanStyleImage();
 
   @override
-  Widget build(BuildContext context) => const FadeInAssetImage(
-        Images.planStyle,
-        fit: BoxFit.fitWidth,
+  Widget build(BuildContext context) => const Padding(
+        padding: EdgeInsets.only(top: navigationBarHeight),
+        child: FadeInAssetImage(
+          Images.planStyle,
+          fit: BoxFit.contain,
+        ),
       );
 }

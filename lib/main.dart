@@ -2,6 +2,7 @@ import 'dart:async' show runZonedGuarded;
 import 'dart:developer' show log;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_router.dart';
@@ -9,7 +10,11 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/_theme.dart';
 
 void main() => runZonedGuarded<void>(
-      () => runApp(const App()),
+      () {
+        // TODO(albert): test this
+        usePathUrlStrategy();
+        runApp(const App());
+      },
       (error, stack) => log(
         'Some Explosion...',
         error: error,
