@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -69,11 +68,11 @@ class _BasePageState extends State<BasePage> {
     final navBarNotifier = context.read<NavBarNotifier>();
     return Scaffold(
       body: DefaultTextStyle.merge(
-        style: context.tt.body?.copyWith(color: mainTODO_0),
+        style: context.tt.body?.copyWith(color: raumGrau),
         child: Stack(
           children: [
             RefreshIndicator(
-              color: mainTODO_0,
+              color: raumGrau,
               edgeOffset: navigationBarHeightExpanded,
               notificationPredicate: (notification) {
                 if (notification.metrics.axis == Axis.vertical) {

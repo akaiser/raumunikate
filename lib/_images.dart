@@ -1,6 +1,4 @@
-class Images {
-  Images._();
-
+abstract final class Images {
   static const //
       _root = 'images',
       _blogRoot = '$_root/blog',
@@ -11,14 +9,14 @@ class Images {
       homeWelcomeIna = '$_root/home_welcome_ina.webp',
       homeImage = '$_root/home_image.webp';
 
-  static const // plan
-      planIntro = '$_root/plan_intro.webp',
-      planStyle = '$_root/plan_style.webp',
-      planAtmosphere = '$_root/plan_atmosphere.webp',
-      planNaturalFirst = '$_root/plan_natural_first.webp',
-      planNaturalSecond = '$_root/plan_natural_second.webp',
-      planElegantFirst = '$_root/plan_elegant_first.webp',
-      planElegantSecond = '$_root/plan_elegant_second.webp';
+  static const // design
+      designIntro = '$_root/design_intro.webp',
+      designStyle = '$_root/design_style.webp',
+      designAtmosphere = '$_root/design_atmosphere.webp',
+      designNaturalFirst = '$_root/design_natural_first.webp',
+      designNaturalSecond = '$_root/design_natural_second.webp',
+      designElegantFirst = '$_root/design_elegant_first.webp',
+      designElegantSecond = '$_root/design_elegant_second.webp';
 
   static const // projects
       projectsIntro = '$_root/projects_intro.webp';
@@ -29,12 +27,7 @@ class Images {
   static const // portrait
       portraitIntro = '$_root/portrait_intro.webp',
       portraitAbout = '$_root/portrait_about.webp',
-      portraitPassion = '$_root/portrait_passion.webp';
-
-  static const // inspiration
-      inspirationIntro = '$_root/inspiration_intro.webp',
-      inspirationWelcome = '$_root/inspiration_welcome.webp',
-      inspirationImagination = '$_root/inspiration_imagination.webp';
+      portraitProduct = '$_root/portrait_product.webp';
 
   static const // blogs
       _blog0 = '$_blogRoot/0';

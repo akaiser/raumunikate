@@ -10,25 +10,37 @@ const linkText = 'Erfahre mehr';
 
 const slidesData = [
   SlideDataEntry(
-    mainTODO_3,
-    'Atmosphäre planen',
-    'Sie sehen einen Einblick in meine Projekte. Im privaten und beruflichen Kontext bekommt Wohlfühlatmosphäre eine immer größere Bedeutung.',
-    Routes.planPage,
+    raumLila,
+    'Atmosphäre gestalten',
+    'Sie erfahren die Phasen unserer Zusammenarbeit und meine methodische Herangehensweise.',
+    Routes.designPage,
   ),
   SlideDataEntry(
-    mainTODO_1,
+    raumCreme,
     'Projekte',
-    'Sie erfahren die Phasen unserer Zusammenarbeit und meine methodische Herangehensweise.',
+    'Sie sehen einen Einblick in meine Projekte. Im privaten und beruflichen Kontext bekommt Wohlfühlatmosphäre eine immer größere Bedeutung.',
     Routes.projectsPage,
   ),
   SlideDataEntry(
-    mainTODO_0,
+    raumGrau,
     'Produkte',
-    'Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKATE kreiert.',
+    'Jedes Produkt ein Unikat. Eine Homage an die Origami-Papierkunst, für die Ewigkeit gemacht aus Leichtmetal.',
     Routes.productsPage,
   ),
-  SlideDataEntry(mainTODO_4, 'Portrait', 'TODO', Routes.portraitPage),
-  SlideDataEntry(mainTODO_4, 'Inspiration', 'TODO', Routes.inspirationPage),
+  SlideDataEntry(
+    raumGreen,
+    'Portrait',
+    'Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKATE kreiert.',
+    Routes.portraitPage,
+  ),
+  SlideDataEntry(
+    raumBrown,
+    'Blog',
+    '''
+Ort der Inspiration.
+Sie erhalten Einblicke in mein persönliche Gedankenwelt und meine spannende Interviewreihe #raumfuerunikate.''',
+    Routes.blogPage,
+  ),
 ];
 
 @immutable

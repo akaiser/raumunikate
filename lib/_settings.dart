@@ -10,15 +10,14 @@ const int navBarTransitionInMillis = 200;
 
 const //
     mainBackgroundColor = Color(0xfff2f2f2),
-    mainTODO_0 = Color(0xff626665),
-    mainTODO_1 = Color(0xffc4b3a3),
-    mainTODO_2 = Color(0xffece9d8),
-    mainTODO_3 = Color(0xff4d4747),
-    mainTODO_4 = Color(0xffccd1cd),
-    mainTODO_5 = Color(0xffccc8cf),
-    mainTODO_6 = Color(0xffcdc8cf);
+    raumGrau = Color(0xff626665),
+    raumCreme = Color(0xffc4b3a3),
+    raumBackground = Color(0xffece9d8),
+    raumBrown = Color(0xff4d4747),
+    raumGreen = Color(0xffccd1cd),
+    raumLila = Color(0xffccc8cf);
 
-const linkColor = mainTODO_1;
+const linkColor = raumCreme;
 
 const newLine = SizedBox(height: 28);
 const smallNewLine = SizedBox(height: 8);

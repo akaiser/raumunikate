@@ -8,7 +8,7 @@ import 'package:raumunikate/pages/a/b/_home_welcome_text.dart';
 class HomeWelcomeFirstSection extends OneColumnSection {
   const HomeWelcomeFirstSection()
       : super(
-          backgroundColor: mainTODO_2,
+          backgroundColor: raumBackground,
           child: const HomeWelcomeText(),
         );
 }
@@ -23,6 +23,6 @@ class HomeWelcomeSection extends TwoColumnsSection {
       : super(
           image: const CoverImageBox(Images.homeWelcomeIna),
           content: const HomeWelcomeText(),
-          backgroundColor: mainTODO_2,
+          backgroundColor: raumBackground,
         );
 }

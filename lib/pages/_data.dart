@@ -1,7 +1,6 @@
 const //
     homeIntroText = 'FARBE SCHAFFT ATMOSPHÄRE',
-    planIntroText = 'ATMOSPHÄRE PLANEN',
+    designIntroText = 'ATMOSPHÄRE GESTALTEN',
     projectsIntroText = 'PROJEKTE',
     productsIntroText = 'PRODUKTE',
-    portraitIntroText = 'PORTRAIT',
-    inspirationIntroText = 'INSPIRATION';
+    portraitIntroText = 'PORTRAIT';

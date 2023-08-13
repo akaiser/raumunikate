@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
@@ -17,7 +16,7 @@ class NavMenu extends StatelessWidget {
         tooltip: '',
         iconSize: 32,
         splashRadius: 0.1,
-        icon: Image.asset(Images.menu, color: mainTODO_0),
+        icon: Image.asset(Images.menu, color: raumGrau),
         itemBuilder: (context) => data.navData.map(
           (entry) {
             final isEnabled = context.currentRoutePath != entry.pagePath;
@@ -44,6 +43,6 @@ class _MenuItemText extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         value,
-        style: context.dts.copyWith(color: isEnabled ? mainTODO_1 : mainTODO_0),
+        style: context.dts.copyWith(color: isEnabled ? raumCreme : raumGrau),
       );
 }

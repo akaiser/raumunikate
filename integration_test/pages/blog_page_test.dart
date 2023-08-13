@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:raumunikate/pages/g/_data.dart';
-import 'package:raumunikate/pages/g/_shared.dart';
-import 'package:raumunikate/pages/g/a/raumfuerunikate_lilli_grewe.dart';
-import 'package:raumunikate/pages/g/blog_page.dart';
+import 'package:raumunikate/pages/f/_data.dart';
+import 'package:raumunikate/pages/f/_shared.dart';
+import 'package:raumunikate/pages/f/a/raumfuerunikate_lilli_grewe.dart';
+import 'package:raumunikate/pages/f/blog_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
@@ -13,7 +13,7 @@ const _blogs = {
 
 void main() {
   testWidgets('ensures to be on $BlogPage', (tester) async {
-    final entry = navData[6];
+    final entry = navData[5];
     await tester.pumpApp();
 
     await tester.navMenuTap();

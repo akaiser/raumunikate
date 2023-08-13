@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';

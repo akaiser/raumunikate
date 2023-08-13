@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/hover_region.dart';
@@ -23,7 +22,7 @@ class ActionButton extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             border: Border.all(
               width: 2,
-              color: isHovering ? mainTODO_1 : Colors.white,
+              color: isHovering ? raumCreme : Colors.white,
             ),
           ),
           child: child,
@@ -41,7 +40,7 @@ class _ActionButtonText extends StatelessWidget {
   Widget build(BuildContext context) => Text(
         text,
         style: context.dts.copyWith(
-          color: mainTODO_1,
+          color: raumCreme,
           fontSize: context.isShittySmallDevice ? 16 : null,
         ),
       );

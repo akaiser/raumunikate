@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
@@ -41,7 +40,7 @@ class _Link extends StatelessWidget {
         child: Image.asset(
           image,
           height: 16,
-          color: mainTODO_0,
+          color: raumGrau,
         ),
       );
 }
