@@ -1,7 +1,6 @@
 import 'dart:async' show runZonedGuarded;
 import 'dart:developer' show log;
 
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_router.dart';

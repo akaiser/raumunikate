@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:raumunikate/_settings.dart';
 
+export 'package:flutter/material.dart';
+
 final theme = ThemeData(
   fontFamily: 'RobotoCondensed',
   scaffoldBackgroundColor: mainBackgroundColor,

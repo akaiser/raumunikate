@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/hover_region.dart';

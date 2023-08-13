@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_footer/_bottom_section.dart';
 import 'package:raumunikate/pages/_footer/_connect_column.dart';
 import 'package:raumunikate/pages/_footer/_contact_column.dart';

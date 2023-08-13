@@ -1,11 +1,10 @@
-import 'dart:ui' show PointerDeviceKind, Size;
+import 'dart:ui' show PointerDeviceKind;
 
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:raumunikate/_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-export 'package:flutter/widgets.dart' show BuildContext;
+export 'package:flutter/material.dart';
 
 final _urlLauncherRegex = RegExp(r'^((tel|http|https|mailto):.*)$');
 
