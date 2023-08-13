@@ -25,7 +25,7 @@ class DesignPage extends StatelessWidget {
         const DesignPhasesPartTwoSection(),
         if (isSxsBreakpoint) ...const [
           DesignAtmosphereFirstSection(),
-          PlanAtmosphereSecondSection(),
+          DesignAtmosphereSecondSection(),
         ] else
           const DesignAtmosphereSection(),
         const DesignAspectsSection(),

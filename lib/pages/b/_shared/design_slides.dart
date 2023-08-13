@@ -61,7 +61,7 @@ class _Cards extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: _SlideCard(
                         slideData,
-                        key: Key('plan-card-$index'),
+                        key: Key('design-card-$index'),
                       ),
                     ),
                   ),
@@ -82,7 +82,7 @@ class _ResponsiveSlides extends StatelessWidget {
         itemCount: slidesData.length,
         itemBuilder: (_, index) => _SlideCard(
           slidesData[index],
-          key: Key('plan-slide-card-$index'),
+          key: Key('design-slide-card-$index'),
         ),
         omitTopPadding: true,
       );

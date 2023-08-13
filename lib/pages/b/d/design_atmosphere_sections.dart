@@ -10,30 +10,30 @@ class DesignAtmosphereFirstSection extends OneColumnSection {
   const DesignAtmosphereFirstSection()
       : super(
           backgroundColor: raumCreme,
-          child: const PlanAtmosphereText(),
+          child: const DesignAtmosphereText(),
         );
 }
 
-class PlanAtmosphereSecondSection extends ColoredBox {
-  const PlanAtmosphereSecondSection()
+class DesignAtmosphereSecondSection extends ColoredBox {
+  const DesignAtmosphereSecondSection()
       : super(
           color: raumCreme,
-          child: const _PlanAtmosphereImage(),
+          child: const _DesignAtmosphereImage(),
         );
 }
 
 class DesignAtmosphereSection extends TwoColumnsSection {
   const DesignAtmosphereSection()
       : super(
-          image: const _PlanAtmosphereImage(),
-          content: const PlanAtmosphereText(),
+          image: const _DesignAtmosphereImage(),
+          content: const DesignAtmosphereText(),
           leftHasMoreFlex: true,
           backgroundColor: raumCreme,
         );
 }
 
-class _PlanAtmosphereImage extends StatelessWidget {
-  const _PlanAtmosphereImage();
+class _DesignAtmosphereImage extends StatelessWidget {
+  const _DesignAtmosphereImage();
 
   @override
   Widget build(BuildContext context) => const Padding(
