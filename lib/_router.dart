@@ -15,8 +15,8 @@ final router = GoRouter(
       pageBuilder: (_, state) => _page(state, const HomePage()),
     ),
     GoRoute(
-      path: Routes.planPage,
-      pageBuilder: (_, state) => _page(state, const PlanPage()),
+      path: Routes.designPage,
+      pageBuilder: (_, state) => _page(state, const DesignPage()),
     ),
     GoRoute(
       path: Routes.projectsPage,
@@ -29,10 +29,6 @@ final router = GoRouter(
     GoRoute(
       path: Routes.portraitPage,
       pageBuilder: (_, state) => _page(state, const PortraitPage()),
-    ),
-    GoRoute(
-      path: Routes.inspirationPage,
-      pageBuilder: (_, state) => _page(state, const InspirationPage()),
     ),
     GoRoute(
       path: Routes.blogPage,

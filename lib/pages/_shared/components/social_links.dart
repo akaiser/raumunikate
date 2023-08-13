@@ -41,7 +41,7 @@ class _Link extends StatelessWidget {
         child: Image.asset(
           image,
           height: 16,
-          color: mainTODO_0,
+          color: raumGrau,
         ),
       );
 }

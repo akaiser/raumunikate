@@ -10,7 +10,7 @@ class HomeReferralsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSectionWithBackgroundColor(
-        color: mainTODO_4,
+        color: raumGreen,
         child: ResponsiveLayout(
           m: (_) => const HomeReferralsSingle(),
           xs: (_) => const HomeReferralsSlides(),

@@ -69,11 +69,11 @@ class _BasePageState extends State<BasePage> {
     final navBarNotifier = context.read<NavBarNotifier>();
     return Scaffold(
       body: DefaultTextStyle.merge(
-        style: context.tt.body?.copyWith(color: mainTODO_0),
+        style: context.tt.body?.copyWith(color: raumGrau),
         child: Stack(
           children: [
             RefreshIndicator(
-              color: mainTODO_0,
+              color: raumGrau,
               edgeOffset: navigationBarHeightExpanded,
               notificationPredicate: (notification) {
                 if (notification.metrics.axis == Axis.vertical) {

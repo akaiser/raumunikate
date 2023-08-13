@@ -8,7 +8,7 @@ import 'package:raumunikate/pages/e/b/_portrait_about_text.dart';
 class PortraitAboutFirstSection extends OneColumnSection {
   const PortraitAboutFirstSection()
       : super(
-          backgroundColor: mainTODO_2,
+          backgroundColor: raumBackground,
           child: const PortraitAboutText(),
         );
 }
@@ -24,6 +24,6 @@ class PortraitAboutSection extends TwoColumnsSection {
           image: const CoverImageBox(Images.portraitAbout),
           content: const PortraitAboutText(),
           flipWidgets: true,
-          backgroundColor: mainTODO_2,
+          backgroundColor: raumBackground,
         );
 }

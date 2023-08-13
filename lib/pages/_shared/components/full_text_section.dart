@@ -1,20 +1,20 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/responsive_text.dart';
 
 class FullTextSection extends StatelessWidget {
   const FullTextSection({
-    required this.title,
+    this.title,
     this.title2,
     required this.text,
     this.textColor,
     this.actionButton,
   });
 
-  final String title;
+  final String? title;
   final String? title2;
   final String text;
   final Color? textColor;
@@ -22,21 +22,20 @@ class FullTextSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _title = title;
     final _title2 = title2;
     final _actionButton = actionButton;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        HeadlineText(title, textColor: textColor),
+        if (_title != null) HeadlineText(_title, textColor: textColor),
         if (_title2 != null) HeadlineText(_title2, textColor: textColor),
-        const _Spacer(),
-        ResponsiveText(
-          text,
-          style: context.dts.copyWith(color: textColor),
-          textAlign: TextAlign.start,
-          fontSizes: context.isShittySmallDevice
-              ? const [20, 18, 18, 18, 18, 16]
-              : const [20, 18, 18, 18, 18, 18],
+        if (_title != null || _title2 != null) const _Spacer(),
+        Flexible(
+          child: AutoSizeText(
+            text,
+            style: context.dts.copyWith(fontSize: 20, color: textColor),
+          ),
         ),
         if (_actionButton != null) ...[
           const _Spacer(),
@@ -53,7 +52,7 @@ class _Spacer extends StatelessWidget {
   @override
   Widget build(BuildContext context) => context.breakpoint == Breakpoint.xs
       ? context.isShittySmallDevice
-          ? const SizedBox(height: 20)
+          ? const SizedBox(height: 10)
           : const SizedBox(height: 40)
       : const SizedBox(height: 60);
 }
