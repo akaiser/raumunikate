@@ -22,7 +22,12 @@ abstract final class Images {
       projectsIntro = '$_root/projects_intro.webp';
 
   static const // products
-      productsIntro = '$_root/products_intro.webp';
+      productsIntro = '$_root/products_intro.webp',
+      productsCandleShell = '$_root/products_candle_shell.webp',
+      productsClockShell = '$_root/products_clock_shell.webp',
+      productShell = '$_root/product_shell.webp',
+      productClock = '$_root/product_clock.webp',
+      productLamp = '$_root/product_lamp.webp';
 
   static const // portrait
       portraitIntro = '$_root/portrait_intro.webp',

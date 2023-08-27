@@ -96,7 +96,7 @@ class _NavBar extends StatelessWidget {
                   child: SocialLinksRow(),
                 )
               else
-                const SizedBox()
+                const SizedBox(),
             ],
           ),
         ],

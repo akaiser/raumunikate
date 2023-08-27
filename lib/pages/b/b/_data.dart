@@ -2,9 +2,9 @@
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
 
-const sectionTitle = 'DIE PHASEN DER ZUSAMMENARBEIT';
+const title = 'DIE PHASEN DER ZUSAMMENARBEIT';
 
-const sectionSubtitle =
+const subtitle =
     'Farbe ist das effektivste und kostengünstigste Mittel um Wunschatmosphäre in einem Raum zu erzielen.';
 
 const slidesData = [

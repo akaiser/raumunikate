@@ -8,9 +8,9 @@ class DesignPhasesPartOneSlides extends DesignSlides {
       : super(
           leading: const Column(
             children: [
-              HeadlineText(data.sectionTitle),
+              HeadlineText(data.title),
               SizedBox(height: 16),
-              Text(data.sectionSubtitle),
+              Text(data.subtitle),
             ],
           ),
           slidesData: data.slidesData,

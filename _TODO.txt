@@ -12,3 +12,10 @@ flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
 - PageView indicators
 - Fix that dirty "we have no time" impls
 - https://icons8.com/icon/set/arrows/ios-filled
+
+
+ä ü ö
+
+Ä Ü Ö
+
+€
