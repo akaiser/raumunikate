@@ -9,10 +9,10 @@ class DesignPhasesPartTwoSlides extends DesignSlides {
       : super(
           leading: const Column(
             children: [
-              HeadlineText(data.sectionTitle, textColor: mainBackgroundColor),
+              HeadlineText(data.title, textColor: mainBackgroundColor),
               SizedBox(height: 4),
               HeadlineText(
-                data.sectionSubtitle,
+                data.subtitle,
                 textColor: mainBackgroundColor,
               ),
             ],

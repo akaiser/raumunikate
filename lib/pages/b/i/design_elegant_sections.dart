@@ -22,11 +22,11 @@ class DesignElegantJustTextSection extends StatelessWidget {
     return DesignColorsSection(
       children: [
         Text(
-          data.elegantTitle,
+          data.title,
           style: context.tt.label,
         ),
         const SizedBox(height: 20),
-        const Text(data.elegantText),
+        const Text(data.content),
         const SizedBox(height: 20),
         if (_trailing != null) _trailing,
       ],

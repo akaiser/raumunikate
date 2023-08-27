@@ -25,8 +25,8 @@ class PortraitPage extends StatelessWidget {
           ] else ...const [
             PortraitAboutSection(),
             PortraitProductSection(),
-            PortraitBlogSection()
-          ]
+            PortraitBlogSection(),
+          ],
         ],
       );
 }

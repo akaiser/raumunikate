@@ -22,11 +22,11 @@ class DesignNaturalJustTextSection extends StatelessWidget {
     return DesignColorsSection(
       children: [
         Text(
-          data.naturalTitle,
+          data.title,
           style: context.tt.label,
         ),
         const SizedBox(height: 20),
-        const Text(data.naturalText),
+        const Text(data.content),
         const SizedBox(height: 20),
         if (_trailing != null) _trailing,
       ],

@@ -457,9 +457,9 @@ class PrivacyPage extends StatelessWidget {
                 'Kölner IT- und Datenschutz Anwalt Christian Solmecke',
                 link: 'https://www.wbs-law.de/it-recht/datenschutzrecht/',
               ),
-              InlineText(' erstellt.')
+              InlineText(' erstellt.'),
             ],
-          )
+          ),
         ],
       );
 }

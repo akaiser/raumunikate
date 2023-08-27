@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
-import 'package:raumunikate/pages/e/b/_data.dart' as data;
+import 'package:raumunikate/pages/d/b/_data.dart' as data;
 
-class PortraitAboutText extends StatelessWidget {
-  const PortraitAboutText();
+class ProductsAboutText extends StatelessWidget {
+  const ProductsAboutText();
 
   @override
   Widget build(BuildContext context) => FullTextSection(

@@ -48,7 +48,7 @@ class TermsPage extends StatelessWidget {
                 'https://www.raumunikate.com',
                 link: 'https://www.raumunikate.com',
               ),
-              InlineText(' des Onlineshops RAUMUNIKATE abschließen.')
+              InlineText(' des Onlineshops RAUMUNIKATE abschließen.'),
             ],
           ),
           newLine,

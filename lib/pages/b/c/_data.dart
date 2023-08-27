@@ -2,9 +2,9 @@
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
 
-const sectionTitle = 'MIT INDIVIDUELLER FARBBERATUNG';
+const title = 'MIT INDIVIDUELLER FARBBERATUNG';
 
-const sectionSubtitle = 'ZU IHRER WUNSCHATMOSPHÄRE';
+const subtitle = 'ZU IHRER WUNSCHATMOSPHÄRE';
 
 const slidesData = [
   DesignSlideDataEntry(

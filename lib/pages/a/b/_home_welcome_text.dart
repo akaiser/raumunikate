@@ -8,11 +8,11 @@ class HomeWelcomeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        title: data.welcomeTitle,
-        title2: data.welcomeTitle2,
-        text: data.welcomeContent,
+        title: data.title,
+        title2: data.title2,
+        text: data.content,
         actionButton: ActionButton(
-          data.welcomeCta,
+          data.cta,
           onTap: () {
             // TODO(albert): where to go?
           },

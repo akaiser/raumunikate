@@ -5,6 +5,8 @@ import 'pages/blog_page_test.dart' as blog_page_test;
 import 'pages/design_page_test.dart' as design_page_test;
 import 'pages/home_page_test.dart' as home_page_test;
 import 'pages/portrait_page_test.dart' as portrait_page_test;
+import 'pages/products_page_test.dart' as products_page_test;
+import 'pages/projects_page_test.dart' as projects_page_test;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +14,8 @@ void main() {
   navigation_test.main();
   home_page_test.main();
   design_page_test.main();
+  projects_page_test.main();
+  products_page_test.main();
   portrait_page_test.main();
   blog_page_test.main();
 }

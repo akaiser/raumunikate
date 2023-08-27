@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
@@ -57,11 +58,9 @@ class _Cards extends StatelessWidget {
                   child: FractionallySizedBox(
                     widthFactor: 0.8,
                     heightFactor: 0.6,
-                    child: SingleChildScrollView(
-                      child: _SlideCard(
-                        slideData,
-                        key: Key('design-card-$index'),
-                      ),
+                    child: _SlideCard(
+                      slideData,
+                      key: Key('design-card-$index'),
                     ),
                   ),
                 ),
@@ -100,12 +99,10 @@ class _SlideCard extends StatelessWidget {
     return ColoredBox(
       color: entry.cardColor.withOpacity(0.85),
       child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: isXsBreakpoint ? 16 : 32,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
+            SizedBox(height: isXsBreakpoint ? 16 : 32),
             Text(
               entry.title,
               style: context.tt.label?.copyWith(color: entry.textColor),
@@ -118,7 +115,8 @@ class _SlideCard extends StatelessWidget {
               ),
             ],
             SizedBox(height: isXsBreakpoint ? 8 : 48),
-            _Text(entry),
+            Flexible(child: _Text(entry)),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -132,12 +130,9 @@ class _Text extends StatelessWidget {
   final DesignSlideDataEntry entry;
 
   @override
-  Widget build(BuildContext context) => Text(
+  Widget build(BuildContext context) => AutoSizeText(
         entry.text,
-        style: context.tt.body?.copyWith(
-          color: entry.textColor,
-          fontSize: context.isShittySmallDevice ? 15 : 18,
-        ),
+        style: context.dts.copyWith(color: entry.textColor),
         textAlign: TextAlign.center,
       );
 }
