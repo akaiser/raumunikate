@@ -3,6 +3,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
+import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
 const blogTextLinkKey = Key('blog-text-link');
@@ -67,4 +68,20 @@ class BlogCaption extends StatelessWidget {
         text,
         style: context.tt.label?.copyWith(fontWeight: FontWeight.bold),
       );
+}
+
+class InlineTextRaumunikate extends InlineText {
+  const InlineTextRaumunikate()
+      : super(
+          '@raumunikate',
+          link: 'https://www.instagram.com/raumunikate/',
+        );
+}
+
+class InlineTextRaumfuerunikate extends InlineText {
+  const InlineTextRaumfuerunikate()
+      : super(
+          '#raumfuerunikate',
+          link: 'https://www.instagram.com/explore/tags/raumfuerunikate/',
+        );
 }

@@ -10,5 +10,6 @@ abstract final class Routes {
       blogPage = BlogPage.path;
 
   static const // Blog
-      blogLilliGrewe = '$blogPage/${RaumfuerunikateLilliGrewe.path}';
+      blogLilliGrewe = '$blogPage/${RaumfuerunikateLilliGrewe.path}',
+      blogKerstinDiehl = '$blogPage/${RaumfuerunikateKerstinDiehl.path}';
 }

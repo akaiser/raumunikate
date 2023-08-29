@@ -4,7 +4,7 @@ import 'package:raumunikate/_pages.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 
-const _permalinkPathParam = 'permalink';
+const _pathParamPermalink = 'permalink';
 
 final router = GoRouter(
   initialLocation: Routes.homePage,
@@ -37,7 +37,7 @@ final router = GoRouter(
       // either here on on server
       routes: [
         GoRoute(
-          path: ':$_permalinkPathParam',
+          path: ':$_pathParamPermalink',
           pageBuilder: (_, state) => _page(state, state.toBlogViewPage),
         ),
       ],
@@ -74,8 +74,9 @@ CustomTransitionPage<Widget> _page(
 extension on GoRouterState {
   // TODO(albert): make a BlogViewNotFoundPage here
   // OR: make the NotFoundPage accept custom messaging
-  Widget get toBlogViewPage => switch (pathParameters[_permalinkPathParam]) {
+  Widget get toBlogViewPage => switch (pathParameters[_pathParamPermalink]) {
         RaumfuerunikateLilliGrewe.path => const RaumfuerunikateLilliGrewe(),
+        RaumfuerunikateKerstinDiehl.path => const RaumfuerunikateKerstinDiehl(),
         _ => const NotFoundPage(),
       };
 }
