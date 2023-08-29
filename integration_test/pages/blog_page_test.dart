@@ -2,13 +2,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:raumunikate/pages/f/_data.dart';
 import 'package:raumunikate/pages/f/_shared.dart';
 import 'package:raumunikate/pages/f/a/raumfuerunikate_lilli_grewe.dart';
+import 'package:raumunikate/pages/f/b/raumfuerunikate_kerstin_diehl.dart';
 import 'package:raumunikate/pages/f/blog_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
 
 const _blogs = {
-  blogLilliGreweName: RaumfuerunikateLilliGrewe,
+  blogNameLilliGrewe: RaumfuerunikateLilliGrewe,
+  blogNameKerstinDiehl: RaumfuerunikateKerstinDiehl,
 };
 
 void main() {

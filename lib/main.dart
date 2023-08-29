@@ -17,13 +17,11 @@ void main() => runZonedGuarded<void>(
     );
 
 class App extends StatelessWidget {
-  const App();
+  const App({super.key});
 
   @override
-  Widget build(BuildContext context) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => NavBarNotifier()),
-        ],
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+        create: (_) => NavBarNotifier(),
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           theme: theme,

@@ -12,15 +12,15 @@ import 'package:raumunikate/pages/f/a/_links_column.dart';
 class RaumfuerunikateLilliGrewe extends StatelessWidget {
   const RaumfuerunikateLilliGrewe();
 
-  static const path = blogLilliGrewePath;
+  static const path = blogPathLilliGrewe;
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
         children: [
           newLine,
           BlogHeader(
-            blogName: blogLilliGreweName,
-            blogDate: blogLilliGreweDate,
+            blogName: blogNameLilliGrewe,
+            blogDate: blogDateLilliGrewe,
           ),
           newLine,
           HeadlineText('#raumfuerunikate'),
@@ -32,16 +32,9 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
           RichTextSection(
             children: [
               InlineText('Mein erster Gast dieser Interviewreihe '),
-              InlineText(
-                '#raumfuerunikate',
-                link: 'https://www.instagram.com/explore/tags/raumfuerunikate/',
-              ),
+              InlineTextRaumfuerunikate(),
               InlineText(' ist die zauberhafte Lilli, die die '),
-              InlineText(
-                '#instagraminteriorchallenge',
-                link:
-                    'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
-              ),
+              InlineTextInstagraminteriorchallenge(),
               InlineText(
                 ' ins Leben gerufen hat. Vor zwei Jahren habe ich an dieser Challenge mitgemacht und interessante Accounts entdeckt. Sie ist mir sehr positiv im Gedächtnis geblieben.',
               ),
@@ -143,11 +136,7 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
           RichTextSection(
             children: [
               InlineText('Schon ganz bald! Die nächste '),
-              InlineText(
-                '#instagraminteriorchallenge',
-                link:
-                    'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
-              ),
+              InlineTextInstagraminteriorchallenge(),
               InlineText(' startet im April 2023.'),
             ],
           ),
@@ -182,12 +171,18 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
           RichTextSection(
             children: [
               InlineText('Verfasst von: Ina Kaiser '),
-              InlineText(
-                '@raumunikate',
-                link: 'https://www.instagram.com/raumunikate/',
-              ),
+              InlineTextRaumunikate(),
             ],
           ),
         ],
       );
+}
+
+class InlineTextInstagraminteriorchallenge extends InlineText {
+  const InlineTextInstagraminteriorchallenge()
+      : super(
+          '#instagraminteriorchallenge',
+          link:
+              'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
+        );
 }

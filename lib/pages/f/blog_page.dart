@@ -9,7 +9,9 @@ class BlogPage extends BaseScrollPage {
       : super(
           children: const [
             newLine,
-            TextLink(blogLilliGreweName, url: Routes.blogLilliGrewe),
+            TextLink(blogNameLilliGrewe, url: Routes.blogLilliGrewe),
+            smallNewLine,
+            TextLink(blogNameKerstinDiehl, url: Routes.blogKerstinDiehl),
           ],
         );
 

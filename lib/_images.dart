@@ -35,7 +35,8 @@ abstract final class Images {
       portraitProduct = '$_root/portrait_product.webp';
 
   static const // blogs
-      _blog0 = '$_blogRoot/0';
+      _blog0 = '$_blogRoot/0',
+      _blog1 = '$_blogRoot/1';
 
   static const // blog 0
       child = '$_blog0/child.webp',
@@ -44,6 +45,17 @@ abstract final class Images {
       sleep = '$_blog0/sleep.webp',
       sleep2 = '$_blog0/sleep2.webp',
       kitchen = '$_blog0/kitchen.webp';
+
+  static const // blog 1
+      kerstinAndStella = '$_blog1/kerstin_and_stella.webp',
+      living = '$_blog1/living.webp',
+      chairs = '$_blog1/chairs.webp',
+      kerstinAndMirror = '$_blog1/kerstin_and_mirror.webp',
+      stellaOnBed = '$_blog1/stella_on_bed.webp',
+      clobber = '$_blog1/clobber.webp',
+      livingCouch = '$_blog1/living_couch.webp',
+      refreshing = '$_blog1/refreshing.webp',
+      chill = '$_blog1/chill.webp';
 
   static const // icons
       facebook = '$_iconsRoot/facebook.webp',

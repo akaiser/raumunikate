@@ -8,4 +8,5 @@ export 'package:raumunikate/pages/c/projects_page.dart';
 export 'package:raumunikate/pages/d/products_page.dart';
 export 'package:raumunikate/pages/e/portrait_page.dart';
 export 'package:raumunikate/pages/f/a/raumfuerunikate_lilli_grewe.dart';
+export 'package:raumunikate/pages/f/b/raumfuerunikate_kerstin_diehl.dart';
 export 'package:raumunikate/pages/f/blog_page.dart';
