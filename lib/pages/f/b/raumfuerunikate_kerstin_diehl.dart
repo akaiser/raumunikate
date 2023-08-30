@@ -5,8 +5,9 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
+import 'package:raumunikate/pages/f/_blog_images.dart';
+import 'package:raumunikate/pages/f/_blog_texts.dart';
 import 'package:raumunikate/pages/f/_data.dart';
-import 'package:raumunikate/pages/f/_shared.dart';
 
 class RaumfuerunikateKerstinDiehl extends StatelessWidget {
   const RaumfuerunikateKerstinDiehl({super.key});
@@ -25,7 +26,6 @@ class RaumfuerunikateKerstinDiehl extends StatelessWidget {
           HeadlineText('#raumfuerunikate'),
           newLine,
           Text(
-            // TODO(albert): wtf? dupe
             'Herzlich Willkommen im Zuhause der Atmosphäre. Es ist an der Zeit zu entdecken, wie Interiorbegeisterte ihr Wohlfühlzuhause authentisch und mit dem gewissen Gespür für Ästhetik einrichten.',
           ),
           newLine,
@@ -42,8 +42,7 @@ class RaumfuerunikateKerstinDiehl extends StatelessWidget {
           ),
           newLine,
           Text(
-            // TODO(albert): wtf? Fragen ohne Antworten...
-            'Liebe Kerstin, Dein Zuhause inspiriert mich. Du hast ein Faible für Farbe, bist mutig im Ausdruck und magst es dennoch stilvoll. Wie geht das zusammen? Erzähle uns Deine Geschichte.',
+            'Liebe Kerstin, Dein Zuhause inspiriert mich. Du hast ein Faible für Farbe, bist mutig im Ausdruck und magst es dennoch stilvoll.',
           ),
           newLine,
           BlogCaption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
@@ -64,7 +63,10 @@ class RaumfuerunikateKerstinDiehl extends StatelessWidget {
             'Zum ersten Mal hat mir eine Wohnung den Rahmen gegeben, mich mit meinem Style so richtig auszutoben und ich hatte die Vision, mir hier einen echten Kersy Happy Space zu schaffen. Auch, wenn viele denken könnten, ich sei extravertiert, das bin ich sicher auch zu Teilen, so bin ich auch sehr, sehr gerne einfach nur zuhause und mache es mir hier gemütlich. Kraft und Energie tanke ich vor allem durch den Rückzug in die eigenen vier Wände.',
           ),
           newLine,
-          BlogImageRow([Images.kerstinAndStella, Images.living, Images.chairs]),
+          ResponsiveBlogImages(
+            [Images.kerstinAndStella, Images.living, Images.chairs],
+            flexRow: true,
+          ),
           newLine,
           BlogCaption(
             'Welche Aspekte verleihen Deiner Wohnung Wohlfühlatmosphäre?',
@@ -139,7 +141,6 @@ an dem ich mich wohlfühle.''',
             'Früher waren mir Räume ohne Bücher suspekt, oder was ich auch komisch fand, wenn da keine privaten Fotos standen, das fand ich sehr unpersönlich. Das hat sich heute total geändert. Ich mag es, wenn ein Zimmer Persönlichkeit hat, aber es sollte nicht zu viel rumstehen. Alles muss seinen Platz haben. Auch, wenn ich Farben und Formen liebe, so bin ich ein großer Fan von Minimalismus, das würde mir niemand glauben, aber in meiner Wohnung steht echt nicht viel drin. Natürlich nicht der extreme Minimalismus, nach dem Motto, ich darf nur 30 Teile besitzen, das würde nicht mal mit meinen Schuhen funktionieren. Aber ich finde es toll, dass man sehr ausgewählt Dinge in seinem Zuhause hat und es einfach nicht so zugestellt aussieht. Vor allem auch aus dem einfachen Grund heraus, dass ich es echt hasse, zu putzen und aufzuräumen. Es ist wirklich extrem viel einfacher Ordnung zu halten, wenn man nicht so viel hat.',
           ),
           Text(
-            // TODO(albert): green for real!?
             'Zurück zum Thema, was darf in einem Raum für mich nicht fehlen? Ich liebe schöne Dinge, aber ganz pragmatisch: essentiell sind für mich ein Bett und Internet. Als ich nach Berlin gezogen bin, habe ich in einem kleinen WG-Zimmer gelebt und war da auch mega happy. Am Ende muss ein Raum ein sicherer Rückzugsort sein, in dem man Energie tanken kann. Heute möchte ich bunt leben und Farbe in die Welt tragen.',
           ),
           newLine,
@@ -150,11 +151,10 @@ ganz lebensbejahendes,
 freundliches und fast friedliches.''',
           ),
           newLine,
-          BlogImageRow([
-            Images.kerstinAndMirror,
-            Images.stellaOnBed,
-            Images.clobber,
-          ]),
+          ResponsiveBlogImages(
+            [Images.kerstinAndMirror, Images.stellaOnBed, Images.clobber],
+            flexRow: true,
+          ),
           newLine,
           BlogCaption(
             'Welche Rolle spielt Raumfarbe für Dich?',
@@ -176,7 +176,10 @@ freundliches und fast friedliches.''',
             'Danke für die schöne Frage! Mittlerweile haben so viele Menschen ein Haustier und ich finde es extrem wichtig, hier auch auf die Bedürfnisse der Fellfreundin zu achten. Stella darf in der Wohnung alles, aufs Bett, auf die Couch, ich will, dass sie sich wohlfühlt und ich habe sie gerne um mich. Ein Hund braucht aber vor allem auch einen eigenen ruhigen Rückzugsort, gerne in einer Ecke, daher habe ich hier auch in stylische Hundekörbchen investiert. Darüber hinaus hat ein guter Staubsauger bei mir noch mal einen ganz anderen Stellenwert bekommen. Wir gehen mindestens drei Mal am Tag raus und sie bringt natürlich den Dreck aus Berlin rein in die Wohnung. Ich bin überhaupt nicht pingelig, aber das Leben mit Hund, der dazu auch noch sehr haart,  ist schon eine Herausforderung und das Thema Putzen gehört jetzt leider jeden Tag zu meinem Leben.  Ich habe glaube ich noch nie soviel gestaubsaugt wie heute. Du merkst, PUTZEN ist ein Thema für mich hahaha.',
           ),
           newLine,
-          BlogImageRow([Images.livingCouch, Images.refreshing, Images.chill]),
+          ResponsiveBlogImages(
+            [Images.livingCouch, Images.refreshing, Images.chill],
+            flexRow: true,
+          ),
           newLine,
           BlogCaption('Gibt es ein Lieblingsmöbelstück?'),
           smallNewLine,
@@ -250,16 +253,7 @@ der crazycolorkiddostyle.'''),
               InlineTextKersylovescolor(),
             ],
           ),
-          RichTextSection(
-            children: [
-              // TODO(albert): what to put here?!
-              InlineText('Fotografie: Benjamin Janzen '),
-              InlineText(
-                '@bjfotografie',
-                link: 'https://www.instagram.com/bjfotografie/',
-              ),
-            ],
-          ),
+          Text('Fotografie: Kerstin Diehl und Tonya Matyu'),
           RichTextSection(
             children: [
               InlineText('Verfasst von: Ina Kaiser '),

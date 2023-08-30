@@ -1,8 +1,5 @@
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
-import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
-import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
-import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
@@ -31,30 +28,6 @@ class BlogHeader extends StatelessWidget {
           const SizedBox(width: 4),
           Text(blogDate),
         ],
-      );
-}
-
-class BlogImageRow extends StatelessWidget {
-  const BlogImageRow(this.images);
-
-  final List<String> images;
-
-  static const _imgSeparator = SizedBox(width: 24, height: 24);
-
-  @override
-  Widget build(BuildContext context) => ResponsiveLayout(
-        m: (_) => Row(
-          children: images
-              .map<Widget>((image) => Expanded(child: FadeInAssetImage(image)))
-              .separate(_imgSeparator)
-              .unmodifiable,
-        ),
-        xs: (_) => Column(
-          children: images
-              .map<Widget>(FadeInAssetImage.new)
-              .separate(_imgSeparator)
-              .unmodifiable,
-        ),
       );
 }
 
