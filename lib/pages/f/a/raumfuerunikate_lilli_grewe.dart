@@ -5,8 +5,9 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
+import 'package:raumunikate/pages/f/_blog_images.dart';
+import 'package:raumunikate/pages/f/_blog_texts.dart';
 import 'package:raumunikate/pages/f/_data.dart';
-import 'package:raumunikate/pages/f/_shared.dart';
 import 'package:raumunikate/pages/f/a/_links_column.dart';
 
 class RaumfuerunikateLilliGrewe extends StatelessWidget {
@@ -45,7 +46,7 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
             'Liebe Lilli, Dein Zuhause inspiriert mich. Du hast ein sehr gutes Raumgefühl und verstehst es wunderbar Produkte in Akzentfarben zu kombinieren und alles mit einem gewissen Charme von Frohsinn. Auf Deinem Instagramkanal habe ich einige Karussellposts entdeckt, die die Entwicklung eurer Einrichtung zeigen. Es ist so schön zu sehen, dass sich das Zuhause mit uns weiterentwickeln darf.',
           ),
           newLine,
-          BlogImageRow([Images.lilli, Images.kitchen, Images.sleep]),
+          ResponsiveBlogImages([Images.lilli, Images.kitchen, Images.sleep]),
           newLine,
           BlogCaption('Bitte erzähle uns etwas über Dich und Dein Zuhause.'),
           smallNewLine,
@@ -73,7 +74,7 @@ class RaumfuerunikateLilliGrewe extends StatelessWidget {
             'Die persönliche Note. Ich mag es, wenn ein Zuhause individuell ist, wächst, sich verändert und Geschichten über die Bewohner erzählt. Es muss niemandem gefallen, außer den Menschen, die darin zuhause sind. Ich persönlich mag Farbe sehr. Die bringt Fröhlichkeit in jeden Raum und tut meinem Wohlbefinden gut.',
           ),
           newLine,
-          BlogImageRow([Images.child, Images.eat, Images.sleep2]),
+          ResponsiveBlogImages([Images.child, Images.eat, Images.sleep2]),
           newLine,
           BlogCaption('Welche Rolle spielt Raumfarbe für Dich?'),
           smallNewLine,

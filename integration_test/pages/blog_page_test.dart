@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:raumunikate/pages/f/_blog_texts.dart';
 import 'package:raumunikate/pages/f/_data.dart';
-import 'package:raumunikate/pages/f/_shared.dart';
 import 'package:raumunikate/pages/f/a/raumfuerunikate_lilli_grewe.dart';
 import 'package:raumunikate/pages/f/b/raumfuerunikate_kerstin_diehl.dart';
 import 'package:raumunikate/pages/f/blog_page.dart';
