@@ -16,6 +16,7 @@ extension BuildContextExt on BuildContext {
   // media
 
   Size get screenSize => MediaQuery.sizeOf(this);
+  Size get bla => MediaQuery.of(this).size;
 
   // theme
 

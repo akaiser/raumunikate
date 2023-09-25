@@ -11,24 +11,24 @@ class ResponsiveBlogImages extends StatelessWidget {
     this.flexRow = false,
   });
 
-  final List<String> images;
+  final Iterable<String> images;
   final bool flexRow;
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
         m: (_) => flexRow ? _FlexRow(images) : _ExpandedRow(images),
-        xs: (_) => Column(children: images.doMap(FadeInAssetImage.new)),
+        xs: (_) => _Column(images),
       );
 }
 
 class _ExpandedRow extends StatelessWidget {
   const _ExpandedRow(this.images);
 
-  final List<String> images;
+  final Iterable<String> images;
 
   @override
   Widget build(BuildContext context) => Row(
-        children: images.doMap(
+        children: images.separated(
           (image) => Expanded(child: FadeInAssetImage(image)),
         ),
       );
@@ -37,7 +37,7 @@ class _ExpandedRow extends StatelessWidget {
 class _FlexRow extends StatelessWidget {
   const _FlexRow(this.images);
 
-  final List<String> images;
+  final Iterable<String> images;
 
   @override
   Widget build(BuildContext context) => Table(
@@ -46,12 +46,22 @@ class _FlexRow extends StatelessWidget {
           2: FlexColumnWidth(1.5),
           3: FixedColumnWidth(24),
         },
-        children: [TableRow(children: images.doMap(FadeInAssetImage.new))],
+        children: [TableRow(children: images.separated(FadeInAssetImage.new))],
       );
 }
 
+class _Column extends StatelessWidget {
+  const _Column(this.images);
+
+  final Iterable<String> images;
+
+  @override
+  Widget build(BuildContext context) =>
+      Column(children: images.separated(FadeInAssetImage.new));
+}
+
 extension on Iterable<String> {
-  List<Widget> doMap(Widget Function(String image) mapper) =>
+  List<Widget> separated(Widget Function(String image) mapper) =>
       map<Widget>((image) => mapper(image))
           .separate(_imgSeparator)
           .unmodifiable;

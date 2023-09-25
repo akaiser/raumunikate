@@ -36,7 +36,9 @@ abstract final class Images {
 
   static const // blogs
       _blog0 = '$_blogRoot/0',
-      _blog1 = '$_blogRoot/1';
+      blog0Cover = '$_blogRoot/cover_lilli_grewe.webp',
+      _blog1 = '$_blogRoot/1',
+      blog1Cover = '$_blogRoot/cover_kerstin_diehl.webp';
 
   static const // blog 0
       child = '$_blog0/child.webp',

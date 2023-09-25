@@ -74,7 +74,7 @@ class RaumfuerunikateKerstinDiehl extends StatelessWidget {
           newLine,
           _Citation(
             '''
-Mein Zuhause ist für mich mein Happy Place/Space,
+Mein Zuhause ist für mich mein Happy Space,
 dieser positiv aufgeladene Ort
 an dem ich mich wohlfühle.''',
           ),
