@@ -94,13 +94,13 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Expanded(child: TextLink(entry.title, url: entry.route)),
-        Text(entry.date),
-      ],
-    );
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(child: TextLink(entry.title, url: entry.route)),
+          Text(entry.date),
+        ],
+      );
 }
 
 class _Image extends StatelessWidget {
