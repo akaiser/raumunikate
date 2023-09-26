@@ -144,7 +144,7 @@ const RESOURCES = {"canvaskit/chromium/canvaskit.js": "96ae916cd2d1b7320fff853ee
 "index.html": "8f5029f267a47b9cb97b7ca3215d7563",
 "/": "8f5029f267a47b9cb97b7ca3215d7563",
 "favicon.png": "1dd0b9cf212a55f09743c7e8c672a7cb",
-"main.dart.js": "d26465bc8b44df1db59acf825eb6c8bb",
+"main.dart.js": "613c31b12ad7a2f8a2db1095cf4dddb2",
 "manifest.json": "85916ae75856376cbba1695a6aba399c",
 "robots.txt": "21fe6d6037f6706faf0a3dd41fe5e014"};
 // The application shell files that are downloaded before a service worker can
