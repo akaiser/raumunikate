@@ -15,7 +15,9 @@ const //
     raumBackground = Color(0xffece9d8),
     raumBrown = Color(0xff4d4747),
     raumGreen = Color(0xffccd1cd),
-    raumLila = Color(0xffccc8cf);
+    raumLila = Color(0xffccc8cf),
+    raumWolf = Color(0xffb3b0a9),
+    raumTheuer = Color(0xffa6afac);
 
 const linkColor = raumCreme;
 

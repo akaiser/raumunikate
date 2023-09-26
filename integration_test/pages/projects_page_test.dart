@@ -1,6 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/c/a/projects_intro_section.dart';
+import 'package:raumunikate/pages/c/b/projects_wolf_sections.dart';
+import 'package:raumunikate/pages/c/c/projects_wolf_how_sections.dart';
+import 'package:raumunikate/pages/c/d/projects_theuer_sections.dart';
+import 'package:raumunikate/pages/c/e/projects_theuer_how_sections.dart';
 import 'package:raumunikate/pages/c/projects_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
@@ -8,7 +12,10 @@ import '../test_helper.dart';
 
 const _sectionTypes = [
   ProjectsIntroSection,
-  // TODO(albert): finish this
+  ProjectsWolfSection,
+  ProjectsWolfHowSection,
+  ProjectsTheuerSection,
+  ProjectsTheuerHowSection,
   Footer,
 ];
 

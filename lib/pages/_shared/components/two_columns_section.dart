@@ -3,7 +3,7 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/base_section.dart';
 
-abstract class TwoColumnsSection extends StatelessWidget {
+class TwoColumnsSection extends StatelessWidget {
   const TwoColumnsSection({
     required this.image,
     required this.content,

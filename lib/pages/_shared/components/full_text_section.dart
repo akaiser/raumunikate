@@ -29,12 +29,7 @@ class FullTextSection extends StatelessWidget {
         if (_title != null) HeadlineText(_title, textColor: textColor),
         if (_title2 != null) HeadlineText(_title2, textColor: textColor),
         if (_title != null || _title2 != null) const _Spacer(),
-        Flexible(
-          child: AutoSizeText(
-            text,
-            style: context.dts.copyWith(fontSize: 20, color: textColor),
-          ),
-        ),
+        Flexible(child: FullTextSectionText(text, color: textColor)),
         if (_actionButton != null) ...[
           const _Spacer(),
           _actionButton,
@@ -53,4 +48,17 @@ class _Spacer extends StatelessWidget {
           ? const SizedBox(height: 10)
           : const SizedBox(height: 40)
       : const SizedBox(height: 60);
+}
+
+class FullTextSectionText extends StatelessWidget {
+  const FullTextSectionText(this.text, {this.color, super.key});
+
+  final String text;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) => AutoSizeText(
+        text,
+        style: context.dts.copyWith(fontSize: 20, color: color),
+      );
 }

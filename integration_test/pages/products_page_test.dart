@@ -4,6 +4,7 @@ import 'package:raumunikate/pages/d/a/products_intro_section.dart';
 import 'package:raumunikate/pages/d/b/products_about_sections.dart';
 import 'package:raumunikate/pages/d/c/products_type_slides.dart';
 import 'package:raumunikate/pages/d/d/products_shape_sections.dart';
+import 'package:raumunikate/pages/d/e/products_citation_section.dart';
 import 'package:raumunikate/pages/d/products_page.dart';
 import 'package:raumunikate/pages/nav_bar/_data.dart';
 
@@ -14,6 +15,7 @@ const _sectionTypes = [
   ProductsAboutSection,
   ProductsTypeSlides,
   ProductsShapeSection,
+  ProductsCitationSection,
   Footer,
 ];
 

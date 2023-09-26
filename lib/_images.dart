@@ -19,12 +19,19 @@ abstract final class Images {
       designElegantSecond = '$_root/design_elegant_second.webp';
 
   static const // projects
-      projectsIntro = '$_root/projects_intro.webp';
+      projectsIntro = '$_root/projects_intro.webp',
+      projectsWolfChill = '$_root/projects_wolf_chill.webp',
+      projectsWolfConference = '$_root/projects_wolf_conference.webp',
+      projectsWolfOffice = '$_root/projects_wolf_office.webp',
+      projectsTheuerStairs = '$_root/projects_theuer_stairs.webp',
+      projectsTheuerFloor = '$_root/projects_theuer_floor.webp',
+      projectsTheuerLiving = '$_root/projects_theuer_living.webp';
 
   static const // products
       productsIntro = '$_root/products_intro.webp',
       productsCandleShell = '$_root/products_candle_shell.webp',
       productsClockShell = '$_root/products_clock_shell.webp',
+      productsWallLamp = '$_root/products_wall_lamp.webp',
       productShell = '$_root/product_shell.webp',
       productClock = '$_root/product_clock.webp',
       productLamp = '$_root/product_lamp.webp';
