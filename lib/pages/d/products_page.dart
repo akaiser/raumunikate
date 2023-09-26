@@ -5,6 +5,7 @@ import 'package:raumunikate/pages/d/a/products_intro_section.dart';
 import 'package:raumunikate/pages/d/b/products_about_sections.dart';
 import 'package:raumunikate/pages/d/c/products_type_slides.dart';
 import 'package:raumunikate/pages/d/d/products_shape_sections.dart';
+import 'package:raumunikate/pages/d/e/products_citation_section.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage();
@@ -28,6 +29,7 @@ class ProductsPage extends StatelessWidget {
           ProductsShapeSecondSection(),
         ] else
           const ProductsShapeSection(),
+        const ProductsCitationSection(),
       ],
     );
   }

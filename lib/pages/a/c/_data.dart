@@ -1,4 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/material.dart' show Color, Colors;
 import 'package:meta/meta.dart';
 import 'package:raumunikate/_routes.dart';
@@ -12,25 +11,29 @@ const slidesData = [
   SlideDataEntry(
     raumLila,
     'Atmosphäre gestalten',
-    'Sie erfahren die Phasen unserer Zusammenarbeit und meine methodische Herangehensweise.',
+    '''
+Sie erfahren die Phasen unserer Zusammenarbeit und meine methodische Herangehensweise.''',
     Routes.designPage,
   ),
   SlideDataEntry(
     raumCreme,
     'Projekte',
-    'Sie sehen einen Einblick in meine Projekte. Im privaten und beruflichen Kontext bekommt Wohlfühlatmosphäre eine immer größere Bedeutung.',
+    '''
+Sie sehen einen Einblick in meine Projekte. Im privaten und beruflichen Kontext bekommt Wohlfühlatmosphäre eine immer größere Bedeutung.''',
     Routes.projectsPage,
   ),
   SlideDataEntry(
     raumGrau,
     'Produkte',
-    'Jedes Produkt ein Unikat. Eine Homage an die Origami-Papierkunst, für die Ewigkeit gemacht aus Leichtmetal.',
+    '''
+Jedes Produkt ein Unikat. Eine Homage an die Origami-Papierkunst, für die Ewigkeit gemacht aus Leichtmetal.''',
     Routes.productsPage,
   ),
   SlideDataEntry(
     raumGreen,
     'Portrait',
-    'Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKATE kreiert.',
+    '''
+Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKATE kreiert.''',
     Routes.portraitPage,
   ),
   SlideDataEntry(

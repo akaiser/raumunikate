@@ -1,4 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
 
@@ -10,7 +9,8 @@ const slidesData = [
   DesignSlideDataEntry(
     raumGreen,
     'Phase 4',
-    'Ich präsentiere Ihnen das Ergebnis, wir besprechen es und machen die Feinabstimmung.',
+    '''
+Ich präsentiere Ihnen das Ergebnis, wir besprechen es und machen die Feinabstimmung.''',
     title2: 'Feinabstimmung',
   ),
   DesignSlideDataEntry(
@@ -22,7 +22,8 @@ const slidesData = [
   DesignSlideDataEntry(
     raumGreen,
     'Phase 6',
-    'Für die Realisierung am Objekt leite ich Sie an oder empfehle Ihnen Handwerker meines Netzwerks.',
+    '''
+Für die Realisierung am Objekt leite ich Sie an oder empfehle Ihnen Handwerker meines Netzwerks.''',
     title2: 'Realisierung',
   ),
 ];

@@ -1,4 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_legal/_contact_column.dart';
@@ -19,7 +18,8 @@ class ImprintPage extends StatelessWidget {
           HeadlineText('Impressum'),
           newLine,
           Text(
-            'Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.',
+            '''
+Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.''',
           ),
           newLine,
           Text('Anbieter:'),
@@ -33,7 +33,8 @@ class ImprintPage extends StatelessWidget {
           newLine,
           Text('Bildmaterial:'),
           Text(
-            'Alle eigenen Bilder und Bildmaterial aller genutzten Fremdquellen unterliegen dem Urheberrecht und dürfen weder genutzt, verändert oder kopiert werden.',
+            '''
+Alle eigenen Bilder und Bildmaterial aller genutzten Fremdquellen unterliegen dem Urheberrecht und dürfen weder genutzt, verändert oder kopiert werden.''',
           ),
           newLine,
           Text('Kleinunternehmer gemäß § 19 UStG'),
@@ -48,7 +49,8 @@ class ImprintPage extends StatelessWidget {
                 link: 'https://ec.europa.eu/consumers/odr/',
               ),
               InlineText(
-                '. Der Verkäufer ist weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer alternativen Streitbeilegungsstelle teilzunehmen.',
+                '''
+. Der Verkäufer ist weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer alternativen Streitbeilegungsstelle teilzunehmen.''',
               ),
             ],
           ),

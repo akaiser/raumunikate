@@ -53,7 +53,7 @@ class _Cards extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 80),
         child: Row(
           children: slidesData
-              .mapIndexed<Widget>(
+              .mapIndexed(
                 (index, slideData) => Expanded(
                   child: FractionallySizedBox(
                     widthFactor: 0.8,
