@@ -1,3 +1,4 @@
+import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/one_column_section.dart';
 import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
@@ -5,7 +6,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/carousel_page_view.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
-import 'package:raumunikate/pages/c/b/_data.dart' as data;
+import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/c/b/_projects_wolf_text.dart';
 
 class ProjectsWolfFirstSection extends OneColumnSection {
@@ -34,6 +35,12 @@ class _Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CarouselPageView(
         activeIndicatorColor: Colors.amber,
-        children: data.carouselData.map(CoverImageBox.new).unmodifiable,
+        children: [
+          Images.projectsWolfChill,
+          // TODO(albert): schlechte quali
+          Images.projectsWolfOffice,
+          // TODO(albert): schlechte quali
+          if (context.isSxsBreakpoint) Images.projectsWolfConference,
+        ].map(CoverImageBox.new).unmodifiable,
       );
 }

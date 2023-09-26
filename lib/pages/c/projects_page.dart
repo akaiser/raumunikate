@@ -21,12 +21,10 @@ class ProjectsPage extends StatelessWidget {
         if (isSxsBreakpoint) ...const [
           ProjectsWolfFirstSection(),
           ProjectsWolfSecondSection(),
-          ProjectsWolfHowFirstSection(),
-          ProjectsWolfHowSecondSection(),
+          ProjectsWolfHowTextOnlySection(),
           ProjectsTheuerFirstSection(),
           ProjectsTheuerSecondSection(),
-          ProjectsTheuerHowFirstSection(),
-          ProjectsTheuerHowSecondSection(),
+          ProjectsTheuerHowTextOnlySection(),
         ] else ...const [
           ProjectsWolfSection(),
           ProjectsWolfHowSection(),
