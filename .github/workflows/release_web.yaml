@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup-flutter
       - name: Build
+        #run: flutter build web --profile --no-web-resources-cdn --base-href /own/raumunikate.com/
         run: flutter build web --profile --no-web-resources-cdn --base-href /raumunikate/
       - name: Upload
         uses: peaceiris/actions-gh-pages@v3

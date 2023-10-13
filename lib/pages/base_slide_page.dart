@@ -77,7 +77,7 @@ class _Footer extends StatelessWidget {
 
   static const _bigPadding = EdgeInsets.only(
     left: 110,
-    top: navigationBarHeight,
+    top: navigationBarHeight + 100,
     right: 110,
   );
 
@@ -93,12 +93,7 @@ class _Footer extends StatelessWidget {
 
     return Padding(
       padding: isFullWidthNavBar ? _bigPadding : _smallPadding,
-      child: const Column(
-        children: [
-          Spacer(),
-          Footer(),
-        ],
-      ),
+      child: const Footer(),
     );
   }
 }

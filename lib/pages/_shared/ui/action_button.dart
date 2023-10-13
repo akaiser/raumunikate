@@ -10,7 +10,7 @@ class ActionButton extends StatelessWidget {
   });
 
   final String text;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) => HoverRegion(
@@ -22,25 +22,29 @@ class ActionButton extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             border: Border.all(
               width: 2,
-              color: isHovering ? raumCreme : Colors.white,
+              color: isHovering ? raumCreme : raumBackground,
             ),
           ),
           child: child,
         ),
-        child: _ActionButtonText(text),
+        child: _ActionButtonText(text, enabled: onTap != null),
       );
 }
 
 class _ActionButtonText extends StatelessWidget {
-  const _ActionButtonText(this.text);
+  const _ActionButtonText(
+    this.text, {
+    required this.enabled,
+  });
 
   final String text;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) => Text(
         text,
         style: context.dts.copyWith(
-          color: raumCreme,
+          color: raumCreme.withOpacity(enabled ? 1 : 0.7),
           fontSize: context.isShittySmallDevice ? 16 : null,
         ),
       );

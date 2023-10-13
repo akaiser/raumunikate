@@ -11,7 +11,7 @@ const referralData0 = ReferralDataEntry(
 
 const referralData1 = ReferralDataEntry(
   '''
-Die Räume sind im Einklang. Sie erzählen die Geschichte die wir erzählen wollten Die Atmosphäre unterstützt die historische Architektur, als auch das Wohlfühlambiente''',
+Die Räume sind im Einklang. Sie erzählen die Geschichte die wir erzählen wollten. Die Atmosphäre unterstützt die historische Architektur, als auch das Wohlfühlambiente.''',
   'Kundenstimme: R. Götzenbrugger',
   360,
 );

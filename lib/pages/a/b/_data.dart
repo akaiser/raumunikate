@@ -6,7 +6,6 @@ Ich bin Ina Kaiser, Farbdesignerin und biete ganzheitliche Farbberatung für Men
 
 Wie muss ein Raum gestaltet sein, damit wir unser ganzes Potential darin entfalten können?
 
-Wenn wir diese Fragen mit guter Gestaltung beantworten, entsteht Atmosphäre, in der wir uns wohl fühlen und Räume, die begeistern.
-Lernen Sie hier meinen Methode kennen und buchen Sie sich ein unverbindliches Erstgespräch.''';
+Wenn wir diese Fragen mit guter Gestaltung beantworten, entsteht Atmosphäre, in der wir uns wohl fühlen und Räume, die begeistern.''';
 
 const cta = 'Gespräch anfragen';

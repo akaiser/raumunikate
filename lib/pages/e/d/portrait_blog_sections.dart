@@ -14,15 +14,13 @@ class PortraitBlogFirstSection extends OneColumnSection {
 
 class PortraitBlogSecondSection extends OneColumnSection {
   const PortraitBlogSecondSection()
-      // TODO(albert): change image
-      : super(backgroundImage: Images.portraitAbout);
+      : super(backgroundImage: Images.portraitBlog);
 }
 
 class PortraitBlogSection extends TwoColumnsSection {
   const PortraitBlogSection()
       : super(
-          // TODO(albert): change image
-          image: const CoverImageBox(Images.portraitAbout),
+          image: const CoverImageBox(Images.portraitBlog),
           content: const PortraitBlogText(),
           flipWidgets: true,
           backgroundImage: Images.waben0,

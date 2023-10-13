@@ -2,7 +2,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
 class ContactColumn extends Column {
-  const ContactColumn({super.crossAxisAlignment = CrossAxisAlignment.end})
+  const ContactColumn({super.crossAxisAlignment = CrossAxisAlignment.start})
       : super(
           children: const [
             _Text('Ina Kaiser'),

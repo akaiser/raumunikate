@@ -54,6 +54,10 @@ final router = GoRouter(
       path: PrivacyPage.path,
       pageBuilder: (_, state) => _page(state, const PrivacyPage()),
     ),
+    GoRoute(
+      path: ContactPage.path,
+      pageBuilder: (_, state) => _page(state, const ContactPage()),
+    ),
   ],
 );
 

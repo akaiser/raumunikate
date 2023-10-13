@@ -23,7 +23,7 @@ Ich präsentiere Ihnen das Ergebnis, wir besprechen es und machen die Feinabstim
     raumGreen,
     'Phase 6',
     '''
-Für die Realisierung am Objekt leite ich Sie an oder empfehle Ihnen Handwerker meines Netzwerks.''',
+Für die Realisierung am Objekt leite ich Sie an oder empfehle Ihnen Handwerker meines Netzwerkes.''',
     title2: 'Realisierung',
   ),
 ];

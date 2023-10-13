@@ -7,7 +7,8 @@ abstract final class Routes {
       projectsPage = ProjectsPage.path,
       productsPage = ProductsPage.path,
       portraitPage = PortraitPage.path,
-      blogPage = BlogPage.path;
+      blogPage = BlogPage.path,
+      contactPage = ContactPage.path;
 
   static const // Blog
       blogLilliGrewe = '$blogPage/${RaumfuerunikateLilliGrewe.path}',

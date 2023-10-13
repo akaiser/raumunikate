@@ -6,14 +6,14 @@ const slidesData = [
     raumCreme,
     'Mensch',
     '''
-Das visuelle Erscheinungsbild und das haitische Erlebnis lösen in uns Gefühle aus. Meine Herangehensweise stellt den Mensch in den Fokus, gemeinsam entwickeln wir sein Wunschwohlgefühl. Ziel ist es Raum zu kreieren, in denen sich die Bewohner widerspiegeln.''',
+Das visuelle Erscheinungsbild und das haptische Erlebnis lösen in uns Gefühle aus. Meine Herangehensweise stellt den Mensch in den Fokus, gemeinsam entwickeln wir sein Wunschwohlgefühl. Ziel ist es Raum zu kreieren, in dem sich die Bewohner widerspiegeln.''',
     textColor: mainBackgroundColor,
   ),
   DesignSlideDataEntry(
     raumCreme,
     'Raum',
     '''
-In Synergie zur Empfindung des Menschen bringt der Raum viele Aspekte mit, die es zu beachten gilt. Die Raumarchitektur, die Raumfunktion und die Materialität. Bewegen wir uns in großzügigen Räumen. In kleinteiligen, in hellen oder dunklen Räumen, in tradierten oder modernen, im Arbeitsraum oder im Wohnzimmer, in künstlichen Oberflächen oder natürlichen Strukturen?''',
+In Synergie zur Empfindung des Menschen bringt der Raum viele Aspekte mit, die es zu beachten gilt. Die Raumarchitektur, die Raumfunktion und die Materialität. Bewegen wir uns in großzügigen Räumen, in kleinteiligen, in hellen oder dunklen Räumen, in tradierten oder modernen, im Arbeitsraum oder im Wohnzimmer, in künstlichen Oberflächen oder natürlichen Strukturen?''',
     textColor: mainBackgroundColor,
   ),
   DesignSlideDataEntry(

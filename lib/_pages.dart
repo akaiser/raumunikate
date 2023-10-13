@@ -1,3 +1,4 @@
+export 'package:raumunikate/pages/_contact/contact_page.dart';
 export 'package:raumunikate/pages/_legal/imprint_page.dart';
 export 'package:raumunikate/pages/_legal/privacy_page.dart';
 export 'package:raumunikate/pages/_legal/terms_page.dart';

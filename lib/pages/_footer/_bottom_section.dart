@@ -8,25 +8,32 @@ class BottomSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
         s: (_) => const Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CopyrightText(),
+            Expanded(child: CopyrightText()),
             SizedBox(width: 26),
-            ImprintTextLink(),
-            SizedBox(width: 26),
-            TermsTextLink(),
-            SizedBox(width: 26),
-            PrivacyTextLink(),
+            _Legal(),
           ],
         ),
         xs: (_) => const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImprintTextLink(),
-            TermsTextLink(),
-            PrivacyTextLink(),
-            SizedBox(height: 12),
+            _Legal(),
             CopyrightText(),
           ],
         ),
       );
+}
+
+class _Legal extends Row {
+  const _Legal()
+      : super(
+          children: const [
+            ImprintTextLink(),
+            SizedBox(width: 26),
+            TermsTextLink(),
+            SizedBox(width: 26),
+            PrivacyTextLink(),
+          ],
+        );
 }

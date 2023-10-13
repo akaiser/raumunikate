@@ -1,7 +1,8 @@
-const title = 'ZEIT IN FORM';
+const title = 'PRODUKTPOESIE';
 
-// TODO(albert): wtf
 const content = '''
-Ich bin Ina Kaiser, Farbdesignerin und biete ganzheitliche Farbberatung für Menschen, die sich ein Zuhause wünschen, welches Sie als Person widerspiegelt. Mit meiner Methode verbinde ich in der Farbberatung die drei..''';
+Eine gefalzte Produktform mit der Anmutung von gefaltetem Papier. Das Auge folgt immer dem hellsten Punkt im Raum. Pergamentweiß, die pure Schönheit dieser Produktform im Fokus der Wahrnehmung.
+
+Produktästhetik, die sich einfügt und jeden Raum bereichert.''';
 
 const cta = 'Produkte anfragen';
