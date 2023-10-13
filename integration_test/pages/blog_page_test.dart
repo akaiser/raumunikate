@@ -26,7 +26,7 @@ void main() {
   });
 
   _blogs.forEach((blogName, pageType) {
-    testWidgets('tap on "$blogName" shows "$pageType', (tester) async {
+    testWidgets('tap on "$blogName" shows "$pageType"', (tester) async {
       await tester.pumpApp();
 
       await tester.tap(find.text(blogName));
@@ -35,7 +35,7 @@ void main() {
       expect(find.byType(pageType), findsOneWidget);
     });
 
-    testWidgets('tap on $blogTextLinkKey leaves "$pageType', (tester) async {
+    testWidgets('tap on "$blogTextLinkKey" leaves "$pageType"', (tester) async {
       await tester.pumpApp();
 
       await tester.tap(find.byKey(blogTextLinkKey));
