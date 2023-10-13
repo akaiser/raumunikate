@@ -4,6 +4,6 @@ const title2 = 'DER KONTRASTE';
 const content = '''
 Jeder Mensch ist einzigartig und kann seinen individuellen Wohnstil entwickeln.
 
-Wenn Ihr Zuhause abgestimmt ist auf Ihre inneren Bedürfnisse, sich Ihr innen im Außen ausdrückt, stellt sich Wohlfühl ein.
+Wenn Ihr Zuhause auf Ihre inneren Bedürfnisse abgestimmt ist, sich Ihr Innen im Außen ausdrückt, stellt sich Wohlgefühl ein.
 
 Um Ihren authentischen Stil beschreibbar zu machen, arbeite ich mit assoziativen Bildern aus zwei Stilweltkontrasten.''';

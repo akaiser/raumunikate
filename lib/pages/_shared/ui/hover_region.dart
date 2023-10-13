@@ -26,10 +26,13 @@ class _HoverRegionState extends State<HoverRegion> {
   bool _isHovering = false;
 
   @override
-  Widget build(BuildContext context) => ClickableRegion(
-        onTap: widget.onTap,
-        onEnter: () => setState(() => _isHovering = true),
-        onExit: () => setState(() => _isHovering = false),
-        child: widget.builder(context, _isHovering, widget.child),
-      );
+  Widget build(BuildContext context) {
+    final onTap = widget.onTap;
+    return ClickableRegion(
+      onTap: onTap,
+      onEnter: () => onTap != null ? setState(() => _isHovering = true) : null,
+      onExit: () => onTap != null ? setState(() => _isHovering = false) : null,
+      child: widget.builder(context, _isHovering, widget.child),
+    );
+  }
 }

@@ -41,7 +41,7 @@ Herzlich Willkommen im Zuhause der Atmosphäre! Hier erfahren Sie wer RAUMUNIKAT
     'Blog',
     '''
 Ort der Inspiration.
-Sie erhalten Einblicke in mein persönliche Gedankenwelt und meine spannende Interviewreihe #raumfuerunikate.''',
+Sie erhalten Einblicke in meine persönliche Gedankenwelt und meine spannende Interviewreihe #raumfuerunikate.''',
     Routes.blogPage,
   ),
 ];

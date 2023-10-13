@@ -18,14 +18,14 @@ In einem unverbindlichen Erstgespräch, erfahre ich von Ihren Wünschen und Vors
     raumGreen,
     'Phase 2',
     '''
-Sir besprechen den Beratrungsumfang. Mit Hilfe meinem Stilraum finden wir gemeinsam heraus, welcher Wohnstil Sie anspricht und mit welchen Materialien und Farben Sie sich wohlfühlen.''',
+Wir besprechen den Beratrungsumfang. Mit Hilfe meinem Stilraum finden wir gemeinsam heraus, welcher Wohnstil Sie anspricht und mit welchen Materialien und Farben Sie sich wohlfühlen.''',
     title2: 'Beratungsrahmen',
   ),
   DesignSlideDataEntry(
     raumGreen,
     'Phase 3',
     '''
-Auf dieser Basis kreiere ich ihr persönliches ganzheitliches Farbkonzept und selektiere eine stimmige Farbkomposition.''',
+Auf dieser Basis kreiere ich Ihr persönliches ganzheitliches Farbkonzept und selektiere eine stimmige Farbkomposition.''',
     title2: 'Konzept',
   ),
 ];

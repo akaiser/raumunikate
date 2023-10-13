@@ -39,7 +39,8 @@ abstract final class Images {
   static const // portrait
       portraitIntro = '$_root/portrait_intro.webp',
       portraitAbout = '$_root/portrait_about.webp',
-      portraitProduct = '$_root/portrait_product.webp';
+      portraitProduct = '$_root/portrait_product.webp',
+      portraitBlog = '$_root/portrait_blog.webp';
 
   static const // blogs
       _blog0 = '$_blogRoot/0',
@@ -71,7 +72,8 @@ abstract final class Images {
       instagram = '$_iconsRoot/instagram.webp',
       mail = '$_iconsRoot/mail.webp',
       menu = '$_iconsRoot/menu.webp',
-      arrowUp = '$_iconsRoot/arrow_up.webp';
+      arrowUp = '$_iconsRoot/arrow_up.webp',
+      arrowLeft = '$_iconsRoot/arrow_left.webp';
 
   static const // misc
       logo = '$_root/logo.webp',
