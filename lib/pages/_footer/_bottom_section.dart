@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_footer/_legal.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 class BottomSection extends StatelessWidget {
@@ -11,7 +12,7 @@ class BottomSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(child: CopyrightText()),
-            SizedBox(width: 26),
+            Gap(26),
             _Legal(),
           ],
         ),
@@ -30,9 +31,9 @@ class _Legal extends Row {
       : super(
           children: const [
             ImprintTextLink(),
-            SizedBox(width: 26),
+            Gap(26),
             TermsTextLink(),
-            SizedBox(width: 26),
+            Gap(26),
             PrivacyTextLink(),
           ],
         );

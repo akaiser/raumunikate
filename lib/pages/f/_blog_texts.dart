@@ -1,5 +1,6 @@
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
@@ -25,7 +26,7 @@ class BlogHeader extends StatelessWidget {
           ),
           const Text(' > '),
           Expanded(child: Text(blogName)),
-          const SizedBox(width: 4),
+          const Gap(4),
           Text(blogDate),
         ],
       );

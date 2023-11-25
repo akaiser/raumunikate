@@ -5,6 +5,7 @@ import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/social_links.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/nav_bar/_logo.dart';
 import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
@@ -81,10 +82,10 @@ class _NavBar extends StatelessWidget {
                     : null,
                 child: Column(
                   children: [
-                    const SizedBox(height: 6),
+                    const Gap(6),
                     const Logo(),
                     if (isExpanded) ...[
-                      const SizedBox(height: 20),
+                      const Gap(20),
                       const LogoText(),
                     ],
                   ],

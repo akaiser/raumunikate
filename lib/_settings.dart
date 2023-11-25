@@ -1,4 +1,5 @@
-import 'package:flutter/widgets.dart' show Color, EdgeInsets, SizedBox;
+import 'package:flutter/widgets.dart' show Color, EdgeInsets;
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 
 const appName = 'RAUMUNIKATE Ina Kaiser';
 
@@ -21,8 +22,8 @@ const //
 
 const linkColor = raumCreme;
 
-const newLine = SizedBox(height: 28);
-const smallNewLine = SizedBox(height: 8);
+const newLine = Gap(28);
+const smallNewLine = Gap(8);
 
 const //
     textHorizontalPaddingXl = EdgeInsets.symmetric(horizontal: 300),

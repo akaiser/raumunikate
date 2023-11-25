@@ -7,6 +7,7 @@ import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
@@ -127,10 +128,9 @@ class _ScrollToTopArrow extends StatelessWidget {
           bottom: navBarNotifier.isExpanded ? -64 : 16,
           child: child ?? const SizedBox(),
         ),
-        child: IconButton(
-          onPressed: onTap,
-          iconSize: 42,
-          icon: Image.asset(Images.arrowUp),
+        child: ClickableRegion(
+          onTap: onTap,
+          child: Image.asset(Images.arrowUp, width: 42),
         ),
       );
 }

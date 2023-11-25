@@ -1,5 +1,6 @@
 import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
 
@@ -47,7 +48,7 @@ class _ReferralCard extends StatelessWidget {
             entry.feedback,
             style: textStyle.copyWith(fontSize: 20),
           ),
-          const SizedBox(height: 8),
+          const Gap(8),
           Text(
             entry.referral,
             style: textStyle.copyWith(color: data.referralTextColor),

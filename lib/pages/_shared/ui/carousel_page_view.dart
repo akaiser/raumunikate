@@ -1,5 +1,6 @@
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 
 class CarouselPageView extends StatefulWidget {
   const CarouselPageView({
@@ -109,7 +110,7 @@ class _Indicator extends StatelessWidget {
               ),
             ],
           ),
-          child: const SizedBox(width: 16, height: 16),
+          child: const Gap(16),
         ),
       );
 }

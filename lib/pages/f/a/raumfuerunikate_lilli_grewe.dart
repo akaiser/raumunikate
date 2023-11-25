@@ -164,7 +164,7 @@ Vielen Dank liebe Lilli für den spannenden Einblick in Dein Zuhause.''',
           Text('Ina'),
           newLine,
           Divider(),
-          SizedBox(height: 8),
+          smallNewLine,
           RichTextSection(
             children: [
               InlineText('Gästin: Lilli Grewe '),

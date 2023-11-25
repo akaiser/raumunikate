@@ -3,6 +3,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
@@ -51,7 +52,7 @@ class _RegularEntry extends StatelessWidget {
             width: 260,
             child: _Image(entry),
           ),
-          const SizedBox(width: 16),
+          const Gap(16),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -124,8 +125,14 @@ class _Categories extends StatelessWidget {
   Widget build(BuildContext context) => Wrap(
         runSpacing: 6,
         children: categories
-            .map<Widget>((category) => Chip(label: Text(category)))
-            .separate(const SizedBox(width: 6))
+            .map<Widget>(
+              (category) => Chip(
+                label: Text(category),
+                padding: EdgeInsets.zero,
+                backgroundColor: mainBackgroundColor,
+              ),
+            )
+            .separate(const Gap(6))
             .unmodifiable,
       );
 }
