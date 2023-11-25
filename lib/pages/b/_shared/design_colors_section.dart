@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
@@ -18,7 +19,7 @@ class DesignColorsSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: navigationBarHeight),
+              const Gap(navigationBarHeight),
               ...children,
             ],
           ),

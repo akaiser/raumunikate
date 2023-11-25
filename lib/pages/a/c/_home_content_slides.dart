@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
@@ -46,7 +47,7 @@ class _SlideCard extends StatelessWidget {
                 data.linkText,
                 onTap: () => context.go(entry.linkPagePath),
               ),
-              const SizedBox(height: 30),
+              const Gap(30),
             ],
           ),
         ),
@@ -57,7 +58,6 @@ class _Spacer extends StatelessWidget {
   const _Spacer();
 
   @override
-  Widget build(BuildContext context) => context.isShittySmallDevice
-      ? const SizedBox(height: 30)
-      : const SizedBox(height: 60);
+  Widget build(BuildContext context) =>
+      context.isShittySmallDevice ? const Gap(30) : const Gap(60);
 }

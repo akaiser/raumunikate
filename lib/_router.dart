@@ -6,60 +6,39 @@ import 'package:raumunikate/_settings.dart';
 
 const _pathParamPermalink = 'permalink';
 
+typedef PageBuilder = Widget Function(GoRouterState state);
+
 final router = GoRouter(
   initialLocation: Routes.homePage,
   errorPageBuilder: (_, state) => _page(state, const NotFoundPage()),
   routes: [
-    GoRoute(
-      path: Routes.homePage,
-      pageBuilder: (_, state) => _page(state, const HomePage()),
-    ),
-    GoRoute(
-      path: Routes.designPage,
-      pageBuilder: (_, state) => _page(state, const DesignPage()),
-    ),
-    GoRoute(
-      path: Routes.projectsPage,
-      pageBuilder: (_, state) => _page(state, const ProjectsPage()),
-    ),
-    GoRoute(
-      path: Routes.productsPage,
-      pageBuilder: (_, state) => _page(state, const ProductsPage()),
-    ),
-    GoRoute(
-      path: Routes.portraitPage,
-      pageBuilder: (_, state) => _page(state, const PortraitPage()),
-    ),
-    GoRoute(
-      path: Routes.blogPage,
-      pageBuilder: (_, state) => _page(state, const BlogPage()),
+    _goRoute(Routes.homePage, (_) => const HomePage()),
+    _goRoute(Routes.designPage, (_) => const DesignPage()),
+    _goRoute(Routes.projectsPage, (_) => const ProjectsPage()),
+    _goRoute(Routes.productsPage, (_) => const ProductsPage()),
+    _goRoute(Routes.portraitPage, (_) => const PortraitPage()),
+    _goRoute(Routes.blogPage, (_) => const BlogPage(), [
       // TODO(albert): add redirect for "/v/raumfuerunikate-lilli-grewe"
       // either here on on server
-      routes: [
-        GoRoute(
-          path: ':$_pathParamPermalink',
-          pageBuilder: (_, state) => _page(state, state.toBlogViewPage),
-        ),
-      ],
-    ),
-    GoRoute(
-      path: ImprintPage.path,
-      pageBuilder: (_, state) => _page(state, const ImprintPage()),
-    ),
-    GoRoute(
-      path: TermsPage.path,
-      pageBuilder: (_, state) => _page(state, const TermsPage()),
-    ),
-    GoRoute(
-      path: PrivacyPage.path,
-      pageBuilder: (_, state) => _page(state, const PrivacyPage()),
-    ),
-    GoRoute(
-      path: ContactPage.path,
-      pageBuilder: (_, state) => _page(state, const ContactPage()),
-    ),
+      _goRoute(':$_pathParamPermalink', (state) => state.toBlogViewPage),
+    ]),
+    _goRoute(ImprintPage.path, (_) => const ImprintPage()),
+    _goRoute(TermsPage.path, (_) => const TermsPage()),
+    _goRoute(PrivacyPage.path, (_) => const PrivacyPage()),
+    _goRoute(ContactPage.path, (_) => const ContactPage()),
   ],
 );
+
+GoRoute _goRoute(
+  String path,
+  PageBuilder builder, [
+  List<GoRoute> routes = const [],
+]) =>
+    GoRoute(
+      path: path,
+      pageBuilder: (_, state) => _page(state, builder(state)),
+      routes: routes,
+    );
 
 CustomTransitionPage<Widget> _page(
   GoRouterState state,

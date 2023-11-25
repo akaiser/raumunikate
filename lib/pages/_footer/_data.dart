@@ -1,4 +1,4 @@
-const contactButton = 'Kontaktformular';
+const contactText = 'Hier geht es zum Kontaktformular';
 
 const // legal
     copyright = '© 2023 Raumunikate. All rights reserved.',

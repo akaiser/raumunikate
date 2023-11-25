@@ -16,13 +16,13 @@ class ActionButton extends StatelessWidget {
   Widget build(BuildContext context) => HoverRegion(
         onTap: onTap,
         builder: (context, isHovering, child) => Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.only(left: 16, top: 2, right: 16),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             border: Border.all(
               width: 2,
-              color: isHovering ? raumCreme : raumBackground,
+              color: isHovering && onTap != null ? raumCreme : raumBackground,
             ),
           ),
           child: child,
@@ -44,7 +44,7 @@ class _ActionButtonText extends StatelessWidget {
   Widget build(BuildContext context) => Text(
         text,
         style: context.dts.copyWith(
-          color: raumCreme.withOpacity(enabled ? 1 : 0.7),
+          color: raumCreme.withOpacity(enabled ? 1 : 0.6),
           fontSize: context.isShittySmallDevice ? 16 : null,
         ),
       );

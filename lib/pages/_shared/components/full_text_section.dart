@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class FullTextSection extends StatelessWidget {
@@ -44,10 +45,8 @@ class _Spacer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => context.breakpoint == Breakpoint.xs
-      ? context.isShittySmallDevice
-          ? const SizedBox(height: 10)
-          : const SizedBox(height: 40)
-      : const SizedBox(height: 60);
+      ? Gap(context.isShittySmallDevice ? 10 : 40)
+      : const Gap(60);
 }
 
 class FullTextSectionText extends StatelessWidget {

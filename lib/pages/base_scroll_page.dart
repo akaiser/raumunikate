@@ -2,6 +2,7 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 const baseScrollPageKey = Key('base-scroll-page');
@@ -18,11 +19,11 @@ class BaseScrollPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _children = [
-      const SizedBox(height: navigationBarHeightExpanded),
+      const Gap(navigationBarHeightExpanded),
       ...children,
-      const SizedBox(height: 16),
+      const Gap(16),
       const Divider(),
-      const SizedBox(height: 8),
+      const Gap(8),
       const Footer(),
     ];
     return ResponsiveLayout(

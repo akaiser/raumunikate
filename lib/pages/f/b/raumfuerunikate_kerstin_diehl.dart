@@ -282,7 +282,7 @@ Liebe Kerstin, vielen Dank für Deine Zeit, es war mir ein großes Vergnügen.''
           Text('Deine Ina'),
           newLine,
           Divider(),
-          SizedBox(height: 8),
+          smallNewLine,
           RichTextSection(
             children: [
               InlineText('Gästin: Kerstin Diehl '),

@@ -2,6 +2,7 @@ import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 
 class SocialLinksRow extends Row {
   const SocialLinksRow({super.mainAxisAlignment = MainAxisAlignment.end})
@@ -11,12 +12,12 @@ class SocialLinksRow extends Row {
               Images.instagram,
               url: 'https://www.instagram.com/raumunikate/',
             ),
-            SizedBox(width: 8),
+            Gap(8),
             _Link(
               Images.facebook,
               url: 'https://de-de.facebook.com/ina.kaiser.7543/',
             ),
-            SizedBox(width: 8),
+            Gap(8),
             _Link(
               Images.mail,
               url: 'mailto:kontakt@raumunikate.com',

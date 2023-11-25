@@ -22,7 +22,7 @@ void main() {
       await tester.render(const CopyrightText());
 
       expect(
-        tester.findWidget<CopyrightText>().data,
+        tester.find<CopyrightText>().data,
         contains('${DateTime.now().year}'),
       );
     });
@@ -32,7 +32,7 @@ void main() {
     testWidgets('is a $TextLink', (tester) async {
       await tester.render(const ImprintTextLink());
 
-      expect(tester.findWidget<ImprintTextLink>(), isA<TextLink>());
+      expect(tester.find<ImprintTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has text', (tester) async {
@@ -44,7 +44,7 @@ void main() {
     testWidgets('has path to $ImprintPage', (tester) async {
       await tester.render(const ImprintTextLink());
 
-      expect(tester.findWidget<ImprintTextLink>().url, ImprintPage.path);
+      expect(tester.find<ImprintTextLink>().url, ImprintPage.path);
     });
   });
 
@@ -52,7 +52,7 @@ void main() {
     testWidgets('is a $TextLink', (tester) async {
       await tester.render(const TermsTextLink());
 
-      expect(tester.findWidget<TermsTextLink>(), isA<TextLink>());
+      expect(tester.find<TermsTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has text', (tester) async {
@@ -64,7 +64,7 @@ void main() {
     testWidgets('has path to $TermsPage', (tester) async {
       await tester.render(const TermsTextLink());
 
-      expect(tester.findWidget<TermsTextLink>().url, TermsPage.path);
+      expect(tester.find<TermsTextLink>().url, TermsPage.path);
     });
   });
 
@@ -72,7 +72,7 @@ void main() {
     testWidgets('is a $TextLink', (tester) async {
       await tester.render(const PrivacyTextLink());
 
-      expect(tester.findWidget<PrivacyTextLink>(), isA<TextLink>());
+      expect(tester.find<PrivacyTextLink>(), isA<TextLink>());
     });
 
     testWidgets('has expected text', (tester) async {
@@ -84,7 +84,7 @@ void main() {
     testWidgets('has path to $PrivacyPage', (tester) async {
       await tester.render(const PrivacyTextLink());
 
-      expect(tester.findWidget<PrivacyTextLink>().url, PrivacyPage.path);
+      expect(tester.find<PrivacyTextLink>().url, PrivacyPage.path);
     });
   });
 }

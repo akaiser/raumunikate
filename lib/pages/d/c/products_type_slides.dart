@@ -5,6 +5,7 @@ import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/d/c/_data.dart' as data;
@@ -18,7 +19,7 @@ class ProductsTypeSlides extends StatelessWidget {
         Images.waben1,
         child: Column(
           children: [
-            const SizedBox(height: navigationBarHeight),
+            const Gap(navigationBarHeight),
             Padding(
               padding: EdgeInsets.fromLTRB(
                 20,
@@ -122,6 +123,6 @@ class _Spacer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isXsBreakpoint = context.isXsBreakpoint;
-    return SizedBox(height: isXsBreakpoint ? 8 : 16);
+    return Gap(isXsBreakpoint ? 8 : 16);
   }
 }

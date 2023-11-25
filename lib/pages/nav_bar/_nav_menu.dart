@@ -15,7 +15,7 @@ class NavMenu extends StatelessWidget {
         key: navMenuKey,
         tooltip: '',
         iconSize: 32,
-        splashRadius: 0.1,
+        surfaceTintColor: Colors.white,
         icon: Image.asset(Images.menu, color: raumGrau),
         itemBuilder: (context) => data.navData.map(
           (entry) {

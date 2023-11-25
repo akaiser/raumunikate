@@ -3,6 +3,7 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/responsive_slides.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
+import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
@@ -27,7 +28,7 @@ abstract class DesignSlides extends StatelessWidget {
         ? cards
         : Column(
             children: [
-              const SizedBox(height: navigationBarHeight),
+              const Gap(navigationBarHeight),
               Padding(
                 padding: EdgeInsets.fromLTRB(
                   20,
@@ -102,21 +103,21 @@ class _SlideCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            SizedBox(height: isXsBreakpoint ? 16 : 32),
+            Gap(isXsBreakpoint ? 16 : 32),
             Text(
               entry.title,
               style: context.tt.label?.copyWith(color: entry.textColor),
             ),
             if (title2 != null) ...[
-              const SizedBox(height: 10),
+              const Gap(10),
               Text(
                 title2,
                 style: context.tt.label?.copyWith(color: entry.textColor),
               ),
             ],
-            SizedBox(height: isXsBreakpoint ? 8 : 48),
+            Gap(isXsBreakpoint ? 8 : 48),
             Flexible(child: _Text(entry)),
-            const SizedBox(height: 8),
+            const Gap(8),
           ],
         ),
       ),
