@@ -16,7 +16,7 @@ extension WidgetTesterExt on WidgetTester {
     await pumpAndSettle();
   }
 
-  void expectType(Type type, List<Type> types) {
+  void expectType(Type type, Iterable<Type> types) {
     for (final _type in types) {
       expect(
         find.byType(_type),

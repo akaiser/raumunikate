@@ -13,7 +13,7 @@ import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
 
-const _sectionTypes = [
+const _sectionTypes = {
   DesignIntroSection,
   DesignPhasesPartOneSection,
   DesignPhasesPartTwoSection,
@@ -23,7 +23,7 @@ const _sectionTypes = [
   DesignNaturalFullSection,
   DesignElegantFullSection,
   Footer,
-];
+};
 
 void main() {
   testWidgets('ensures to be on $DesignPage', (tester) async {

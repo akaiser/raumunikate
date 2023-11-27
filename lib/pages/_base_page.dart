@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:raumunikate/_images.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_routes.dart';
@@ -38,9 +37,9 @@ class _BasePageState extends State<BasePage> {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
         // When navigating to new scaffold and NavBar was not expanded yet...
-        final navBarNotifier = context.read<NavBarNotifier>();
+        final navBarNotifier = context.navBarNotifier;
         if (!navBarNotifier.isExpanded) {
-          navBarNotifier.toggle;
+          navBarNotifier.toggle();
         }
       },
     );
@@ -66,7 +65,7 @@ class _BasePageState extends State<BasePage> {
   @override
   Widget build(BuildContext context) {
     final screenSize = context.screenSize;
-    final navBarNotifier = context.read<NavBarNotifier>();
+    final navBarNotifier = context.navBarNotifier;
     return Scaffold(
       body: DefaultTextStyle.merge(
         style: context.tt.body?.copyWith(color: raumGrau),
@@ -79,7 +78,7 @@ class _BasePageState extends State<BasePage> {
                 if (notification.metrics.axis == Axis.vertical) {
                   final isAtTop = notification.metrics.pixels <= 10;
                   if (navBarNotifier.isExpanded != isAtTop) {
-                    navBarNotifier.toggle;
+                    navBarNotifier.toggle();
                   }
                 }
                 return true;
