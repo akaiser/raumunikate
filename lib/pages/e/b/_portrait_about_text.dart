@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/e/b/_data.dart' as data;
@@ -13,9 +14,7 @@ class PortraitAboutText extends StatelessWidget {
         text: data.content,
         actionButton: ActionButton(
           data.cta,
-          onTap: () {
-            // TODO(albert): where to go?
-          },
+          onTap: () => context.scrollToBottomNotifier.notify(),
         ),
       );
 }

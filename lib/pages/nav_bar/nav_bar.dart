@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:raumunikate/_notifier.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_base_page.dart';
 import 'package:raumunikate/pages/_footer/footer.dart';
@@ -17,26 +18,36 @@ class BaseSlidePage extends StatefulWidget {
 
 class _BaseSlidePageState extends State<BaseSlidePage> {
   late final PageController _controller;
+  late final ScrollToBottomNotifier _scrollToBottomNotifier;
 
   @override
   void initState() {
     super.initState();
     _controller = PageController();
+    _scrollToBottomNotifier = context.scrollToBottomNotifier
+      ..addListener(_scrollToBottom);
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _scrollToBottomNotifier.removeListener(_scrollToBottom);
     super.dispose();
   }
 
-  void get _scrollToTop => _controller.animateToPage(
+  void _scrollToTop() => _controller.animateToPage(
         0,
         duration: const Duration(milliseconds: pageTransitionInMillis),
         curve: Curves.ease,
       );
 
-  void get _onScrollUpRequest {
+  void _scrollToBottom() => _controller.animateToPage(
+        widget.children.length,
+        duration: const Duration(milliseconds: pageTransitionInMillis),
+        curve: Curves.ease,
+      );
+
+  void _onScrollUpRequest() {
     if (widget.children.length != _controller.page?.toInt()) {
       _controller.nextPage(
         duration: const Duration(milliseconds: pageTransitionInMillis),
@@ -45,7 +56,7 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
     }
   }
 
-  void get _onScrollDownRequest {
+  void _onScrollDownRequest() {
     if (_controller.page?.toInt() != 0) {
       _controller.previousPage(
         duration: const Duration(milliseconds: pageTransitionInMillis),
@@ -58,9 +69,9 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
   Widget build(BuildContext context) {
     final _children = [...widget.children, const _Footer()];
     return BasePage(
-      onScrollToTopTap: () => _scrollToTop,
-      onScrollUpRequest: () => _onScrollUpRequest,
-      onScrollDownRequest: () => _onScrollDownRequest,
+      onScrollToTopTap: _scrollToTop,
+      onScrollUpRequest: _onScrollUpRequest,
+      onScrollDownRequest: _onScrollDownRequest,
       child: PageView.builder(
         key: baseSlidePageKey,
         controller: _controller,

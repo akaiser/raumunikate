@@ -10,14 +10,14 @@ import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
 
-const _sectionTypes = [
+const _sectionTypes = {
   ProjectsIntroSection,
   ProjectsWolfSection,
   ProjectsWolfHowSection,
   ProjectsTheuerSection,
   ProjectsTheuerHowSection,
   Footer,
-];
+};
 
 void main() {
   testWidgets('ensures to be on $ProjectsPage', (tester) async {
