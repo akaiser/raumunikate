@@ -5,10 +5,7 @@ const loadingEl = document.querySelector('#loading');
 
 _flutter.loader.load({
     onEntrypointLoaded: async function (engineInitializer) {
-        const appRunner = await engineInitializer.initializeEngine({
-            // hack
-            canvasKitBaseUrl: "raumunikate/canvaskit/"
-        });
+        const appRunner = await engineInitializer.initializeEngine({useLocalCanvasKit: true});
         await appRunner.runApp();
         loadingEl.remove();
     }
