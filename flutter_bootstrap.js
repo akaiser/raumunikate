@@ -9,12 +9,10 @@ if (!window._flutter) {
 _flutter.buildConfig = {"engineRevision":"b8800d88be4866db1b15f8b954ab2573bba9960f","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"}],"useLocalCanvasKit":true};
 
 
-const loadingEl = document.querySelector('#loading');
-
 _flutter.loader.load({
     onEntrypointLoaded: async function (engineInitializer) {
-        const appRunner = await engineInitializer.initializeEngine({useLocalCanvasKit: true});
+        const appRunner = await engineInitializer.initializeEngine();
         await appRunner.runApp();
-        loadingEl.remove();
+        document.querySelector('#loading').remove();
     }
 });
