@@ -3,7 +3,10 @@
 
 _flutter.loader.load({
     onEntrypointLoaded: async function (engineInitializer) {
-        const appRunner = await engineInitializer.initializeEngine();
+        const appRunner = await engineInitializer.initializeEngine({
+            // hack
+            canvasKitBaseUrl: "/canvaskit/"
+        });
         await appRunner.runApp();
         document.querySelector('#loading').remove();
     }
