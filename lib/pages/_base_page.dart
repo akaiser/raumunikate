@@ -85,7 +85,11 @@ class _BasePageState extends State<BasePage> {
               },
               onRefresh: () => Future<void>.delayed(
                 const Duration(milliseconds: pageTransitionInMillis),
-                () => context.go(Routes.homePage),
+                () {
+                  if (context.mounted) {
+                    context.go(Routes.homePage);
+                  }
+                },
               ),
               child: KeyboardListener(
                 autofocus: true,
