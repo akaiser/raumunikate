@@ -6,7 +6,7 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {"flutter.js": "f393d3c16b631f36852323de8e583132",
 "contact.php": "89ba640268ee49c4b7a7a77e97c84b6b",
 "robots.txt": "21fe6d6037f6706faf0a3dd41fe5e014",
-"main.dart.js": "34038384e12c06cd5b2565b1c1902276",
+"main.dart.js": "27d41be303f884411ae11f24f001892e",
 "inc/PHPMailer/PHPMailer.php": "1148d1086fc5276e50db15ebce405ac6",
 "inc/PHPMailer/SMTP.php": "39ef3a4a88a641cb5e81637204e8c41e",
 "inc/PHPMailer/Exception.php": "93ffca756944cd37c78d85804300ec2c",
