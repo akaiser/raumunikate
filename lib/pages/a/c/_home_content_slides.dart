@@ -26,7 +26,7 @@ class _SlideCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ColoredBox(
-        color: entry.backgroundColor.withOpacity(0.85),
+        color: entry.backgroundColor.withValues(alpha: 0.85),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
