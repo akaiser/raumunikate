@@ -44,7 +44,7 @@ class _ActionButtonText extends StatelessWidget {
   Widget build(BuildContext context) => Text(
         text,
         style: context.dts.copyWith(
-          color: raumCreme.withOpacity(enabled ? 1 : 0.6),
+          color: raumCreme.withValues(alpha: enabled ? 1 : 0.6),
           fontSize: context.isShittySmallDevice ? 16 : null,
         ),
       );

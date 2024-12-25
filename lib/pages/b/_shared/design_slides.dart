@@ -98,7 +98,7 @@ class _SlideCard extends StatelessWidget {
     final title2 = entry.title2;
 
     return ColoredBox(
-      color: entry.cardColor.withOpacity(0.85),
+      color: entry.cardColor.withValues(alpha: 0.85),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
