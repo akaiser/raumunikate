@@ -13,7 +13,7 @@ void main() {
       await tester.render(const CopyrightText());
 
       expect(
-        find.text('© 2024 Raumunikate. All rights reserved.'),
+        find.text('© 2025 Raumunikate. All rights reserved.'),
         findsOneWidget,
       );
     });
