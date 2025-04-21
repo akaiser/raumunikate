@@ -9,18 +9,18 @@ class ProductsCitationSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const BaseSectionWithBackgroundImage(
-        Images.productsWallLamp,
-        child: Padding(
-          padding: EdgeInsets.only(left: 40, top: 40, right: 40),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(),
-              SizedBox(),
-              Citation(citation: data.citation, signature: data.signature),
-              SizedBox(),
-            ],
-          ),
-        ),
-      );
+    Images.productsWallLamp,
+    child: Padding(
+      padding: EdgeInsets.only(left: 40, top: 40, right: 40),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SizedBox(),
+          SizedBox(),
+          Citation(citation: data.citation, signature: data.signature),
+          SizedBox(),
+        ],
+      ),
+    ),
+  );
 }

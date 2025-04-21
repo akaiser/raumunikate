@@ -8,28 +8,22 @@ import 'package:raumunikate/pages/b/f/_design_style_text.dart';
 
 class DesignStyleFirstSection extends OneColumnSection {
   const DesignStyleFirstSection()
-      : super(
-          backgroundColor: raumLila,
-          child: const DesignStyleText(),
-        );
+    : super(backgroundColor: raumLila, child: const DesignStyleText());
 }
 
 class DesignStyleSecondSection extends ColoredBox {
   const DesignStyleSecondSection()
-      : super(
-          color: raumLila,
-          child: const _DesignStyleImage(),
-        );
+    : super(color: raumLila, child: const _DesignStyleImage());
 }
 
 class DesignStyleSection extends TwoColumnsSection {
   const DesignStyleSection()
-      : super(
-          image: const _DesignStyleImage(),
-          content: const DesignStyleText(),
-          leftHasMoreFlex: true,
-          backgroundColor: raumLila,
-        );
+    : super(
+        image: const _DesignStyleImage(),
+        content: const DesignStyleText(),
+        leftHasMoreFlex: true,
+        backgroundColor: raumLila,
+      );
 }
 
 class _DesignStyleImage extends StatelessWidget {
@@ -37,10 +31,7 @@ class _DesignStyleImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const Padding(
-        padding: EdgeInsets.only(top: navigationBarHeight),
-        child: FadeInAssetImage(
-          Images.designStyle,
-          fit: BoxFit.contain,
-        ),
-      );
+    padding: EdgeInsets.only(top: navigationBarHeight),
+    child: FadeInAssetImage(Images.designStyle, fit: BoxFit.contain),
+  );
 }

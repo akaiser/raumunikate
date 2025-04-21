@@ -7,23 +7,20 @@ import 'package:raumunikate/pages/e/b/_portrait_about_text.dart';
 
 class PortraitAboutFirstSection extends OneColumnSection {
   const PortraitAboutFirstSection()
-      : super(
-          backgroundColor: raumBackground,
-          child: const PortraitAboutText(),
-        );
+    : super(backgroundColor: raumBackground, child: const PortraitAboutText());
 }
 
 class PortraitAboutSecondSection extends OneColumnSection {
   const PortraitAboutSecondSection()
-      : super(backgroundImage: Images.portraitAbout);
+    : super(backgroundImage: Images.portraitAbout);
 }
 
 class PortraitAboutSection extends TwoColumnsSection {
   const PortraitAboutSection()
-      : super(
-          image: const CoverImageBox(Images.portraitAbout),
-          content: const PortraitAboutText(),
-          flipWidgets: true,
-          backgroundColor: raumBackground,
-        );
+    : super(
+        image: const CoverImageBox(Images.portraitAbout),
+        content: const PortraitAboutText(),
+        flipWidgets: true,
+        backgroundColor: raumBackground,
+      );
 }

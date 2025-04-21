@@ -24,10 +24,7 @@ class BaseSectionWithBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     final _backgroundImage = backgroundImage;
     if (_backgroundImage != null) {
-      return BaseSectionWithBackgroundImage(
-        _backgroundImage,
-        child: child,
-      );
+      return BaseSectionWithBackgroundImage(_backgroundImage, child: child);
     }
 
     final _backgroundColor = backgroundColor;

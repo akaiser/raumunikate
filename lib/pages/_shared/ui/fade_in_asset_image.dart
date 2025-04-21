@@ -3,12 +3,7 @@ import 'package:raumunikate/_settings.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class FadeInAssetImage extends StatelessWidget {
-  const FadeInAssetImage(
-    this.image, {
-    this.fit,
-    this.child,
-    super.key,
-  });
+  const FadeInAssetImage(this.image, {this.fit, this.child, super.key});
 
   final String image;
   final BoxFit? fit;
@@ -26,9 +21,6 @@ class FadeInAssetImage extends StatelessWidget {
 
     return _child == null
         ? fadeInImage
-        : Stack(
-            fit: StackFit.expand,
-            children: [fadeInImage, _child],
-          );
+        : Stack(fit: StackFit.expand, children: [fadeInImage, _child]);
   }
 }

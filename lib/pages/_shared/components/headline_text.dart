@@ -2,10 +2,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class HeadlineText extends StatelessWidget {
-  const HeadlineText(
-    this.text, {
-    this.textColor,
-  });
+  const HeadlineText(this.text, {this.textColor});
 
   final String text;
   final Color? textColor;
@@ -19,9 +16,10 @@ class HeadlineText extends StatelessWidget {
       text,
       style: context.tt.title?.copyWith(
         color: textColor,
-        fontSize: isXsBreakpoint
-            ? 24
-            : isXxlBreakpoint
+        fontSize:
+            isXsBreakpoint
+                ? 24
+                : isXxlBreakpoint
                 ? 40
                 : 30,
       ),

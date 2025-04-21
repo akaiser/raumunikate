@@ -60,9 +60,9 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
         return widget.omitTopPadding
             ? child
             : Padding(
-                padding: const EdgeInsets.only(top: navigationBarHeight - 20),
-                child: child,
-              );
+              padding: const EdgeInsets.only(top: navigationBarHeight - 20),
+              child: child,
+            );
       },
     );
   }
@@ -79,8 +79,8 @@ class _FractionallySizedBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FractionallySizedBox(
-        widthFactor: 0.9,
-        heightFactor: isSxsBreakpoint ? 0.8 : 0.6,
-        child: child,
-      );
+    widthFactor: 0.9,
+    heightFactor: isSxsBreakpoint ? 0.8 : 0.6,
+    child: child,
+  );
 }

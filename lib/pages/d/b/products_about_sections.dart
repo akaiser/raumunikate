@@ -7,23 +7,20 @@ import 'package:raumunikate/pages/d/b/_products_about_text.dart';
 
 class ProductsAboutFirstSection extends OneColumnSection {
   const ProductsAboutFirstSection()
-      : super(
-          backgroundColor: raumBackground,
-          child: const ProductsAboutText(),
-        );
+    : super(backgroundColor: raumBackground, child: const ProductsAboutText());
 }
 
 class ProductsAboutSecondSection extends OneColumnSection {
   const ProductsAboutSecondSection()
-      : super(backgroundImage: Images.productsCandleShell);
+    : super(backgroundImage: Images.productsCandleShell);
 }
 
 class ProductsAboutSection extends TwoColumnsSection {
   const ProductsAboutSection()
-      : super(
-          image: const CoverImageBox(Images.productsCandleShell),
-          content: const ProductsAboutText(),
-          backgroundColor: raumBackground,
-          leftHasMoreFlex: true,
-        );
+    : super(
+        image: const CoverImageBox(Images.productsCandleShell),
+        content: const ProductsAboutText(),
+        backgroundColor: raumBackground,
+        leftHasMoreFlex: true,
+      );
 }

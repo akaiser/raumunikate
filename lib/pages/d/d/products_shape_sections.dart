@@ -7,24 +7,21 @@ import 'package:raumunikate/pages/d/d/_products_shape_text.dart';
 
 class ProductsShapeFirstSection extends OneColumnSection {
   const ProductsShapeFirstSection()
-      : super(
-          backgroundColor: raumLila,
-          child: const ProductsShapeText(),
-        );
+    : super(backgroundColor: raumLila, child: const ProductsShapeText());
 }
 
 class ProductsShapeSecondSection extends OneColumnSection {
   const ProductsShapeSecondSection()
-      : super(backgroundImage: Images.productsClockShell);
+    : super(backgroundImage: Images.productsClockShell);
 }
 
 class ProductsShapeSection extends TwoColumnsSection {
   const ProductsShapeSection()
-      : super(
-          image: const CoverImageBox(Images.productsClockShell),
-          content: const ProductsShapeText(),
-          leftHasMoreFlex: true,
-          flipWidgets: true,
-          backgroundColor: raumLila,
-        );
+    : super(
+        image: const CoverImageBox(Images.productsClockShell),
+        content: const ProductsShapeText(),
+        leftHasMoreFlex: true,
+        flipWidgets: true,
+        backgroundColor: raumLila,
+      );
 }

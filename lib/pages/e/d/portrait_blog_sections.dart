@@ -6,23 +6,20 @@ import 'package:raumunikate/pages/e/d/_portrait_blog_text.dart';
 
 class PortraitBlogFirstSection extends OneColumnSection {
   const PortraitBlogFirstSection()
-      : super(
-          backgroundImage: Images.waben0,
-          child: const PortraitBlogText(),
-        );
+    : super(backgroundImage: Images.waben0, child: const PortraitBlogText());
 }
 
 class PortraitBlogSecondSection extends OneColumnSection {
   const PortraitBlogSecondSection()
-      : super(backgroundImage: Images.portraitBlog);
+    : super(backgroundImage: Images.portraitBlog);
 }
 
 class PortraitBlogSection extends TwoColumnsSection {
   const PortraitBlogSection()
-      : super(
-          image: const CoverImageBox(Images.portraitBlog),
-          content: const PortraitBlogText(),
-          flipWidgets: true,
-          backgroundImage: Images.waben0,
-        );
+    : super(
+        image: const CoverImageBox(Images.portraitBlog),
+        content: const PortraitBlogText(),
+        flipWidgets: true,
+        backgroundImage: Images.waben0,
+      );
 }

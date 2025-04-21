@@ -4,10 +4,10 @@ import 'package:raumunikate/pages/b/d/_data.dart' as data;
 
 class DesignAtmosphereText extends FullTextSection {
   const DesignAtmosphereText()
-      : super(
-          title: data.title,
-          title2: data.title2,
-          text: data.content,
-          textColor: mainBackgroundColor,
-        );
+    : super(
+        title: data.title,
+        title2: data.title2,
+        text: data.content,
+        textColor: mainBackgroundColor,
+      );
 }

@@ -33,24 +33,21 @@ GoRoute _goRoute(
   String path,
   PageBuilder builder, [
   List<GoRoute> routes = const [],
-]) =>
-    GoRoute(
-      path: path,
-      pageBuilder: (_, state) => _page(state, builder(state)),
-      routes: routes,
-    );
+]) => GoRoute(
+  path: path,
+  pageBuilder: (_, state) => _page(state, builder(state)),
+  routes: routes,
+);
 
-CustomTransitionPage<Widget> _page(
-  GoRouterState state,
-  Widget page,
-) =>
+CustomTransitionPage<Widget> _page(GoRouterState state, Widget page) =>
     CustomTransitionPage(
       key: state.pageKey,
       transitionDuration: const Duration(milliseconds: pageTransitionInMillis),
-      transitionsBuilder: (_, animation, __, child) => FadeTransition(
-        opacity: CurveTween(curve: Curves.ease).animate(animation),
-        child: child,
-      ),
+      transitionsBuilder:
+          (_, animation, __, child) => FadeTransition(
+            opacity: CurveTween(curve: Curves.ease).animate(animation),
+            child: child,
+          ),
       child: page,
     );
 
@@ -58,8 +55,8 @@ extension on GoRouterState {
   // TODO(albert): make a BlogViewNotFoundPage here
   // OR: make the NotFoundPage accept custom messaging
   Widget get toBlogViewPage => switch (pathParameters[_pathParamPermalink]) {
-        RaumfuerunikateLilliGrewe.path => const RaumfuerunikateLilliGrewe(),
-        RaumfuerunikateKerstinDiehl.path => const RaumfuerunikateKerstinDiehl(),
-        _ => const NotFoundPage(),
-      };
+    RaumfuerunikateLilliGrewe.path => const RaumfuerunikateLilliGrewe(),
+    RaumfuerunikateKerstinDiehl.path => const RaumfuerunikateKerstinDiehl(),
+    _ => const NotFoundPage(),
+  };
 }

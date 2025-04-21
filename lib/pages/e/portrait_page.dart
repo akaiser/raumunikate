@@ -13,20 +13,20 @@ class PortraitPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSlidePage(
-        children: [
-          const PortraitIntroSection(),
-          if (context.isSxsBreakpoint) ...const [
-            PortraitAboutFirstSection(),
-            PortraitAboutSecondSection(),
-            PortraitProductFirstSection(),
-            PortraitProductSecondSection(),
-            PortraitBlogFirstSection(),
-            PortraitBlogSecondSection(),
-          ] else ...const [
-            PortraitAboutSection(),
-            PortraitProductSection(),
-            PortraitBlogSection(),
-          ],
-        ],
-      );
+    children: [
+      const PortraitIntroSection(),
+      if (context.isSxsBreakpoint) ...const [
+        PortraitAboutFirstSection(),
+        PortraitAboutSecondSection(),
+        PortraitProductFirstSection(),
+        PortraitProductSecondSection(),
+        PortraitBlogFirstSection(),
+        PortraitBlogSecondSection(),
+      ] else ...const [
+        PortraitAboutSection(),
+        PortraitProductSection(),
+        PortraitBlogSection(),
+      ],
+    ],
+  );
 }

@@ -9,8 +9,7 @@ const double navigationBarHeightExpanded = 132;
 const int pageTransitionInMillis = 400;
 const int navBarTransitionInMillis = 200;
 
-const //
-    mainBackgroundColor = Color(0xfff2f2f2),
+const mainBackgroundColor = Color(0xfff2f2f2),
     raumGrau = Color(0xff626665),
     raumCreme = Color(0xffc4b3a3),
     raumBackground = Color(0xffece9d8),
@@ -25,7 +24,6 @@ const linkColor = raumCreme;
 const newLine = Gap(28);
 const smallNewLine = Gap(8);
 
-const //
-    textHorizontalPaddingXl = EdgeInsets.symmetric(horizontal: 300),
+const textHorizontalPaddingXl = EdgeInsets.symmetric(horizontal: 300),
     textHorizontalPaddingL = EdgeInsets.symmetric(horizontal: 200),
     textHorizontalPaddingXs = EdgeInsets.symmetric(horizontal: 20);

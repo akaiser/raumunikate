@@ -9,12 +9,12 @@ class PortraitAboutText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        title: data.title,
-        title2: data.title2,
-        text: data.content,
-        actionButton: ActionButton(
-          data.cta,
-          onTap: () => context.scrollToBottomNotifier.notify(),
-        ),
-      );
+    title: data.title,
+    title2: data.title2,
+    text: data.content,
+    actionButton: ActionButton(
+      data.cta,
+      onTap: () => context.scrollToBottomNotifier.notify(),
+    ),
+  );
 }

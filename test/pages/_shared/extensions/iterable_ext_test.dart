@@ -64,22 +64,20 @@ void main() {
 
   group('mapIndexed', () {
     test('properly maps index and element', () {
-      expect(
-        Map.fromEntries(const [3, 4, 5].mapIndexed(MapEntry.new)),
-        const {0: 3, 1: 4, 2: 5},
-      );
+      expect(Map.fromEntries(const [3, 4, 5].mapIndexed(MapEntry.new)), const {
+        0: 3,
+        1: 4,
+        2: 5,
+      });
     });
   });
 
   group('groupBy', () {
     test('properly groups', () {
-      expect(
-        const [0, 1, 2, 3, 4, 5].groupBy((e) => e.isEven),
-        {
-          true: [0, 2, 4],
-          false: [1, 3, 5],
-        },
-      );
+      expect(const [0, 1, 2, 3, 4, 5].groupBy((e) => e.isEven), {
+        true: [0, 2, 4],
+        false: [1, 3, 5],
+      });
     });
   });
 }

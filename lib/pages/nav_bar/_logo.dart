@@ -12,8 +12,6 @@ class LogoText extends StatelessWidget {
   const LogoText();
 
   @override
-  Widget build(BuildContext context) => Image.asset(
-        Images.logoText,
-        height: 40,
-      );
+  Widget build(BuildContext context) =>
+      Image.asset(Images.logoText, height: 40);
 }

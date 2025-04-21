@@ -34,13 +34,14 @@ class _Carousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => CarouselPageView(
-        activeIndicatorColor: Colors.amber,
-        children: [
+    activeIndicatorColor: Colors.amber,
+    children:
+        [
           Images.projectsWolfChill,
           // TODO(albert): schlechte quali
           Images.projectsWolfOffice,
           // TODO(albert): schlechte quali
           if (context.isSxsBreakpoint) Images.projectsWolfConference,
         ].map(CoverImageBox.new).unmodifiable,
-      );
+  );
 }

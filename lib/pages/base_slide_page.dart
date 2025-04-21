@@ -24,8 +24,8 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
   void initState() {
     super.initState();
     _controller = PageController();
-    _scrollToBottomNotifier = context.scrollToBottomNotifier
-      ..addListener(_scrollToBottom);
+    _scrollToBottomNotifier =
+        context.scrollToBottomNotifier..addListener(_scrollToBottom);
   }
 
   @override
@@ -36,16 +36,16 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
   }
 
   void _scrollToTop() => _controller.animateToPage(
-        0,
-        duration: const Duration(milliseconds: pageTransitionInMillis),
-        curve: Curves.ease,
-      );
+    0,
+    duration: const Duration(milliseconds: pageTransitionInMillis),
+    curve: Curves.ease,
+  );
 
   void _scrollToBottom() => _controller.animateToPage(
-        widget.children.length,
-        duration: const Duration(milliseconds: pageTransitionInMillis),
-        curve: Curves.ease,
-      );
+    widget.children.length,
+    duration: const Duration(milliseconds: pageTransitionInMillis),
+    curve: Curves.ease,
+  );
 
   void _onScrollUpRequest() {
     if (widget.children.length != _controller.page?.toInt()) {

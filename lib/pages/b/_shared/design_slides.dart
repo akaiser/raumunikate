@@ -9,10 +9,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
 
 abstract class DesignSlides extends StatelessWidget {
-  const DesignSlides({
-    this.leading,
-    required this.slidesData,
-  });
+  const DesignSlides({this.leading, required this.slidesData});
 
   final Widget? leading;
   final List<DesignSlideDataEntry> slidesData;
@@ -27,20 +24,20 @@ abstract class DesignSlides extends StatelessWidget {
     return leading == null
         ? cards
         : Column(
-            children: [
-              const Gap(navigationBarHeight),
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                  20,
-                  context.isFullWidthNavBar ? 32 : 0,
-                  20,
-                  0,
-                ),
-                child: leading,
+          children: [
+            const Gap(navigationBarHeight),
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                20,
+                context.isFullWidthNavBar ? 32 : 0,
+                20,
+                0,
               ),
-              Expanded(child: cards),
-            ],
-          );
+              child: leading,
+            ),
+            Expanded(child: cards),
+          ],
+        );
   }
 }
 
@@ -51,9 +48,10 @@ class _Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: Row(
-          children: slidesData
+    padding: const EdgeInsets.symmetric(horizontal: 80),
+    child: Row(
+      children:
+          slidesData
               .mapIndexed(
                 (index, slideData) => Expanded(
                   child: FractionallySizedBox(
@@ -67,8 +65,8 @@ class _Cards extends StatelessWidget {
                 ),
               )
               .unmodifiable,
-        ),
-      );
+    ),
+  );
 }
 
 class _ResponsiveSlides extends StatelessWidget {
@@ -78,13 +76,12 @@ class _ResponsiveSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
-        itemCount: slidesData.length,
-        itemBuilder: (_, index) => _SlideCard(
-          slidesData[index],
-          key: Key('design-slide-card-$index'),
-        ),
-        omitTopPadding: true,
-      );
+    itemCount: slidesData.length,
+    itemBuilder:
+        (_, index) =>
+            _SlideCard(slidesData[index], key: Key('design-slide-card-$index')),
+    omitTopPadding: true,
+  );
 }
 
 class _SlideCard extends StatelessWidget {
@@ -132,8 +129,8 @@ class _Text extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AutoSizeText(
-        entry.text,
-        style: context.dts.copyWith(color: entry.textColor),
-        textAlign: TextAlign.center,
-      );
+    entry.text,
+    style: context.dts.copyWith(color: entry.textColor),
+    textAlign: TextAlign.center,
+  );
 }

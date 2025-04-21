@@ -17,13 +17,13 @@ class TextLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ClickableRegion(
-        onTap: () => doPush ? context.push(url) : context.launch(url),
-        child: Text(
-          text,
-          style: context.dts.copyWith(
-            //decoration: TextDecoration.underline,
-            color: linkColor,
-          ),
-        ),
-      );
+    onTap: () => doPush ? context.push(url) : context.launch(url),
+    child: Text(
+      text,
+      style: context.dts.copyWith(
+        //decoration: TextDecoration.underline,
+        color: linkColor,
+      ),
+    ),
+  );
 }

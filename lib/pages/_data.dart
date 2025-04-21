@@ -1,5 +1,4 @@
-const //
-    homeIntroText = 'FARBE SCHAFFT ATMOSPHÄRE',
+const homeIntroText = 'FARBE SCHAFFT ATMOSPHÄRE',
     designIntroText = 'ATMOSPHÄRE GESTALTEN',
     projectsIntroText = 'PROJEKTE',
     productsIntroText = 'PRODUKTE',
