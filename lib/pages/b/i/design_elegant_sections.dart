@@ -7,9 +7,7 @@ import 'package:raumunikate/pages/b/i/_data.dart' as data;
 
 class DesignElegantFullSection extends DesignElegantJustTextSection {
   const DesignElegantFullSection({super.key})
-      : super(
-          trailing: const Row(children: [_FirstImage(), _SecondImage()]),
-        );
+    : super(trailing: const Row(children: [_FirstImage(), _SecondImage()]));
 }
 
 class DesignElegantJustTextSection extends StatelessWidget {
@@ -22,10 +20,7 @@ class DesignElegantJustTextSection extends StatelessWidget {
     final _trailing = trailing;
     return DesignColorsSection(
       children: [
-        Text(
-          data.title,
-          style: context.tt.label,
-        ),
+        Text(data.title, style: context.tt.label),
         const Gap(20),
         const Text(data.content),
         const Gap(20),
@@ -37,20 +32,20 @@ class DesignElegantJustTextSection extends StatelessWidget {
 
 class DesignElegantJustFirstImageSection extends DesignColorsSection {
   const DesignElegantJustFirstImageSection({super.key})
-      : super(children: const [_FirstImage()]);
+    : super(children: const [_FirstImage()]);
 }
 
 class DesignElegantJustSecondImageSection extends DesignColorsSection {
   const DesignElegantJustSecondImageSection({super.key})
-      : super(children: const [_SecondImage()]);
+    : super(children: const [_SecondImage()]);
 }
 
 class _FirstImage extends Expanded {
   const _FirstImage()
-      : super(child: const FadeInAssetImage(Images.designElegantFirst));
+    : super(child: const FadeInAssetImage(Images.designElegantFirst));
 }
 
 class _SecondImage extends Expanded {
   const _SecondImage()
-      : super(child: const FadeInAssetImage(Images.designElegantSecond));
+    : super(child: const FadeInAssetImage(Images.designElegantSecond));
 }

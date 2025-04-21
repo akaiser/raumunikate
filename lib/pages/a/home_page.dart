@@ -14,16 +14,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseSlidePage(
-        children: [
-          const HomeIntroSection(),
-          if (context.isSxsBreakpoint) ...const [
-            HomeWelcomeFirstSection(),
-            HomeWelcomeSecondSection(),
-          ] else
-            const HomeWelcomeSection(),
-          const HomeContentSection(),
-          const HomeImageSection(),
-          const HomeReferralsSection(),
-        ],
-      );
+    children: [
+      const HomeIntroSection(),
+      if (context.isSxsBreakpoint) ...const [
+        HomeWelcomeFirstSection(),
+        HomeWelcomeSecondSection(),
+      ] else
+        const HomeWelcomeSection(),
+      const HomeContentSection(),
+      const HomeImageSection(),
+      const HomeReferralsSection(),
+    ],
+  );
 }

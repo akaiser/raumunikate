@@ -8,10 +8,7 @@ import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 const baseScrollPageKey = Key('base-scroll-page');
 
 class BaseScrollPage extends StatelessWidget {
-  const BaseScrollPage({
-    this.preferListView = false,
-    required this.children,
-  });
+  const BaseScrollPage({this.preferListView = false, required this.children});
 
   final bool preferListView;
   final List<Widget> children;
@@ -27,21 +24,24 @@ class BaseScrollPage extends StatelessWidget {
       const Footer(),
     ];
     return ResponsiveLayout(
-      xl: (_) => _BaseScrollPage(
-        preferListView: preferListView,
-        padding: textHorizontalPaddingXl,
-        children: _children,
-      ),
-      l: (_) => _BaseScrollPage(
-        preferListView: preferListView,
-        padding: textHorizontalPaddingL,
-        children: _children,
-      ),
-      xs: (_) => _BaseScrollPage(
-        preferListView: preferListView,
-        padding: textHorizontalPaddingXs,
-        children: _children,
-      ),
+      xl:
+          (_) => _BaseScrollPage(
+            preferListView: preferListView,
+            padding: textHorizontalPaddingXl,
+            children: _children,
+          ),
+      l:
+          (_) => _BaseScrollPage(
+            preferListView: preferListView,
+            padding: textHorizontalPaddingL,
+            children: _children,
+          ),
+      xs:
+          (_) => _BaseScrollPage(
+            preferListView: preferListView,
+            padding: textHorizontalPaddingXs,
+            children: _children,
+          ),
     );
   }
 }
@@ -77,10 +77,10 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
   }
 
   void get _scrollToTop => _controller.animateTo(
-        0,
-        duration: const Duration(milliseconds: pageTransitionInMillis),
-        curve: Curves.ease,
-      );
+    0,
+    duration: const Duration(milliseconds: pageTransitionInMillis),
+    curve: Curves.ease,
+  );
 
   void get _onScrollUpRequest {
     _controller.animateTo(
@@ -102,21 +102,22 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
 
   @override
   Widget build(BuildContext context) => BasePage(
-        onScrollToTopTap: () => _scrollToTop,
-        onScrollUpRequest: () => _onScrollUpRequest,
-        onScrollDownRequest: () => _onScrollDownRequest,
-        child: widget.preferListView
+    onScrollToTopTap: () => _scrollToTop,
+    onScrollUpRequest: () => _onScrollUpRequest,
+    onScrollDownRequest: () => _onScrollDownRequest,
+    child:
+        widget.preferListView
             ? _ListView(
-                _controller,
-                padding: widget.padding,
-                children: widget.children,
-              )
+              _controller,
+              padding: widget.padding,
+              children: widget.children,
+            )
             : _SingleChildScrollView(
-                _controller,
-                padding: widget.padding,
-                children: widget.children,
-              ),
-      );
+              _controller,
+              padding: widget.padding,
+              children: widget.children,
+            ),
+  );
 }
 
 class _ListView extends StatelessWidget {
@@ -132,12 +133,12 @@ class _ListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ListView.builder(
-        key: baseScrollPageKey,
-        controller: controller,
-        padding: padding,
-        itemCount: children.length,
-        itemBuilder: (_, index) => children[index],
-      );
+    key: baseScrollPageKey,
+    controller: controller,
+    padding: padding,
+    itemCount: children.length,
+    itemBuilder: (_, index) => children[index],
+  );
 }
 
 class _SingleChildScrollView extends StatelessWidget {
@@ -153,12 +154,12 @@ class _SingleChildScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
-        key: baseScrollPageKey,
-        controller: controller,
-        padding: padding,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: children,
-        ),
-      );
+    key: baseScrollPageKey,
+    controller: controller,
+    padding: padding,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: children,
+    ),
+  );
 }

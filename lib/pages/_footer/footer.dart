@@ -14,13 +14,13 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DefaultTextStyle(
-        style: context.dts.copyWith(fontSize: 13),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [_TopSection(), _BottomSection()],
-        ),
-      );
+    style: context.dts.copyWith(fontSize: 13),
+    child: const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [_TopSection(), _BottomSection()],
+    ),
+  );
 }
 
 class _TopSection extends StatelessWidget {
@@ -56,22 +56,12 @@ class _BottomSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Gap(16),
-          ContactColumn(),
-          Gap(16),
-          BottomSection(),
-          Gap(16),
-        ],
-      );
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [Gap(16), ContactColumn(), Gap(16), BottomSection(), Gap(16)],
+  );
 }
 
 class _ContactPageLink extends TextLink {
   const _ContactPageLink()
-      : super(
-          data.contactText,
-          url: Routes.contactPage,
-          doPush: true,
-        );
+    : super(data.contactText, url: Routes.contactPage, doPush: true);
 }

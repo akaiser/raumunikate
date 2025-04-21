@@ -7,19 +7,16 @@ import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 const _imgSeparator = Gap(24);
 
 class ResponsiveBlogImages extends StatelessWidget {
-  const ResponsiveBlogImages(
-    this.images, {
-    this.flexRow = false,
-  });
+  const ResponsiveBlogImages(this.images, {this.flexRow = false});
 
   final Iterable<String> images;
   final bool flexRow;
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-        m: (_) => flexRow ? _FlexRow(images) : _ExpandedRow(images),
-        xs: (_) => _Column(images),
-      );
+    m: (_) => flexRow ? _FlexRow(images) : _ExpandedRow(images),
+    xs: (_) => _Column(images),
+  );
 }
 
 class _ExpandedRow extends StatelessWidget {
@@ -29,10 +26,10 @@ class _ExpandedRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        children: images.separated(
-          (image) => Expanded(child: FadeInAssetImage(image)),
-        ),
-      );
+    children: images.separated(
+      (image) => Expanded(child: FadeInAssetImage(image)),
+    ),
+  );
 }
 
 class _FlexRow extends StatelessWidget {
@@ -42,13 +39,13 @@ class _FlexRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Table(
-        columnWidths: const {
-          1: FixedColumnWidth(24),
-          2: FlexColumnWidth(1.5),
-          3: FixedColumnWidth(24),
-        },
-        children: [TableRow(children: images.separated(FadeInAssetImage.new))],
-      );
+    columnWidths: const {
+      1: FixedColumnWidth(24),
+      2: FlexColumnWidth(1.5),
+      3: FixedColumnWidth(24),
+    },
+    children: [TableRow(children: images.separated(FadeInAssetImage.new))],
+  );
 }
 
 class _Column extends StatelessWidget {
@@ -63,7 +60,7 @@ class _Column extends StatelessWidget {
 
 extension on Iterable<String> {
   List<Widget> separated(Widget Function(String image) mapper) =>
-      map<Widget>((image) => mapper(image))
-          .separate(_imgSeparator)
-          .unmodifiable;
+      map<Widget>(
+        (image) => mapper(image),
+      ).separate(_imgSeparator).unmodifiable;
 }

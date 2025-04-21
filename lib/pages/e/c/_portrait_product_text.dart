@@ -10,11 +10,11 @@ class PortraitProductText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        text: data.productContent,
-        textColor: Colors.white,
-        actionButton: ActionButton(
-          data.productCta,
-          onTap: () => context.go(Routes.productsPage),
-        ),
-      );
+    text: data.productContent,
+    textColor: Colors.white,
+    actionButton: ActionButton(
+      data.productCta,
+      onTap: () => context.go(Routes.productsPage),
+    ),
+  );
 }

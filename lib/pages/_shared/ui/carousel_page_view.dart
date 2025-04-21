@@ -71,46 +71,41 @@ class _Indicators extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ValueListenableBuilder(
-        valueListenable: currentPageNotifier,
-        builder: (_, currentPage, __) => Row(
+    valueListenable: currentPageNotifier,
+    builder:
+        (_, currentPage, __) => Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             for (int i = 0; i < indicatorCount; i++)
-              _Indicator(
-                activeIndicatorColor,
-                isActive: currentPage == i,
-              ),
+              _Indicator(activeIndicatorColor, isActive: currentPage == i),
           ],
         ),
-      );
+  );
 }
 
 class _Indicator extends StatelessWidget {
-  const _Indicator(
-    this.activeIndicatorColor, {
-    required this.isActive,
-  });
+  const _Indicator(this.activeIndicatorColor, {required this.isActive});
 
   final bool isActive;
   final Color activeIndicatorColor;
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: navBarTransitionInMillis),
-          decoration: BoxDecoration(
-            color: isActive ? activeIndicatorColor : raumBackground,
-            shape: BoxShape.circle,
-            boxShadow: const [
-              BoxShadow(
-                color: raumGrau,
-                //spreadRadius: 1,
-                blurRadius: 1,
-              ),
-            ],
+    padding: const EdgeInsets.symmetric(horizontal: 4),
+    child: AnimatedContainer(
+      duration: const Duration(milliseconds: navBarTransitionInMillis),
+      decoration: BoxDecoration(
+        color: isActive ? activeIndicatorColor : raumBackground,
+        shape: BoxShape.circle,
+        boxShadow: const [
+          BoxShadow(
+            color: raumGrau,
+            //spreadRadius: 1,
+            blurRadius: 1,
           ),
-          child: const Gap(16),
-        ),
-      );
+        ],
+      ),
+      child: const Gap(16),
+    ),
+  );
 }

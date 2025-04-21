@@ -2,18 +2,15 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
 class HoverRegion extends StatefulWidget {
-  const HoverRegion({
-    required this.builder,
-    this.onTap,
-    this.child,
-  });
+  const HoverRegion({required this.builder, this.onTap, this.child});
 
   final Widget Function(
     BuildContext context,
     // ignore: avoid_positional_boolean_parameters
     bool isHovering,
     Widget? child,
-  ) builder;
+  )
+  builder;
 
   final VoidCallback? onTap;
   final Widget? child;

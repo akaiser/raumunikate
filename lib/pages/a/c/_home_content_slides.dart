@@ -11,12 +11,13 @@ class HomeContentSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
-        itemCount: data.slidesData.length,
-        itemBuilder: (_, index) => _SlideCard(
+    itemCount: data.slidesData.length,
+    itemBuilder:
+        (_, index) => _SlideCard(
           data.slidesData[index],
           key: Key('home-content-slide-card-$index'),
         ),
-      );
+  );
 }
 
 class _SlideCard extends StatelessWidget {
@@ -26,32 +27,32 @@ class _SlideCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ColoredBox(
-        color: entry.backgroundColor.withValues(alpha: 0.85),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              const _Spacer(),
-              Text(
-                entry.title,
-                style: context.tt.label?.copyWith(color: data.textColor),
-              ),
-              const _Spacer(),
-              Text(
-                entry.text,
-                textAlign: TextAlign.center,
-                style: context.dts.copyWith(color: data.textColor),
-              ),
-              const Spacer(),
-              ActionButton(
-                data.linkText,
-                onTap: () => context.go(entry.linkPagePath),
-              ),
-              const Gap(30),
-            ],
+    color: entry.backgroundColor.withValues(alpha: 0.85),
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          const _Spacer(),
+          Text(
+            entry.title,
+            style: context.tt.label?.copyWith(color: data.textColor),
           ),
-        ),
-      );
+          const _Spacer(),
+          Text(
+            entry.text,
+            textAlign: TextAlign.center,
+            style: context.dts.copyWith(color: data.textColor),
+          ),
+          const Spacer(),
+          ActionButton(
+            data.linkText,
+            onTap: () => context.go(entry.linkPagePath),
+          ),
+          const Gap(30),
+        ],
+      ),
+    ),
+  );
 }
 
 class _Spacer extends StatelessWidget {

@@ -12,11 +12,7 @@ void main() {
 
   runZonedGuarded<void>(
     () => runApp(const App()),
-    (error, stack) => log(
-      'Some Explosion...',
-      error: error,
-      stackTrace: stack,
-    ),
+    (error, stack) => log('Some Explosion...', error: error, stackTrace: stack),
   );
 }
 
@@ -25,15 +21,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => NavBarNotifier()),
-          ChangeNotifierProvider(create: (_) => ScrollToBottomNotifier()),
-        ],
-        child: MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          theme: theme,
-          title: appName,
-          routerConfig: router,
-        ),
-      );
+    providers: [
+      ChangeNotifierProvider(create: (_) => NavBarNotifier()),
+      ChangeNotifierProvider(create: (_) => ScrollToBottomNotifier()),
+    ],
+    child: MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      theme: theme,
+      title: appName,
+      routerConfig: router,
+    ),
+  );
 }

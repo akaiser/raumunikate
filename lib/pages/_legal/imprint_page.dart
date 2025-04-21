@@ -13,57 +13,57 @@ class ImprintPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(
-        children: [
-          newLine,
-          HeadlineText('Impressum'),
-          newLine,
-          Text(
-            '''
+    children: [
+      newLine,
+      HeadlineText('Impressum'),
+      newLine,
+      Text(
+        '''
 Angaben gem. §5 des Telemediengesetz (TMG) in der Fassung des Gesetzes über rechtliche Rahmenbedingungen für den elektronischen Geschäftsverkehr.''',
-          ),
-          newLine,
-          Text('Anbieter:'),
-          Text('RAUMUNIKATE Einzelunternehmen'),
-          newLine,
-          Text('Vertretungsberechtigte Geschäftsführerin:'),
-          ContactColumn(),
-          newLine,
-          Text('Steuernummer: 64306/24636'),
-          Text('Konzept und Design: Ina Kaiser'),
-          newLine,
-          Text('Bildmaterial:'),
-          Text(
-            '''
+      ),
+      newLine,
+      Text('Anbieter:'),
+      Text('RAUMUNIKATE Einzelunternehmen'),
+      newLine,
+      Text('Vertretungsberechtigte Geschäftsführerin:'),
+      ContactColumn(),
+      newLine,
+      Text('Steuernummer: 64306/24636'),
+      Text('Konzept und Design: Ina Kaiser'),
+      newLine,
+      Text('Bildmaterial:'),
+      Text(
+        '''
 Alle eigenen Bilder und Bildmaterial aller genutzten Fremdquellen unterliegen dem Urheberrecht und dürfen weder genutzt, verändert oder kopiert werden.''',
+      ),
+      newLine,
+      Text('Kleinunternehmer gemäß § 19 UStG'),
+      newLine,
+      RichTextSection(
+        children: [
+          InlineText(
+            'Plattform der EU-Kommission zur Online-Streitbeilegung: ',
           ),
-          newLine,
-          Text('Kleinunternehmer gemäß § 19 UStG'),
-          newLine,
-          RichTextSection(
-            children: [
-              InlineText(
-                'Plattform der EU-Kommission zur Online-Streitbeilegung: ',
-              ),
-              InlineText(
-                'https://ec.europa.eu/consumers/odr',
-                link: 'https://ec.europa.eu/consumers/odr/',
-              ),
-              InlineText(
-                '''
+          InlineText(
+            'https://ec.europa.eu/consumers/odr',
+            link: 'https://ec.europa.eu/consumers/odr/',
+          ),
+          InlineText(
+            '''
 . Der Verkäufer ist weder verpflichtet noch bereit, an einem Streitbeilegungsverfahren vor einer alternativen Streitbeilegungsstelle teilzunehmen.''',
-              ),
-            ],
           ),
-          newLine,
-          RichTextSection(
-            children: [
-              InlineText('Es gelten folgende Datenschutzrichtlinien: '),
-              InlineText('Datenschutz', link: PrivacyPage.path),
-              InlineText(' '),
-            ],
-          ),
-          newLine,
-          Text('Erstellt in Kooperation mit Vera Hofmann – daataxx GmbH'),
         ],
-      );
+      ),
+      newLine,
+      RichTextSection(
+        children: [
+          InlineText('Es gelten folgende Datenschutzrichtlinien: '),
+          InlineText('Datenschutz', link: PrivacyPage.path),
+          InlineText(' '),
+        ],
+      ),
+      newLine,
+      Text('Erstellt in Kooperation mit Vera Hofmann – daataxx GmbH'),
+    ],
+  );
 }

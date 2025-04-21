@@ -34,7 +34,8 @@ class TwoColumnsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-        xl: (_) => _TwoColumn(
+    xl:
+        (_) => _TwoColumn(
           image,
           content,
           flipWidgets,
@@ -43,7 +44,8 @@ class TwoColumnsSection extends StatelessWidget {
           backgroundImage,
           backgroundColor,
         ),
-        m: (_) => _TwoColumn(
+    m:
+        (_) => _TwoColumn(
           image,
           content,
           flipWidgets,
@@ -52,7 +54,7 @@ class TwoColumnsSection extends StatelessWidget {
           backgroundImage,
           backgroundColor,
         ),
-      );
+  );
 }
 
 class _TwoColumn extends StatelessWidget {

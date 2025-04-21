@@ -48,9 +48,10 @@ class _ChildPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: context.breakpoint == Breakpoint.xs
+    padding:
+        context.breakpoint == Breakpoint.xs
             ? _xsChildPadding
             : _defaultChildPadding,
-        child: child,
-      );
+    child: child,
+  );
 }

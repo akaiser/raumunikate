@@ -9,11 +9,11 @@ class ProductsShapeText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        title: data.title,
-        text: data.content,
-        actionButton: ActionButton(
-          data.cta,
-          onTap: () => context.scrollToBottomNotifier.notify(),
-        ),
-      );
+    title: data.title,
+    text: data.content,
+    actionButton: ActionButton(
+      data.cta,
+      onTap: () => context.scrollToBottomNotifier.notify(),
+    ),
+  );
 }

@@ -16,15 +16,15 @@ class BlogPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => BaseScrollPage(
-        children: [
-          newLine,
-          ...blogDataEntries
-              .map<Widget>(_BlogEntry.new)
-              .separate(newLine)
-              .unmodifiable
-              .reversed,
-        ],
-      );
+    children: [
+      newLine,
+      ...blogDataEntries
+          .map<Widget>(_BlogEntry.new)
+          .separate(newLine)
+          .unmodifiable
+          .reversed,
+    ],
+  );
 }
 
 class _BlogEntry extends StatelessWidget {
@@ -34,9 +34,9 @@ class _BlogEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-        s: (_) => _RegularEntry(entry),
-        xs: (_) => _SmallEntry(entry),
-      );
+    s: (_) => _RegularEntry(entry),
+    xs: (_) => _SmallEntry(entry),
+  );
 }
 
 class _RegularEntry extends StatelessWidget {
@@ -46,26 +46,23 @@ class _RegularEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 260,
-            child: _Image(entry),
-          ),
-          const Gap(16),
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                _Header(entry),
-                Text(entry.description),
-                newLine,
-                _Categories(entry.categories),
-              ],
-            ),
-          ),
-        ],
-      );
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      SizedBox(width: 260, child: _Image(entry)),
+      const Gap(16),
+      Flexible(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _Header(entry),
+            Text(entry.description),
+            newLine,
+            _Categories(entry.categories),
+          ],
+        ),
+      ),
+    ],
+  );
 }
 
 class _SmallEntry extends StatelessWidget {
@@ -75,17 +72,17 @@ class _SmallEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _Header(entry),
-          smallNewLine,
-          _Image(entry),
-          smallNewLine,
-          Text(entry.description),
-          smallNewLine,
-          _Categories(entry.categories),
-        ],
-      );
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      _Header(entry),
+      smallNewLine,
+      _Image(entry),
+      smallNewLine,
+      Text(entry.description),
+      smallNewLine,
+      _Categories(entry.categories),
+    ],
+  );
 }
 
 class _Header extends StatelessWidget {
@@ -95,13 +92,13 @@ class _Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(child: TextLink(entry.title, url: entry.route)),
-          Text(entry.date),
-        ],
-      );
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Expanded(child: TextLink(entry.title, url: entry.route)),
+      Text(entry.date),
+    ],
+  );
 }
 
 class _Image extends StatelessWidget {
@@ -111,9 +108,9 @@ class _Image extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ClickableRegion(
-        onTap: () => context.launch(entry.route),
-        child: FadeInAssetImage(entry.image),
-      );
+    onTap: () => context.launch(entry.route),
+    child: FadeInAssetImage(entry.image),
+  );
 }
 
 class _Categories extends StatelessWidget {
@@ -123,8 +120,9 @@ class _Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Wrap(
-        runSpacing: 6,
-        children: categories
+    runSpacing: 6,
+    children:
+        categories
             .map<Widget>(
               (category) => Chip(
                 label: Text(category),
@@ -134,5 +132,5 @@ class _Categories extends StatelessWidget {
             )
             .separate(const Gap(6))
             .unmodifiable,
-      );
+  );
 }

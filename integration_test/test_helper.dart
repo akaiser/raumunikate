@@ -18,10 +18,7 @@ extension WidgetTesterExt on WidgetTester {
 
   void expectType(Type type, Iterable<Type> types) {
     for (final _type in types) {
-      expect(
-        find.byType(_type),
-        _type == type ? findsOneWidget : findsNothing,
-      );
+      expect(find.byType(_type), _type == type ? findsOneWidget : findsNothing);
     }
   }
 

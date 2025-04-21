@@ -11,8 +11,9 @@ import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 
-final _emailRegExp =
-    RegExp(r'^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$');
+final _emailRegExp = RegExp(
+  r'^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$',
+);
 
 class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
@@ -79,87 +80,83 @@ class _ContactFormState extends State<ContactForm> {
   }
 
   Future<http.Response> _post() => http.post(
-        Uri.https('localhost', Environment.contactPath),
-        encoding: Encoding.getByName('utf-8'),
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: {'name': _name, 'email': _email, 'message': _message},
-      );
+    Uri.https('localhost', Environment.contactPath),
+    encoding: Encoding.getByName('utf-8'),
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: {'name': _name, 'email': _email, 'message': _message},
+  );
 
   @override
   Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          ResponsiveLayout(
-            m: (context) => Row(
+    crossAxisAlignment: CrossAxisAlignment.end,
+    children: [
+      ResponsiveLayout(
+        m:
+            (context) => Row(
               children: [
                 Expanded(
-                  child: _TextField(
-                    data.yourName,
-                    onChanged: _onNameChanged,
-                  ),
+                  child: _TextField(data.yourName, onChanged: _onNameChanged),
                 ),
                 const Gap(12),
                 Expanded(
-                  child: _TextField(
-                    data.yourMail,
-                    onChanged: _onEmailChanged,
-                  ),
+                  child: _TextField(data.yourMail, onChanged: _onEmailChanged),
                 ),
               ],
             ),
-            xs: (context) => Column(
+        xs:
+            (context) => Column(
               children: [
                 _TextField(data.yourName, onChanged: _onNameChanged),
                 const Gap(12),
                 _TextField(data.yourMail, onChanged: _onEmailChanged),
               ],
             ),
+      ),
+      const Gap(12),
+      _TextField(
+        data.yourMessage,
+        minLines: 4,
+        maxLines: 4,
+        onChanged: _onMessageChanged,
+      ),
+      const Gap(12),
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Checkbox(
+            value: _accepted,
+            splashRadius: 0,
+            activeColor: raumCreme,
+            side: const BorderSide(width: 2, color: raumCreme),
+            onChanged: _onAcceptedChanged,
           ),
-          const Gap(12),
-          _TextField(
-            data.yourMessage,
-            minLines: 4,
-            maxLines: 4,
-            onChanged: _onMessageChanged,
-          ),
-          const Gap(12),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Checkbox(
-                value: _accepted,
-                splashRadius: 0,
-                activeColor: raumCreme,
-                side: const BorderSide(width: 2, color: raumCreme),
-                onChanged: _onAcceptedChanged,
+          Expanded(
+            child: DefaultTextStyle(
+              style: context.dts.copyWith(fontSize: 14),
+              child: const RichTextSection(
+                children: [
+                  InlineText(data.legal0),
+                  InlineText(data.legal1, link: PrivacyPage.path),
+                  InlineText(data.legal2),
+                ],
               ),
-              Expanded(
-                child: DefaultTextStyle(
-                  style: context.dts.copyWith(fontSize: 14),
-                  child: const RichTextSection(
-                    children: [
-                      InlineText(data.legal0),
-                      InlineText(data.legal1, link: PrivacyPage.path),
-                      InlineText(data.legal2),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const Gap(12),
-          ActionButton(
-            _sending
-                ? data.sending
-                : _sent
-                    ? data.sent
-                    : _error
-                        ? data.error
-                        : data.send,
-            onTap: !_isValid || _sent || _sending || _error ? null : _send,
+            ),
           ),
         ],
-      );
+      ),
+      const Gap(12),
+      ActionButton(
+        _sending
+            ? data.sending
+            : _sent
+            ? data.sent
+            : _error
+            ? data.error
+            : data.send,
+        onTap: !_isValid || _sent || _sending || _error ? null : _send,
+      ),
+    ],
+  );
 }
 
 class _TextField extends StatelessWidget {
@@ -177,22 +174,22 @@ class _TextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => TextFormField(
-        cursorColor: raumGrau,
-        style: context.dts.copyWith(color: raumGrau),
-        onChanged: onChanged,
-        minLines: minLines,
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          labelText: labelText,
-          labelStyle: context.dts.copyWith(color: raumCreme),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: raumCreme),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: raumCreme),
-          ),
-        ),
-      );
+    cursorColor: raumGrau,
+    style: context.dts.copyWith(color: raumGrau),
+    onChanged: onChanged,
+    minLines: minLines,
+    maxLines: maxLines,
+    decoration: InputDecoration(
+      labelText: labelText,
+      labelStyle: context.dts.copyWith(color: raumCreme),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: const BorderSide(color: raumCreme),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: const BorderSide(color: raumCreme),
+      ),
+    ),
+  );
 }

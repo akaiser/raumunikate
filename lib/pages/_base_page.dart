@@ -34,15 +34,13 @@ class _BasePageState extends State<BasePage> {
   void initState() {
     super.initState();
     _focus = FocusNode();
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) {
-        // When navigating to new scaffold and NavBar was not expanded yet...
-        final navBarNotifier = context.navBarNotifier;
-        if (!navBarNotifier.isExpanded) {
-          navBarNotifier.toggle();
-        }
-      },
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // When navigating to new scaffold and NavBar was not expanded yet...
+      final navBarNotifier = context.navBarNotifier;
+      if (!navBarNotifier.isExpanded) {
+        navBarNotifier.toggle();
+      }
+    });
   }
 
   @override
@@ -83,14 +81,15 @@ class _BasePageState extends State<BasePage> {
                 }
                 return true;
               },
-              onRefresh: () => Future<void>.delayed(
-                const Duration(milliseconds: pageTransitionInMillis),
-                () {
-                  if (context.mounted) {
-                    context.go(Routes.homePage);
-                  }
-                },
-              ),
+              onRefresh:
+                  () => Future<void>.delayed(
+                    const Duration(milliseconds: pageTransitionInMillis),
+                    () {
+                      if (context.mounted) {
+                        context.go(Routes.homePage);
+                      }
+                    },
+                  ),
               child: KeyboardListener(
                 autofocus: true,
                 focusNode: _focus,
@@ -124,16 +123,17 @@ class _ScrollToTopArrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Consumer<NavBarNotifier>(
-        builder: (context, navBarNotifier, child) => AnimatedPositioned(
+    builder:
+        (context, navBarNotifier, child) => AnimatedPositioned(
           duration: const Duration(milliseconds: navBarTransitionInMillis),
           curve: Curves.ease,
           right: 16,
           bottom: navBarNotifier.isExpanded ? -64 : 16,
           child: child ?? const SizedBox(),
         ),
-        child: ClickableRegion(
-          onTap: onTap,
-          child: Image.asset(Images.arrowUp, width: 42),
-        ),
-      );
+    child: ClickableRegion(
+      onTap: onTap,
+      child: Image.asset(Images.arrowUp, width: 42),
+    ),
+  );
 }

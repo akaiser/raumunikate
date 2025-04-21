@@ -12,26 +12,23 @@ class NavMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
-        key: navMenuKey,
-        tooltip: '',
-        iconSize: 32,
-        surfaceTintColor: Colors.white,
-        icon: Image.asset(Images.menu, color: raumGrau),
-        itemBuilder: (context) => data.navData.map(
-          (entry) {
-            final isEnabled = context.currentRoutePath != entry.pagePath;
-            return PopupMenuItem<String>(
-              enabled: isEnabled,
-              onTap: () => context.go(entry.pagePath),
-              value: entry.menuLinkText,
-              child: _MenuItemText(
-                entry.menuLinkText,
-                isEnabled: isEnabled,
-              ),
-            );
-          },
-        ).unmodifiable,
-      );
+    key: navMenuKey,
+    tooltip: '',
+    iconSize: 32,
+    surfaceTintColor: Colors.white,
+    icon: Image.asset(Images.menu, color: raumGrau),
+    itemBuilder:
+        (context) =>
+            data.navData.map((entry) {
+              final isEnabled = context.currentRoutePath != entry.pagePath;
+              return PopupMenuItem<String>(
+                enabled: isEnabled,
+                onTap: () => context.go(entry.pagePath),
+                value: entry.menuLinkText,
+                child: _MenuItemText(entry.menuLinkText, isEnabled: isEnabled),
+              );
+            }).unmodifiable,
+  );
 }
 
 class _MenuItemText extends StatelessWidget {
@@ -42,7 +39,7 @@ class _MenuItemText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-        value,
-        style: context.dts.copyWith(color: isEnabled ? raumCreme : raumGrau),
-      );
+    value,
+    style: context.dts.copyWith(color: isEnabled ? raumCreme : raumGrau),
+  );
 }

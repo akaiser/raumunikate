@@ -1,10 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class FadeIn extends StatefulWidget {
-  const FadeIn({
-    required this.child,
-    this.millis = 200,
-  });
+  const FadeIn({required this.child, this.millis = 200});
 
   final int millis;
   final Widget child;
@@ -39,7 +36,7 @@ class _FadeInState extends State<FadeIn> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) => FadeTransition(
-        opacity: _controller.drive(CurveTween(curve: Curves.easeIn)),
-        child: widget.child,
-      );
+    opacity: _controller.drive(CurveTween(curve: Curves.easeIn)),
+    child: widget.child,
+  );
 }

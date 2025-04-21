@@ -7,17 +7,14 @@ import 'package:raumunikate/pages/b/c/_data.dart' as data;
 
 class DesignPhasesPartTwoSlides extends DesignSlides {
   const DesignPhasesPartTwoSlides()
-      : super(
-          leading: const Column(
-            children: [
-              HeadlineText(data.title, textColor: mainBackgroundColor),
-              Gap(4),
-              HeadlineText(
-                data.subtitle,
-                textColor: mainBackgroundColor,
-              ),
-            ],
-          ),
-          slidesData: data.slidesData,
-        );
+    : super(
+        leading: const Column(
+          children: [
+            HeadlineText(data.title, textColor: mainBackgroundColor),
+            Gap(4),
+            HeadlineText(data.subtitle, textColor: mainBackgroundColor),
+          ],
+        ),
+        slidesData: data.slidesData,
+      );
 }

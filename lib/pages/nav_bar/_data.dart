@@ -13,11 +13,7 @@ const navData = [
 
 @immutable
 class NavDataEntry {
-  const NavDataEntry(
-    this.pagePath,
-    this.pageType,
-    this.menuLinkText,
-  );
+  const NavDataEntry(this.pagePath, this.pageType, this.menuLinkText);
 
   final String pagePath;
   final Type pageType;

@@ -31,10 +31,7 @@ class FullTextSection extends StatelessWidget {
         if (_title2 != null) HeadlineText(_title2, textColor: textColor),
         if (_title != null || _title2 != null) const _Spacer(),
         Flexible(child: FullTextSectionText(text, color: textColor)),
-        if (_actionButton != null) ...[
-          const _Spacer(),
-          _actionButton,
-        ],
+        if (_actionButton != null) ...[const _Spacer(), _actionButton],
       ],
     );
   }
@@ -44,9 +41,10 @@ class _Spacer extends StatelessWidget {
   const _Spacer();
 
   @override
-  Widget build(BuildContext context) => context.breakpoint == Breakpoint.xs
-      ? Gap(context.isShittySmallDevice ? 10 : 40)
-      : const Gap(60);
+  Widget build(BuildContext context) =>
+      context.breakpoint == Breakpoint.xs
+          ? Gap(context.isShittySmallDevice ? 10 : 40)
+          : const Gap(60);
 }
 
 class FullTextSectionText extends StatelessWidget {
@@ -57,7 +55,7 @@ class FullTextSectionText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => AutoSizeText(
-        text,
-        style: context.dts.copyWith(fontSize: 20, color: color),
-      );
+    text,
+    style: context.dts.copyWith(fontSize: 20, color: color),
+  );
 }

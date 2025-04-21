@@ -7,13 +7,13 @@ class HomeReferralsSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PageView(
-        scrollBehavior: context.defaultScrollBehavior,
-        children: const [
-          _HomeReferralCard(data.referralData0),
-          _HomeReferralCard(data.referralData1),
-          _HomeReferralCard(data.referralData2),
-        ],
-      );
+    scrollBehavior: context.defaultScrollBehavior,
+    children: const [
+      _HomeReferralCard(data.referralData0),
+      _HomeReferralCard(data.referralData1),
+      _HomeReferralCard(data.referralData2),
+    ],
+  );
 }
 
 class _HomeReferralCard extends StatelessWidget {
@@ -23,12 +23,7 @@ class _HomeReferralCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(
-          top: 80,
-          left: 24,
-          right: 40,
-          bottom: 40,
-        ),
-        child: HomeReferralCard(entry),
-      );
+    padding: const EdgeInsets.only(top: 80, left: 24, right: 40, bottom: 40),
+    child: HomeReferralCard(entry),
+  );
 }

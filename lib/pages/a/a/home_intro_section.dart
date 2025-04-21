@@ -4,8 +4,5 @@ import 'package:raumunikate/pages/base_intro_section.dart';
 
 class HomeIntroSection extends BaseIntroSection {
   const HomeIntroSection()
-      : super(
-          text: data.homeIntroText,
-          image: Images.homeIntro,
-        );
+    : super(text: data.homeIntroText, image: Images.homeIntro);
 }

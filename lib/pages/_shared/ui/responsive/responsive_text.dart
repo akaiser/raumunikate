@@ -18,17 +18,17 @@ class ResponsiveText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Text(
-        text,
-        textAlign: textAlign,
-        style: style?.copyWith(fontSize: _resolveFontSize(context.breakpoint)),
-      );
+    text,
+    textAlign: textAlign,
+    style: style?.copyWith(fontSize: _resolveFontSize(context.breakpoint)),
+  );
 
   double _resolveFontSize(Breakpoint breakpoint) => switch (breakpoint) {
-        Breakpoint.xxl => fontSizes[0],
-        Breakpoint.xl => fontSizes[1],
-        Breakpoint.l => fontSizes[2],
-        Breakpoint.m => fontSizes[3],
-        Breakpoint.s => fontSizes[4],
-        Breakpoint.xs => fontSizes[5],
-      };
+    Breakpoint.xxl => fontSizes[0],
+    Breakpoint.xl => fontSizes[1],
+    Breakpoint.l => fontSizes[2],
+    Breakpoint.m => fontSizes[3],
+    Breakpoint.s => fontSizes[4],
+    Breakpoint.xs => fontSizes[5],
+  };
 }

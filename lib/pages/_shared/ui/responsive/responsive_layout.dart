@@ -2,14 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 class ResponsiveLayout extends StatelessWidget {
-  const ResponsiveLayout({
-    this.xxl,
-    this.xl,
-    this.l,
-    this.m,
-    this.s,
-    this.xs,
-  });
+  const ResponsiveLayout({this.xxl, this.xl, this.l, this.m, this.s, this.xs});
 
   final WidgetBuilder? xxl;
   final WidgetBuilder? xl;

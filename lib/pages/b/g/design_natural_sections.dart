@@ -7,9 +7,7 @@ import 'package:raumunikate/pages/b/g/_data.dart' as data;
 
 class DesignNaturalFullSection extends DesignNaturalJustTextSection {
   const DesignNaturalFullSection({super.key})
-      : super(
-          trailing: const Row(children: [_FirstImage(), _SecondImage()]),
-        );
+    : super(trailing: const Row(children: [_FirstImage(), _SecondImage()]));
 }
 
 class DesignNaturalJustTextSection extends StatelessWidget {
@@ -22,10 +20,7 @@ class DesignNaturalJustTextSection extends StatelessWidget {
     final _trailing = trailing;
     return DesignColorsSection(
       children: [
-        Text(
-          data.title,
-          style: context.tt.label,
-        ),
+        Text(data.title, style: context.tt.label),
         const Gap(20),
         const Text(data.content),
         const Gap(20),
@@ -37,20 +32,20 @@ class DesignNaturalJustTextSection extends StatelessWidget {
 
 class DesignNaturalJustFirstImageSection extends DesignColorsSection {
   const DesignNaturalJustFirstImageSection({super.key})
-      : super(children: const [_FirstImage()]);
+    : super(children: const [_FirstImage()]);
 }
 
 class DesignNaturalJustSecondImageSection extends DesignColorsSection {
   const DesignNaturalJustSecondImageSection({super.key})
-      : super(children: const [_SecondImage()]);
+    : super(children: const [_SecondImage()]);
 }
 
 class _FirstImage extends Expanded {
   const _FirstImage()
-      : super(child: const FadeInAssetImage(Images.designNaturalFirst));
+    : super(child: const FadeInAssetImage(Images.designNaturalFirst));
 }
 
 class _SecondImage extends Expanded {
   const _SecondImage()
-      : super(child: const FadeInAssetImage(Images.designNaturalSecond));
+    : super(child: const FadeInAssetImage(Images.designNaturalSecond));
 }

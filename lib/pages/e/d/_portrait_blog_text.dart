@@ -10,10 +10,10 @@ class PortraitBlogText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FullTextSection(
-        text: data.blogContent,
-        actionButton: ActionButton(
-          data.blogCta,
-          onTap: () => context.go(Routes.blogPage),
-        ),
-      );
+    text: data.blogContent,
+    actionButton: ActionButton(
+      data.blogCta,
+      onTap: () => context.go(Routes.blogPage),
+    ),
+  );
 }

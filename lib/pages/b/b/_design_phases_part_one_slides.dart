@@ -6,14 +6,10 @@ import 'package:raumunikate/pages/b/b/_data.dart' as data;
 
 class DesignPhasesPartOneSlides extends DesignSlides {
   const DesignPhasesPartOneSlides()
-      : super(
-          leading: const Column(
-            children: [
-              HeadlineText(data.title),
-              Gap(16),
-              Text(data.subtitle),
-            ],
-          ),
-          slidesData: data.slidesData,
-        );
+    : super(
+        leading: const Column(
+          children: [HeadlineText(data.title), Gap(16), Text(data.subtitle)],
+        ),
+        slidesData: data.slidesData,
+      );
 }

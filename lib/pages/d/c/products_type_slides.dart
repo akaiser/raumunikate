@@ -16,31 +16,28 @@ class ProductsTypeSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => CoverImageBox(
-        Images.waben1,
-        child: Column(
-          children: [
-            const Gap(navigationBarHeight),
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                20,
-                context.isFullWidthNavBar ? 32 : 0,
-                20,
-                0,
-              ),
-              child: const HeadlineText(
-                data.title,
-                textColor: mainBackgroundColor,
-              ),
-            ),
-            Expanded(
-              child: ResponsiveLayout(
-                xl: (_) => const _Cards(),
-                xs: (_) => const _ResponsiveSlides(),
-              ),
-            ),
-          ],
+    Images.waben1,
+    child: Column(
+      children: [
+        const Gap(navigationBarHeight),
+        Padding(
+          padding: EdgeInsets.fromLTRB(
+            20,
+            context.isFullWidthNavBar ? 32 : 0,
+            20,
+            0,
+          ),
+          child: const HeadlineText(data.title, textColor: mainBackgroundColor),
         ),
-      );
+        Expanded(
+          child: ResponsiveLayout(
+            xl: (_) => const _Cards(),
+            xs: (_) => const _ResponsiveSlides(),
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 class _Cards extends StatelessWidget {
@@ -48,9 +45,10 @@ class _Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80),
-        child: Row(
-          children: data.slidesData
+    padding: const EdgeInsets.symmetric(horizontal: 80),
+    child: Row(
+      children:
+          data.slidesData
               .mapIndexed(
                 (index, slideData) => Expanded(
                   child: FractionallySizedBox(
@@ -64,8 +62,8 @@ class _Cards extends StatelessWidget {
                 ),
               )
               .unmodifiable,
-        ),
-      );
+    ),
+  );
 }
 
 class _ResponsiveSlides extends StatelessWidget {
@@ -73,13 +71,14 @@ class _ResponsiveSlides extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
-        itemCount: data.slidesData.length,
-        itemBuilder: (_, index) => _SlideCard(
+    itemCount: data.slidesData.length,
+    itemBuilder:
+        (_, index) => _SlideCard(
           data.slidesData[index],
           key: Key('products-slide-card-$index'),
         ),
-        omitTopPadding: true,
-      );
+    omitTopPadding: true,
+  );
 }
 
 class _SlideCard extends StatelessWidget {
@@ -89,32 +88,32 @@ class _SlideCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
-        children: [
-          Expanded(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints.expand(),
-              child: CoverImageBox(entry.image),
-            ),
+    children: [
+      Expanded(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints.expand(),
+          child: CoverImageBox(entry.image),
+        ),
+      ),
+      ColoredBox(
+        color: mainBackgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              const _Spacer(),
+              Text(entry.title, style: context.tt.label),
+              const _Spacer(),
+              Text(entry.subtitle, textAlign: TextAlign.center),
+              const _Spacer(),
+              Text(entry.price),
+              const _Spacer(),
+            ],
           ),
-          ColoredBox(
-            color: mainBackgroundColor,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  const _Spacer(),
-                  Text(entry.title, style: context.tt.label),
-                  const _Spacer(),
-                  Text(entry.subtitle, textAlign: TextAlign.center),
-                  const _Spacer(),
-                  Text(entry.price),
-                  const _Spacer(),
-                ],
-              ),
-            ),
-          ),
-        ],
-      );
+        ),
+      ),
+    ],
+  );
 }
 
 class _Spacer extends StatelessWidget {
