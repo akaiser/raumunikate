@@ -68,11 +68,11 @@ Seit mehr als 20 Jahren arbeite ich in der Lifestyle PR, angefangen mit bekannte
 Zum ersten Mal hat mir eine Wohnung den Rahmen gegeben, mich mit meinem Style so richtig auszutoben und ich hatte die Vision, mir hier einen echten Kersy Happy Space zu schaffen. Auch, wenn viele denken könnten, ich sei extravertiert, das bin ich sicher auch zu Teilen, so bin ich auch sehr, sehr gerne einfach nur zuhause und mache es mir hier gemütlich. Kraft und Energie tanke ich vor allem durch den Rückzug in die eigenen vier Wände.''',
       ),
       newLine,
-      ResponsiveBlogImages([
+      ResponsiveBlogImages(flexRow: true, [
         Images.kerstinAndStella,
         Images.living,
         Images.chairs,
-      ], flexRow: true),
+      ]),
       newLine,
       BlogCaption(
         'Welche Aspekte verleihen Deiner Wohnung Wohlfühlatmosphäre?',
@@ -166,11 +166,11 @@ Farbe und Buntsein hat für mich etwas
 ganz lebensbejahendes,
 freundliches und fast friedliches.'''),
       newLine,
-      ResponsiveBlogImages([
+      ResponsiveBlogImages(flexRow: true, [
         Images.kerstinAndMirror,
         Images.stellaOnBed,
         Images.clobber,
-      ], flexRow: true),
+      ]),
       newLine,
       BlogCaption('Welche Rolle spielt Raumfarbe für Dich?'),
       smallNewLine,
@@ -194,11 +194,11 @@ Du wohnst nicht allein, wie bekommst Du Deine Bedürfnisse und die Deiner Hündi
 Danke für die schöne Frage! Mittlerweile haben so viele Menschen ein Haustier und ich finde es extrem wichtig, hier auch auf die Bedürfnisse der Fellfreundin zu achten. Stella darf in der Wohnung alles, aufs Bett, auf die Couch, ich will, dass sie sich wohlfühlt und ich habe sie gerne um mich. Ein Hund braucht aber vor allem auch einen eigenen ruhigen Rückzugsort, gerne in einer Ecke, daher habe ich hier auch in stylische Hundekörbchen investiert. Darüber hinaus hat ein guter Staubsauger bei mir noch mal einen ganz anderen Stellenwert bekommen. Wir gehen mindestens drei Mal am Tag raus und sie bringt natürlich den Dreck aus Berlin rein in die Wohnung. Ich bin überhaupt nicht pingelig, aber das Leben mit Hund, der dazu auch noch sehr haart,  ist schon eine Herausforderung und das Thema Putzen gehört jetzt leider jeden Tag zu meinem Leben.  Ich habe glaube ich noch nie soviel gestaubsaugt wie heute. Du merkst, PUTZEN ist ein Thema für mich hahaha.''',
       ),
       newLine,
-      ResponsiveBlogImages([
+      ResponsiveBlogImages(flexRow: true, [
         Images.livingCouch,
         Images.refreshing,
         Images.chill,
-      ], flexRow: true),
+      ]),
       newLine,
       BlogCaption('Gibt es ein Lieblingsmöbelstück?'),
       smallNewLine,
