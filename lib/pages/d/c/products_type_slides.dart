@@ -47,21 +47,20 @@ class _Cards extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: 80),
     child: Row(
-      children:
-          data.slidesData
-              .mapIndexed(
-                (index, slideData) => Expanded(
-                  child: FractionallySizedBox(
-                    widthFactor: 0.8,
-                    heightFactor: 0.6,
-                    child: _SlideCard(
-                      slideData,
-                      key: Key('products-card-$index'),
-                    ),
-                  ),
+      children: data.slidesData
+          .mapIndexed(
+            (index, slideData) => Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 0.8,
+                heightFactor: 0.6,
+                child: _SlideCard(
+                  slideData,
+                  key: Key('products-card-$index'),
                 ),
-              )
-              .unmodifiable,
+              ),
+            ),
+          )
+          .unmodifiable,
     ),
   );
 }
@@ -72,11 +71,10 @@ class _ResponsiveSlides extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
     itemCount: data.slidesData.length,
-    itemBuilder:
-        (_, index) => _SlideCard(
-          data.slidesData[index],
-          key: Key('products-slide-card-$index'),
-        ),
+    itemBuilder: (_, index) => _SlideCard(
+      data.slidesData[index],
+      key: Key('products-slide-card-$index'),
+    ),
     omitTopPadding: true,
   );
 }

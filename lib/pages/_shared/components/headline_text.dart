@@ -16,12 +16,11 @@ class HeadlineText extends StatelessWidget {
       text,
       style: context.tt.title?.copyWith(
         color: textColor,
-        fontSize:
-            isXsBreakpoint
-                ? 24
-                : isXxlBreakpoint
-                ? 40
-                : 30,
+        fontSize: isXsBreakpoint
+            ? 24
+            : isXxlBreakpoint
+            ? 40
+            : 30,
       ),
     );
   }

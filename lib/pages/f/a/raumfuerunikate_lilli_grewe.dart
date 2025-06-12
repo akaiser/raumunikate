@@ -12,7 +12,7 @@ import 'package:raumunikate/pages/f/a/_links_column.dart';
 class RaumfuerunikateLilliGrewe extends StatelessWidget {
   const RaumfuerunikateLilliGrewe();
 
-  static const path = blogPathLilliGrewe;
+  static const String path = blogPathLilliGrewe;
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(

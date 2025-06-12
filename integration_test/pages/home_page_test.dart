@@ -11,7 +11,7 @@ import 'package:raumunikate/pages/nav_bar/_data.dart';
 
 import '../test_helper.dart';
 
-const _sectionTypes = {
+const _sectionTypes = <Type>{
   HomeIntroSection,
   HomeWelcomeSection,
   HomeContentSection,

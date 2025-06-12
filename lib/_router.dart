@@ -43,11 +43,10 @@ CustomTransitionPage<Widget> _page(GoRouterState state, Widget page) =>
     CustomTransitionPage(
       key: state.pageKey,
       transitionDuration: const Duration(milliseconds: pageTransitionInMillis),
-      transitionsBuilder:
-          (_, animation, __, child) => FadeTransition(
-            opacity: CurveTween(curve: Curves.ease).animate(animation),
-            child: child,
-          ),
+      transitionsBuilder: (_, animation, _, child) => FadeTransition(
+        opacity: CurveTween(curve: Curves.ease).animate(animation),
+        child: child,
+      ),
       child: page,
     );
 

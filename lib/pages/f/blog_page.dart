@@ -121,16 +121,15 @@ class _Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Wrap(
     runSpacing: 6,
-    children:
-        categories
-            .map<Widget>(
-              (category) => Chip(
-                label: Text(category),
-                padding: EdgeInsets.zero,
-                backgroundColor: mainBackgroundColor,
-              ),
-            )
-            .separate(const Gap(6))
-            .unmodifiable,
+    children: categories
+        .map<Widget>(
+          (category) => Chip(
+            label: Text(category),
+            padding: EdgeInsets.zero,
+            backgroundColor: mainBackgroundColor,
+          ),
+        )
+        .separate(const Gap(6))
+        .unmodifiable,
   );
 }

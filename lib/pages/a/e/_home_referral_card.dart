@@ -21,10 +21,9 @@ class HomeReferralCard extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding:
-            isSxsBreakpoint
-                ? const EdgeInsets.only(left: 24, top: 54)
-                : const EdgeInsets.only(left: 56, top: 54),
+        padding: isSxsBreakpoint
+            ? const EdgeInsets.only(left: 24, top: 54)
+            : const EdgeInsets.only(left: 56, top: 54),
         child: _ReferralCard(entry),
       ),
     );

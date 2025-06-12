@@ -24,8 +24,8 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
   void initState() {
     super.initState();
     _controller = PageController();
-    _scrollToBottomNotifier =
-        context.scrollToBottomNotifier..addListener(_scrollToBottom);
+    _scrollToBottomNotifier = context.scrollToBottomNotifier
+      ..addListener(_scrollToBottom);
   }
 
   @override

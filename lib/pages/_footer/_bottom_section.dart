@@ -8,16 +8,18 @@ class BottomSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-    s:
-        (_) => const Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Expanded(child: CopyrightText()), Gap(26), _Legal()],
-        ),
-    xs:
-        (_) => const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [_Legal(), CopyrightText()],
-        ),
+    s: (_) => const Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(child: CopyrightText()),
+        Gap(26),
+        _Legal(),
+      ],
+    ),
+    xs: (_) => const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [_Legal(), CopyrightText()],
+    ),
   );
 }
 

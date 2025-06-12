@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 import 'package:raumunikate/_routes.dart';
 import 'package:raumunikate/_settings.dart';
 
-const textColor = Colors.white;
+const Color textColor = Colors.white;
 
 const linkText = 'Erfahre mehr';
 
