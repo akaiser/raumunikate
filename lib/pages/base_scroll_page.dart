@@ -24,24 +24,21 @@ class BaseScrollPage extends StatelessWidget {
       const Footer(),
     ];
     return ResponsiveLayout(
-      xl:
-          (_) => _BaseScrollPage(
-            preferListView: preferListView,
-            padding: textHorizontalPaddingXl,
-            children: _children,
-          ),
-      l:
-          (_) => _BaseScrollPage(
-            preferListView: preferListView,
-            padding: textHorizontalPaddingL,
-            children: _children,
-          ),
-      xs:
-          (_) => _BaseScrollPage(
-            preferListView: preferListView,
-            padding: textHorizontalPaddingXs,
-            children: _children,
-          ),
+      xl: (_) => _BaseScrollPage(
+        preferListView: preferListView,
+        padding: textHorizontalPaddingXl,
+        children: _children,
+      ),
+      l: (_) => _BaseScrollPage(
+        preferListView: preferListView,
+        padding: textHorizontalPaddingL,
+        children: _children,
+      ),
+      xs: (_) => _BaseScrollPage(
+        preferListView: preferListView,
+        padding: textHorizontalPaddingXs,
+        children: _children,
+      ),
     );
   }
 }
@@ -105,18 +102,17 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
     onScrollToTopTap: () => _scrollToTop,
     onScrollUpRequest: () => _onScrollUpRequest,
     onScrollDownRequest: () => _onScrollDownRequest,
-    child:
-        widget.preferListView
-            ? _ListView(
-              _controller,
-              padding: widget.padding,
-              children: widget.children,
-            )
-            : _SingleChildScrollView(
-              _controller,
-              padding: widget.padding,
-              children: widget.children,
-            ),
+    child: widget.preferListView
+        ? _ListView(
+            _controller,
+            padding: widget.padding,
+            children: widget.children,
+          )
+        : _SingleChildScrollView(
+            _controller,
+            padding: widget.padding,
+            children: widget.children,
+          ),
   );
 }
 

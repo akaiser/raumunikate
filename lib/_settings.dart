@@ -19,7 +19,7 @@ const mainBackgroundColor = Color(0xfff2f2f2),
     raumWolf = Color(0xffb3b0a9),
     raumTheuer = Color(0xffa6afac);
 
-const linkColor = raumCreme;
+const Color linkColor = raumCreme;
 
 const newLine = Gap(28);
 const smallNewLine = Gap(8);

@@ -11,7 +11,7 @@ import 'package:raumunikate/pages/f/_data.dart';
 class RaumfuerunikateKerstinDiehl extends StatelessWidget {
   const RaumfuerunikateKerstinDiehl({super.key});
 
-  static const path = blogPathKerstinDiehl;
+  static const String path = blogPathKerstinDiehl;
 
   @override
   Widget build(BuildContext context) => const BaseScrollPage(

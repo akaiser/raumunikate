@@ -12,11 +12,10 @@ class HomeContentSlides extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
     itemCount: data.slidesData.length,
-    itemBuilder:
-        (_, index) => _SlideCard(
-          data.slidesData[index],
-          key: Key('home-content-slide-card-$index'),
-        ),
+    itemBuilder: (_, index) => _SlideCard(
+      data.slidesData[index],
+      key: Key('home-content-slide-card-$index'),
+    ),
   );
 }
 

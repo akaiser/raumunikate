@@ -35,11 +35,10 @@ class _Carousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CarouselPageView(
     activeIndicatorColor: raumTheuer,
-    children:
-        [
-          Images.projectsTheuerStairs,
-          Images.projectsTheuerFloor,
-          if (context.isSxsBreakpoint) Images.projectsTheuerLiving,
-        ].map(CoverImageBox.new).unmodifiable,
+    children: [
+      Images.projectsTheuerStairs,
+      Images.projectsTheuerFloor,
+      if (context.isSxsBreakpoint) Images.projectsTheuerLiving,
+    ].map(CoverImageBox.new).unmodifiable,
   );
 }

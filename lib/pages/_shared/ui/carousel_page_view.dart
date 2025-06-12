@@ -72,14 +72,13 @@ class _Indicators extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ValueListenableBuilder(
     valueListenable: currentPageNotifier,
-    builder:
-        (_, currentPage, __) => Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (int i = 0; i < indicatorCount; i++)
-              _Indicator(activeIndicatorColor, isActive: currentPage == i),
-          ],
-        ),
+    builder: (_, currentPage, _) => Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        for (int i = 0; i < indicatorCount; i++)
+          _Indicator(activeIndicatorColor, isActive: currentPage == i),
+      ],
+    ),
   );
 }
 

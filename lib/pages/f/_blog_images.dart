@@ -59,8 +59,7 @@ class _Column extends StatelessWidget {
 }
 
 extension on Iterable<String> {
-  List<Widget> separated(Widget Function(String image) mapper) =>
-      map<Widget>(
-        (image) => mapper(image),
-      ).separate(_imgSeparator).unmodifiable;
+  List<Widget> separated(Widget Function(String image) mapper) => map<Widget>(
+    (image) => mapper(image),
+  ).separate(_imgSeparator).unmodifiable;
 }

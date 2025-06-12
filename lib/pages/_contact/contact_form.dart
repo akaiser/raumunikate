@@ -91,26 +91,24 @@ class _ContactFormState extends State<ContactForm> {
     crossAxisAlignment: CrossAxisAlignment.end,
     children: [
       ResponsiveLayout(
-        m:
-            (context) => Row(
-              children: [
-                Expanded(
-                  child: _TextField(data.yourName, onChanged: _onNameChanged),
-                ),
-                const Gap(12),
-                Expanded(
-                  child: _TextField(data.yourMail, onChanged: _onEmailChanged),
-                ),
-              ],
+        m: (context) => Row(
+          children: [
+            Expanded(
+              child: _TextField(data.yourName, onChanged: _onNameChanged),
             ),
-        xs:
-            (context) => Column(
-              children: [
-                _TextField(data.yourName, onChanged: _onNameChanged),
-                const Gap(12),
-                _TextField(data.yourMail, onChanged: _onEmailChanged),
-              ],
+            const Gap(12),
+            Expanded(
+              child: _TextField(data.yourMail, onChanged: _onEmailChanged),
             ),
+          ],
+        ),
+        xs: (context) => Column(
+          children: [
+            _TextField(data.yourName, onChanged: _onNameChanged),
+            const Gap(12),
+            _TextField(data.yourMail, onChanged: _onEmailChanged),
+          ],
+        ),
       ),
       const Gap(12),
       _TextField(

@@ -41,10 +41,9 @@ class _Spacer extends StatelessWidget {
   const _Spacer();
 
   @override
-  Widget build(BuildContext context) =>
-      context.breakpoint == Breakpoint.xs
-          ? Gap(context.isShittySmallDevice ? 10 : 40)
-          : const Gap(60);
+  Widget build(BuildContext context) => context.breakpoint == Breakpoint.xs
+      ? Gap(context.isShittySmallDevice ? 10 : 40)
+      : const Gap(60);
 }
 
 class FullTextSectionText extends StatelessWidget {

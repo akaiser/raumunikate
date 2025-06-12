@@ -20,7 +20,7 @@ class ResponsiveSlides extends StatefulWidget {
 class _ResponsiveSlidesState extends State<ResponsiveSlides> {
   late PageController _controller;
 
-  static const _viewportFractions = {
+  static const _viewportFractions = <Breakpoint, double>{
     Breakpoint.xxl: 0.2,
     Breakpoint.xl: 0.3,
     Breakpoint.l: 0.4,
@@ -60,9 +60,9 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
         return widget.omitTopPadding
             ? child
             : Padding(
-              padding: const EdgeInsets.only(top: navigationBarHeight - 20),
-              child: child,
-            );
+                padding: const EdgeInsets.only(top: navigationBarHeight - 20),
+                child: child,
+              );
       },
     );
   }

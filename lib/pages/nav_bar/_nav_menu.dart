@@ -17,17 +17,15 @@ class NavMenu extends StatelessWidget {
     iconSize: 32,
     surfaceTintColor: Colors.white,
     icon: Image.asset(Images.menu, color: raumGrau),
-    itemBuilder:
-        (context) =>
-            data.navData.map((entry) {
-              final isEnabled = context.currentRoutePath != entry.pagePath;
-              return PopupMenuItem<String>(
-                enabled: isEnabled,
-                onTap: () => context.go(entry.pagePath),
-                value: entry.menuLinkText,
-                child: _MenuItemText(entry.menuLinkText, isEnabled: isEnabled),
-              );
-            }).unmodifiable,
+    itemBuilder: (context) => data.navData.map((entry) {
+      final isEnabled = context.currentRoutePath != entry.pagePath;
+      return PopupMenuItem<String>(
+        enabled: isEnabled,
+        onTap: () => context.go(entry.pagePath),
+        value: entry.menuLinkText,
+        child: _MenuItemText(entry.menuLinkText, isEnabled: isEnabled),
+      );
+    }).unmodifiable,
   );
 }
 

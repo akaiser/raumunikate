@@ -1,7 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart' show Colors;
 import 'package:meta/meta.dart';
 
-const referralTextColor = Colors.white;
+const Color referralTextColor = Colors.white;
 
 const referralData0 = ReferralDataEntry(
   'Ina kann nicht nur Farbe. Sie schafft Atmosphäre!',

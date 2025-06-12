@@ -24,20 +24,20 @@ abstract class DesignSlides extends StatelessWidget {
     return leading == null
         ? cards
         : Column(
-          children: [
-            const Gap(navigationBarHeight),
-            Padding(
-              padding: EdgeInsets.fromLTRB(
-                20,
-                context.isFullWidthNavBar ? 32 : 0,
-                20,
-                0,
+            children: [
+              const Gap(navigationBarHeight),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                  20,
+                  context.isFullWidthNavBar ? 32 : 0,
+                  20,
+                  0,
+                ),
+                child: leading,
               ),
-              child: leading,
-            ),
-            Expanded(child: cards),
-          ],
-        );
+              Expanded(child: cards),
+            ],
+          );
   }
 }
 
@@ -50,21 +50,20 @@ class _Cards extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: 80),
     child: Row(
-      children:
-          slidesData
-              .mapIndexed(
-                (index, slideData) => Expanded(
-                  child: FractionallySizedBox(
-                    widthFactor: 0.8,
-                    heightFactor: 0.6,
-                    child: _SlideCard(
-                      slideData,
-                      key: Key('design-card-$index'),
-                    ),
-                  ),
+      children: slidesData
+          .mapIndexed(
+            (index, slideData) => Expanded(
+              child: FractionallySizedBox(
+                widthFactor: 0.8,
+                heightFactor: 0.6,
+                child: _SlideCard(
+                  slideData,
+                  key: Key('design-card-$index'),
                 ),
-              )
-              .unmodifiable,
+              ),
+            ),
+          )
+          .unmodifiable,
     ),
   );
 }
@@ -77,9 +76,8 @@ class _ResponsiveSlides extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
     itemCount: slidesData.length,
-    itemBuilder:
-        (_, index) =>
-            _SlideCard(slidesData[index], key: Key('design-slide-card-$index')),
+    itemBuilder: (_, index) =>
+        _SlideCard(slidesData[index], key: Key('design-slide-card-$index')),
     omitTopPadding: true,
   );
 }

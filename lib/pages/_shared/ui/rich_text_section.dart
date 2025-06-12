@@ -23,14 +23,14 @@ class RichTextSection extends StatelessWidget {
     final link = inlineText.link;
     return link != null
         ? TextSpan(
-          text: inlineText.text,
-          style: textStyle?.copyWith(
-            //decoration: TextDecoration.underline,
-            color: linkColor,
-          ),
-          recognizer:
-              TapGestureRecognizer()..onTap = () => context.launch(link),
-        )
+            text: inlineText.text,
+            style: textStyle?.copyWith(
+              //decoration: TextDecoration.underline,
+              color: linkColor,
+            ),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => context.launch(link),
+          )
         : TextSpan(text: inlineText.text, style: textStyle);
   }
 
@@ -39,10 +39,9 @@ class RichTextSection extends StatelessWidget {
     final textStyle = context.dts;
     return Text.rich(
       TextSpan(
-        children:
-            children
-                .map((inlineText) => _resolve(context, inlineText, textStyle))
-                .unmodifiable,
+        children: children
+            .map((inlineText) => _resolve(context, inlineText, textStyle))
+            .unmodifiable,
       ),
     );
   }

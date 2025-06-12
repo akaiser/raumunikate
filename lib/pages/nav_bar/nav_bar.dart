@@ -26,25 +26,24 @@ class NavBar extends StatelessWidget {
           duration: const Duration(milliseconds: navBarTransitionInMillis),
           curve: Curves.ease,
           padding: isFullWidthNavBar ? _bigPadding : _smallPadding,
-          height:
-              isExpanded ? navigationBarHeightExpanded : navigationBarHeight,
-          decoration:
-              navMenuOnly
-                  ? null
-                  : const BoxDecoration(
-                    color: mainBackgroundColor,
-                    boxShadow: [
-                      BoxShadow(color: Colors.black12, blurRadius: 8),
-                    ],
-                  ),
-          child:
-              navMenuOnly
-                  ? navMenu
-                  : _NavBar(
-                    navMenu ?? const SizedBox(),
-                    isExpanded: isExpanded,
-                    isFullWidthNavBar: isFullWidthNavBar,
-                  ),
+          height: isExpanded
+              ? navigationBarHeightExpanded
+              : navigationBarHeight,
+          decoration: navMenuOnly
+              ? null
+              : const BoxDecoration(
+                  color: mainBackgroundColor,
+                  boxShadow: [
+                    BoxShadow(color: Colors.black12, blurRadius: 8),
+                  ],
+                ),
+          child: navMenuOnly
+              ? navMenu
+              : _NavBar(
+                  navMenu ?? const SizedBox(),
+                  isExpanded: isExpanded,
+                  isFullWidthNavBar: isFullWidthNavBar,
+                ),
         );
       },
       child: const Align(alignment: Alignment.topLeft, child: NavMenu()),
@@ -75,10 +74,9 @@ class _NavBar extends StatelessWidget {
         children: [
           navMenu,
           GestureDetector(
-            onTap:
-                context.currentRoutePath != Routes.homePage
-                    ? () => context.go(Routes.homePage)
-                    : null,
+            onTap: context.currentRoutePath != Routes.homePage
+                ? () => context.go(Routes.homePage)
+                : null,
             child: Column(
               children: [
                 const Gap(6),

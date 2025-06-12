@@ -12,19 +12,18 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) => HoverRegion(
     onTap: onTap,
-    builder:
-        (context, isHovering, child) => Container(
-          padding: const EdgeInsets.only(left: 16, top: 2, right: 16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(20)),
-            border: Border.all(
-              width: 2,
-              color: isHovering && onTap != null ? raumCreme : raumBackground,
-            ),
-          ),
-          child: child,
+    builder: (context, isHovering, child) => Container(
+      padding: const EdgeInsets.only(left: 16, top: 2, right: 16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        border: Border.all(
+          width: 2,
+          color: isHovering && onTap != null ? raumCreme : raumBackground,
         ),
+      ),
+      child: child,
+    ),
     child: _ActionButtonText(text, enabled: onTap != null),
   );
 }
