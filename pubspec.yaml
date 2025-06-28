@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
 
   auto_size_text: ^3.0.0
-  go_router: ^15.2.3
+  go_router: ^15.2.4
   http: ^1.4.0
   provider: ^6.1.5
   transparent_image: ^2.0.1
