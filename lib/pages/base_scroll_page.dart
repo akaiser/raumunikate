@@ -79,17 +79,17 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
     curve: Curves.ease,
   );
 
-  void get _onScrollUpRequest {
-    _controller.animateTo(
+  Future<void> get _onScrollUpRequest async {
+    await _controller.animateTo(
       _controller.offset + context.screenSize.height,
       duration: const Duration(milliseconds: pageTransitionInMillis),
       curve: Curves.ease,
     );
   }
 
-  void get _onScrollDownRequest {
+  Future<void> get _onScrollDownRequest async {
     if (_controller.offset != 0) {
-      _controller.animateTo(
+      await _controller.animateTo(
         _controller.offset - context.screenSize.height,
         duration: const Duration(milliseconds: pageTransitionInMillis),
         curve: Curves.ease,

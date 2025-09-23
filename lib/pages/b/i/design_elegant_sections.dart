@@ -24,7 +24,7 @@ class DesignElegantJustTextSection extends StatelessWidget {
         const Gap(20),
         const Text(data.content),
         const Gap(20),
-        if (_trailing != null) _trailing,
+        ?_trailing,
       ],
     );
   }

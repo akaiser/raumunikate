@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
 class FadeIn extends StatefulWidget {
@@ -24,7 +26,7 @@ class _FadeInState extends State<FadeIn> with SingleTickerProviderStateMixin {
 
   @override
   void didChangeDependencies() {
-    _controller.forward();
+    unawaited(_controller.forward());
     super.didChangeDependencies();
   }
 

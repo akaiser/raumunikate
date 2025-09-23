@@ -47,18 +47,18 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
     curve: Curves.ease,
   );
 
-  void _onScrollUpRequest() {
+  Future<void> _onScrollUpRequest() async {
     if (widget.children.length != _controller.page?.toInt()) {
-      _controller.nextPage(
+      await _controller.nextPage(
         duration: const Duration(milliseconds: pageTransitionInMillis),
         curve: Curves.ease,
       );
     }
   }
 
-  void _onScrollDownRequest() {
+  Future<void> _onScrollDownRequest() async {
     if (_controller.page?.toInt() != 0) {
-      _controller.previousPage(
+      await _controller.previousPage(
         duration: const Duration(milliseconds: pageTransitionInMillis),
         curve: Curves.ease,
       );
