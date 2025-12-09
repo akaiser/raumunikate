@@ -7,9 +7,9 @@ on:
 
 jobs:
   release-web:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: ./.github/actions/setup-flutter
       - name: Build
         #run: flutter build web --profile --no-web-resources-cdn --base-href /own/raumunikate.com/
