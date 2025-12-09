@@ -17,8 +17,7 @@ class ScrollToBottomNotifier with ChangeNotifier {
 }
 
 extension BuildContextExt on BuildContext {
-  NavBarNotifier get navBarNotifier => read<NavBarNotifier>();
+  NavBarNotifier get navBarNotifier => read();
 
-  ScrollToBottomNotifier get scrollToBottomNotifier =>
-      read<ScrollToBottomNotifier>();
+  ScrollToBottomNotifier get scrollToBottomNotifier => read();
 }
