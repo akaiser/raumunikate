@@ -9,21 +9,12 @@ import '../../widget_tester_ext.dart';
 
 void main() {
   group('$CopyrightText', () {
-    testWidgets('has text', (tester) async {
+    testWidgets('has text with year', (tester) async {
       await tester.render(const CopyrightText());
 
       expect(
-        find.text('© 2025 Raumunikate. All rights reserved.'),
+        find.text('© ${DateTime.now().year} Raumunikate. All rights reserved.'),
         findsOneWidget,
-      );
-    });
-
-    testWidgets('has current year', (tester) async {
-      await tester.render(const CopyrightText());
-
-      expect(
-        tester.find<CopyrightText>().data,
-        contains('${DateTime.now().year}'),
       );
     });
   });

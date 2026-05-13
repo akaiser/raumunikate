@@ -50,6 +50,9 @@ class _BasePageState extends State<BasePage> {
   }
 
   void _onKeyEvent(KeyEvent event) {
+    if (event is! KeyDownEvent) {
+      return;
+    }
     switch (event.logicalKey) {
       case LogicalKeyboardKey.arrowDown:
       case LogicalKeyboardKey.pageDown:
