@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:raumunikate/_settings.dart';
 
-export 'package:flutter/material.dart';
+export 'package:material_ui/material_ui.dart';
 
 final theme = ThemeData(
   fontFamily: 'RobotoCondensed',

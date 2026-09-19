@@ -9,7 +9,7 @@ jobs:
   release-web:
     runs-on: ubuntu-slim
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup-flutter
       - name: Build
         #run: flutter build web --wasm --profile --no-web-resources-cdn --base-href /own/raumunikate.com/

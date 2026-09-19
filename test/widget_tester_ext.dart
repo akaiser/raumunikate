@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart' as ft show WidgetTester, find;
+import 'package:material_ui/material_ui.dart';
 
 extension WidgetTesterEx on ft.WidgetTester {
   Future<void> render(Widget widget) => pumpWidget(

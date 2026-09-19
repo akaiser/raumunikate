@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:raumunikate/_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-export 'package:flutter/material.dart';
+export 'package:material_ui/material_ui.dart';
 
 final _urlLauncherRegex = RegExp(r'^((tel|http|https|mailto):.*)$');
 
