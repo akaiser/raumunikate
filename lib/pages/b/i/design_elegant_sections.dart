@@ -5,47 +5,39 @@ import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/b/_shared/design_colors_section.dart';
 import 'package:raumunikate/pages/b/i/_data.dart' as data;
 
-class DesignElegantFullSection extends DesignElegantJustTextSection {
-  const DesignElegantFullSection({super.key})
-    : super(trailing: const Row(children: [_FirstImage(), _SecondImage()]));
+class const DesignElegantFullSection({super.key})
+    extends DesignElegantJustTextSection {
+  this : super(trailing: const Row(children: [_FirstImage(), _SecondImage()]));
 }
 
-class DesignElegantJustTextSection extends StatelessWidget {
-  const DesignElegantJustTextSection({super.key, this.trailing});
-
-  final Widget? trailing;
-
+class const DesignElegantJustTextSection({final Widget? trailing, super.key})
+    extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    final _trailing = trailing;
-    return DesignColorsSection(
-      children: [
-        Text(data.title, style: context.tt.label),
-        const Gap(20),
-        const Text(data.content),
-        const Gap(20),
-        ?_trailing,
-      ],
-    );
-  }
+  Widget build(BuildContext context) => DesignColorsSection(
+    children: [
+      Text(data.title, style: context.tt.label),
+      const Gap(20),
+      const Text(data.content),
+      const Gap(20),
+      ?trailing,
+    ],
+  );
 }
 
-class DesignElegantJustFirstImageSection extends DesignColorsSection {
-  const DesignElegantJustFirstImageSection({super.key})
-    : super(children: const [_FirstImage()]);
+class const DesignElegantJustFirstImageSection({super.key})
+    extends DesignColorsSection {
+  this : super(children: const [_FirstImage()]);
 }
 
-class DesignElegantJustSecondImageSection extends DesignColorsSection {
-  const DesignElegantJustSecondImageSection({super.key})
-    : super(children: const [_SecondImage()]);
+class const DesignElegantJustSecondImageSection({super.key})
+    extends DesignColorsSection {
+  this : super(children: const [_SecondImage()]);
 }
 
-class _FirstImage extends Expanded {
-  const _FirstImage()
-    : super(child: const FadeInAssetImage(Images.designElegantFirst));
+class const _FirstImage() extends Expanded {
+  this : super(child: const FadeInAssetImage(Images.designElegantFirst));
 }
 
-class _SecondImage extends Expanded {
-  const _SecondImage()
-    : super(child: const FadeInAssetImage(Images.designElegantSecond));
+class const _SecondImage() extends Expanded {
+  this : super(child: const FadeInAssetImage(Images.designElegantSecond));
 }

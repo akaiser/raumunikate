@@ -8,11 +8,7 @@ final theme = ThemeData(
   scaffoldBackgroundColor: mainBackgroundColor,
 );
 
-class AppTextTheme {
-  const AppTextTheme(this._textTheme);
-
-  final TextTheme _textTheme;
-
+class const AppTextTheme(final TextTheme _textTheme) {
   TextStyle? get title => _textTheme.titleLarge?.copyWith(
     fontFamily: 'RobotoCondensed',
     color: raumGrau,

@@ -2,15 +2,11 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/gap.dart';
 
-class CarouselPageView extends StatefulWidget {
-  const CarouselPageView({
-    required this.activeIndicatorColor,
-    required this.children,
-  });
-
-  final Color activeIndicatorColor;
-  final List<Widget> children;
-
+class const CarouselPageView(
+  final Color _activeIndicatorColor, {
+  required final List<Widget> _children,
+  super.key,
+}) extends StatefulWidget {
   @override
   State<CarouselPageView> createState() => _CarouselPageViewState();
 }
@@ -32,7 +28,7 @@ class _CarouselPageViewState extends State<CarouselPageView> {
 
   @override
   Widget build(BuildContext context) {
-    final itemCount = widget.children.length;
+    final itemCount = widget._children.length;
     return Stack(
       children: [
         PageView.builder(
@@ -40,14 +36,14 @@ class _CarouselPageViewState extends State<CarouselPageView> {
           scrollBehavior: context.defaultScrollBehavior,
           onPageChanged: (page) => _currentPageNotifier.value = page,
           itemCount: itemCount,
-          itemBuilder: (_, index) => widget.children[index],
+          itemBuilder: (_, index) => widget._children[index],
         ),
         Align(
-          alignment: Alignment.bottomCenter,
+          alignment: .bottomCenter,
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 40),
+            padding: const .only(bottom: 40),
             child: _Indicators(
-              widget.activeIndicatorColor,
+              widget._activeIndicatorColor,
               _currentPageNotifier,
               itemCount,
             ),
@@ -58,44 +54,36 @@ class _CarouselPageViewState extends State<CarouselPageView> {
   }
 }
 
-class _Indicators extends StatelessWidget {
-  const _Indicators(
-    this.activeIndicatorColor,
-    this.currentPageNotifier,
-    this.indicatorCount,
-  );
-
-  final Color activeIndicatorColor;
-  final ValueNotifier<int> currentPageNotifier;
-  final int indicatorCount;
-
+class const _Indicators(
+  final Color _activeIndicatorColor,
+  final ValueNotifier<int> _currentPageNotifier,
+  final int _indicatorCount,
+) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ValueListenableBuilder(
-    valueListenable: currentPageNotifier,
+    valueListenable: _currentPageNotifier,
     builder: (_, currentPage, _) => Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: .center,
       children: [
-        for (int i = 0; i < indicatorCount; i++)
-          _Indicator(activeIndicatorColor, isActive: currentPage == i),
+        for (int i = 0; i < _indicatorCount; i++)
+          _Indicator(_activeIndicatorColor, isActive: currentPage == i),
       ],
     ),
   );
 }
 
-class _Indicator extends StatelessWidget {
-  const _Indicator(this.activeIndicatorColor, {required this.isActive});
-
-  final bool isActive;
-  final Color activeIndicatorColor;
-
+class const _Indicator(
+  final Color _activeIndicatorColor, {
+  required final bool _isActive,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 4),
+    padding: const .symmetric(horizontal: 4),
     child: AnimatedContainer(
       duration: const Duration(milliseconds: navBarTransitionInMillis),
       decoration: BoxDecoration(
-        color: isActive ? activeIndicatorColor : raumBackground,
-        shape: BoxShape.circle,
+        color: _isActive ? _activeIndicatorColor : raumBackground,
+        shape: .circle,
         boxShadow: const [
           BoxShadow(
             color: raumGrau,

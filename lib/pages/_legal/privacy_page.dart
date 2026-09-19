@@ -6,9 +6,7 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 
-class PrivacyPage extends StatelessWidget {
-  const PrivacyPage();
-
+class const PrivacyPage({super.key}) extends StatelessWidget {
   static const path = '/datenschutz';
 
   @override
@@ -435,8 +433,7 @@ class PrivacyPage extends StatelessWidget {
           ),
           InlineText(
             'Externer Datenschutzbeauftragter Regensburg',
-            link:
-                'https://dg-datenschutz.de/datenschutz-dienstleistungen/externer-datenschutzbeauftragter/',
+            link: 'https://dg-datenschutz.de/datenschutz-dienstleistungen/externer-datenschutzbeauftragter/',
           ),
           InlineText(' tätig ist, in Kooperation mit dem '),
           InlineText(

@@ -7,7 +7,6 @@ import 'package:raumunikate/pages/_contact/_data.dart' as data;
 import 'package:raumunikate/pages/_legal/privacy_page.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
-import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 
@@ -15,9 +14,7 @@ final _emailRegExp = RegExp(
   r'^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$',
 );
 
-class ContactForm extends StatefulWidget {
-  const ContactForm({super.key});
-
+class const ContactForm({super.key}) extends StatefulWidget {
   @override
   State<ContactForm> createState() => _ContactFormState();
 }
@@ -88,38 +85,37 @@ class _ContactFormState extends State<ContactForm> {
 
   @override
   Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.end,
+    crossAxisAlignment: .end,
+    spacing: 12,
     children: [
       ResponsiveLayout(
         m: (context) => Row(
+          spacing: 12,
           children: [
             Expanded(
               child: _TextField(data.yourName, onChanged: _onNameChanged),
             ),
-            const Gap(12),
             Expanded(
               child: _TextField(data.yourMail, onChanged: _onEmailChanged),
             ),
           ],
         ),
         xs: (context) => Column(
+          spacing: 12,
           children: [
             _TextField(data.yourName, onChanged: _onNameChanged),
-            const Gap(12),
             _TextField(data.yourMail, onChanged: _onEmailChanged),
           ],
         ),
       ),
-      const Gap(12),
       _TextField(
         data.yourMessage,
         minLines: 4,
         maxLines: 4,
         onChanged: _onMessageChanged,
       ),
-      const Gap(12),
       Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: [
           Checkbox(
             value: _accepted,
@@ -142,7 +138,6 @@ class _ContactFormState extends State<ContactForm> {
           ),
         ],
       ),
-      const Gap(12),
       ActionButton(
         _sending
             ? data.sending
@@ -157,35 +152,28 @@ class _ContactFormState extends State<ContactForm> {
   );
 }
 
-class _TextField extends StatelessWidget {
-  const _TextField(
-    this.labelText, {
-    this.minLines = 1,
-    this.maxLines = 1,
-    required this.onChanged,
-  });
-
-  final String labelText;
-  final int minLines;
-  final int maxLines;
-  final ValueChanged<String> onChanged;
-
+class const _TextField(
+  final String _labelText, {
+  required final ValueChanged<String> _onChanged,
+  final int _minLines = 1,
+  final int _maxLines = 1,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => TextFormField(
     cursorColor: raumGrau,
     style: context.dts.copyWith(color: raumGrau),
-    onChanged: onChanged,
-    minLines: minLines,
-    maxLines: maxLines,
+    onChanged: _onChanged,
+    minLines: _minLines,
+    maxLines: _maxLines,
     decoration: InputDecoration(
-      labelText: labelText,
+      labelText: _labelText,
       labelStyle: context.dts.copyWith(color: raumCreme),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: .circular(8),
         borderSide: const BorderSide(color: raumCreme),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: .circular(8),
         borderSide: const BorderSide(color: raumCreme),
       ),
     ),

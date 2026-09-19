@@ -1,13 +1,10 @@
-import 'dart:async';
-
 import 'package:flutter/widgets.dart';
 
-class FadeIn extends StatefulWidget {
-  const FadeIn({required this.child, this.millis = 200});
-
-  final int millis;
-  final Widget child;
-
+class const FadeIn({
+  required final Widget _child,
+  final int _millis = 200,
+  super.key,
+}) extends StatefulWidget {
   @override
   State<FadeIn> createState() => _FadeInState();
 }
@@ -19,14 +16,14 @@ class _FadeInState extends State<FadeIn> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: widget.millis),
+      duration: Duration(milliseconds: widget._millis),
       vsync: this,
     );
   }
 
   @override
   void didChangeDependencies() {
-    unawaited(_controller.forward());
+    _controller.forward();
     super.didChangeDependencies();
   }
 
@@ -39,6 +36,6 @@ class _FadeInState extends State<FadeIn> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) => FadeTransition(
     opacity: _controller.drive(CurveTween(curve: Curves.easeIn)),
-    child: widget.child,
+    child: widget._child,
   );
 }

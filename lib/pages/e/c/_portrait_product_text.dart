@@ -5,12 +5,10 @@ import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/e/c/_data.dart' as data;
 
-class PortraitProductText extends StatelessWidget {
-  const PortraitProductText();
-
+class const PortraitProductText({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FullTextSection(
-    text: data.productContent,
+    data.productContent,
     textColor: Colors.white,
     actionButton: ActionButton(
       data.productCta,

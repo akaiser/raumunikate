@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart' show SizedBox;
 
-class Gap extends SizedBox {
-  const Gap(double size, {super.key}) : super(width: size, height: size);
+class const Gap(final double size, {super.key}) extends SizedBox {
+  this : super(width: size, height: size);
 }

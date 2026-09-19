@@ -16,9 +16,7 @@ void main() {
   );
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
-
+class const App({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MultiProvider(
     providers: [

@@ -3,23 +3,15 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/base_section.dart';
 
-class TwoColumnsSection extends StatelessWidget {
-  const TwoColumnsSection({
-    required this.image,
-    required this.content,
-    this.flipWidgets = false,
-    this.leftHasMoreFlex = false,
-    this.backgroundImage,
-    this.backgroundColor,
-  });
-
-  final Widget image;
-  final Widget content;
-  final bool flipWidgets;
-  final bool leftHasMoreFlex;
-  final String? backgroundImage;
-  final Color? backgroundColor;
-
+class const TwoColumnsSection({
+  required final Widget _image,
+  required final Widget _content,
+  final bool _flipWidgets = false,
+  final bool _leftHasMoreFlex = false,
+  final String? _backgroundImage,
+  final Color? _backgroundColor,
+  super.key,
+}) extends StatelessWidget {
   static const _xlContentPadding = EdgeInsets.only(
     left: 100,
     top: navigationBarHeight + 100,
@@ -35,64 +27,54 @@ class TwoColumnsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
     xl: (_) => _TwoColumn(
-      image,
-      content,
-      flipWidgets,
-      leftHasMoreFlex,
+      _image,
+      _content,
+      _flipWidgets,
+      _leftHasMoreFlex,
       _xlContentPadding,
-      backgroundImage,
-      backgroundColor,
+      _backgroundImage,
+      _backgroundColor,
     ),
     m: (_) => _TwoColumn(
-      image,
-      content,
-      flipWidgets,
-      leftHasMoreFlex,
+      _image,
+      _content,
+      _flipWidgets,
+      _leftHasMoreFlex,
       _mContentPadding,
-      backgroundImage,
-      backgroundColor,
+      _backgroundImage,
+      _backgroundColor,
     ),
   );
 }
 
-class _TwoColumn extends StatelessWidget {
-  const _TwoColumn(
-    this.image,
-    this.content,
-    // ignore: avoid_positional_boolean_parameters
-    this.flipWidgets,
-    this.leftHasMoreFlex,
-    this.contentPadding,
-    this.backgroundImage,
-    this.backgroundColor,
-  );
-
-  final Widget image;
-  final Widget content;
-  final bool flipWidgets;
-  final bool leftHasMoreFlex;
-  final EdgeInsetsGeometry contentPadding;
-  final String? backgroundImage;
-  final Color? backgroundColor;
-
+class const _TwoColumn(
+  final Widget _image,
+  final Widget _content,
+  // ignore: avoid_positional_boolean_parameters
+  final bool _flipWidgets,
+  final bool _leftHasMoreFlex,
+  final EdgeInsetsGeometry _contentPadding,
+  final String? _backgroundImage,
+  final Color? _backgroundColor,
+) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _image = Flexible(
-      flex: leftHasMoreFlex ? 3 : 2,
-      child: SizedBox.expand(child: image),
+    final image = Flexible(
+      flex: _leftHasMoreFlex ? 3 : 2,
+      child: SizedBox.expand(child: _image),
     );
-    final _content = Flexible(
-      flex: leftHasMoreFlex ? 2 : 3,
-      child: Padding(padding: contentPadding, child: content),
+    final content = Flexible(
+      flex: _leftHasMoreFlex ? 2 : 3,
+      child: Padding(padding: _contentPadding, child: _content),
     );
 
     return BaseSectionWithBackground(
-      backgroundImage: backgroundImage,
-      backgroundColor: backgroundColor,
+      backgroundImage: _backgroundImage,
+      backgroundColor: _backgroundColor,
       child: Row(
         children: [
-          if (flipWidgets) _content else _image,
-          if (flipWidgets) _image else _content,
+          if (_flipWidgets) content else image,
+          if (_flipWidgets) image else content,
         ],
       ),
     );

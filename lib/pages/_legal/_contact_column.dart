@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
 
-class ContactColumn extends Column {
-  const ContactColumn()
+class const ContactColumn({super.key}) extends Column {
+  this
     : super(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: const [
           Text('Ina Kaiser'),
           Text('Straußstraße 27'),

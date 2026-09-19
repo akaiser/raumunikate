@@ -4,32 +4,28 @@ import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
-class DesignColorsSection extends StatelessWidget {
-  const DesignColorsSection({required this.children, super.key});
-
-  final List<Widget> children;
-
+class const DesignColorsSection({
+  required final List<Widget> _children,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
-    padding: EdgeInsets.only(top: context.isFullWidthNavBar ? 32 : 0),
+    padding: .only(top: context.isFullWidthNavBar ? 32 : 0),
     child: _HorizontalPadding(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [const Gap(navigationBarHeight), ...children],
+        crossAxisAlignment: .start,
+        children: [const Gap(navigationBarHeight), ..._children],
       ),
     ),
   );
 }
 
-class _HorizontalPadding extends StatelessWidget {
-  const _HorizontalPadding({required this.child});
-
-  final Widget child;
-
+class const _HorizontalPadding({required final Widget _child})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
-    xl: (_) => Padding(padding: textHorizontalPaddingXl, child: child),
-    l: (_) => Padding(padding: textHorizontalPaddingL, child: child),
-    xs: (_) => Padding(padding: textHorizontalPaddingXs, child: child),
+    xl: (_) => Padding(padding: textHorizontalPaddingXl, child: _child),
+    l: (_) => Padding(padding: textHorizontalPaddingL, child: _child),
+    xs: (_) => Padding(padding: textHorizontalPaddingXs, child: _child),
   );
 }

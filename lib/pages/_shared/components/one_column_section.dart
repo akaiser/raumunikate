@@ -1,39 +1,25 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
+import 'package:raumunikate/pages/_shared/extensions/nullable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/base_section.dart';
 
-abstract class OneColumnSection extends StatelessWidget {
-  const OneColumnSection({
-    this.backgroundImage,
-    this.backgroundColor,
-    this.child,
-  });
-
-  final String? backgroundImage;
-  final Color? backgroundColor;
-  final Widget? child;
-
+abstract class const OneColumnSection({
+  final String? _backgroundImage,
+  final Color? _backgroundColor,
+  final Widget? _child,
+  super.key,
+}) extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    var _child = child;
-    if (_child != null) {
-      _child = _ChildPadding(child: _child);
-    }
-
-    return BaseSectionWithBackground(
-      backgroundImage: backgroundImage,
-      backgroundColor: backgroundColor,
-      child: _child,
-    );
-  }
+  Widget build(BuildContext context) => BaseSectionWithBackground(
+    backgroundImage: _backgroundImage,
+    backgroundColor: _backgroundColor,
+    child: _child.let((it) => _ChildPadding(child: it)),
+  );
 }
 
-class _ChildPadding extends StatelessWidget {
-  const _ChildPadding({required this.child});
-
-  final Widget child;
-
+class const _ChildPadding({required final Widget _child})
+    extends StatelessWidget {
   static const _xsChildPadding = EdgeInsets.only(
     left: 20,
     top: navigationBarHeight,
@@ -48,9 +34,7 @@ class _ChildPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-    padding: context.breakpoint == Breakpoint.xs
-        ? _xsChildPadding
-        : _defaultChildPadding,
-    child: child,
+    padding: context.breakpoint == .xs ? _xsChildPadding : _defaultChildPadding,
+    child: _child,
   );
 }

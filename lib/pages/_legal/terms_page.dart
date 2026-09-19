@@ -6,9 +6,7 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 
-class TermsPage extends StatelessWidget {
-  const TermsPage();
-
+class const TermsPage({super.key}) extends StatelessWidget {
   static const path = '/agb';
 
   @override

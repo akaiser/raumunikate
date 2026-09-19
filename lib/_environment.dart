@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-abstract final class Environment {
+abstract final class const Environment() {
   static const _prodEnv = '';
   static const _devEnv = '/own/raumunikate.com';
 

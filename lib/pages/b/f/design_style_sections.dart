@@ -6,18 +6,16 @@ import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 import 'package:raumunikate/pages/b/f/_design_style_text.dart';
 
-class DesignStyleFirstSection extends OneColumnSection {
-  const DesignStyleFirstSection()
-    : super(backgroundColor: raumLila, child: const DesignStyleText());
+class const DesignStyleFirstSection({super.key}) extends OneColumnSection {
+  this : super(backgroundColor: raumLila, child: const DesignStyleText());
 }
 
-class DesignStyleSecondSection extends ColoredBox {
-  const DesignStyleSecondSection()
-    : super(color: raumLila, child: const _DesignStyleImage());
+class const DesignStyleSecondSection({super.key}) extends ColoredBox {
+  this : super(color: raumLila, child: const _DesignStyleImage());
 }
 
-class DesignStyleSection extends TwoColumnsSection {
-  const DesignStyleSection()
+class const DesignStyleSection({super.key}) extends TwoColumnsSection {
+  this
     : super(
         image: const _DesignStyleImage(),
         content: const DesignStyleText(),
@@ -26,12 +24,10 @@ class DesignStyleSection extends TwoColumnsSection {
       );
 }
 
-class _DesignStyleImage extends StatelessWidget {
-  const _DesignStyleImage();
-
+class const _DesignStyleImage() extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const Padding(
-    padding: EdgeInsets.only(top: navigationBarHeight),
-    child: FadeInAssetImage(Images.designStyle, fit: BoxFit.contain),
+    padding: .only(top: navigationBarHeight),
+    child: FadeInAssetImage(Images.designStyle, fit: .contain),
   );
 }

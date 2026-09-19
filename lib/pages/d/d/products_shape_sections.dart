@@ -5,18 +5,16 @@ import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/d/d/_products_shape_text.dart';
 
-class ProductsShapeFirstSection extends OneColumnSection {
-  const ProductsShapeFirstSection()
-    : super(backgroundColor: raumLila, child: const ProductsShapeText());
+class const ProductsShapeFirstSection({super.key}) extends OneColumnSection {
+  this : super(backgroundColor: raumLila, child: const ProductsShapeText());
 }
 
-class ProductsShapeSecondSection extends OneColumnSection {
-  const ProductsShapeSecondSection()
-    : super(backgroundImage: Images.productsClockShell);
+class const ProductsShapeSecondSection({super.key}) extends OneColumnSection {
+  this : super(backgroundImage: Images.productsClockShell);
 }
 
-class ProductsShapeSection extends TwoColumnsSection {
-  const ProductsShapeSection()
+class const ProductsShapeSection({super.key}) extends TwoColumnsSection {
+  this
     : super(
         image: const CoverImageBox(Images.productsClockShell),
         content: const ProductsShapeText(),

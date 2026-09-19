@@ -1,6 +1,6 @@
 import 'package:raumunikate/_pages.dart';
 
-abstract final class Routes {
+abstract final class const Routes() {
   static const String homePage = HomePage.path,
       designPage = DesignPage.path,
       projectsPage = ProjectsPage.path,

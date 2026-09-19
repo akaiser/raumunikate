@@ -7,17 +7,16 @@ import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 const baseScrollPageKey = Key('base-scroll-page');
 
-class BaseScrollPage extends StatelessWidget {
-  const BaseScrollPage({this.preferListView = false, required this.children});
-
-  final bool preferListView;
-  final List<Widget> children;
-
+class const BaseScrollPage({
+  required final List<Widget> _children,
+  final bool _preferListView = false,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _children = [
+    final children = [
       const Gap(navigationBarHeightExpanded),
-      ...children,
+      ..._children,
       const Gap(16),
       const Divider(),
       const Gap(8),
@@ -25,35 +24,29 @@ class BaseScrollPage extends StatelessWidget {
     ];
     return ResponsiveLayout(
       xl: (_) => _BaseScrollPage(
-        preferListView: preferListView,
+        preferListView: _preferListView,
         padding: textHorizontalPaddingXl,
-        children: _children,
+        children: children,
       ),
       l: (_) => _BaseScrollPage(
-        preferListView: preferListView,
+        preferListView: _preferListView,
         padding: textHorizontalPaddingL,
-        children: _children,
+        children: children,
       ),
       xs: (_) => _BaseScrollPage(
-        preferListView: preferListView,
+        preferListView: _preferListView,
         padding: textHorizontalPaddingXs,
-        children: _children,
+        children: children,
       ),
     );
   }
 }
 
-class _BaseScrollPage extends StatefulWidget {
-  const _BaseScrollPage({
-    required this.preferListView,
-    required this.padding,
-    required this.children,
-  });
-
-  final bool preferListView;
-  final EdgeInsetsGeometry padding;
-  final List<Widget> children;
-
+class const _BaseScrollPage({
+  required final bool _preferListView,
+  required final EdgeInsetsGeometry _padding,
+  required final List<Widget> _children,
+}) extends StatefulWidget {
   @override
   State<_BaseScrollPage> createState() => _BaseScrollPageState();
 }
@@ -102,60 +95,45 @@ class _BaseScrollPageState extends State<_BaseScrollPage> {
     onScrollToTopTap: () => _scrollToTop,
     onScrollUpRequest: () => _onScrollUpRequest,
     onScrollDownRequest: () => _onScrollDownRequest,
-    child: widget.preferListView
+    child: widget._preferListView
         ? _ListView(
             _controller,
-            padding: widget.padding,
-            children: widget.children,
+            padding: widget._padding,
+            children: widget._children,
           )
         : _SingleChildScrollView(
             _controller,
-            padding: widget.padding,
-            children: widget.children,
+            padding: widget._padding,
+            children: widget._children,
           ),
   );
 }
 
-class _ListView extends StatelessWidget {
-  const _ListView(
-    this.controller, {
-    required this.padding,
-    required this.children,
-  });
-
-  final ScrollController controller;
-  final EdgeInsetsGeometry padding;
-  final List<Widget> children;
-
+class const _ListView(
+  final ScrollController _controller, {
+  required final EdgeInsetsGeometry _padding,
+  required final List<Widget> _children,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ListView.builder(
     key: baseScrollPageKey,
-    controller: controller,
-    padding: padding,
-    itemCount: children.length,
-    itemBuilder: (_, index) => children[index],
+    controller: _controller,
+    padding: _padding,
+    itemCount: _children.length,
+    itemBuilder: (_, index) => _children[index],
   );
 }
 
-class _SingleChildScrollView extends StatelessWidget {
-  const _SingleChildScrollView(
-    this.controller, {
-    required this.padding,
-    required this.children,
-  });
-
-  final ScrollController controller;
-  final EdgeInsetsGeometry padding;
-  final List<Widget> children;
-
+class const _SingleChildScrollView(
+  final ScrollController _controller, {
+  required final EdgeInsetsGeometry _padding,
+  required final List<Widget> _children,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
     key: baseScrollPageKey,
-    controller: controller,
-    padding: padding,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: children,
-    ),
+    controller: _controller,
+    padding: _padding,
+    child: Column(crossAxisAlignment: .start, children: _children),
   );
 }

@@ -47,16 +47,9 @@ Sie erhalten Einblicke in meine persönliche Gedankenwelt und meine spannende In
 ];
 
 @immutable
-class SlideDataEntry {
-  const SlideDataEntry(
-    this.backgroundColor,
-    this.title,
-    this.text,
-    this.linkPagePath,
-  );
-
-  final Color backgroundColor;
-  final String title;
-  final String text;
-  final String linkPagePath;
-}
+class const SlideDataEntry(
+  final Color backgroundColor,
+  final String title,
+  final String text,
+  final String linkPagePath,
+);

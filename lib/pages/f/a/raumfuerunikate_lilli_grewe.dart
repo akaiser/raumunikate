@@ -9,9 +9,7 @@ import 'package:raumunikate/pages/f/_blog_texts.dart';
 import 'package:raumunikate/pages/f/_data.dart';
 import 'package:raumunikate/pages/f/a/_links_column.dart';
 
-class RaumfuerunikateLilliGrewe extends StatelessWidget {
-  const RaumfuerunikateLilliGrewe();
-
+class const RaumfuerunikateLilliGrewe({super.key}) extends StatelessWidget {
   static const String path = blogPathLilliGrewe;
 
   @override
@@ -32,7 +30,7 @@ Herzlich Willkommen im Zuhause der Atmosphäre. Es ist an der Zeit zu entdecken,
           InlineText('Mein erster Gast dieser Interviewreihe '),
           InlineTextRaumfuerunikate(),
           InlineText(' ist die zauberhafte Lilli, die die '),
-          InlineTextInstagraminteriorchallenge(),
+          _InlineTextInstagraminteriorchallenge(),
           InlineText(
             '''
  ins Leben gerufen hat. Vor zwei Jahren habe ich an dieser Challenge mitgemacht und interessante Accounts entdeckt. Sie ist mir sehr positiv im Gedächtnis geblieben.''',
@@ -142,7 +140,7 @@ Um nochmal den Bogen zum Anfang zu spannen, wie kam es zu Deiner Instagram Inter
       RichTextSection(
         children: [
           InlineText('Schon ganz bald! Die nächste '),
-          InlineTextInstagraminteriorchallenge(),
+          _InlineTextInstagraminteriorchallenge(),
           InlineText(' startet im April 2023.'),
         ],
       ),
@@ -183,11 +181,10 @@ Vielen Dank liebe Lilli für den spannenden Einblick in Dein Zuhause.'''),
   );
 }
 
-class InlineTextInstagraminteriorchallenge extends InlineText {
-  const InlineTextInstagraminteriorchallenge()
+class const _InlineTextInstagraminteriorchallenge() extends InlineText {
+  this
     : super(
         '#instagraminteriorchallenge',
-        link:
-            'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
+        link: 'https://www.instagram.com/explore/tags/instagraminteriorchallenge/',
       );
 }

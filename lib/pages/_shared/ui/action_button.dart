@@ -3,42 +3,39 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/hover_region.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
-class ActionButton extends StatelessWidget {
-  const ActionButton(this.text, {required this.onTap});
-
-  final String text;
-  final VoidCallback? onTap;
-
+class const ActionButton(
+  final String _text, {
+  required final VoidCallback? _onTap,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => HoverRegion(
-    onTap: onTap,
+    onTap: _onTap,
     builder: (context, isHovering, child) => Container(
-      padding: const EdgeInsets.only(left: 16, top: 2, right: 16),
+      padding: const .only(left: 16, top: 2, right: 16),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        borderRadius: const .all(Radius.circular(20)),
         border: Border.all(
           width: 2,
-          color: isHovering && onTap != null ? raumCreme : raumBackground,
+          color: isHovering && _onTap != null ? raumCreme : raumBackground,
         ),
       ),
       child: child,
     ),
-    child: _ActionButtonText(text, enabled: onTap != null),
+    child: _ActionButtonText(_text, enabled: _onTap != null),
   );
 }
 
-class _ActionButtonText extends StatelessWidget {
-  const _ActionButtonText(this.text, {required this.enabled});
-
-  final String text;
-  final bool enabled;
-
+class const _ActionButtonText(
+  final String _text, {
+  required final bool _enabled,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
-    text,
+    _text,
     style: context.dts.copyWith(
-      color: raumCreme.withValues(alpha: enabled ? 1 : 0.6),
+      color: raumCreme.withValues(alpha: _enabled ? 1 : 0.6),
       fontSize: context.isShittySmallDevice ? 16 : null,
     ),
   );

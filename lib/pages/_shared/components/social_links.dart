@@ -4,8 +4,9 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 import 'package:raumunikate/pages/_shared/ui/gap.dart';
 
-class SocialLinksRow extends Row {
-  const SocialLinksRow({super.mainAxisAlignment = MainAxisAlignment.end})
+class const SocialLinksRow({super.mainAxisAlignment = .end, super.key})
+    extends Row {
+  this
     : super(
         children: const [
           _Link(
@@ -23,15 +24,11 @@ class SocialLinksRow extends Row {
       );
 }
 
-class _Link extends StatelessWidget {
-  const _Link(this.image, {required this.url});
-
-  final String image;
-  final String url;
-
+class const _Link(final String _image, {required final String _url})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ClickableRegion(
-    onTap: () => context.launch(url),
-    child: Image.asset(image, height: 16, color: raumGrau),
+    onTap: () => context.launch(_url),
+    child: Image.asset(_image, height: 16, color: raumGrau),
   );
 }

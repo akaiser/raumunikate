@@ -6,9 +6,7 @@ import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/a/c/_data.dart' as data;
 
-class HomeContentSlides extends StatelessWidget {
-  const HomeContentSlides();
-
+class const HomeContentSlides({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
     itemCount: data.slidesData.length,
@@ -19,33 +17,30 @@ class HomeContentSlides extends StatelessWidget {
   );
 }
 
-class _SlideCard extends StatelessWidget {
-  const _SlideCard(this.entry, {super.key});
-
-  final data.SlideDataEntry entry;
-
+class const _SlideCard(final data.SlideDataEntry _entry, {super.key})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ColoredBox(
-    color: entry.backgroundColor.withValues(alpha: 0.85),
+    color: _entry.backgroundColor.withValues(alpha: 0.85),
     child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const .symmetric(horizontal: 16),
       child: Column(
         children: [
           const _Spacer(),
           Text(
-            entry.title,
+            _entry.title,
             style: context.tt.label?.copyWith(color: data.textColor),
           ),
           const _Spacer(),
           Text(
-            entry.text,
-            textAlign: TextAlign.center,
+            _entry.text,
+            textAlign: .center,
             style: context.dts.copyWith(color: data.textColor),
           ),
           const Spacer(),
           ActionButton(
             data.linkText,
-            onTap: () => context.go(entry.linkPagePath),
+            onTap: () => context.go(_entry.linkPagePath),
           ),
           const Gap(30),
         ],
@@ -54,9 +49,7 @@ class _SlideCard extends StatelessWidget {
   );
 }
 
-class _Spacer extends StatelessWidget {
-  const _Spacer();
-
+class const _Spacer() extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       context.isShittySmallDevice ? const Gap(30) : const Gap(60);

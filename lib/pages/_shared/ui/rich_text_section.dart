@@ -3,27 +3,21 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/extensions/iterable_ext.dart';
 
-class InlineText {
-  const InlineText(this.text, {this.link});
+class const InlineText(final String _text, {final String? _link});
 
-  final String text;
-  final String? link;
-}
-
-class RichTextSection extends StatelessWidget {
-  const RichTextSection({required this.children});
-
-  final List<InlineText> children;
-
+class const RichTextSection({
+  required final List<InlineText> _children,
+  super.key,
+}) extends StatelessWidget {
   TextSpan _resolve(
     BuildContext context,
     InlineText inlineText,
     TextStyle? textStyle,
   ) {
-    final link = inlineText.link;
+    final link = inlineText._link;
     return link != null
         ? TextSpan(
-            text: inlineText.text,
+            text: inlineText._text,
             style: textStyle?.copyWith(
               //decoration: TextDecoration.underline,
               color: linkColor,
@@ -31,7 +25,7 @@ class RichTextSection extends StatelessWidget {
             recognizer: TapGestureRecognizer()
               ..onTap = () => context.launch(link),
           )
-        : TextSpan(text: inlineText.text, style: textStyle);
+        : TextSpan(text: inlineText._text, style: textStyle);
   }
 
   @override
@@ -39,7 +33,7 @@ class RichTextSection extends StatelessWidget {
     final textStyle = context.dts;
     return Text.rich(
       TextSpan(
-        children: children
+        children: _children
             .map((inlineText) => _resolve(context, inlineText, textStyle))
             .unmodifiable,
       ),

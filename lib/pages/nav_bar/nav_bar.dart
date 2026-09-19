@@ -13,9 +13,7 @@ import 'package:raumunikate/pages/nav_bar/_nav_menu.dart';
 const _bigPadding = EdgeInsets.only(left: 100, top: 10, right: 100);
 const _smallPadding = EdgeInsets.only(left: 10, top: 10, right: 10);
 
-class NavBar extends StatelessWidget {
-  const NavBar();
-
+class const NavBar({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isFullWidthNavBar = context.isFullWidthNavBar;
@@ -34,9 +32,7 @@ class NavBar extends StatelessWidget {
               ? null
               : const BoxDecoration(
                   color: mainBackgroundColor,
-                  boxShadow: [
-                    BoxShadow(color: Colors.black12, blurRadius: 8),
-                  ],
+                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
                 ),
           child: navMenuOnly
               ? navMenu
@@ -47,22 +43,16 @@ class NavBar extends StatelessWidget {
                 ),
         );
       },
-      child: const Align(alignment: Alignment.topLeft, child: NavMenu()),
+      child: const Align(alignment: .topLeft, child: NavMenu()),
     );
   }
 }
 
-class _NavBar extends StatelessWidget {
-  const _NavBar(
-    this.navMenu, {
-    required this.isExpanded,
-    required this.isFullWidthNavBar,
-  });
-
-  final Widget navMenu;
-  final bool isExpanded;
-  final bool isFullWidthNavBar;
-
+class const _NavBar(
+  final Widget navMenu, {
+  required final bool isExpanded,
+  required final bool isFullWidthNavBar,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Table(
     columnWidths: const {
@@ -90,10 +80,7 @@ class _NavBar extends StatelessWidget {
             ),
           ),
           if (isFullWidthNavBar)
-            const Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: SocialLinksRow(),
-            )
+            const Padding(padding: .only(top: 16), child: SocialLinksRow())
           else
             const SizedBox(),
         ],

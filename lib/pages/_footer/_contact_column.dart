@@ -1,9 +1,11 @@
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
+import 'package:raumunikate/pages/_shared/extensions/nullable_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 
-class ContactColumn extends Column {
-  const ContactColumn({super.crossAxisAlignment = CrossAxisAlignment.start})
+class const ContactColumn({super.key}) extends Column {
+  this
     : super(
+        crossAxisAlignment: .start,
         children: const [
           _Text('Ina Kaiser'),
           _Text('Straussstraße 27'),
@@ -14,18 +16,15 @@ class ContactColumn extends Column {
       );
 }
 
-class _Text extends StatelessWidget {
-  const _Text(this.text, [this.url]);
-
-  final String text;
-  final String? url;
-
+class const _Text(final String _text, [final String? url])
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final child = Text(text, style: context.dts.copyWith(fontSize: 14));
-    final _url = url;
-    return _url != null
-        ? ClickableRegion(onTap: () => context.launch(_url), child: child)
-        : child;
+    final child = Text(_text, style: context.dts.copyWith(fontSize: 14));
+    return url.let(
+          (url) =>
+              ClickableRegion(onTap: () => context.launch(url), child: child),
+        ) ??
+        child;
   }
 }

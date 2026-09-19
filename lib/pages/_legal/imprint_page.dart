@@ -6,9 +6,7 @@ import 'package:raumunikate/pages/_shared/components/headline_text.dart';
 import 'package:raumunikate/pages/_shared/ui/rich_text_section.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 
-class ImprintPage extends StatelessWidget {
-  const ImprintPage();
-
+class const ImprintPage({super.key}) extends StatelessWidget {
   static const path = '/impressum';
 
   @override

@@ -4,13 +4,11 @@ import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/d/d/_data.dart' as data;
 
-class ProductsShapeText extends StatelessWidget {
-  const ProductsShapeText();
-
+class const ProductsShapeText({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FullTextSection(
+    data.content,
     title: data.title,
-    text: data.content,
     actionButton: ActionButton(
       data.cta,
       onTap: () => context.scrollToBottomNotifier.notify(),

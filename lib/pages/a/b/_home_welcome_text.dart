@@ -4,14 +4,12 @@ import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/a/b/_data.dart' as data;
 
-class HomeWelcomeText extends StatelessWidget {
-  const HomeWelcomeText();
-
+class const HomeWelcomeText({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FullTextSection(
+    data.content,
     title: data.title,
     title2: data.title2,
-    text: data.content,
     actionButton: ActionButton(
       data.cta,
       onTap: () => context.scrollToBottomNotifier.notify(),

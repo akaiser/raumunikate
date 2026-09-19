@@ -1,46 +1,45 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
-class ResponsiveLayout extends StatelessWidget {
-  const ResponsiveLayout({this.xxl, this.xl, this.l, this.m, this.s, this.xs});
-
-  final WidgetBuilder? xxl;
-  final WidgetBuilder? xl;
-  final WidgetBuilder? l;
-  final WidgetBuilder? m;
-  final WidgetBuilder? s;
-  final WidgetBuilder? xs;
-
+class const ResponsiveLayout({
+  final WidgetBuilder? _xxl,
+  final WidgetBuilder? _xl,
+  final WidgetBuilder? _l,
+  final WidgetBuilder? _m,
+  final WidgetBuilder? _s,
+  final WidgetBuilder? _xs,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     switch (context.breakpoint) {
-      case Breakpoint.xxl:
-        final result = xxl?.call(context);
+      case .xxl:
+        final result = _xxl?.call(context);
         if (result != null) return result;
         continue xl;
       xl:
-      case Breakpoint.xl:
-        final result = xl?.call(context);
+      case .xl:
+        final result = _xl?.call(context);
         if (result != null) return result;
         continue l;
       l:
-      case Breakpoint.l:
-        final result = l?.call(context);
+      case .l:
+        final result = _l?.call(context);
         if (result != null) return result;
         continue m;
       m:
-      case Breakpoint.m:
-        final result = m?.call(context);
+      case .m:
+        final result = _m?.call(context);
         if (result != null) return result;
         continue s;
       s:
-      case Breakpoint.s:
-        final result = s?.call(context);
+      case .s:
+        final result = _s?.call(context);
         if (result != null) return result;
         continue xs;
       xs:
-      case Breakpoint.xs:
-        final result = xs?.call(context);
+      case .xs:
+        final result = _xs?.call(context);
         if (result != null) return result;
         throw Exception('This might happen!');
     }

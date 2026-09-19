@@ -2,9 +2,7 @@ import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
 import 'package:raumunikate/pages/a/e/_home_referral_card.dart';
 
-class HomeReferralsSlides extends StatelessWidget {
-  const HomeReferralsSlides();
-
+class const HomeReferralsSlides({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PageView(
     scrollBehavior: context.defaultScrollBehavior,
@@ -16,14 +14,11 @@ class HomeReferralsSlides extends StatelessWidget {
   );
 }
 
-class _HomeReferralCard extends StatelessWidget {
-  const _HomeReferralCard(this.entry);
-
-  final data.ReferralDataEntry entry;
-
+class const _HomeReferralCard(final data.ReferralDataEntry _entry)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(top: 80, left: 24, right: 40, bottom: 40),
-    child: HomeReferralCard(entry),
+    padding: const .only(top: 80, left: 24, right: 40, bottom: 40),
+    child: HomeReferralCard(_entry),
   );
 }

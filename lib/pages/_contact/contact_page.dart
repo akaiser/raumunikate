@@ -6,9 +6,7 @@ import 'package:raumunikate/pages/_contact/contact_form.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 
 // TODO(albert): write UI tests...
-class ContactPage extends StatelessWidget {
-  const ContactPage({super.key});
-
+class const ContactPage({super.key}) extends StatelessWidget {
   static const path = '/kontakt';
 
   @override
@@ -30,7 +28,7 @@ class ContactPage extends StatelessWidget {
       child: ScrollConfiguration(
         behavior: context.defaultScrollBehavior,
         child: const SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: .symmetric(horizontal: 20, vertical: 20),
           child: ContactForm(),
         ),
       ),
@@ -38,9 +36,7 @@ class ContactPage extends StatelessWidget {
   );
 }
 
-class _BackButton extends StatelessWidget {
-  const _BackButton();
-
+class const _BackButton() extends StatelessWidget {
   @override
   Widget build(BuildContext context) => IconButton(
     onPressed: () => context.pop(),

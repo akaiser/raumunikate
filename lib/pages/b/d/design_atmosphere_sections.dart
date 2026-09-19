@@ -6,18 +6,16 @@ import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
 import 'package:raumunikate/pages/_shared/ui/fade_in_asset_image.dart';
 import 'package:raumunikate/pages/b/d/_design_atmosphere_text.dart';
 
-class DesignAtmosphereFirstSection extends OneColumnSection {
-  const DesignAtmosphereFirstSection()
-    : super(backgroundColor: raumCreme, child: const DesignAtmosphereText());
+class const DesignAtmosphereFirstSection({super.key}) extends OneColumnSection {
+  this : super(backgroundColor: raumCreme, child: const DesignAtmosphereText());
 }
 
-class DesignAtmosphereSecondSection extends ColoredBox {
-  const DesignAtmosphereSecondSection()
-    : super(color: raumCreme, child: const _DesignAtmosphereImage());
+class const DesignAtmosphereSecondSection({super.key}) extends ColoredBox {
+  this : super(color: raumCreme, child: const _DesignAtmosphereImage());
 }
 
-class DesignAtmosphereSection extends TwoColumnsSection {
-  const DesignAtmosphereSection()
+class const DesignAtmosphereSection({super.key}) extends TwoColumnsSection {
+  this
     : super(
         image: const _DesignAtmosphereImage(),
         content: const DesignAtmosphereText(),
@@ -26,12 +24,10 @@ class DesignAtmosphereSection extends TwoColumnsSection {
       );
 }
 
-class _DesignAtmosphereImage extends StatelessWidget {
-  const _DesignAtmosphereImage();
-
+class const _DesignAtmosphereImage() extends StatelessWidget {
   @override
   Widget build(BuildContext context) => const Padding(
-    padding: EdgeInsets.only(top: navigationBarHeight),
-    child: FadeInAssetImage(Images.designAtmosphere, fit: BoxFit.contain),
+    padding: .only(top: navigationBarHeight),
+    child: FadeInAssetImage(Images.designAtmosphere, fit: .contain),
   );
 }

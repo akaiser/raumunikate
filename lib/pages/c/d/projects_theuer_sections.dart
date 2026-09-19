@@ -9,32 +9,30 @@ import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/c/d/_projects_theuer_text.dart';
 
-class ProjectsTheuerFirstSection extends OneColumnSection {
-  const ProjectsTheuerFirstSection({
-    super.backgroundColor = mainBackgroundColor,
-    super.child = const ProjectsTheuerText(),
-  });
+class const ProjectsTheuerFirstSection({super.key}) extends OneColumnSection {
+  this
+    : super(
+        backgroundColor: mainBackgroundColor,
+        child: const ProjectsTheuerText(),
+      );
 }
 
-class ProjectsTheuerSecondSection extends _Carousel {
-  const ProjectsTheuerSecondSection();
+class const ProjectsTheuerSecondSection({super.key}) extends _Carousel;
+
+class const ProjectsTheuerSection({super.key}) extends TwoColumnsSection {
+  this
+    : super(
+        image: const _Carousel(),
+        content: const ProjectsTheuerText(),
+        backgroundColor: mainBackgroundColor,
+        leftHasMoreFlex: true,
+      );
 }
 
-class ProjectsTheuerSection extends TwoColumnsSection {
-  const ProjectsTheuerSection({
-    super.image = const _Carousel(),
-    super.content = const ProjectsTheuerText(),
-    super.backgroundColor = mainBackgroundColor,
-    super.leftHasMoreFlex = true,
-  });
-}
-
-class _Carousel extends StatelessWidget {
-  const _Carousel();
-
+class const _Carousel({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CarouselPageView(
-    activeIndicatorColor: raumTheuer,
+    raumTheuer,
     children: [
       Images.projectsTheuerStairs,
       Images.projectsTheuerFloor,

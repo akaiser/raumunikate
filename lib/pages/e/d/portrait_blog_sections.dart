@@ -4,18 +4,16 @@ import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/e/d/_portrait_blog_text.dart';
 
-class PortraitBlogFirstSection extends OneColumnSection {
-  const PortraitBlogFirstSection()
-    : super(backgroundImage: Images.waben0, child: const PortraitBlogText());
+class const PortraitBlogFirstSection({super.key}) extends OneColumnSection {
+  this : super(backgroundImage: Images.waben0, child: const PortraitBlogText());
 }
 
-class PortraitBlogSecondSection extends OneColumnSection {
-  const PortraitBlogSecondSection()
-    : super(backgroundImage: Images.portraitBlog);
+class const PortraitBlogSecondSection({super.key}) extends OneColumnSection {
+  this : super(backgroundImage: Images.portraitBlog);
 }
 
-class PortraitBlogSection extends TwoColumnsSection {
-  const PortraitBlogSection()
+class const PortraitBlogSection({super.key}) extends TwoColumnsSection {
+  this
     : super(
         image: const CoverImageBox(Images.portraitBlog),
         content: const PortraitBlogText(),

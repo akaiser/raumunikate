@@ -3,15 +3,15 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/a/e/_data.dart' as data;
 import 'package:raumunikate/pages/a/e/_home_referral_card.dart';
 
-class HomeReferralsSingle extends Padding {
-  const HomeReferralsSingle()
+class const HomeReferralsSingle({super.key}) extends Padding {
+  this
     : super(
-        padding: const EdgeInsets.all(navigationBarHeight),
+        padding: const .all(navigationBarHeight),
         child: const Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: .spaceEvenly,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: .spaceAround,
               children: [
                 HomeReferralCard(data.referralData0),
                 HomeReferralCard(data.referralData1),

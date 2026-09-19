@@ -8,32 +8,31 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 import 'package:raumunikate/pages/b/_shared/design_slide_data_entry.dart';
 
-abstract class DesignSlides extends StatelessWidget {
-  const DesignSlides({this.leading, required this.slidesData});
-
-  final Widget? leading;
-  final List<DesignSlideDataEntry> slidesData;
-
+abstract class const DesignSlides({
+  required final List<DesignSlideDataEntry> _slidesData,
+  final Widget? _leading,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cards = ResponsiveLayout(
-      xl: (_) => _Cards(slidesData),
-      xs: (_) => _ResponsiveSlides(slidesData),
+      xl: (_) => _Cards(_slidesData),
+      xs: (_) => _ResponsiveSlides(_slidesData),
     );
 
-    return leading == null
+    return _leading == null
         ? cards
         : Column(
             children: [
               const Gap(navigationBarHeight),
               Padding(
-                padding: EdgeInsets.fromLTRB(
+                padding: .fromLTRB(
                   20,
                   context.isFullWidthNavBar ? 32 : 0,
                   20,
                   0,
                 ),
-                child: leading,
+                child: _leading,
               ),
               Expanded(child: cards),
             ],
@@ -41,25 +40,19 @@ abstract class DesignSlides extends StatelessWidget {
   }
 }
 
-class _Cards extends StatelessWidget {
-  const _Cards(this.slidesData);
-
-  final List<DesignSlideDataEntry> slidesData;
-
+class const _Cards(final List<DesignSlideDataEntry> _slidesData)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 80),
+    padding: const .symmetric(horizontal: 80),
     child: Row(
-      children: slidesData
+      children: _slidesData
           .mapIndexed(
             (index, slideData) => Expanded(
               child: FractionallySizedBox(
                 widthFactor: 0.8,
                 heightFactor: 0.6,
-                child: _SlideCard(
-                  slideData,
-                  key: Key('design-card-$index'),
-                ),
+                child: _SlideCard(slideData, key: Key('design-card-$index')),
               ),
             ),
           )
@@ -68,50 +61,44 @@ class _Cards extends StatelessWidget {
   );
 }
 
-class _ResponsiveSlides extends StatelessWidget {
-  const _ResponsiveSlides(this.slidesData);
-
-  final List<DesignSlideDataEntry> slidesData;
-
+class const _ResponsiveSlides(final List<DesignSlideDataEntry> _slidesData)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSlides(
-    itemCount: slidesData.length,
+    itemCount: _slidesData.length,
     itemBuilder: (_, index) =>
-        _SlideCard(slidesData[index], key: Key('design-slide-card-$index')),
+        _SlideCard(_slidesData[index], key: Key('design-slide-card-$index')),
     omitTopPadding: true,
   );
 }
 
-class _SlideCard extends StatelessWidget {
-  const _SlideCard(this.entry, {super.key});
-
-  final DesignSlideDataEntry entry;
-
+class const _SlideCard(final DesignSlideDataEntry _entry, {super.key})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isXsBreakpoint = context.isXsBreakpoint;
-    final title2 = entry.title2;
+    final title2 = _entry.title2;
 
     return ColoredBox(
-      color: entry.cardColor.withValues(alpha: 0.85),
+      color: _entry.cardColor.withValues(alpha: 0.85),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const .symmetric(horizontal: 16),
         child: Column(
           children: [
             Gap(isXsBreakpoint ? 16 : 32),
             Text(
-              entry.title,
-              style: context.tt.label?.copyWith(color: entry.textColor),
+              _entry.title,
+              style: context.tt.label?.copyWith(color: _entry.textColor),
             ),
             if (title2 != null) ...[
               const Gap(10),
               Text(
                 title2,
-                style: context.tt.label?.copyWith(color: entry.textColor),
+                style: context.tt.label?.copyWith(color: _entry.textColor),
               ),
             ],
             Gap(isXsBreakpoint ? 8 : 48),
-            Flexible(child: _Text(entry)),
+            Flexible(child: _Text(_entry)),
             const Gap(8),
           ],
         ),
@@ -120,15 +107,11 @@ class _SlideCard extends StatelessWidget {
   }
 }
 
-class _Text extends StatelessWidget {
-  const _Text(this.entry);
-
-  final DesignSlideDataEntry entry;
-
+class const _Text(final DesignSlideDataEntry _entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => AutoSizeText(
-    entry.text,
-    style: context.dts.copyWith(color: entry.textColor),
-    textAlign: TextAlign.center,
+    _entry.text,
+    style: context.dts.copyWith(color: _entry.textColor),
+    textAlign: .center,
   );
 }

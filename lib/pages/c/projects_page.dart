@@ -7,9 +7,7 @@ import 'package:raumunikate/pages/c/c/projects_wolf_how_sections.dart';
 import 'package:raumunikate/pages/c/d/projects_theuer_sections.dart';
 import 'package:raumunikate/pages/c/e/projects_theuer_how_sections.dart';
 
-class ProjectsPage extends StatelessWidget {
-  const ProjectsPage();
-
+class const ProjectsPage({super.key}) extends StatelessWidget {
   static const path = '/projekte';
 
   @override

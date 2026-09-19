@@ -10,19 +10,13 @@ import 'package:raumunikate/pages/_shared/ui/clickable_region.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/nav_bar/nav_bar.dart';
 
-class BasePage extends StatefulWidget {
-  const BasePage({
-    required this.onScrollToTopTap,
-    required this.onScrollUpRequest,
-    required this.onScrollDownRequest,
-    required this.child,
-  });
-
-  final VoidCallback onScrollToTopTap;
-  final VoidCallback onScrollUpRequest;
-  final VoidCallback onScrollDownRequest;
-  final Widget child;
-
+class const BasePage({
+  required final VoidCallback onScrollToTopTap,
+  required final VoidCallback onScrollUpRequest,
+  required final VoidCallback onScrollDownRequest,
+  required final Widget child,
+  super.key,
+}) extends StatefulWidget {
   @override
   State<BasePage> createState() => _BasePageState();
 }
@@ -118,11 +112,8 @@ class _BasePageState extends State<BasePage> {
   }
 }
 
-class _ScrollToTopArrow extends StatelessWidget {
-  const _ScrollToTopArrow(this.onTap);
-
-  final VoidCallback onTap;
-
+class const _ScrollToTopArrow(final VoidCallback onTap)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Consumer<NavBarNotifier>(
     builder: (context, navBarNotifier, child) => AnimatedPositioned(

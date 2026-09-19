@@ -9,9 +9,7 @@ import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 import 'package:raumunikate/pages/base_scroll_page.dart';
 import 'package:raumunikate/pages/f/_data.dart';
 
-class BlogPage extends StatelessWidget {
-  const BlogPage({super.key});
-
+class const BlogPage({super.key}) extends StatelessWidget {
   static const path = '/blog';
 
   @override
@@ -27,11 +25,7 @@ class BlogPage extends StatelessWidget {
   );
 }
 
-class _BlogEntry extends StatelessWidget {
-  const _BlogEntry(this.entry);
-
-  final BlogDataEntry entry;
-
+class const _BlogEntry(final BlogDataEntry entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
     s: (_) => _RegularEntry(entry),
@@ -39,20 +33,16 @@ class _BlogEntry extends StatelessWidget {
   );
 }
 
-class _RegularEntry extends StatelessWidget {
-  const _RegularEntry(this.entry);
-
-  final BlogDataEntry entry;
-
+class const _RegularEntry(final BlogDataEntry entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: .start,
     children: [
       SizedBox(width: 260, child: _Image(entry)),
       const Gap(16),
       Flexible(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: .end,
           children: [
             _Header(entry),
             Text(entry.description),
@@ -65,14 +55,10 @@ class _RegularEntry extends StatelessWidget {
   );
 }
 
-class _SmallEntry extends StatelessWidget {
-  const _SmallEntry(this.entry);
-
-  final BlogDataEntry entry;
-
+class const _SmallEntry(final BlogDataEntry entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+    crossAxisAlignment: .start,
     children: [
       _Header(entry),
       smallNewLine,
@@ -85,15 +71,11 @@ class _SmallEntry extends StatelessWidget {
   );
 }
 
-class _Header extends StatelessWidget {
-  const _Header(this.entry);
-
-  final BlogDataEntry entry;
-
+class const _Header(final BlogDataEntry entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    crossAxisAlignment: CrossAxisAlignment.start,
+    mainAxisAlignment: .spaceBetween,
+    crossAxisAlignment: .start,
     children: [
       Expanded(child: TextLink(entry.title, url: entry.route)),
       Text(entry.date),
@@ -101,11 +83,7 @@ class _Header extends StatelessWidget {
   );
 }
 
-class _Image extends StatelessWidget {
-  const _Image(this.entry);
-
-  final BlogDataEntry entry;
-
+class const _Image(final BlogDataEntry entry) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ClickableRegion(
     onTap: () => context.launch(entry.route),
@@ -113,11 +91,8 @@ class _Image extends StatelessWidget {
   );
 }
 
-class _Categories extends StatelessWidget {
-  const _Categories(this.categories);
-
-  final Iterable<String> categories;
-
+class const _Categories(final Iterable<String> categories)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Wrap(
     runSpacing: 6,
@@ -125,7 +100,7 @@ class _Categories extends StatelessWidget {
         .map<Widget>(
           (category) => Chip(
             label: Text(category),
-            padding: EdgeInsets.zero,
+            padding: .zero,
             backgroundColor: mainBackgroundColor,
           ),
         )

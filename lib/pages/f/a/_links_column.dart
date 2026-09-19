@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_shared/ui/text_link.dart';
 
-class LinksColumn extends Column {
-  const LinksColumn()
+class const LinksColumn({super.key}) extends Column {
+  this
     : super(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: const [
           TextLink(
             '@theobert_pot',

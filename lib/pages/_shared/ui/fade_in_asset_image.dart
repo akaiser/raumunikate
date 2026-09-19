@@ -2,25 +2,23 @@ import 'package:flutter/widgets.dart';
 import 'package:raumunikate/_settings.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class FadeInAssetImage extends StatelessWidget {
-  const FadeInAssetImage(this.image, {this.fit, this.child, super.key});
-
-  final String image;
-  final BoxFit? fit;
-  final Widget? child;
-
+class const FadeInAssetImage(
+  final String _image, {
+  final BoxFit? _fit,
+  final Widget? _child,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _child = child;
     final fadeInImage = FadeInImage(
-      fit: fit,
-      image: AssetImage(image),
+      fit: _fit,
+      image: AssetImage(_image),
       placeholder: MemoryImage(kTransparentImage),
       fadeInDuration: const Duration(milliseconds: pageTransitionInMillis),
     );
 
-    return _child == null
-        ? fadeInImage
-        : Stack(fit: StackFit.expand, children: [fadeInImage, _child]);
+    return _child != null
+        ? Stack(fit: .expand, children: [fadeInImage, _child])
+        : fadeInImage;
   }
 }

@@ -2,26 +2,22 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/components/social_links.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 
-class ConnectColumn extends Column {
-  const ConnectColumn()
+class const ConnectColumn({super.key}) extends Column {
+  this
     : super(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: .start,
         children: const [
           _Text('Ist Ihr Interesse geweckt?'),
           _Text('Melden Sie sich gern bei mir und bleiben Sie ein Unikat,'),
           _Text('Ina Kaiser'),
           newLine,
-          SocialLinksRow(mainAxisAlignment: MainAxisAlignment.start),
+          SocialLinksRow(mainAxisAlignment: .start),
         ],
       );
 }
 
-class _Text extends StatelessWidget {
-  const _Text(this.text);
-
-  final String text;
-
+class const _Text(final String _text) extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
-      Text(text, style: context.dts.copyWith(fontSize: 16));
+      Text(_text, style: context.dts.copyWith(fontSize: 16));
 }

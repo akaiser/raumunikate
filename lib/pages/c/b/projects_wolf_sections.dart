@@ -9,32 +9,26 @@ import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 import 'package:raumunikate/pages/c/b/_projects_wolf_text.dart';
 
-class ProjectsWolfFirstSection extends OneColumnSection {
-  const ProjectsWolfFirstSection({
-    super.backgroundColor = raumGreen,
-    super.child = const ProjectsWolfText(),
-  });
+class const ProjectsWolfFirstSection({super.key}) extends OneColumnSection {
+  this : super(backgroundColor: raumGreen, child: const ProjectsWolfText());
 }
 
-class ProjectsWolfSecondSection extends _Carousel {
-  const ProjectsWolfSecondSection();
+class const ProjectsWolfSecondSection({super.key}) extends _Carousel;
+
+class const ProjectsWolfSection({super.key}) extends TwoColumnsSection {
+  this
+    : super(
+        image: const _Carousel(),
+        content: const ProjectsWolfText(),
+        backgroundColor: raumGreen,
+        leftHasMoreFlex: true,
+      );
 }
 
-class ProjectsWolfSection extends TwoColumnsSection {
-  const ProjectsWolfSection({
-    super.image = const _Carousel(),
-    super.content = const ProjectsWolfText(),
-    super.backgroundColor = raumGreen,
-    super.leftHasMoreFlex = true,
-  });
-}
-
-class _Carousel extends StatelessWidget {
-  const _Carousel();
-
+class const _Carousel({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CarouselPageView(
-    activeIndicatorColor: Colors.amber,
+    Colors.amber,
     children: [
       Images.projectsWolfChill,
       // TODO(albert): schlechte quali

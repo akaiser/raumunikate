@@ -7,9 +7,7 @@ import 'package:raumunikate/pages/nav_bar/_data.dart' as data;
 
 const navMenuKey = Key('nav-menu');
 
-class NavMenu extends StatelessWidget {
-  const NavMenu();
-
+class const NavMenu({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
     key: navMenuKey,
@@ -29,12 +27,8 @@ class NavMenu extends StatelessWidget {
   );
 }
 
-class _MenuItemText extends StatelessWidget {
-  const _MenuItemText(this.value, {required this.isEnabled});
-
-  final String value;
-  final bool isEnabled;
-
+class const _MenuItemText(final String value, {required final bool isEnabled})
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
     value,

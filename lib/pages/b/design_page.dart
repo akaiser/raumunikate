@@ -10,9 +10,7 @@ import 'package:raumunikate/pages/b/g/design_natural_sections.dart';
 import 'package:raumunikate/pages/b/i/design_elegant_sections.dart';
 import 'package:raumunikate/pages/base_slide_page.dart';
 
-class DesignPage extends StatelessWidget {
-  const DesignPage();
-
+class const DesignPage({super.key}) extends StatelessWidget {
   static const path = '/gestalten';
 
   @override

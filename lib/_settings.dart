@@ -24,6 +24,6 @@ const Color linkColor = raumCreme;
 const newLine = Gap(28);
 const smallNewLine = Gap(8);
 
-const textHorizontalPaddingXl = EdgeInsets.symmetric(horizontal: 300),
-    textHorizontalPaddingL = EdgeInsets.symmetric(horizontal: 200),
-    textHorizontalPaddingXs = EdgeInsets.symmetric(horizontal: 20);
+const EdgeInsets textHorizontalPaddingXl = .symmetric(horizontal: 300),
+    textHorizontalPaddingL = .symmetric(horizontal: 200),
+    textHorizontalPaddingXs = .symmetric(horizontal: 20);

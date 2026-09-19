@@ -7,11 +7,8 @@ import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
 const baseSlidePageKey = Key('base-slide-page');
 
-class BaseSlidePage extends StatefulWidget {
-  const BaseSlidePage({required this.children});
-
-  final List<Widget> children;
-
+class const BaseSlidePage({required final List<Widget> children, super.key})
+    extends StatefulWidget {
   @override
   State<BaseSlidePage> createState() => _BaseSlidePageState();
 }
@@ -67,7 +64,7 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
 
   @override
   Widget build(BuildContext context) {
-    final _children = [...widget.children, const _Footer()];
+    final children = [...widget.children, const _Footer()];
     return BasePage(
       onScrollToTopTap: _scrollToTop,
       onScrollUpRequest: _onScrollUpRequest,
@@ -76,16 +73,14 @@ class _BaseSlidePageState extends State<BaseSlidePage> {
         key: baseSlidePageKey,
         controller: _controller,
         scrollDirection: Axis.vertical,
-        itemCount: _children.length,
-        itemBuilder: (_, index) => _children[index],
+        itemCount: children.length,
+        itemBuilder: (_, index) => children[index],
       ),
     );
   }
 }
 
-class _Footer extends StatelessWidget {
-  const _Footer();
-
+class const _Footer() extends StatelessWidget {
   static const _bigPadding = EdgeInsets.only(
     left: 110,
     top: navigationBarHeight + 100,

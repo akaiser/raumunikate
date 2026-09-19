@@ -1,37 +1,29 @@
 import 'package:flutter/widgets.dart';
 import 'package:raumunikate/pages/_footer/_legal.dart';
-import 'package:raumunikate/pages/_shared/ui/gap.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
-class BottomSection extends StatelessWidget {
-  const BottomSection();
-
+class const BottomSection({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
     s: (_) => const Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
+      spacing: 26,
       children: [
         Expanded(child: CopyrightText()),
-        Gap(26),
         _Legal(),
       ],
     ),
     xs: (_) => const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: [_Legal(), CopyrightText()],
     ),
   );
 }
 
-class _Legal extends Row {
-  const _Legal()
+class const _Legal() extends Row {
+  this
     : super(
-        children: const [
-          ImprintTextLink(),
-          Gap(26),
-          TermsTextLink(),
-          Gap(26),
-          PrivacyTextLink(),
-        ],
+        spacing: 26,
+        children: const [ImprintTextLink(), TermsTextLink(), PrivacyTextLink()],
       );
 }

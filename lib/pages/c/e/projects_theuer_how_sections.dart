@@ -5,20 +5,20 @@ import 'package:raumunikate/pages/_shared/components/two_columns_section.dart';
 import 'package:raumunikate/pages/_shared/ui/cover_image_box.dart';
 import 'package:raumunikate/pages/c/e/_projects_theuer_how_text.dart';
 
-class ProjectsTheuerHowTextOnlySection extends OneColumnSection {
-  const ProjectsTheuerHowTextOnlySection({
-    super.backgroundColor = raumTheuer,
-    super.child = const ProjectsTheuerHowText(),
-  });
+class const ProjectsTheuerHowTextOnlySection({super.key})
+    extends OneColumnSection {
+  this
+    : super(backgroundColor: raumTheuer, child: const ProjectsTheuerHowText());
 }
 
-class ProjectsTheuerHowSection extends TwoColumnsSection {
-  const ProjectsTheuerHowSection({
-    // TODO(albert): schlechte quali
-    super.image = const CoverImageBox(Images.projectsTheuerLiving),
-    super.content = const ProjectsTheuerHowText(),
-    super.leftHasMoreFlex = true,
-    super.flipWidgets = true,
-    super.backgroundColor = raumTheuer,
-  });
+class const ProjectsTheuerHowSection({super.key}) extends TwoColumnsSection {
+  this
+    : super(
+        // TODO(albert): schlechte quali
+        image: const CoverImageBox(Images.projectsTheuerLiving),
+        content: const ProjectsTheuerHowText(),
+        leftHasMoreFlex: true,
+        flipWidgets: true,
+        backgroundColor: raumTheuer,
+      );
 }

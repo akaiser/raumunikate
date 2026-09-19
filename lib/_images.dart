@@ -1,4 +1,4 @@
-abstract final class Images {
+abstract final class const Images() {
   static const _root = 'images',
       _blogRoot = '$_root/blog',
       _iconsRoot = '$_root/icons';

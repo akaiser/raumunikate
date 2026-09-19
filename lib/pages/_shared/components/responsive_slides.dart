@@ -2,17 +2,12 @@ import 'package:raumunikate/_settings.dart';
 import 'package:raumunikate/pages/_shared/extensions/build_context_ext.dart';
 import 'package:raumunikate/pages/_shared/ui/responsive/breakpoint.dart';
 
-class ResponsiveSlides extends StatefulWidget {
-  const ResponsiveSlides({
-    required this.itemCount,
-    required this.itemBuilder,
-    this.omitTopPadding = false,
-  });
-
-  final int itemCount;
-  final IndexedWidgetBuilder itemBuilder;
-  final bool omitTopPadding;
-
+class const ResponsiveSlides({
+  required final int _itemCount,
+  required final IndexedWidgetBuilder _itemBuilder,
+  final bool _omitTopPadding = false,
+  super.key,
+}) extends StatefulWidget {
   @override
   State<ResponsiveSlides> createState() => _ResponsiveSlidesState();
 }
@@ -21,12 +16,12 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
   late PageController _controller;
 
   static const _viewportFractions = <Breakpoint, double>{
-    Breakpoint.xxl: 0.2,
-    Breakpoint.xl: 0.3,
-    Breakpoint.l: 0.4,
-    Breakpoint.m: 0.5,
-    Breakpoint.s: 0.6,
-    Breakpoint.xs: 0.8,
+    .xxl: 0.2,
+    .xl: 0.3,
+    .l: 0.4,
+    .m: 0.5,
+    .s: 0.6,
+    .xs: 0.8,
   };
 
   @override
@@ -49,18 +44,18 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
     return PageView.builder(
       controller: _controller,
       scrollBehavior: context.defaultScrollBehavior,
-      itemCount: widget.itemCount,
+      itemCount: widget._itemCount,
       padEnds: isSxsBreakpoint,
       itemBuilder: (context, index) {
         final child = _FractionallySizedBox(
           isSxsBreakpoint: isSxsBreakpoint,
-          child: widget.itemBuilder(context, index),
+          child: widget._itemBuilder(context, index),
         );
 
-        return widget.omitTopPadding
+        return widget._omitTopPadding
             ? child
             : Padding(
-                padding: const EdgeInsets.only(top: navigationBarHeight - 20),
+                padding: const .only(top: navigationBarHeight - 20),
                 child: child,
               );
       },
@@ -68,19 +63,14 @@ class _ResponsiveSlidesState extends State<ResponsiveSlides> {
   }
 }
 
-class _FractionallySizedBox extends StatelessWidget {
-  const _FractionallySizedBox({
-    required this.isSxsBreakpoint,
-    required this.child,
-  });
-
-  final bool isSxsBreakpoint;
-  final Widget child;
-
+class const _FractionallySizedBox({
+  required final bool _isSxsBreakpoint,
+  required final Widget _child,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FractionallySizedBox(
     widthFactor: 0.9,
-    heightFactor: isSxsBreakpoint ? 0.8 : 0.6,
-    child: child,
+    heightFactor: _isSxsBreakpoint ? 0.8 : 0.6,
+    child: _child,
   );
 }

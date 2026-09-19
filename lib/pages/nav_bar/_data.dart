@@ -12,10 +12,8 @@ const navData = [
 ];
 
 @immutable
-class NavDataEntry {
-  const NavDataEntry(this.pagePath, this.pageType, this.menuLinkText);
-
-  final String pagePath;
-  final Type pageType;
-  final String menuLinkText;
-}
+class const NavDataEntry(
+  final String pagePath,
+  final Type pageType,
+  final String menuLinkText,
+);

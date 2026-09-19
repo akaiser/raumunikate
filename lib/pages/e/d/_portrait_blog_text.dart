@@ -5,12 +5,10 @@ import 'package:raumunikate/pages/_shared/components/full_text_section.dart';
 import 'package:raumunikate/pages/_shared/ui/action_button.dart';
 import 'package:raumunikate/pages/e/d/_data.dart' as data;
 
-class PortraitBlogText extends StatelessWidget {
-  const PortraitBlogText();
-
+class const PortraitBlogText({super.key}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => FullTextSection(
-    text: data.blogContent,
+    data.blogContent,
     actionButton: ActionButton(
       data.blogCta,
       onTap: () => context.go(Routes.blogPage),

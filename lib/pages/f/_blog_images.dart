@@ -6,12 +6,11 @@ import 'package:raumunikate/pages/_shared/ui/responsive/responsive_layout.dart';
 
 const _imgSeparator = Gap(24);
 
-class ResponsiveBlogImages extends StatelessWidget {
-  const ResponsiveBlogImages(this.images, {this.flexRow = false});
-
-  final Iterable<String> images;
-  final bool flexRow;
-
+class const ResponsiveBlogImages(
+  final Iterable<String> images, {
+  final bool flexRow = false,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveLayout(
     m: (_) => flexRow ? _FlexRow(images) : _ExpandedRow(images),
@@ -19,11 +18,8 @@ class ResponsiveBlogImages extends StatelessWidget {
   );
 }
 
-class _ExpandedRow extends StatelessWidget {
-  const _ExpandedRow(this.images);
-
-  final Iterable<String> images;
-
+class const _ExpandedRow(final Iterable<String> images)
+    extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
     children: images.separated(
@@ -32,11 +28,7 @@ class _ExpandedRow extends StatelessWidget {
   );
 }
 
-class _FlexRow extends StatelessWidget {
-  const _FlexRow(this.images);
-
-  final Iterable<String> images;
-
+class const _FlexRow(final Iterable<String> images) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Table(
     columnWidths: const {
@@ -48,18 +40,15 @@ class _FlexRow extends StatelessWidget {
   );
 }
 
-class _Column extends StatelessWidget {
-  const _Column(this.images);
-
-  final Iterable<String> images;
-
+class const _Column(final Iterable<String> images) extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       Column(children: images.separated(FadeInAssetImage.new));
 }
 
 extension on Iterable<String> {
-  List<Widget> separated(Widget Function(String image) mapper) => map<Widget>(
-    (image) => mapper(image),
-  ).separate(_imgSeparator).unmodifiable;
+  List<Widget> separated(Widget Function(String image) mapper) =>
+      map<Widget>((image) => mapper(image))
+          .separate(_imgSeparator)
+          .unmodifiable;
 }

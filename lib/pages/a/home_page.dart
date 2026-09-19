@@ -7,9 +7,7 @@ import 'package:raumunikate/pages/a/d/home_image_section.dart';
 import 'package:raumunikate/pages/a/e/home_referrals_section.dart';
 import 'package:raumunikate/pages/base_slide_page.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage();
-
+class const HomePage({super.key}) extends StatelessWidget {
   static const String path = '/';
 
   @override

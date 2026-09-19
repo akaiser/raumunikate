@@ -26,10 +26,8 @@ Die Zusammenarbeit war unkompliziert. Uns hat das direkte Feedback zur Ausgangss
 );
 
 @immutable
-class ReferralDataEntry {
-  const ReferralDataEntry(this.feedback, this.referral, this.maxTextWidth);
-
-  final String feedback;
-  final String referral;
-  final double maxTextWidth;
-}
+class const ReferralDataEntry(
+  final String feedback,
+  final String referral,
+  final double maxTextWidth,
+);

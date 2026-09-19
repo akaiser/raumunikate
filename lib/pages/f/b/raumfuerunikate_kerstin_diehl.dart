@@ -8,9 +8,7 @@ import 'package:raumunikate/pages/f/_blog_images.dart';
 import 'package:raumunikate/pages/f/_blog_texts.dart';
 import 'package:raumunikate/pages/f/_data.dart';
 
-class RaumfuerunikateKerstinDiehl extends StatelessWidget {
-  const RaumfuerunikateKerstinDiehl({super.key});
-
+class const RaumfuerunikateKerstinDiehl({super.key}) extends StatelessWidget {
   static const String path = blogPathKerstinDiehl;
 
   @override
@@ -36,7 +34,7 @@ Herzlich Willkommen im Zuhause der Atmosphäre. Es ist an der Zeit zu entdecken,
           InlineText(
             ' ist die zauberhafte Kerstin, die Du auf Instagram unter ',
           ),
-          InlineTextKersylovescolor(),
+          _InlineTextKersylovescolor(),
           InlineText(' findest.'),
         ],
       ),
@@ -277,7 +275,7 @@ Liebe Kerstin, vielen Dank für Deine Zeit, es war mir ein großes Vergnügen.''
       RichTextSection(
         children: [
           InlineText('Gästin: Kerstin Diehl '),
-          InlineTextKersylovescolor(),
+          _InlineTextKersylovescolor(),
         ],
       ),
       Text('Fotografie: Kerstin Diehl und Tonya Matyu'),
@@ -291,19 +289,15 @@ Liebe Kerstin, vielen Dank für Deine Zeit, es war mir ein großes Vergnügen.''
   );
 }
 
-class _Citation extends StatelessWidget {
-  const _Citation(this.text);
-
-  final String text;
-
+class const _Citation(final String text) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
-    child: Text(text, style: context.tt.label, textAlign: TextAlign.center),
+    child: Text(text, style: context.tt.label, textAlign: .center),
   );
 }
 
-class InlineTextKersylovescolor extends InlineText {
-  const InlineTextKersylovescolor()
+class const _InlineTextKersylovescolor() extends InlineText {
+  this
     : super(
         '@kersylovescolor',
         link: 'https://www.instagram.com/kersylovescolor/',

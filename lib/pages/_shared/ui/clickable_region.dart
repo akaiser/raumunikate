@@ -1,23 +1,17 @@
 import 'package:flutter/widgets.dart';
 
-class ClickableRegion extends StatelessWidget {
-  const ClickableRegion({
-    this.onTap,
-    this.onEnter,
-    this.onExit,
-    required this.child,
-  });
-
-  final VoidCallback? onTap;
-  final VoidCallback? onEnter;
-  final VoidCallback? onExit;
-  final Widget child;
-
+class const ClickableRegion({
+  required final Widget _child,
+  final VoidCallback? _onTap,
+  final VoidCallback? _onEnter,
+  final VoidCallback? _onExit,
+  super.key,
+}) extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MouseRegion(
-    cursor: onTap != null ? SystemMouseCursors.click : MouseCursor.defer,
-    onEnter: onEnter != null ? (_) => onEnter?.call() : null,
-    onExit: onExit != null ? (_) => onExit?.call() : null,
-    child: GestureDetector(onTap: onTap, child: child),
+    cursor: _onTap != null ? SystemMouseCursors.click : .defer,
+    onEnter: _onEnter != null ? (_) => _onEnter.call() : null,
+    onExit: _onExit != null ? (_) => _onExit.call() : null,
+    child: GestureDetector(onTap: _onTap, child: _child),
   );
 }

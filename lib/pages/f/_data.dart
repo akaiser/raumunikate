@@ -34,20 +34,11 @@ final blogDataEntries = [
 ];
 
 @immutable
-class BlogDataEntry {
-  const BlogDataEntry({
-    required this.date,
-    required this.title,
-    required this.description,
-    required this.image,
-    required this.categories,
-    required this.route,
-  });
-
-  final String date;
-  final String title;
-  final String description;
-  final Iterable<String> categories;
-  final String image;
-  final String route;
-}
+class const BlogDataEntry({
+  required final String date,
+  required final String title,
+  required final String description,
+  required final Iterable<String> categories,
+  required final String image,
+  required final String route,
+});
